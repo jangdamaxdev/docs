@@ -1,0 +1,1 @@
+Dịch nội dung(body) các file riêng biệt này sang tiếng Việt, ngữ cảnh là tài liệu của Nuxt meta-framework. Yêu cầu giữ nguyên (không dịch) các Heading, block code, link. Chú ý các MCD như `:`, `::` phải được giữ nguyên, tuyệt đối không được tự ý xóa, thêm escape `\` vào trước chúng. Dịch từng file riêng biệt, không được gộp chung.
