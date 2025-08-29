@@ -1,3 +1,5 @@
 Dịch nội dung(body) các file riêng biệt này sang tiếng Việt, ngữ cảnh là tài liệu của Nuxt meta-framework. Yêu cầu giữ nguyên (không dịch) các Heading có dạng bắt đầu bằng `#`, block code. Chú ý các MCD như `:`, `::` và link như `[]()` phải được giữ nguyên, tuyệt đối không được tự ý xóa, thêm escape `\` vào trước chúng. Dịch từng file riêng biệt, không được gộp chung. Xuất ra thẳng kết quả, không cần chèn thêm các lời chào hỏi lúc bắt đầu và lúc kết thúc của phản hồi
 
-Dịch nội dung(body) các file riêng biệt này sang tiếng Việt, ngữ cảnh là tài liệu của Nuxt meta-framework. Yêu cầu giữ nguyên (không dịch) các Heading, block code, link. Chú ý các MCD như `:`, `::` phải được giữ nguyên, tuyệt đối không được tự ý xóa, thêm escape `\` vào trước chúng. Dịch từng file riêng biệt, không được gộp chung.
+Dịch nội dung(body) các file riêng biệt này sang tiếng Việt, ngữ cảnh là tài liệu của Nuxt meta-framework. Yêu cầu giữ nguyên (không dịch) các Heading, block code, link. Chú ý các MCD như `:`, `::` phải được giữ nguyên, tuyệt đối không được tự ý xóa, thêm escape `\` vào trước chúng. Dịch từng file riêng biệt, không được gộp chung. 
+
+Dịch thư mục với `code` đang bị lỗi, bị giữ lại tiếng anh rất nhiều
