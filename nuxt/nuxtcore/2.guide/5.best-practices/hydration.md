@@ -4,28 +4,28 @@ title: Nuxt and hydration
 description: Why fixing hydration issues is important
 ---
 
-When developing, you may face hydration issues. Don't ignore those warnings.
+Khi developing, bạn may face hydration issues. Don't ignore những warnings này.
 
 # Why is it important to fix them?
 
-Hydration mismatches are not just warnings - they are indicators of serious problems that can break your application:
+Hydration mismatches are not just warnings - chúng are indicators của serious problems that can break application của bạn:
 
 ## Performance Impact
 
-- **Increased time to interactive**: Hydration errors force Vue to re-render the entire component tree, which will increase the time for your Nuxt app to become interactive
-- **Poor user experience**: Users may see content flashing or unexpected layout shifts
+- **Increased time to interactive**: Hydration errors force Vue để re-render entire component tree, which will increase time cho Nuxt app của bạn để become interactive
+- **Poor user experience**: Users may see content flashing hoặc unexpected layout shifts
 
 ## Functionality Issues
 
-- **Broken interactivity**: Event listeners may not attach properly, leaving buttons and forms non-functional
-- **State inconsistencies**: Application state can become out of sync between what the user sees and what the application thinks is rendered
+- **Broken interactivity**: Event listeners may not attach properly, leaving buttons và forms non-functional
+- **State inconsistencies**: Application state can become out of sync between what user sees và what application thinks is rendered
 - **SEO problems**: Search engines may index different content than what users actually see
 
 # How to detect them
 
 ## Development Console Warnings
 
-Vue will log hydration mismatch warnings in the browser console during development:
+Vue will log hydration mismatch warnings trong browser console during development:
 
 ![Screenshot of Vue hydration mismatch warning in the browser console](/assets/docs/best-practices/vue-console-hydration.png)
 
@@ -107,7 +107,7 @@ const state = useState('random', () => Math.random())
 
 ## Third-party Libraries with Side Effects
 
-**Problem**: Libraries that modify the DOM or have browser dependencies (this happens a LOT with tag managers).
+**Problem**: Libraries that modify DOM or have browser dependencies (this happens a LOT with tag managers).
 
 ```html
 <script setup>

@@ -4,17 +4,17 @@ title: Nuxt Plugins
 description: Best practices when using Nuxt plugins.
 ---
 
-Plugins in Nuxt allow you to extend your application with additional functionality. However, improper use can lead to performance bottlenecks. This guide outlines best practices to optimize your Nuxt plugins.
+Plugins trong Nuxt allow bạn để extend application của bạn với additional functionality. Tuy nhiên, improper use can lead đến performance bottlenecks. Guide này outlines best practices để optimize Nuxt plugins của bạn.
 
 ## Avoid costly plugin setup
 
-A large number of plugins can cause performance issues, especially if they require expensive computations or take too long to initialize. Since plugins run during the hydration phase, inefficient setups can block rendering and degrade the user experience.
+Một large number của plugins can cause performance issues, especially if chúng require expensive computations hoặc take too long để initialize. Since plugins run during hydration phase, inefficient setups can block rendering và degrade user experience.
 
 ## Use Composition whenever possible
 
-Whenever possible, favor composition over plugins. Just like in Vue, many utilities and composables can be used directly without the need for a plugin. This keeps your project lightweight and improves maintainability.
+Whenever possible, favor composition over plugins. Just like trong Vue, many utilities và composables can be used directly without need cho một plugin. Điều này keeps project của bạn lightweight và improves maintainability.
 
 ## If `async`, enable `parallel`
 
-By default, all plugins loads synchronously.
-When defining asynchronous plugins, setting `parallel: true` allows multiple plugins to load concurrently, improving performance by preventing blocking operations.
+By default, tất cả plugins loads synchronously.
+Khi defining asynchronous plugins, setting `parallel: true` allows multiple plugins để load concurrently, improving performance bằng preventing blocking operations.
