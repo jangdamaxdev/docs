@@ -4,28 +4,28 @@ title: Nuxt and hydration
 description: Why fixing hydration issues is important
 ---
 
-When developing, you may face hydration issues. Don't ignore those warnings.
+Khi phát triển, bạn có thể gặp phải các vấn đề hydration. Đừng bỏ qua những cảnh báo đó.
 
 # Why is it important to fix them?
 
-Hydration mismatches are not just warnings - they are indicators of serious problems that can break your application:
+Các lỗi hydration không chỉ là cảnh báo - chúng là dấu hiệu của các vấn đề nghiêm trọng có thể phá vỡ ứng dụng của bạn:
 
 ## Performance Impact
 
-- **Increased time to interactive**: Hydration errors force Vue to re-render the entire component tree, which will increase the time for your Nuxt app to become interactive
-- **Poor user experience**: Users may see content flashing or unexpected layout shifts
+- **Thời gian tương tác tăng lên**: Lỗi hydration buộc Vue phải render lại toàn bộ cây component, điều này sẽ tăng thời gian để ứng dụng Nuxt của bạn trở nên tương tác
+- **Trải nghiệm người dùng kém**: Người dùng có thể thấy nội dung nhấp nháy hoặc dịch chuyển bố cục bất ngờ
 
 ## Functionality Issues
 
-- **Broken interactivity**: Event listeners may not attach properly, leaving buttons and forms non-functional
-- **State inconsistencies**: Application state can become out of sync between what the user sees and what the application thinks is rendered
-- **SEO problems**: Search engines may index different content than what users actually see
+- **Tương tác bị hỏng**: Các event listener có thể không gắn kết đúng cách, khiến các nút và form không hoạt động
+- **Không nhất quán trạng thái**: Trạng thái ứng dụng có thể không đồng bộ giữa những gì người dùng thấy và những gì ứng dụng nghĩ là đã render
+- **Vấn đề SEO**: Công cụ tìm kiếm có thể index nội dung khác với những gì người dùng thực sự thấy
 
 # How to detect them
 
 ## Development Console Warnings
 
-Vue will log hydration mismatch warnings in the browser console during development:
+Vue sẽ ghi lại các cảnh báo lỗi hydration trong console trình duyệt trong quá trình phát triển:
 
 ![Screenshot of Vue hydration mismatch warning in the browser console](/assets/docs/best-practices/vue-console-hydration.png)
 
@@ -33,7 +33,7 @@ Vue will log hydration mismatch warnings in the browser console during developme
 
 ## Browser-only APIs in Server Context
 
-**Problem**: Using browser-specific APIs during server-side rendering.
+**Vấn đề**: Sử dụng các API dành riêng cho trình duyệt trong quá trình render phía server.
 
 ```html
 <template>
@@ -47,7 +47,7 @@ const userTheme = localStorage.getItem('theme') || 'light'
 </script>
 ```
 
-**Solution**: You can use [`useCookie`](/docs/api/composables/use-cookie):
+**Giải pháp**: Bạn có thể sử dụng [`useCookie`](/docs/api/composables/use-cookie):
 
 ```html
 <template>
@@ -62,7 +62,7 @@ const userTheme = useCookie('theme', { default: () => 'light' })
 
 ## Inconsistent Data
 
-**Problem**: Different data between server and client.
+**Vấn đề**: Dữ liệu khác nhau giữa server và client.
 
 ```html
 <template>
@@ -70,7 +70,7 @@ const userTheme = useCookie('theme', { default: () => 'light' })
 </template>
 ```
 
-**Solution**: Use SSR-friendly state:
+**Giải pháp**: Sử dụng trạng thái thân thiện với SSR:
 
 ```html
 <template>
@@ -84,7 +84,7 @@ const state = useState('random', () => Math.random())
 
 ## Conditional Rendering Based on Client State
 
-**Problem**: Using client-only conditions during SSR.
+**Vấn đề**: Sử dụng điều kiện chỉ dành cho client trong SSR.
 
 ```html
 <template>
@@ -94,7 +94,7 @@ const state = useState('random', () => Math.random())
 </template>
 ```
 
-**Solution**: Use media queries or handle it client-side:
+**Giải pháp**: Sử dụng media queries hoặc xử lý phía client:
 
 ```html
 <template>
@@ -107,7 +107,7 @@ const state = useState('random', () => Math.random())
 
 ## Third-party Libraries with Side Effects
 
-**Problem**: Libraries that modify the DOM or have browser dependencies (this happens a LOT with tag managers).
+**Vấn đề**: Các thư viện sửa đổi DOM hoặc có phụ thuộc trình duyệt (điều này xảy ra RẤT NHIỀU với tag managers).
 
 ```html
 <script setup>
@@ -118,7 +118,7 @@ if (import.meta.client) {
 </script>
 ```
 
-**Solution**: Initialise libraries after hydration has completed:
+**Giải pháp**: Khởi tạo thư viện sau khi hydration hoàn thành:
 
 ```html
 <script setup>
@@ -131,7 +131,7 @@ onMounted(async () => {
 
 ## Dynamic Content Based on Time
 
-**Problem**: Content that changes based on current time.
+**Vấn đề**: Nội dung thay đổi dựa trên thời gian hiện tại.
 
 ```html
 <template>
@@ -144,7 +144,7 @@ const greeting = hour < 12 ? 'Good morning' : 'Good afternoon'
 </script>
 ```
 
-**Solution**: Use [`NuxtTime`](/docs/api/components/nuxt-time) component or handle it client-side:
+**Giải pháp**: Sử dụng component [`NuxtTime`](/docs/api/components/nuxt-time) hoặc xử lý phía client:
 
 ```html
 <template>
@@ -178,11 +178,11 @@ onMounted(() => {
 
 ## In summary
 
-1. **Use SSR-friendly composables**: [`useFetch`](/docs/api/composables/use-fetch), [`useAsyncData`](/docs/api/composables/use-async-data), [`useState`](/docs/api/composables/use-state)
-2. **Wrap client-only code**: Use [`ClientOnly`](/docs/api/components/client-only) component for browser-specific content
-3. **Consistent data sources**: Ensure server and client uses the same data
-4. **Avoid side effects in setup**: Move browser-dependent code to `onMounted`
+1. **Sử dụng composables thân thiện với SSR**: [`useFetch`](/docs/api/composables/use-fetch), [`useAsyncData`](/docs/api/composables/use-async-data), [`useState`](/docs/api/composables/use-state)
+2. **Bao bọc code chỉ dành cho client**: Sử dụng component [`ClientOnly`](/docs/api/components/client-only) cho nội dung dành riêng cho trình duyệt
+3. **Nguồn dữ liệu nhất quán**: Đảm bảo server và client sử dụng cùng dữ liệu
+4. **Tránh side effects trong setup**: Di chuyển code phụ thuộc trình duyệt vào `onMounted`
 
 ::tip
-You can read the [Vue documentation on SSR hydration mismatch](https://vuejs.org/guide/scaling-up/ssr.html#hydration-mismatch) for a better understanding of hydration.
+Bạn có thể đọc [tài liệu Vue về lỗi hydration SSR](https://vuejs.org/guide/scaling-up/ssr.html#hydration-mismatch) để hiểu rõ hơn về hydration.
 ::
