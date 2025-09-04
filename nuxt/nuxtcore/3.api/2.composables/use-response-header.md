@@ -1,6 +1,6 @@
 ---
 title: "useResponseHeader"
-description: "Use useResponseHeader to set a server response header."
+description: "Sử dụng useResponseHeader để thiết lập một header response server."
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -9,10 +9,10 @@ links:
 ---
 
 ::important
-This composable is available in Nuxt v3.14+.
+Composable này khả dụng trong Nuxt v3.14+.
 ::
 
-You can use the built-in [`useResponseHeader`](/docs/api/composables/use-response-header) composable to set any server response header within your pages, components, and plugins.
+Bạn có thể sử dụng composable tích hợp [`useResponseHeader`](/docs/api/composables/use-response-header) để thiết lập bất kỳ header response server nào trong pages, components và plugins của bạn.
 
 ```ts
 // Set a custom response header
@@ -22,7 +22,7 @@ header.value = 'my-value';
 
 ## Example
 
-We can use `useResponseHeader` to easily set a response header on a per-page basis.
+Chúng ta có thể sử dụng `useResponseHeader` để dễ dàng thiết lập một header response trên cơ sở per-page.
 
 ```vue [pages/test.vue]
 <script setup>
@@ -37,7 +37,7 @@ header.value = 'my-value';
 </template>
 ```
 
-We can use `useResponseHeader` for example in Nuxt [middleware](/docs/guide/directory-structure/middleware) to set a response header for all pages.
+Chúng ta có thể sử dụng `useResponseHeader` ví dụ trong Nuxt [middleware](/docs/guide/directory-structure/middleware) để thiết lập một header response cho tất cả pages.
 
 ```ts [middleware/my-header-middleware.ts]
 export default defineNuxtRouteMiddleware((to, from) => {

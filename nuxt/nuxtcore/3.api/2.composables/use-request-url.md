@@ -1,6 +1,6 @@
 ---
 title: 'useRequestURL'
-description: 'Access the incoming request URL with the useRequestURL composable.'
+description: 'Truy cập URL request đến với composable useRequestURL.'
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -8,12 +8,12 @@ links:
     size: xs
 ---
 
-`useRequestURL` is a helper function that returns an [URL object](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL) working on both server-side and client-side.
+`useRequestURL` là một hàm trợ giúp trả về một [URL object](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL) hoạt động trên cả server-side và client-side.
 
 ::important
-When utilizing [Hybrid Rendering](/docs/guide/concepts/rendering#hybrid-rendering) with cache strategies, all incoming request headers are dropped when handling the cached responses via the [Nitro caching layer](https://nitro.build/guide/cache) (meaning `useRequestURL` will return `localhost` for the `host`).
+Khi sử dụng [Hybrid Rendering](/docs/guide/concepts/rendering#hybrid-rendering) với các chiến lược cache, tất cả headers request đến sẽ bị drop khi xử lý các responses cache qua [Nitro caching layer](https://nitro.build/guide/cache) (có nghĩa là `useRequestURL` sẽ trả về `localhost` cho `host`).
 
-You can define the [`cache.varies` option](https://nitro.build/guide/cache#options) to specify headers that will be considered when caching and serving the responses, such as `host` and `x-forwarded-host` for multi-tenant environments.
+Bạn có thể định nghĩa option [`cache.varies`](https://nitro.build/guide/cache#options) để chỉ định headers sẽ được xem xét khi cache và serve responses, chẳng hạn như `host` và `x-forwarded-host` cho các môi trường multi-tenant.
 ::
 
 ::code-group
@@ -37,5 +37,5 @@ const url = useRequestURL()
 ::
 
 ::tip{icon="i-simple-icons-mdnwebdocs" to="https://developer.mozilla.org/en-US/docs/Web/API/URL#instance_properties" target="_blank"}
-Read about the URL instance properties on the MDN documentation.
+Đọc về các thuộc tính instance URL trên tài liệu MDN.
 ::

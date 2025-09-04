@@ -1,6 +1,6 @@
 ---
 title: 'useRuntimeConfig'
-description: 'Access runtime config variables with the useRuntimeConfig composable.'
+description: 'Truy cập các biến config runtime với composable useRuntimeConfig.'
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -26,9 +26,9 @@ export default defineEventHandler((event) => {
 
 ## Define Runtime Config
 
-The example below shows how to set a public API base URL and a secret API token that is only accessible on the server.
+Ví dụ dưới đây cho thấy cách thiết lập một public API base URL và một secret API token chỉ có thể truy cập trên server.
 
-We should always define `runtimeConfig` variables inside `nuxt.config`.
+Chúng ta nên luôn định nghĩa các biến `runtimeConfig` bên trong `nuxt.config`.
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
@@ -45,14 +45,14 @@ export default defineNuxtConfig({
 ```
 
 ::note
-Variables that need to be accessible on the server are added directly inside `runtimeConfig`. Variables that need to be accessible on both the client and the server are defined in `runtimeConfig.public`.
+Các biến cần truy cập trên server được thêm trực tiếp bên trong `runtimeConfig`. Các biến cần truy cập trên cả client và server được định nghĩa trong `runtimeConfig.public`.
 ::
 
 :read-more{to="/docs/guide/going-further/runtime-config"}
 
 ## Access Runtime Config
 
-To access runtime config, we can use `useRuntimeConfig()` composable:
+Để truy cập runtime config, chúng ta có thể sử dụng composable `useRuntimeConfig()`:
 
 ```ts [server/api/test.ts]
 export default defineEventHandler(async (event) => {
@@ -70,17 +70,17 @@ export default defineEventHandler(async (event) => {
 }
 ```
 
-In this example, since `apiBase` is defined within the `public` namespace, it is universally accessible on both server and client-side, while `apiSecret` **is only accessible on the server-side**.
+Trong ví dụ này, vì `apiBase` được định nghĩa trong namespace `public`, nó có thể truy cập universally trên cả server và client-side, trong khi `apiSecret` **chỉ có thể truy cập trên server-side**.
 
 ## Environment Variables
 
-It is possible to update runtime config values using a matching environment variable name prefixed with `NUXT_`.
+Có thể cập nhật các giá trị runtime config bằng cách sử dụng tên biến môi trường khớp với prefix `NUXT_`.
 
 :read-more{to="/docs/guide/going-further/runtime-config"}
 
 ### Using the `.env` File
 
-We can set the environment variables inside the `.env` file to make them accessible during **development** and **build/generate**.
+Chúng ta có thể thiết lập các biến môi trường bên trong file `.env` để làm cho chúng có thể truy cập trong quá trình **development** và **build/generate**.
 
 ```ini [.env]
 NUXT_PUBLIC_API_BASE = "https://api.localhost:5555"
@@ -88,30 +88,30 @@ NUXT_API_SECRET = "123"
 ```
 
 ::note
-Any environment variables set within `.env` file are accessed using `process.env` in the Nuxt app during **development** and **build/generate**.
+Bất kỳ biến môi trường nào được thiết lập trong file `.env` được truy cập bằng `process.env` trong Nuxt app trong quá trình **development** và **build/generate**.
 ::
 
 ::warning
-In **production runtime**, you should use platform environment variables and `.env` is not used.
+Trong **production runtime**, bạn nên sử dụng platform environment variables và `.env` không được sử dụng.
 ::
 
 :read-more{to="/docs/guide/directory-structure/env"}
 
 ## `app` namespace
 
-Nuxt uses `app` namespace in runtime-config with keys including `baseURL` and `cdnURL`. You can customize their values at runtime by setting environment variables.
+Nuxt sử dụng namespace `app` trong runtime-config với các keys bao gồm `baseURL` và `cdnURL`. Bạn có thể tùy chỉnh các giá trị của chúng tại runtime bằng cách thiết lập environment variables.
 
 ::note
-This is a reserved namespace. You should not introduce additional keys inside `app`.
+Đây là một namespace reserved. Bạn không nên giới thiệu các keys bổ sung bên trong `app`.
 ::
 
 ### `app.baseURL`
 
-By default, the `baseURL` is set to `'/'`.
+Theo mặc định, `baseURL` được thiết lập thành `'/'`.
 
-However, the `baseURL` can be updated at runtime by setting the `NUXT_APP_BASE_URL` as an environment variable.
+Tuy nhiên, `baseURL` có thể được cập nhật tại runtime bằng cách thiết lập `NUXT_APP_BASE_URL` làm environment variable.
 
-Then, you can access this new base URL using `config.app.baseURL`:
+Sau đó, bạn có thể truy cập base URL mới này bằng `config.app.baseURL`:
 
 ```ts [/plugins/my-plugin.ts]
 export default defineNuxtPlugin((NuxtApp) => {
@@ -124,11 +124,11 @@ export default defineNuxtPlugin((NuxtApp) => {
 
 ### `app.cdnURL`
 
-This example shows how to set a custom CDN url and access them using `useRuntimeConfig()`.
+Ví dụ này cho thấy cách thiết lập một custom CDN url và truy cập chúng bằng `useRuntimeConfig()`.
 
-You can use a custom CDN for serving static assets inside `.output/public` using the `NUXT_APP_CDN_URL` environment variable.
+Bạn có thể sử dụng một custom CDN để serve static assets bên trong `.output/public` bằng environment variable `NUXT_APP_CDN_URL`.
 
-And then access the new CDN url using `config.app.cdnURL`.
+Và sau đó truy cập CDN url mới bằng `config.app.cdnURL`.
 
 ```ts [server/api/foo.ts]
 export default defineEventHandler((event) => {

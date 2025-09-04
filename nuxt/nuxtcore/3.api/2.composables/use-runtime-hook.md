@@ -1,6 +1,6 @@
 ---
 title: useRuntimeHook
-description: Registers a runtime hook in a Nuxt application and ensures it is properly disposed of when the scope is destroyed.
+description: Đăng ký một runtime hook trong ứng dụng Nuxt và đảm bảo nó được dispose đúng cách khi scope bị destroy.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -9,7 +9,7 @@ links:
 ---
 
 ::important
-This composable is available in Nuxt v3.14+.
+Composable này khả dụng trong Nuxt v3.14+.
 ::
 
 ```ts [signature]
@@ -23,12 +23,12 @@ function useRuntimeHook<THookName extends keyof RuntimeNuxtHooks>(
 
 ### Parameters
 
-- `name`: The name of the runtime hook to register. You can see the full list of [runtime Nuxt hooks here](/docs/api/advanced/hooks#app-hooks-runtime).
-- `fn`: The callback function to execute when the hook is triggered. The function signature varies based on the hook name.
+- `name`: Tên của runtime hook để đăng ký. Bạn có thể xem danh sách đầy đủ của [runtime Nuxt hooks here](/docs/api/advanced/hooks#app-hooks-runtime).
+- `fn`: Hàm callback để thực thi khi hook được trigger. Chữ ký hàm thay đổi dựa trên tên hook.
 
 ### Returns
 
-The composable doesn't return a value, but it automatically unregisters the hook when the component's scope is destroyed.
+Composable không trả về giá trị, nhưng nó tự động unregister hook khi scope của component bị destroy.
 
 ## Example
 

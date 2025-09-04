@@ -1,6 +1,6 @@
 ---
 title: 'useRequestFetch'
-description: 'Forward the request context and headers for server-side fetch requests with the useRequestFetch composable.'
+description: 'Chuyển tiếp ngữ cảnh request và headers cho các yêu cầu fetch server-side với composable useRequestFetch.'
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -8,18 +8,20 @@ links:
     size: xs
 ---
 
-You can use `useRequestFetch` to forward the request context and headers when making server-side fetch requests.
+Bạn có thể sử dụng `useRequestFetch` để chuyển tiếp ngữ cảnh request và headers khi thực hiện các yêu cầu fetch server-side.
 
-When making a client-side fetch request, the browser automatically sends the necessary headers.
-However, when making a request during server-side rendering, due to security considerations, we need to forward the headers manually.
+Khi thực hiện yêu cầu fetch client-side, browser tự động gửi các headers cần thiết.
+
+Tuy nhiên, khi thực hiện yêu cầu trong quá trình server-side rendering, do các cân nhắc bảo mật, chúng ta cần chuyển tiếp headers thủ công.
 
 ::note
-Headers that are **not meant to be forwarded** will **not be included** in the request. These headers include, for example:
+Headers mà **không được thiết kế để chuyển tiếp** sẽ **không được bao gồm** trong yêu cầu. Các headers này bao gồm, ví dụ:
+
 `transfer-encoding`, `connection`, `keep-alive`, `upgrade`, `expect`, `host`, `accept`
 ::
 
 ::tip
-The [`useFetch`](/docs/api/composables/use-fetch) composable uses `useRequestFetch` under the hood to automatically forward the request context and headers.
+Composable [`useFetch`](/docs/api/composables/use-fetch) sử dụng `useRequestFetch` under the hood để tự động chuyển tiếp ngữ cảnh request và headers.
 ::
 
 ::code-group
@@ -48,5 +50,5 @@ export default defineEventHandler((event) => {
 ::
 
 ::tip
-In the browser during client-side navigation, `useRequestFetch` will behave just like regular [`$fetch`](/docs/api/utils/dollarfetch).
+Trong browser trong quá trình navigation client-side, `useRequestFetch` sẽ hoạt động giống như [`$fetch`](/docs/api/utils/dollarfetch) thông thường.
 ::

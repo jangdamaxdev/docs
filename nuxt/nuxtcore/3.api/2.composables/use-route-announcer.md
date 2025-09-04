@@ -1,6 +1,6 @@
 ---
 title: 'useRouteAnnouncer'
-description: This composable observes the page title changes and updates the announcer message accordingly.
+description: Composable này quan sát các thay đổi tiêu đề trang và cập nhật thông báo announcer tương ứng.
 navigation:
   badge: New
 links:
@@ -11,43 +11,44 @@ links:
 ---
 
 ::important
-This composable is available in Nuxt v3.12+.
+Composable này khả dụng trong Nuxt v3.12+.
 ::
 
 ## Description
 
-A composable which observes the page title changes and updates the announcer message accordingly. Used by [`<NuxtRouteAnnouncer>`](/docs/api/components/nuxt-route-announcer) and controllable.
-It hooks into Unhead's [`dom:rendered`](https://unhead.unjs.io/docs/typescript/head/api/hooks/dom-rendered) to read the page's title and set it as the announcer message.
+Một composable quan sát các thay đổi tiêu đề trang và cập nhật thông báo announcer tương ứng. Được sử dụng bởi [`<NuxtRouteAnnouncer>`](/docs/api/components/nuxt-route-announcer) và có thể kiểm soát.
+
+Nó hook vào [`dom:rendered`](https://unhead.unjs.io/docs/typescript/head/api/hooks/dom-rendered) của Unhead để đọc tiêu đề trang và thiết lập nó làm thông báo announcer.
 
 ## Parameters
 
-- `politeness`: Sets the urgency for screen reader announcements: `off` (disable the announcement), `polite` (waits for silence), or `assertive` (interrupts immediately).  (default `polite`).
+- `politeness`: Thiết lập mức độ khẩn cấp cho các thông báo screen reader: `off` (tắt thông báo), `polite` (chờ im lặng), hoặc `assertive` (ngắt ngay lập tức). (mặc định `polite`).
 
 ## Properties
 
 ### `message`
 
 - **type**: `Ref<string>`
-- **description**: The message to announce
+- **description**: Thông báo để announce
 
 ### `politeness`
 
 - **type**: `Ref<string>`
-- **description**: Screen reader announcement urgency level `off`, `polite`, or `assertive`
+- **description**: Mức độ khẩn cấp thông báo screen reader `off`, `polite`, hoặc `assertive`
 
 ## Methods
 
 ### `set(message, politeness = "polite")`
 
-Sets the message to announce with its urgency level.
+Thiết lập thông báo để announce với mức độ khẩn cấp của nó.
 
 ### `polite(message)`
 
-Sets the message with `politeness = "polite"`
+Thiết lập thông báo với `politeness = "polite"`
 
 ### `assertive(message)`
 
-Sets the message with `politeness = "assertive"`
+Thiết lập thông báo với `politeness = "assertive"`
 
 ## Example
 

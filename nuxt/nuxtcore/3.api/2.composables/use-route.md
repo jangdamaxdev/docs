@@ -1,6 +1,6 @@
 ---
 title: "useRoute"
-description: The useRoute composable returns the current route.
+description: Composable useRoute trả về route hiện tại.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -9,12 +9,12 @@ links:
 ---
 
 ::note
-Within the template of a Vue component, you can access the route using `$route`.
+Trong template của một Vue component, bạn có thể truy cập route bằng `$route`.
 ::
 
 ## Example
 
-In the following example, we call an API via [`useFetch`](/docs/api/composables/use-fetch) using a dynamic page parameter - `slug` - as part of the URL.
+Trong ví dụ sau, chúng ta gọi một API qua [`useFetch`](/docs/api/composables/use-fetch) sử dụng một tham số trang động - `slug` - làm một phần của URL.
 
 ```html [~/pages/[slug\\].vue]
 <script setup lang="ts">
@@ -30,23 +30,23 @@ const { data: mountain } = await useFetch(`/api/mountains/${route.params.slug}`)
 </template>
 ```
 
-If you need to access the route query parameters (for example `example` in the path `/test?example=true`), then you can use `useRoute().query` instead of `useRoute().params`.
+Nếu bạn cần truy cập các tham số query của route (ví dụ `example` trong path `/test?example=true`), thì bạn có thể sử dụng `useRoute().query` thay vì `useRoute().params`.
 
 ## API
 
-Apart from dynamic parameters and query parameters, `useRoute()` also provides the following computed references related to the current route:
+Ngoài các tham số động và tham số query, `useRoute()` cũng cung cấp các computed references sau liên quan đến route hiện tại:
 
-- `fullPath`: encoded URL associated with the current route that contains path, query and hash
-- `hash`: decoded hash section of the URL that starts with a #
-- `query`: access route query parameters
-- `matched`: array of normalized matched routes with current route location
-- `meta`: custom data attached to the record
-- `name`: unique name for the route record
-- `path`: encoded pathname section of the URL
-- `redirectedFrom`: route location that was attempted to access before ending up on the current route location
+- `fullPath`: URL được encode liên quan đến route hiện tại chứa path, query và hash
+- `hash`: phần hash được decode của URL bắt đầu với #
+- `query`: truy cập tham số query của route
+- `matched`: mảng các route đã match được normalized với vị trí route hiện tại
+- `meta`: dữ liệu tùy chỉnh được gắn vào record
+- `name`: tên duy nhất cho route record
+- `path`: phần pathname được encode của URL
+- `redirectedFrom`: vị trí route đã cố gắng truy cập trước khi kết thúc ở vị trí route hiện tại
 
 ::note
-Browsers don't send [URL fragments](https://url.spec.whatwg.org/#concept-url-fragment) (for example `#foo`) when making requests. So using `route.fullPath` in your template can trigger hydration issues because this will include the fragment on client but not the server.
+Browsers không gửi [URL fragments](https://url.spec.whatwg.org/#concept-url-fragment) (ví dụ `#foo`) khi thực hiện requests. Vì vậy, sử dụng `route.fullPath` trong template của bạn có thể trigger các vấn đề hydration vì điều này sẽ bao gồm fragment trên client nhưng không phải trên server.
 ::
 
 :read-more{icon="i-simple-icons-vuedotjs" to="https://router.vuejs.org/api/type-aliases/RouteLocationNormalizedLoaded.html"}

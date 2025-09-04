@@ -1,6 +1,6 @@
 ---
 title: 'useNuxtData'
-description: 'Access the current cached value of data fetching composables.'
+description: 'Truy cập giá trị cache hiện tại của các composables fetch data.'
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -9,30 +9,30 @@ links:
 ---
 
 ::note
-`useNuxtData` gives you access to the current cached value of [`useAsyncData`](/docs/api/composables/use-async-data) , [`useLazyAsyncData`](/docs/api/composables/use-lazy-async-data), [`useFetch`](/docs/api/composables/use-fetch) and [`useLazyFetch`](/docs/api/composables/use-lazy-fetch) with explicitly provided key.
+`useNuxtData` cho bạn truy cập giá trị cache hiện tại của [`useAsyncData`](/docs/api/composables/use-async-data) , [`useLazyAsyncData`](/docs/api/composables/use-lazy-async-data), [`useFetch`](/docs/api/composables/use-fetch) và [`useLazyFetch`](/docs/api/composables/use-lazy-fetch) với key được cung cấp rõ ràng.
 ::
 
 ## Usage
 
-The `useNuxtData` composable is used to access the current cached value of data-fetching composables such as `useAsyncData`, `useLazyAsyncData`, `useFetch`, and `useLazyFetch`. By providing the key used during the data fetch, you can retrieve the cached data and use it as needed.
+Composable `useNuxtData` được sử dụng để truy cập giá trị cache hiện tại của các composables fetch data như `useAsyncData`, `useLazyAsyncData`, `useFetch`, và `useLazyFetch`. Bằng cách cung cấp key được sử dụng trong quá trình fetch data, bạn có thể truy xuất data cache và sử dụng nó khi cần.
 
-This is particularly useful for optimizing performance by reusing already-fetched data or implementing features like Optimistic Updates or cascading data updates.
+Điều này đặc biệt hữu ích để tối ưu hóa performance bằng cách tái sử dụng data đã fetch hoặc triển khai các tính năng như Optimistic Updates hoặc cascading data updates.
 
-To use `useNuxtData`, ensure that the data-fetching composable (`useFetch`, `useAsyncData`, etc.) has been called with an explicitly provided key.
+Để sử dụng `useNuxtData`, đảm bảo rằng composable fetch data (`useFetch`, `useAsyncData`, etc.) đã được gọi với key được cung cấp rõ ràng.
 
 :video-accordion{title="Watch a video from LearnVue about useNuxtData" videoId="e-_u6swXRWk"}
 
 ## Params
 
-- `key`: The unique key that identifies the cached data. This key should match the one used during the original data fetch.
+- `key`: Key duy nhất xác định data cache. Key này nên khớp với key được sử dụng trong quá trình fetch data ban đầu.
 
 ## Return Values
 
-- `data`: A reactive reference to the cached data associated with the provided key. If no cached data exists, the value will be `null`. This `Ref` automatically updates if the cached data changes, allowing seamless reactivity in your components.
+- `data`: Một reactive reference đến data cache liên quan đến key được cung cấp. Nếu không có data cache tồn tại, giá trị sẽ là `null`. `Ref` này tự động cập nhật nếu data cache thay đổi, cho phép reactivity liền mạch trong các components của bạn.
 
 ## Example
 
-The example below shows how you can use cached data as a placeholder while the most recent data is being fetched from the server.
+Ví dụ dưới đây cho thấy cách bạn có thể sử dụng data cache làm placeholder trong khi data mới nhất đang được fetch từ server.
 
 ```vue [pages/posts.vue]
 <script setup lang="ts">
@@ -60,9 +60,9 @@ const { data } = useLazyFetch(`/api/posts/${route.params.id}`, {
 
 ## Optimistic Updates
 
-The example below shows how implementing Optimistic Updates can be achieved using useNuxtData.
+Ví dụ dưới đây cho thấy cách triển khai Optimistic Updates có thể được thực hiện bằng cách sử dụng useNuxtData.
 
-Optimistic Updates is a technique where the user interface is updated immediately, assuming a server operation will succeed. If the operation eventually fails, the UI is rolled back to its previous state.
+Optimistic Updates là một kỹ thuật mà giao diện người dùng được cập nhật ngay lập tức, giả định rằng một operation server sẽ thành công. Nếu operation cuối cùng thất bại, UI sẽ được rollback về trạng thái trước đó.
 
 ```vue [pages/todos.vue]
 <script setup lang="ts">

@@ -1,6 +1,6 @@
 ---
 title: "useState"
-description: The useState composable creates a reactive and SSR-friendly shared state.
+description: "Composable useState tạo ra một shared state reactive và SSR-friendly."
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -18,18 +18,18 @@ const count = useState('counter', () => Math.round(Math.random() * 100))
 :read-more{to="/docs/getting-started/state-management"}
 
 ::important
-Because the data inside `useState` will be serialized to JSON, it is important that it does not contain anything that cannot be serialized, such as classes, functions or symbols.
+Vì data bên trong `useState` sẽ được serialize thành JSON, điều quan trọng là nó không chứa bất kỳ thứ gì không thể serialize, chẳng hạn như classes, functions hoặc symbols.
 ::
 
 ::warning
-`useState` is a reserved function name transformed by the compiler, so you should not name your own function `useState`.
+`useState` là một tên hàm reserved được transform bởi compiler, vì vậy bạn không nên đặt tên hàm riêng của bạn là `useState`.
 ::
 
 :video-accordion{title="Watch a video from Alexander Lichter about why and when to use useState" videoId="mv0WcBABcIk"}
 
 ## Using `shallowRef`
 
-If you don't need your state to be deeply reactive, you can combine `useState` with [`shallowRef`](https://vuejs.org/api/reactivity-advanced.html#shallowref). This can improve performance when your state contains large objects and arrays.
+Nếu bạn không cần state của bạn reactive deeply, bạn có thể kết hợp `useState` với [`shallowRef`](https://vuejs.org/api/reactivity-advanced.html#shallowref). Điều này có thể cải thiện performance khi state của bạn chứa large objects và arrays.
 
 ```ts
 const state = useState('my-shallow-state', () => shallowRef({ deep: 'not reactive' }))
@@ -43,6 +43,6 @@ useState<T>(init?: () => T | Ref<T>): Ref<T>
 useState<T>(key: string, init?: () => T | Ref<T>): Ref<T>
 ```
 
-- `key`: A unique key ensuring that data fetching is properly de-duplicated across requests. If you do not provide a key, then a key that is unique to the file and line number of the instance of [`useState`](/docs/api/composables/use-state) will be generated for you.
-- `init`: A function that provides initial value for the state when not initiated. This function can also return a `Ref`.
-- `T`: (typescript only) Specify the type of state
+- `key`: Một key duy nhất đảm bảo rằng data fetching được de-duplicate đúng cách trên các requests. Nếu bạn không cung cấp key, thì một key duy nhất với file và line number của instance [`useState`](/docs/api/composables/use-state) sẽ được generate cho bạn.
+- `init`: Một hàm cung cấp giá trị ban đầu cho state khi không được initiated. Hàm này cũng có thể trả về một `Ref`.
+- `T`: (chỉ typescript) Chỉ định type của state

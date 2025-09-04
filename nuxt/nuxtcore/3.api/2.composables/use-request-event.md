@@ -1,6 +1,6 @@
 ---
 title: 'useRequestEvent'
-description: 'Access the incoming request event with the useRequestEvent composable.'
+description: 'Truy cập sự kiện request đến với composable useRequestEvent.'
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -8,7 +8,7 @@ links:
     size: xs
 ---
 
-Within the [Nuxt context](/docs/guide/going-further/nuxt-app#the-nuxt-context) you can use `useRequestEvent` to access the incoming request.
+Trong [Nuxt context](/docs/guide/going-further/nuxt-app#the-nuxt-context) bạn có thể sử dụng `useRequestEvent` để truy cập request đến.
 
 ```ts
 // Get underlying request event
@@ -19,5 +19,5 @@ const url = event?.path
 ```
 
 ::tip
-In the browser, `useRequestEvent` will return `undefined`.
+Trong browser, `useRequestEvent` sẽ trả về `undefined`.
 ::
