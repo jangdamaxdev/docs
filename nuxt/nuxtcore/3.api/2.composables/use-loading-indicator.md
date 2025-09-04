@@ -1,6 +1,6 @@
 ---
 title: 'useLoadingIndicator'
-description: This composable gives you access to the loading state of the app page.
+description: Composable này cung cấp cho bạn quyền truy cập vào trạng thái loading của trang ứng dụng.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -10,49 +10,49 @@ links:
 
 ## Description
 
-A composable which returns the loading state of the page. Used by [`<NuxtLoadingIndicator>`](/docs/api/components/nuxt-loading-indicator) and controllable.
-It hooks into [`page:loading:start`](/docs/api/advanced/hooks#app-hooks-runtime) and [`page:loading:end`](/docs/api/advanced/hooks#app-hooks-runtime) to change its state.
+Một composable trả về trạng thái loading của trang. Được sử dụng bởi [`<NuxtLoadingIndicator>`](/docs/api/components/nuxt-loading-indicator) và có thể kiểm soát.
+Nó hook vào [`page:loading:start`](/docs/api/advanced/hooks#app-hooks-runtime) và [`page:loading:end`](/docs/api/advanced/hooks#app-hooks-runtime) để thay đổi trạng thái của nó.
 
 ## Parameters
 
-- `duration`: Duration of the loading bar, in milliseconds (default `2000`).
-- `throttle`: Throttle the appearing and hiding, in milliseconds (default `200`).
-- `estimatedProgress`: By default Nuxt will back off as it approaches 100%. You can provide a custom function to customize the progress estimation, which is a function that receives the duration of the loading bar (above) and the elapsed time. It should return a value between 0 and 100.
+- `duration`: Thời lượng của thanh loading, tính bằng mili giây (mặc định `2000`).
+- `throttle`: Throttle việc xuất hiện và ẩn, tính bằng mili giây (mặc định `200`).
+- `estimatedProgress`: Theo mặc định Nuxt sẽ back off khi nó tiếp cận 100%. Bạn có thể cung cấp một hàm tùy chỉnh để tùy chỉnh ước tính tiến độ, hàm này nhận thời lượng của thanh loading (ở trên) và thời gian đã trôi qua. Nó nên trả về một giá trị từ 0 đến 100.
 
 ## Properties
 
 ### `isLoading`
 
 - **type**: `Ref<boolean>`
-- **description**: The loading state
+- **description**: Trạng thái loading
 
 ### `error`
 
 - **type**: `Ref<boolean>`
-- **description**: The error state
+- **description**: Trạng thái lỗi
 
 ### `progress`
 
 - **type**: `Ref<number>`
-- **description**: The progress state. From `0` to `100`.
+- **description**: Trạng thái tiến độ. Từ `0` đến `100`.
 
 ## Methods
 
 ### `start()`
 
-Set `isLoading` to true and start to increase the `progress` value. `start` accepts a `{ force: true }` option to skip the interval and show the loading state immediately.
+Đặt `isLoading` thành true và bắt đầu tăng giá trị `progress`. `start` chấp nhận tùy chọn `{ force: true }` để bỏ qua khoảng thời gian và hiển thị trạng thái loading ngay lập tức.
 
 ### `set()`
 
-Set the `progress` value to a specific value. `set` accepts a `{ force: true }` option to skip the interval and show the loading state immediately.
+Đặt giá trị `progress` thành một giá trị cụ thể. `set` chấp nhận tùy chọn `{ force: true }` để bỏ qua khoảng thời gian và hiển thị trạng thái loading ngay lập tức.
 
 ### `finish()`
 
-Set the `progress` value to `100`, stop all timers and intervals then reset the loading state `500` ms later. `finish` accepts a `{ force: true }` option to skip the interval before the state is reset, and `{ error: true }` to change the loading bar color and set the error property to true.
+Đặt giá trị `progress` thành `100`, dừng tất cả timer và interval sau đó reset trạng thái loading sau `500` ms. `finish` chấp nhận `{ force: true }` để bỏ qua khoảng thời gian trước khi trạng thái được reset, và `{ error: true }` để thay đổi màu thanh loading và đặt thuộc tính error thành true.
 
 ### `clear()`
 
-Used by `finish()`. Clear all timers and intervals used by the composable.
+Được sử dụng bởi `finish()`. Xóa tất cả timer và interval được sử dụng bởi composable.
 
 ## Example
 
@@ -61,7 +61,7 @@ Used by `finish()`. Clear all timers and intervals used by the composable.
   const { progress, isLoading, start, finish, clear } = useLoadingIndicator({
     duration: 2000,
     throttle: 200,
-    // This is how progress is calculated by default
+    // Đây là cách tiến độ được tính toán theo mặc định
     estimatedProgress: (duration, elapsed) => (2 / Math.PI * 100) * Math.atan(elapsed / duration * 100 / 50)
   })
 </script>
@@ -70,8 +70,8 @@ Used by `finish()`. Clear all timers and intervals used by the composable.
 ```vue
 <script setup lang="ts">
   const { start, set } = useLoadingIndicator()
-  // same as set(0, { force: true })
-  // set the progress to 0, and show loading immediately
+  // giống như set(0, { force: true })
+  // đặt tiến độ thành 0, và hiển thị loading ngay lập tức
   start({ force: true })
 </script>
 ```

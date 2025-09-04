@@ -1,6 +1,6 @@
 ---
 title: useHead
-description: useHead customizes the head properties of individual pages of your Nuxt app.
+description: useHead tùy chỉnh các thuộc tính head của các trang riêng lẻ trong ứng dụng Nuxt của bạn.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -8,7 +8,7 @@ links:
     size: xs
 ---
 
-The [`useHead`](/docs/api/composables/use-head) composable function allows you to manage your head tags in a programmatic and reactive way, powered by [Unhead](https://unhead.unjs.io). If the data comes from a user or other untrusted source, we recommend you check out [`useHeadSafe`](/docs/api/composables/use-head-safe).
+Hàm composable [`useHead`](/docs/api/composables/use-head) cho phép bạn quản lý các thẻ head của mình theo cách lập trình và phản ứng, được hỗ trợ bởi [Unhead](https://unhead.unjs.io). Nếu dữ liệu đến từ người dùng hoặc nguồn không đáng tin cậy, chúng tôi khuyên bạn nên kiểm tra [`useHeadSafe`](/docs/api/composables/use-head-safe).
 
 :read-more{to="/docs/getting-started/seo-meta"}
 
@@ -18,7 +18,7 @@ The [`useHead`](/docs/api/composables/use-head) composable function allows you t
 useHead(meta: MaybeComputedRef<MetaObject>): void
 ```
 
-Below are the non-reactive types for [`useHead`](/docs/api/composables/use-head) .
+Dưới đây là các loại không phản ứng cho [`useHead`](/docs/api/composables/use-head).
 
 ```ts
 interface MetaObject {
@@ -35,10 +35,10 @@ interface MetaObject {
 }
 ```
 
-See [@unhead/vue](https://github.com/unjs/unhead/blob/main/packages/vue/src/types/schema.ts) for more detailed types.
+Xem [@unhead/vue](https://github.com/unjs/unhead/blob/main/packages/vue/src/types/schema.ts) để biết các loại chi tiết hơn.
 
 ::note
-The properties of `useHead` can be dynamic, accepting `ref`, `computed` and `reactive` properties. `meta` parameter can also accept a function returning an object to make the entire object reactive.
+Các thuộc tính của `useHead` có thể động, chấp nhận các thuộc tính `ref`, `computed` và `reactive`. Tham số `meta` cũng có thể chấp nhận một hàm trả về một đối tượng để làm cho toàn bộ đối tượng phản ứng.
 ::
 
 ## Params
@@ -47,23 +47,23 @@ The properties of `useHead` can be dynamic, accepting `ref`, `computed` and `rea
 
 **Type**: `MetaObject`
 
-An object accepting the following head metadata:
+Một đối tượng chấp nhận siêu dữ liệu head sau:
 
-- `meta`: Each element in the array is mapped to a newly-created `<meta>` tag, where object properties are mapped to the corresponding attributes.
+- `meta`: Mỗi phần tử trong mảng được ánh xạ tới một thẻ `<meta>` mới được tạo, nơi các thuộc tính đối tượng được ánh xạ tới các thuộc tính tương ứng.
   - **Type**: `Array<Record<string, any>>`
-- `link`: Each element in the array is mapped to a newly-created `<link>` tag, where object properties are mapped to the corresponding attributes.
+- `link`: Mỗi phần tử trong mảng được ánh xạ tới một thẻ `<link>` mới được tạo, nơi các thuộc tính đối tượng được ánh xạ tới các thuộc tính tương ứng.
   - **Type**: `Array<Record<string, any>>`
-- `style`: Each element in the array is mapped to a newly-created `<style>` tag, where object properties are mapped to the corresponding attributes.
+- `style`: Mỗi phần tử trong mảng được ánh xạ tới một thẻ `<style>` mới được tạo, nơi các thuộc tính đối tượng được ánh xạ tới các thuộc tính tương ứng.
   - **Type**: `Array<Record<string, any>>`
-- `script`: Each element in the array is mapped to a newly-created `<script>` tag, where object properties are mapped to the corresponding attributes.
+- `script`: Mỗi phần tử trong mảng được ánh xạ tới một thẻ `<script>` mới được tạo, nơi các thuộc tính đối tượng được ánh xạ tới các thuộc tính tương ứng.
   - **Type**: `Array<Record<string, any>>`
-- `noscript`: Each element in the array is mapped to a newly-created `<noscript>` tag, where object properties are mapped to the corresponding attributes.
+- `noscript`: Mỗi phần tử trong mảng được ánh xạ tới một thẻ `<noscript>` mới được tạo, nơi các thuộc tính đối tượng được ánh xạ tới các thuộc tính tương ứng.
   - **Type**: `Array<Record<string, any>>`
-- `titleTemplate`: Configures dynamic template to customize the page title on an individual page.
+- `titleTemplate`: Cấu hình mẫu động để tùy chỉnh tiêu đề trang trên một trang riêng lẻ.
   - **Type**: `string` | `((title: string) => string)`
-- `title`: Sets static page title on an individual page.
+- `title`: Đặt tiêu đề trang tĩnh trên một trang riêng lẻ.
   - **Type**: `string`
-- `bodyAttrs`: Sets attributes of the `<body>` tag. Each object property is mapped to the corresponding attribute.
+- `bodyAttrs`: Đặt các thuộc tính của thẻ `<body>`. Mỗi thuộc tính đối tượng được ánh xạ tới thuộc tính tương ứng.
   - **Type**: `Record<string, any>`
-- `htmlAttrs`: Sets attributes of the `<html>` tag. Each object property is mapped to the corresponding attribute.
+- `htmlAttrs`: Đặt các thuộc tính của thẻ `<html>`. Mỗi thuộc tính đối tượng được ánh xạ tới thuộc tính tương ứng.
   - **Type**: `Record<string, any>`

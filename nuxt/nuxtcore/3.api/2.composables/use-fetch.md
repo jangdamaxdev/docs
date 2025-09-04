@@ -1,6 +1,6 @@
 ---
 title: 'useFetch'
-description: 'Fetch data from an API endpoint with an SSR-friendly composable.'
+description: 'Fetch dữ liệu từ một API endpoint với một composable thân thiện với SSR.'
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -8,11 +8,12 @@ links:
     size: xs
 ---
 
-This composable provides a convenient wrapper around [`useAsyncData`](/docs/api/composables/use-async-data) and [`$fetch`](/docs/api/utils/dollarfetch).
-It automatically generates a key based on URL and fetch options, provides type hints for request url based on server routes, and infers API response type.
+Composable này cung cấp một wrapper tiện lợi xung quanh [`useAsyncData`](/docs/api/composables/use-async-data) và [`$fetch`](/docs/api/utils/dollarfetch).
+
+Nó tự động generate một key dựa trên URL và fetch options, cung cấp type hints cho request url dựa trên server routes, và infers API response type.
 
 ::note
-`useFetch` is a composable meant to be called directly in a setup function, plugin, or route middleware. It returns reactive composables and handles adding responses to the Nuxt payload so they can be passed from server to client without re-fetching the data on client side when the page hydrates.
+`useFetch` là một composable được thiết kế để được gọi trực tiếp trong một setup function, plugin, hoặc route middleware. Nó trả về các composables reactive và xử lý việc thêm responses vào Nuxt payload để chúng có thể được truyền từ server sang client mà không re-fetch dữ liệu trên client side khi trang hydrate.
 ::
 
 ## Usage
@@ -26,14 +27,14 @@ const { data, status, error, refresh, clear } = await useFetch('/api/modules', {
 ```
 
 ::warning
-If you're using a custom useFetch wrapper, do not await it in the composable, as that can cause unexpected behavior. Please follow [this recipe](/docs/guide/recipes/custom-usefetch#custom-usefetch) for more information on how to make a custom async data fetcher.
+Nếu bạn đang sử dụng một useFetch wrapper tùy chỉnh, không await nó trong composable, vì điều đó có thể gây ra hành vi không mong muốn. Vui lòng làm theo [recipe này](/docs/guide/recipes/custom-usefetch#custom-usefetch) để biết thêm thông tin về cách tạo một custom async data fetcher.
 ::
 
 ::note
-`data`, `status`, and `error` are Vue refs, and they should be accessed with `.value` when used within the `<script setup>`, while `refresh`/`execute` and `clear` are plain functions.
+`data`, `status`, và `error` là Vue refs, và chúng nên được truy cập với `.value` khi được sử dụng trong `<script setup>`, trong khi `refresh`/`execute` và `clear` là các hàm plain.
 ::
 
-Using the `query` option, you can add search parameters to your query. This option is extended from [unjs/ofetch](https://github.com/unjs/ofetch) and is using [unjs/ufo](https://github.com/unjs/ufo) to create the URL. Objects are automatically stringified.
+Sử dụng option `query`, bạn có thể thêm search parameters vào query của bạn. Option này được extended từ [unjs/ofetch](https://github.com/unjs/ofetch) và sử dụng [unjs/ufo](https://github.com/unjs/ufo) để tạo URL. Objects được tự động stringified.
 
 ```ts
 const param1 = ref('value1')
@@ -42,9 +43,9 @@ const { data, status, error, refresh } = await useFetch('/api/modules', {
 })
 ```
 
-The above example results in `https://api.nuxt.com/modules?param1=value1&param2=value2`.
+Ví dụ trên results in `https://api.nuxt.com/modules?param1=value1&param2=value2`.
 
-You can also use [interceptors](https://github.com/unjs/ofetch#%EF%B8%8F-interceptors):
+Bạn cũng có thể sử dụng [interceptors](https://github.com/unjs/ofetch#%EF%B8%8F-interceptors):
 
 ```ts
 const { data, status, error, refresh, clear } = await useFetch('/api/auth/login', {
@@ -66,35 +67,35 @@ const { data, status, error, refresh, clear } = await useFetch('/api/auth/login'
 })
 ```
 
-### Reactive Keys and Shared State
+### Reactive Keys và Shared State
 
-You can use a computed ref or a plain ref as the URL, allowing for dynamic data fetching that automatically updates when the URL changes:
+Bạn có thể sử dụng một computed ref hoặc một plain ref làm URL, cho phép fetching dữ liệu động tự động cập nhật khi URL thay đổi:
 
 ```vue [pages/[id\\].vue]
 <script setup lang="ts">
 const route = useRoute()
 const id = computed(() => route.params.id)
 
-// When the route changes and id updates, the data will be automatically refetched
+// Khi route thay đổi và id cập nhật, dữ liệu sẽ được tự động refetched
 const { data: post } = await useFetch(() => `/api/posts/${id.value}`)
 </script>
 ```
 
-When using `useFetch` with the same URL and options in multiple components, they will share the same `data`, `error` and `status` refs. This ensures consistency across components.
+Khi sử dụng `useFetch` với cùng URL và options trong multiple components, chúng sẽ share cùng `data`, `error` và `status` refs. Điều này đảm bảo consistency trên components.
 
 ::tip
-Keyed state created using `useFetch` can be retrieved across your Nuxt application using [`useNuxtData`](/docs/api/composables/use-nuxt-data).
+Keyed state được tạo bằng `useFetch` có thể được retrieved trên Nuxt application của bạn bằng [`useNuxtData`](/docs/api/composables/use-nuxt-data).
 ::
 
 ::warning
-`useFetch` is a reserved function name transformed by the compiler, so you should not name your own function `useFetch`.
+`useFetch` là một function name được reserved được transformed bởi compiler, vì vậy bạn không nên đặt tên cho function của riêng bạn là `useFetch`.
 ::
 
 ::warning
-If you encounter the `data` variable destructured from a `useFetch` returns a string and not a JSON parsed object then make sure your component doesn't include an import statement like `import { useFetch } from '@vueuse/core`.
+Nếu bạn encounter variable `data` destructured từ một `useFetch` returns một string và không phải là JSON parsed object thì đảm bảo component của bạn không include một import statement như `import { useFetch } from '@vueuse/core`.
 ::
 
-:video-accordion{title="Watch the video from Alexander Lichter to avoid using useFetch the wrong way" videoId="njsGVmcWviY"}
+:video-accordion{title="Xem video từ Alexander Lichter để tránh sử dụng useFetch theo cách sai" videoId="njsGVmcWviY"}
 
 :read-more{to="/docs/getting-started/data-fetching"}
 
@@ -128,7 +129,7 @@ type UseFetchOptions<DataT> = {
 }
 
 type AsyncDataRequestContext = {
-  /** The reason for this data request */
+  /** Lý do cho data request này */
   cause: 'initial' | 'refresh:manual' | 'refresh:hook' | 'watch'
 }
 
@@ -150,66 +151,67 @@ type AsyncDataRequestStatus = 'idle' | 'pending' | 'success' | 'error'
 
 ## Parameters
 
-- `URL` (`string | Request | Ref<string | Request> | () => string | Request`): The URL or request to fetch. Can be a string, a Request object, a Vue ref, or a function returning a string/Request. Supports reactivity for dynamic endpoints.
+- `URL` (`string | Request | Ref<string | Request> | () => string | Request`): URL hoặc request để fetch. Có thể là string, Request object, Vue ref, hoặc function returning string/Request. Supports reactivity cho dynamic endpoints.
 
-- `options` (object): Configuration for the fetch request. Extends [unjs/ofetch](https://github.com/unjs/ofetch) options and [`AsyncDataOptions`](/docs/api/composables/use-async-data#params). All options can be a static value, a `ref`, or a computed value.
+- `options` (object): Configuration cho fetch request. Extends [unjs/ofetch](https://github.com/unjs/ofetch) options và [`AsyncDataOptions`](/docs/api/composables/use-async-data#params). Tất cả options có thể là static value, `ref`, hoặc computed value.
 
 | Option | Type | Default | Description |
 | ---| --- | --- | --- |
-| `key` | `MaybeRefOrGetter<string>` | auto-gen | Unique key for de-duplication. If not provided, generated from URL and options. |
+| `key` | `MaybeRefOrGetter<string>` | auto-gen | Unique key cho de-duplication. Nếu không provided, generated từ URL và options. |
 | `method` | `string` | `'GET'` | HTTP request method. |
-| `query` | `object` | - | Query/search params to append to the URL. Alias: `params`. Supports refs/computed. |
-| `params` | `object` | - | Alias for `query`. |
-| `body` | `RequestInit['body'] \| Record<string, any>` | - | Request body. Objects are automatically stringified. Supports refs/computed. |
+| `query` | `object` | - | Query/search params để append vào URL. Alias: `params`. Supports refs/computed. |
+| `params` | `object` | - | Alias cho `query`. |
+| `body` | `RequestInit['body'] \| Record<string, any>` | - | Request body. Objects được tự động stringified. Supports refs/computed. |
 | `headers` | `Record<string, string> \| [key, value][] \| Headers` | - | Request headers. |
-| `baseURL` | `string` | - | Base URL for the request. |
-| `timeout` | `number` | - | Timeout in milliseconds to abort the request. |
-| `cache` | `boolean \| string` | - | Cache control. Boolean disables cache, or use Fetch API values: `default`, `no-store`, etc. |
-| `server` | `boolean` | `true` | Whether to fetch on the server. |
-| `lazy` | `boolean` | `false` | If true, resolves after route loads (does not block navigation). |
-| `immediate` | `boolean` | `true` | If false, prevents request from firing immediately. |
-| `default` | `() => DataT` | - | Factory for default value of `data` before async resolves. |
-| `transform` | `(input: DataT) => DataT \| Promise<DataT>` | - | Function to transform the result after resolving. |
-| `getCachedData`| `(key, nuxtApp, ctx) => DataT \| undefined` | - | Function to return cached data. See below for default. |
-| `pick` | `string[]` | - | Only pick specified keys from the result. |
-| `watch` | `MultiWatchSources \| false` | - | Array of reactive sources to watch and auto-refresh. `false` disables watching. |
-| `deep` | `boolean` | `false` | Return data in a deep ref object. |
-| `dedupe` | `'cancel' \| 'defer'` | `'cancel'` | Avoid fetching same key more than once at a time. |
+| `baseURL` | `string` | - | Base URL cho request. |
+| `timeout` | `number` | - | Timeout in milliseconds để abort request. |
+| `cache` | `boolean \| string` | - | Cache control. Boolean disables cache, hoặc use Fetch API values: `default`, `no-store`, etc. |
+| `server` | `boolean` | `true` | Có fetch trên server hay không. |
+| `lazy` | `boolean` | `false` | Nếu true, resolves sau khi loading route (không block navigation). |
+| `immediate` | `boolean` | `true` | Nếu false, prevents request firing ngay lập tức. |
+| `default` | `() => DataT` | - | Factory cho default value của `data` trước khi async resolves. |
+| `transform` | `(input: DataT) => DataT \| Promise<DataT>` | - | Function để transform result sau khi resolving. |
+| `getCachedData`| `(key, nuxtApp, ctx) => DataT \| undefined` | - | Function để return cached data. Xem dưới cho default. |
+| `pick` | `string[]` | - | Chỉ pick specified keys từ result. |
+| `watch` | `MultiWatchSources \| false` | - | Array của reactive sources để watch và auto-refresh. `false` disables watching. |
+| `deep` | `boolean` | `false` | Return data trong deep ref object. |
+| `dedupe` | `'cancel' \| 'defer'` | `'cancel'` | Tránh fetching cùng key nhiều hơn một lần tại một thời điểm. |
 | `$fetch` | `typeof globalThis.$fetch` | - | Custom $fetch implementation. |
 
 ::note
-All fetch options can be given a `computed` or `ref` value. These will be watched and new requests made automatically with any new values if they are updated.
+Tất cả fetch options có thể được given một `computed` hoặc `ref` value. Những cái này sẽ được watched và new requests made tự động với bất kỳ new values nào nếu chúng được updated.
 ::
 
 **getCachedData default:**
 
 ```ts
 const getDefaultCachedData = (key, nuxtApp, ctx) => nuxtApp.isHydrating 
- ? nuxtApp.payload.data[key] 
- : nuxtApp.static.data[key]
+  ? nuxtApp.payload.data[key] 
+  : nuxtApp.static.data[key]
 ```
-This only caches data when `experimental.payloadExtraction` in `nuxt.config` is enabled.
+
+Chỉ cache data khi `experimental.payloadExtraction` trong `nuxt.config` được enabled.
 
 ## Return Values
 
 | Name | Type | Description |
 | --- | --- |--- |
-| `data` | `Ref<DataT \| undefined>` | The result of the asynchronous fetch. |
-| `refresh` | `(opts?: AsyncDataExecuteOptions) => Promise<void>` | Function to manually refresh the data. By default, Nuxt waits until a `refresh` is finished before it can be executed again. |
-| `execute` | `(opts?: AsyncDataExecuteOptions) => Promise<void>` | Alias for `refresh`. |
-| `error` | `Ref<ErrorT \| undefined>` | Error object if the data fetching failed. |
-| `status` | `Ref<'idle' \| 'pending' \| 'success' \| 'error'>` | Status of the data request. See below for possible values. |
-| `clear` | `() => void` | Resets `data` to `undefined` (or the value of `options.default()` if provided), `error` to `undefined`, set `status` to `idle`, and cancels any pending requests. |
+| `data` | `Ref<DataT \| undefined>` | Kết quả của asynchronous fetch. |
+| `refresh` | `(opts?: AsyncDataExecuteOptions) => Promise<void>` | Function để manually refresh data. Theo mặc định, Nuxt waits cho đến khi một `refresh` hoàn thành trước khi nó có thể được execute lại. |
+| `execute` | `(opts?: AsyncDataExecuteOptions) => Promise<void>` | Alias cho `refresh`. |
+| `error` | `Ref<ErrorT \| undefined>` | Error object nếu data fetching thất bại. |
+| `status` | `Ref<'idle' \| 'pending' \| 'success' \| 'error'>` | Status của data request. Xem dưới cho possible values. |
+| `clear` | `() => void` | Resets `data` thành `undefined` (hoặc giá trị của `options.default()` nếu provided), `error` thành `undefined`, set `status` thành `idle`, và cancels bất kỳ pending requests hiện tại nào. |
 
 ### Status values
 
-- `idle`: Request has not started (e.g. `{ immediate: false }` or `{ server: false }` on server render)
-- `pending`: Request is in progress
-- `success`: Request completed successfully
-- `error`: Request failed
+- `idle`: Request chưa bắt đầu (e.g. `{ immediate: false }` hoặc `{ server: false }` trên server render)
+- `pending`: Request đang trong tiến trình
+- `success`: Request hoàn thành thành công
+- `error`: Request thất bại
 
 ::note
-If you have not fetched data on the server (for example, with `server: false`), then the data _will not_ be fetched until hydration completes. This means even if you await `useFetch` on client-side, `data` will remain null within `<script setup>`.
+Nếu bạn chưa fetch data trên server (ví dụ, với `server: false`), thì data _sẽ không_ được fetch cho đến khi hydration hoàn thành. Điều này có nghĩa là ngay cả khi bạn await `useFetch` trên client-side, `data` sẽ vẫn là null trong `<script setup>`.
 ::
 
 ### Examples

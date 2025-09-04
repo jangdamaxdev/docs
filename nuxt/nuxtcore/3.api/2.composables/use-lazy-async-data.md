@@ -1,6 +1,6 @@
 ---
 title: useLazyAsyncData
-description: This wrapper around useAsyncData triggers navigation immediately.
+description: Wrapper này xung quanh useAsyncData kích hoạt điều hướng ngay lập tức.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -10,7 +10,7 @@ links:
 
 ## Description
 
-By default, [`useAsyncData`](/docs/api/composables/use-async-data) blocks navigation until its async handler is resolved. `useLazyAsyncData` provides a wrapper around [`useAsyncData`](/docs/api/composables/use-async-data) that triggers navigation before the handler is resolved by setting the `lazy` option to `true`.
+Theo mặc định, [`useAsyncData`](/docs/api/composables/use-async-data) chặn điều hướng cho đến khi trình xử lý async của nó được giải quyết. `useLazyAsyncData` cung cấp một wrapper xung quanh [`useAsyncData`](/docs/api/composables/use-async-data) kích hoạt điều hướng trước khi trình xử lý được giải quyết bằng cách đặt tùy chọn `lazy` thành `true`.
 
 ::note
 `useLazyAsyncData` has the same signature as [`useAsyncData`](/docs/api/composables/use-async-data).
@@ -22,26 +22,26 @@ By default, [`useAsyncData`](/docs/api/composables/use-async-data) blocks naviga
 
 ```vue [pages/index.vue]
 <script setup lang="ts">
-/* Navigation will occur before fetching is complete.
-  Handle 'pending' and 'error' states directly within your component's template
+/* Điều hướng sẽ xảy ra trước khi fetching hoàn tất.
+  Xử lý trạng thái 'pending' và 'error' trực tiếp trong template của component
 */
 const { status, data: count } = await useLazyAsyncData('count', () => $fetch('/api/count'))
 
 watch(count, (newCount) => {
-  // Because count might start out null, you won't have access
-  // to its contents immediately, but you can watch it.
+  // Vì count có thể bắt đầu là null, bạn sẽ không có quyền truy cập
+  // vào nội dung của nó ngay lập tức, nhưng bạn có thể watch nó.
 })
 </script>
 
 <template>
   <div>
-    {{ status === 'pending' ? 'Loading' : count }}
+    {{ status === 'pending' ? 'Đang tải' : count }}
   </div>
 </template>
 ```
 
 ::warning
-`useLazyAsyncData` is a reserved function name transformed by the compiler, so you should not name your own function `useLazyAsyncData`.
+`useLazyAsyncData` là một tên hàm được bảo lưu được biến đổi bởi compiler, vì vậy bạn không nên đặt tên hàm của mình là `useLazyAsyncData`.
 ::
 
 :read-more{to="/docs/getting-started/data-fetching"}

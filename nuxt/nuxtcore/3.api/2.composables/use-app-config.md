@@ -1,6 +1,6 @@
 ---
 title: 'useAppConfig'
-description: 'Access the reactive app config defined in the project.'
+description: 'Truy cập cấu hình ứng dụng reactive được định nghĩa trong dự án.'
 links:
   - label: Source
     icon: i-simple-icons-github

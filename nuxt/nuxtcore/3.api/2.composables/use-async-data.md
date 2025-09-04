@@ -1,6 +1,6 @@
 ---
 title: 'useAsyncData'
-description: useAsyncData provides access to data that resolves asynchronously in an SSR-friendly composable.
+description: useAsyncData cung cấp quyền truy cập vào dữ liệu được giải quyết bất đồng bộ trong một composable thân thiện với SSR.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -8,10 +8,10 @@ links:
     size: xs
 ---
 
-Within your pages, components, and plugins you can use useAsyncData to get access to data that resolves asynchronously.
+Trong các pages, components và plugins của bạn, bạn có thể sử dụng useAsyncData để có quyền truy cập vào dữ liệu được giải quyết bất đồng bộ.
 
 ::note
-[`useAsyncData`](/docs/api/composables/use-async-data) is a composable meant to be called directly in the [Nuxt context](/docs/guide/going-further/nuxt-app#the-nuxt-context). It returns reactive composables and handles adding responses to the Nuxt payload so they can be passed from server to client **without re-fetching the data on client side** when the page hydrates.
+[`useAsyncData`](/docs/api/composables/use-async-data) là một composable được thiết kế để được gọi trực tiếp trong [Nuxt context](/docs/guide/going-further/nuxt-app#the-nuxt-context). Nó trả về các composables reactive và xử lý việc thêm responses vào Nuxt payload để chúng có thể được truyền từ server sang client **mà không cần fetch lại dữ liệu trên client side** khi trang hydrate.
 ::
 
 ## Usage
@@ -26,16 +26,16 @@ const { data, status, error, refresh, clear } = await useAsyncData(
 ```
 
 ::warning
-If you're using a custom useAsyncData wrapper, do not await it in the composable, as that can cause unexpected behavior. Please follow [this recipe](/docs/guide/recipes/custom-usefetch#custom-usefetch) for more information on how to make a custom async data fetcher.
+Nếu bạn đang sử dụng một useAsyncData wrapper tùy chỉnh, không await nó trong composable, vì điều đó có thể gây ra hành vi không mong muốn. Vui lòng làm theo [recipe này](/docs/guide/recipes/custom-usefetch#custom-usefetch) để biết thêm thông tin về cách tạo một custom async data fetcher.
 ::
 
 ::note
-`data`, `status` and `error` are Vue refs and they should be accessed with `.value` when used within the `<script setup>`, while `refresh`/`execute` and `clear` are plain functions.
+`data`, `status` và `error` là Vue refs và chúng nên được truy cập với `.value` khi được sử dụng trong `<script setup>`, trong khi `refresh`/`execute` và `clear` là các hàm plain.
 ::
 
 ### Watch Params
 
-The built-in `watch` option allows automatically rerunning the fetcher function when any changes are detected.
+Option `watch` tích hợp cho phép tự động rerun hàm fetcher khi phát hiện bất kỳ thay đổi nào.
 
 ```vue [pages/index.vue]
 <script setup lang="ts">
@@ -55,14 +55,14 @@ const { data: posts } = await useAsyncData(
 
 ### Reactive Keys
 
-You can use a computed ref, plain ref or a getter function as the key, allowing for dynamic data fetching that automatically updates when the key changes:
+Bạn có thể sử dụng một computed ref, plain ref hoặc một getter function làm key, cho phép fetching dữ liệu động tự động cập nhật khi key thay đổi:
 
 ```vue [pages/[id\\].vue]
 <script setup lang="ts">
 const route = useRoute()
 const userId = computed(() => `user-${route.params.id}`)
 
-// When the route changes and userId updates, the data will be automatically refetched
+// Khi route thay đổi và userId cập nhật, dữ liệu sẽ được tự động refetch
 const { data: user } = useAsyncData(
   userId,
   () => fetchUserById(route.params.id)
@@ -71,53 +71,53 @@ const { data: user } = useAsyncData(
 ```
 
 ::warning
-[`useAsyncData`](/docs/api/composables/use-async-data) is a reserved function name transformed by the compiler, so you should not name your own function [`useAsyncData`](/docs/api/composables/use-async-data).
+[`useAsyncData`](/docs/api/composables/use-async-data) là một function name được reserved được transformed bởi compiler, vì vậy bạn không nên đặt tên cho function của riêng bạn là [`useAsyncData`](/docs/api/composables/use-async-data).
 ::
 
 :read-more{to="/docs/getting-started/data-fetching#useasyncdata"}
 
 ## Params
 
-- `key`: a unique key to ensure that data fetching can be properly de-duplicated across requests. If you do not provide a key, then a key that is unique to the file name and line number of the instance of `useAsyncData` will be generated for you.
-- `handler`: an asynchronous function that must return a truthy value (for example, it should not be `undefined` or `null`) or the request may be duplicated on the client side.
+- `key`: một key duy nhất để đảm bảo rằng việc fetching dữ liệu có thể được de-duplicated đúng cách trên các requests. Nếu bạn không cung cấp key, thì một key sẽ được tạo cho bạn duy nhất cho file name và line number của instance của `useAsyncData`.
+- `handler`: một hàm asynchronous phải trả về một giá trị truthy (ví dụ, nó không nên là `undefined` hoặc `null`) hoặc request có thể bị duplicated trên client side.
 ::warning
-The `handler` function should be **side-effect free** to ensure predictable behavior during SSR and CSR hydration. If you need to trigger side effects, use the [`callOnce`](/docs/api/utils/call-once) utility to do so.
+Hàm `handler` nên là **side-effect free** để đảm bảo hành vi predictable trong SSR và CSR hydration. Nếu bạn cần trigger side effects, hãy sử dụng utility [`callOnce`](/docs/api/utils/call-once) để làm điều đó.
 ::
 - `options`:
-  - `server`: whether to fetch the data on the server (defaults to `true`)
-  - `lazy`: whether to resolve the async function after loading the route, instead of blocking client-side navigation (defaults to `false`)
-  - `immediate`: when set to `false`, will prevent the request from firing immediately. (defaults to `true`)
-  - `default`: a factory function to set the default value of the `data`, before the async function resolves - useful with the `lazy: true` or `immediate: false` option
-  - `transform`: a function that can be used to alter `handler` function result after resolving
-  - `getCachedData`: Provide a function which returns cached data. A `null` or `undefined` return value will trigger a fetch. By default, this is:
+  - `server`: có fetch dữ liệu trên server hay không (mặc định là `true`)
+  - `lazy`: có resolve hàm async sau khi loading route hay không, thay vì blocking client-side navigation (mặc định là `false`)
+  - `immediate`: khi được set thành `false`, sẽ ngăn request firing ngay lập tức. (mặc định là `true`)
+  - `default`: một factory function để set giá trị mặc định của `data`, trước khi hàm async resolves - hữu ích với option `lazy: true` hoặc `immediate: false`
+  - `transform`: một hàm có thể được sử dụng để alter `handler` function result sau khi resolving
+  - `getCachedData`: Cung cấp một hàm trả về cached data. Một return value `null` hoặc `undefined` sẽ trigger một fetch. Theo mặc định, điều này là:
     ```ts
     const getDefaultCachedData = (key, nuxtApp, ctx) => nuxtApp.isHydrating 
       ? nuxtApp.payload.data[key] 
       : nuxtApp.static.data[key]
     ```
-    Which only caches data when `experimental.payloadExtraction` of `nuxt.config` is enabled.
-  - `pick`: only pick specified keys in this array from the `handler` function result
-  - `watch`: watch reactive sources to auto-refresh
-  - `deep`: return data in a deep ref object. It is `false` by default to return data in a shallow ref object, which can improve performance if your data does not need to be deeply reactive.
-  - `dedupe`: avoid fetching same key more than once at a time (defaults to `cancel`). Possible options:
-    - `cancel` - cancels existing requests when a new one is made
-    - `defer` - does not make new requests at all if there is a pending request
+    Chỉ cache data khi `experimental.payloadExtraction` của `nuxt.config` được enabled.
+  - `pick`: chỉ pick specified keys trong array này từ `handler` function result
+  - `watch`: watch reactive sources để auto-refresh
+  - `deep`: return data trong một deep ref object. Nó là `false` theo mặc định để return data trong một shallow ref object, có thể cải thiện performance nếu data của bạn không cần reactive deeply.
+  - `dedupe`: tránh fetching cùng key nhiều hơn một lần tại một thời điểm (mặc định là `cancel`). Các options có thể:
+    - `cancel` - cancels existing requests khi một request mới được thực hiện
+    - `defer` - không thực hiện new requests nếu có một pending request
 
 ::note
-Under the hood, `lazy: false` uses `<Suspense>` to block the loading of the route before the data has been fetched. Consider using `lazy: true` and implementing a loading state instead for a snappier user experience.
+Dưới hood, `lazy: false` sử dụng `<Suspense>` để block loading của route trước khi data đã được fetched. Cân nhắc sử dụng `lazy: true` và implement một loading state thay thế để có user experience mượt mà hơn.
 ::
 
-::read-more{to="/docs/api/composables/use-lazy-async-data"}
-You can use `useLazyAsyncData` to have the same behavior as `lazy: true` with `useAsyncData`.
+:read-more{to="/docs/api/composables/use-lazy-async-data"}
+Bạn có thể sử dụng `useLazyAsyncData` để có cùng behavior như `lazy: true` với `useAsyncData`.
 ::
 
-:video-accordion{title="Watch a video from Alexander Lichter about client-side caching with getCachedData" videoId="aQPR0xn-MMk"}
+:video-accordion{title="Xem video từ Alexander Lichter về client-side caching với getCachedData" videoId="aQPR0xn-MMk"}
 
-### Shared State and Option Consistency
+### Shared State và Option Consistency
 
-When using the same key for multiple `useAsyncData` calls, they will share the same `data`, `error` and `status` refs. This ensures consistency across components but requires option consistency.
+Khi sử dụng cùng key cho multiple `useAsyncData` calls, chúng sẽ share cùng `data`, `error` và `status` refs. Điều này đảm bảo consistency trên components nhưng yêu cầu option consistency.
 
-The following options **must be consistent** across all calls with the same key:
+Các options sau **phải consistent** trên tất cả calls với cùng key:
 - `handler` function
 - `deep` option
 - `transform` function
@@ -125,7 +125,7 @@ The following options **must be consistent** across all calls with the same key:
 - `getCachedData` function
 - `default` value
 
-The following options **can differ** without triggering warnings:
+Các options sau **có thể khác** mà không trigger warnings:
 - `server`
 - `lazy`
 - `immediate`
@@ -133,37 +133,37 @@ The following options **can differ** without triggering warnings:
 - `watch`
 
 ```ts
-// ❌ This will trigger a development warning
+// ❌ Điều này sẽ trigger development warning
 const { data: users1 } = useAsyncData('users', () => $fetch('/api/users'), { deep: false })
 const { data: users2 } = useAsyncData('users', () => $fetch('/api/users'), { deep: true })
 
-// ✅ This is allowed
+// ✅ Điều này được cho phép
 const { data: users1 } = useAsyncData('users', () => $fetch('/api/users'), { immediate: true })
 const { data: users2 } = useAsyncData('users', () => $fetch('/api/users'), { immediate: false })
 ```
 
 ::tip
-Keyed state created using `useAsyncData` can be retrieved across your Nuxt application using [`useNuxtData`](/docs/api/composables/use-nuxt-data).
+Keyed state được tạo bằng `useAsyncData` có thể được retrieved trên Nuxt application của bạn bằng [`useNuxtData`](/docs/api/composables/use-nuxt-data).
 ::
 
 ## Return Values
 
-- `data`: the result of the asynchronous function that is passed in.
-- `refresh`/`execute`: a function that can be used to refresh the data returned by the `handler` function.
-- `error`: an error object if the data fetching failed.
-- `status`: a string indicating the status of the data request:
-  - `idle`: when the request has not started, such as:
-    - when `execute` has not yet been called and `{ immediate: false }` is set
-    - when rendering HTML on the server and `{ server: false }` is set
-  - `pending`: the request is in progress
-  - `success`: the request has completed successfully
-  - `error`: the request has failed
-- `clear`: a function that can be used to set `data` to `undefined` (or the value of `options.default()` if provided), set `error` to `undefined`, set `status` to `idle`, and mark any currently pending requests as cancelled.
+- `data`: kết quả của hàm asynchronous được truyền vào.
+- `refresh`/`execute`: một hàm có thể được sử dụng để refresh data được trả về bởi hàm `handler`.
+- `error`: một error object nếu việc fetching data thất bại.
+- `status`: một string chỉ ra status của data request:
+  - `idle`: khi request chưa bắt đầu, chẳng hạn như:
+    - khi `execute` chưa được gọi và `{ immediate: false }` được set
+    - khi rendering HTML trên server và `{ server: false }` được set
+  - `pending`: request đang trong tiến trình
+  - `success`: request đã hoàn thành thành công
+  - `error`: request đã thất bại
+- `clear`: một hàm có thể được sử dụng để set `data` thành `undefined` (hoặc giá trị của `options.default()` nếu được cung cấp), set `error` thành `undefined`, set `status` thành `idle`, và mark bất kỳ pending requests hiện tại nào là cancelled.
 
-By default, Nuxt waits until a `refresh` is finished before it can be executed again.
+Theo mặc định, Nuxt chờ cho đến khi một `refresh` hoàn thành trước khi nó có thể được execute lại.
 
 ::note
-If you have not fetched data on the server (for example, with `server: false`), then the data _will not_ be fetched until hydration completes. This means even if you await [`useAsyncData`](/docs/api/composables/use-async-data) on the client side, `data` will remain `undefined` within `<script setup>`.
+Nếu bạn chưa fetch data trên server (ví dụ, với `server: false`), thì data _sẽ không_ được fetch cho đến khi hydration hoàn thành. Điều này có nghĩa là ngay cả khi bạn await [`useAsyncData`](/docs/api/composables/use-async-data) trên client side, `data` sẽ vẫn là `undefined` trong `<script setup>`.
 ::
 
 ## Type
@@ -193,7 +193,7 @@ type AsyncDataOptions<DataT> = {
 }
 
 type AsyncDataRequestContext = {
-  /** The reason for this data request */
+  /** Lý do cho data request này */
   cause: 'initial' | 'refresh:manual' | 'refresh:hook' | 'watch'
 }
 

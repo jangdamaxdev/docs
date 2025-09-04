@@ -1,6 +1,6 @@
 ---
 title: useHeadSafe
-description: The recommended way to provide head data with user input.
+description: Cách được khuyến nghị để cung cấp dữ liệu head với đầu vào của người dùng.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -8,11 +8,11 @@ links:
     size: xs
 ---
 
-The `useHeadSafe` composable is a wrapper around the [`useHead`](/docs/api/composables/use-head) composable that restricts the input to only allow safe values.
+Composable `useHeadSafe` là một wrapper xung quanh composable [`useHead`](/docs/api/composables/use-head) nhằm hạn chế đầu vào chỉ cho phép các giá trị an toàn.
 
 ## Usage
 
-You can pass all the same values as [`useHead`](/docs/api/composables/use-head)
+Bạn có thể truyền tất cả các giá trị giống như [`useHead`](/docs/api/composables/use-head)
 
 ```ts
 useHeadSafe({
@@ -23,13 +23,13 @@ useHeadSafe({
     { 'http-equiv': 'refresh', content: '0;javascript:alert(1)' }
   ]
 })
-// Will safely generate
+// Sẽ tạo ra một cách an toàn
 // <script id="xss-script"></script>
 // <meta content="0;javascript:alert(1)">
 ```
 
 ::read-more{to="https://unhead.unjs.io/docs/typescript/head/api/composables/use-head-safe" target="_blank"}
-Read more on the `Unhead` documentation.
+Đọc thêm về tài liệu `Unhead`.
 ::
 
 ## Type
@@ -38,7 +38,7 @@ Read more on the `Unhead` documentation.
 useHeadSafe(input: MaybeComputedRef<HeadSafe>): void
 ```
 
-The list of allowed values is:
+Danh sách các giá trị được phép là:
 
 ```ts
 const WhitelistAttributes = {
@@ -52,4 +52,4 @@ const WhitelistAttributes = {
 }
 ```
 
-See [@unhead/vue](https://github.com/unjs/unhead/blob/main/packages/vue/src/types/safeSchema.ts) for more detailed types.
+Xem [@unhead/vue](https://github.com/unjs/unhead/blob/main/packages/vue/src/types/safeSchema.ts) để biết các loại chi tiết hơn.

@@ -1,6 +1,6 @@
 ---
 title: 'useHydration'
-description: 'Allows full control of the hydration cycle to set and receive data from the server.'
+description: 'Cho phép kiểm soát đầy đủ chu kỳ hydration để đặt và nhận dữ liệu từ máy chủ.'
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -9,16 +9,16 @@ links:
 ---
 
 ::note
-This is an advanced composable, primarily designed for use within plugins, mostly used by Nuxt modules.
+Đây là một composable nâng cao, chủ yếu được thiết kế để sử dụng trong các plugin, chủ yếu được sử dụng bởi các module Nuxt.
 ::
 
 ::note
-`useHydration` is designed to **ensure state synchronization and restoration during SSR**. If you need to create a globally reactive state that is SSR-friendly in Nuxt, [`useState`](/docs/api/composables/use-state) is the recommended choice.
+`useHydration` được thiết kế để **đảm bảo đồng bộ hóa và khôi phục trạng thái trong quá trình SSR**. Nếu bạn cần tạo một trạng thái phản ứng toàn cục thân thiện với SSR trong Nuxt, [`useState`](/docs/api/composables/use-state) là lựa chọn được khuyến nghị.
 ::
 
-`useHydration` is a built-in composable that provides a way to set data on the server side every time a new HTTP request is made and receive that data on the client side. This way `useHydration` allows you to take full control of the hydration cycle.
+`useHydration` là một composable tích hợp cung cấp cách để đặt dữ liệu ở phía máy chủ mỗi khi có yêu cầu HTTP mới và nhận dữ liệu đó ở phía client. Bằng cách này `useHydration` cho phép bạn kiểm soát đầy đủ chu kỳ hydration.
 
-The data returned from the `get` function on the server is stored in `nuxtApp.payload` under the unique key provided as the first parameter to `useHydration`. During hydration, this data is then retrieved on the client, preventing redundant computations or API calls.
+Dữ liệu trả về từ hàm `get` trên máy chủ được lưu trữ trong `nuxtApp.payload` dưới khóa duy nhất được cung cấp làm tham số đầu tiên cho `useHydration`. Trong quá trình hydration, dữ liệu này sau đó được truy xuất trên client, ngăn chặn các tính toán hoặc gọi API dư thừa.
 
 ## Usage
 
@@ -47,12 +47,13 @@ export default defineNuxtPlugin((nuxtApp) => {
   const myStore = new MyStore()
 
   useHydration(
-    'myStoreState', 
-    () => myStore.getState(), 
+    'myStoreState',
+    () => myStore.getState(),
     (data) => myStore.setState(data)
   )
 })
 ```
+
 ::
 
 ## Type
@@ -63,6 +64,6 @@ useHydration <T> (key: string, get: () => T, set: (value: T) => void) => void
 
 ## Parameters
 
-- `key`: A unique key that identifies the data in your Nuxt application.
-- `get`: A function executed **only on the server** (called when SSR rendering is done) to set the initial value.
-- `set`: A function executed **only on the client** (called when initial vue instance is created) to receive the data.
+- `key`: Một khóa duy nhất xác định dữ liệu trong ứng dụng Nuxt của bạn.
+- `get`: Một hàm được thực thi **chỉ trên máy chủ** (được gọi khi kết xuất SSR hoàn tất) để đặt giá trị ban đầu.
+- `set`: Một hàm được thực thi **chỉ trên client** (được gọi khi instance vue ban đầu được tạo) để nhận dữ liệu.

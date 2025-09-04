@@ -1,6 +1,6 @@
 ---
 title: "useError"
-description: useError composable returns the global Nuxt error that is being handled.
+description: useError composable trả về lỗi Nuxt toàn cục đang được xử lý.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -10,13 +10,13 @@ links:
 
 ## Usage
 
-The `useError` composable returns the global Nuxt error that is being handled and is available on both client and server. It provides a reactive, SSR-friendly error state across your app.
+Composable `useError` trả về lỗi Nuxt toàn cục đang được xử lý và có sẵn trên cả client và server. Nó cung cấp một error state reactive, thân thiện với SSR trên app của bạn.
 
 ```ts
 const error = useError()
 ```
 
-You can use this composable in your components, pages, or plugins to access or react to the current Nuxt error.
+Bạn có thể sử dụng composable này trong components, pages hoặc plugins của bạn để access hoặc react với Nuxt error hiện tại.
 
 ## Type
 
@@ -34,11 +34,11 @@ export const useError: () => Ref<NuxtError | undefined>
 
 ## Parameters
 
-This composable does not take any parameters.
+Composable này không nhận bất kỳ parameters nào.
 
 ## Return Values
 
-Returns a `Ref` containing the current Nuxt error (or `undefined` if there is no error). The error object is reactive and will update automatically when the error state changes.
+Trả về một `Ref` chứa Nuxt error hiện tại (hoặc `undefined` nếu không có error). Error object là reactive và sẽ update tự động khi error state changes.
 
 ## Example
 

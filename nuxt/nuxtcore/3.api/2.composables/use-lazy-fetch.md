@@ -1,6 +1,6 @@
 ---
 title: 'useLazyFetch'
-description: This wrapper around useFetch triggers navigation immediately.
+description: Wrapper này xung quanh useFetch kích hoạt điều hướng ngay lập tức.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -10,14 +10,14 @@ links:
 
 ## Description
 
-By default, [`useFetch`](/docs/api/composables/use-fetch) blocks navigation until its async handler is resolved. `useLazyFetch` provides a wrapper around [`useFetch`](/docs/api/composables/use-fetch) that triggers navigation before the handler is resolved by setting the `lazy` option to `true`.
+Theo mặc định, [`useFetch`](/docs/api/composables/use-fetch) chặn điều hướng cho đến khi trình xử lý async của nó được giải quyết. `useLazyFetch` cung cấp một wrapper xung quanh [`useFetch`](/docs/api/composables/use-fetch) kích hoạt điều hướng trước khi trình xử lý được giải quyết bằng cách đặt tùy chọn `lazy` thành `true`.
 
 ::note
 `useLazyFetch` has the same signature as [`useFetch`](/docs/api/composables/use-fetch).
 ::
 
 ::note
-Awaiting `useLazyFetch` in this mode only ensures the call is initialized. On client-side navigation, data may not be immediately available, and you should make sure to handle the pending state in your app.
+Việc awaiting `useLazyFetch` ở chế độ này chỉ đảm bảo cuộc gọi được khởi tạo. Trên điều hướng phía client, dữ liệu có thể không khả dụng ngay lập tức, và bạn nên đảm bảo xử lý trạng thái pending trong ứng dụng của mình.
 ::
 
 :read-more{to="/docs/api/composables/use-fetch"}
@@ -26,19 +26,19 @@ Awaiting `useLazyFetch` in this mode only ensures the call is initialized. On cl
 
 ```vue [pages/index.vue]
 <script setup lang="ts">
-/* Navigation will occur before fetching is complete.
- * Handle 'pending' and 'error' states directly within your component's template
+/* Điều hướng sẽ xảy ra trước khi fetching hoàn tất.
+ * Xử lý trạng thái 'pending' và 'error' trực tiếp trong template của component
  */
 const { status, data: posts } = await useLazyFetch('/api/posts')
 watch(posts, (newPosts) => {
-  // Because posts might start out null, you won't have access
-  // to its contents immediately, but you can watch it.
+  // Vì posts có thể bắt đầu là null, bạn sẽ không có quyền truy cập
+  // vào nội dung của nó ngay lập tức, nhưng bạn có thể watch nó.
 })
 </script>
 
 <template>
   <div v-if="status === 'pending'">
-    Loading ...
+    Đang tải ...
   </div>
   <div v-else>
     <div v-for="post in posts">
@@ -49,7 +49,7 @@ watch(posts, (newPosts) => {
 ```
 
 ::note
-`useLazyFetch` is a reserved function name transformed by the compiler, so you should not name your own function `useLazyFetch`.
+`useLazyFetch` là một tên hàm được bảo lưu được biến đổi bởi compiler, vì vậy bạn không nên đặt tên hàm của mình là `useLazyFetch`.
 ::
 
 :read-more{to="/docs/getting-started/data-fetching"}
