@@ -5,7 +5,7 @@ description: 'A composable to programmatically control overlays.'
 
 ## Usage
 
-Use the auto-imported `useOverlay` composable to programmatically control [Modal](/components/modal) and [Slideover](/components/slideover) components.
+Sử dụng composable `useOverlay` được tự động nhập để kiểm soát theo chương trình các thành phần [Modal](/components/modal) và [Slideover](/components/slideover).
 
 ```vue
 <script setup lang="ts">
@@ -21,10 +21,10 @@ async function openModal() {
 </script>
 ```
 
-- The `useOverlay` composable is created using `createSharedComposable`, ensuring that the same overlay state is shared across your entire application.
+- Composable `useOverlay` được tạo bằng `createSharedComposable`, đảm bảo rằng cùng một trạng thái overlay được chia sẻ trên toàn bộ ứng dụng của bạn.
 
 ::note
-In order to return a value from the overlay, the `overlay.open().instance` can be awaited. In order for this to work, however, the **overlay component must emit a `close` event**. See example below for details.
+Để trả về một giá trị từ overlay, `overlay.open().instance` có thể được chờ đợi. Để điều này hoạt động, tuy nhiên, **thành phần overlay phải phát ra một sự kiện `close`**. Xem ví dụ bên dưới để biết chi tiết.
 ::
 
 
@@ -32,65 +32,65 @@ In order to return a value from the overlay, the `overlay.open().instance` can b
 
 ### `create(component: T, options: OverlayOptions): OverlayInstance`
 
-Create an overlay, and return a factory instance.
+Tạo một overlay và trả về một instance factory.
 
 - Parameters:
-  - `component`: The overlay component.
+  - `component`: Thành phần overlay.
   - `options`:
-    - `defaultOpen?: boolean` Open the overlay immediately after being created. Defaults to `false`.
-    - `props?: ComponentProps`: An optional object of props to pass to the rendered component.
-    - `destroyOnClose?: boolean` Removes the overlay from memory when closed. Defaults to `false`.
+    - `defaultOpen?: boolean` Mở overlay ngay sau khi được tạo. Mặc định là `false`.
+    - `props?: ComponentProps`: Một đối tượng tùy chọn của props để truyền cho thành phần được render.
+    - `destroyOnClose?: boolean` Loại bỏ overlay khỏi bộ nhớ khi đóng. Mặc định là `false`.
 
 ### `open(id: symbol, props?: ComponentProps<T>): OpenedOverlay<T>`
 
-Open an overlay by its `id`.
+Mở một overlay theo `id` của nó.
 
 - Parameters:
-  - `id`: The identifier of the overlay.
-  - `props`: An optional object of props to pass to the rendered component.
+  - `id`: Mã định danh của overlay.
+  - `props`: Một đối tượng tùy chọn của props để truyền cho thành phần được render.
 
 ### `close(id: symbol, value?: any): void`
 
-Close an overlay by its `id`.
+Đóng một overlay theo `id` của nó.
 
 - Parameters:
-  - `id`: The identifier of the overlay.
-  - `value`: A value to resolve the overlay promise with.
+  - `id`: Mã định danh của overlay.
+  - `value`: Một giá trị để giải quyết promise overlay.
 
 ### `patch(id: symbol, props: ComponentProps<T>): void`
 
-Update an overlay by its `id`.
+Cập nhật một overlay theo `id` của nó.
 
 - Parameters:
-  - `id`: The identifier of the overlay.
-  - `props`: An object of props to update on the rendered component.
+  - `id`: Mã định danh của overlay.
+  - `props`: Một đối tượng của props để cập nhật trên thành phần được render.
 
 ### `unmount(id: symbol): void`
 
-Remove an overlay from the DOM by its `id`.
+Loại bỏ một overlay khỏi DOM theo `id` của nó.
 
 - Parameters:
-  - `id`: The identifier of the overlay.
+  - `id`: Mã định danh của overlay.
 
 ### `isOpen(id: symbol): boolean`
 
-Check if an overlay is open using its `id`.
+Kiểm tra xem một overlay có mở không bằng `id` của nó.
 
 - Parameters:
-  - `id`: The identifier of the overlay.
+  - `id`: Mã định danh của overlay.
 
 ### `overlays: Overlay[]`
 
-In-memory list of all overlays that were created.
+Danh sách trong bộ nhớ của tất cả các overlay đã được tạo.
 
 ## Instance API
 
 ### `open(props?: ComponentProps<T>): Promise<OpenedOverlay<T>>`
 
-Open the overlay.
+Mở overlay.
 
 - Parameters:
-  - `props`: An optional object of props to pass to the rendered component.
+  - `props`: Một đối tượng tùy chọn của props để truyền cho thành phần được render.
 
 ```vue
 <script setup lang="ts">
@@ -110,17 +110,17 @@ function openModal() {
 
 ### `close(value?: any): void`
 
-Close the overlay.
+Đóng overlay.
 
 - Parameters:
-  - `value`: A value to resolve the overlay promise with.
+  - `value`: Một giá trị để giải quyết promise overlay.
 
 ### `patch(props: ComponentProps<T>)`
 
-Update the props of the overlay.
+Cập nhật props của overlay.
 
 - Parameters:
-  - `props`: An object of props to update on the rendered component.
+  - `props`: Một đối tượng của props để cập nhật trên thành phần được render.
 
 ```vue
 <script setup lang="ts">
@@ -144,7 +144,7 @@ function updateModalTitle() {
 
 ## Example
 
-Here's a complete example of how to use the `useOverlay` composable:
+Đây là một ví dụ hoàn chỉnh về cách sử dụng composable `useOverlay`:
 
 ```vue
 <script setup lang="ts">
@@ -179,15 +179,15 @@ const openModalB = async () => {
 </template>
 ```
 
-In this example, we're using the `useOverlay` composable to control multiple modals and slideovers.
+Trong ví dụ này, chúng ta đang sử dụng composable `useOverlay` để kiểm soát nhiều modal và slideover.
 
 ## Caveats
 
 ### Provide / Inject
 
-When opening overlays programmatically (e.g. modals, slideovers, etc), the overlay component can only access injected values from the component containing `UApp` (typically `app.vue` or layout components). This is because overlays are mounted outside of the page context by the `UApp` component.
+Khi mở overlay theo chương trình (ví dụ: modal, slideover, v.v.), thành phần overlay chỉ có thể truy cập các giá trị được inject từ thành phần chứa `UApp` (thường là `app.vue` hoặc các thành phần layout). Điều này là vì overlay được mount bên ngoài ngữ cảnh trang bởi thành phần `UApp`.
 
-As such, using `provide()` in pages or parent components isn't supported directly. To pass provided values to overlays, the recommended approach is to use props instead:
+Như vậy, sử dụng `provide()` trong các trang hoặc thành phần cha không được hỗ trợ trực tiếp. Để truyền các giá trị được provide cho overlay, cách tiếp cận được khuyến nghị là sử dụng props thay thế:
 
 ```vue
 <script setup lang="ts">

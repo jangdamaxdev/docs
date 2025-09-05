@@ -5,7 +5,7 @@ description: 'A composable to display toast notifications in your app.'
 
 ## Usage
 
-Use the auto-imported `useToast` composable to display [Toast](/components/toast) notifications.
+Sử dụng composable `useToast` được tự động nhập để hiển thị thông báo [Toast](/components/toast).
 
 ```vue
 <script setup lang="ts">
@@ -13,30 +13,30 @@ const toast = useToast()
 </script>
 ```
 
-- The `useToast` composable uses Nuxt's `useState` to manage the toast state, ensuring reactivity across your application.
-- A maximum of 5 toasts are displayed at a time. When adding a new toast that would exceed this limit, the oldest toast is automatically removed.
-- When removing a toast, there's a 200ms delay before it's actually removed from the state, allowing for exit animations.
+- Composable `useToast` sử dụng `useState` của Nuxt để quản lý trạng thái toast, đảm bảo tính phản ứng trên toàn bộ ứng dụng của bạn.
+- Tối đa 5 toast được hiển thị cùng lúc. Khi thêm một toast mới vượt quá giới hạn này, toast cũ nhất sẽ được tự động loại bỏ.
+- Khi loại bỏ một toast, có độ trễ 200ms trước khi nó thực sự được loại bỏ khỏi trạng thái, cho phép các animation thoát.
 
 ::warning
-Make sure to wrap your app with the [`App`](/components/app) component which uses our [`Toaster`](https://github.com/nuxt/ui/blob/v3/src/runtime/components/Toaster.vue) component which uses the [`ToastProvider`](https://reka-ui.com/docs/components/toast#provider) component from Reka UI.
+Đảm bảo bọc ứng dụng của bạn với thành phần [`App`](/components/app) sử dụng thành phần [`Toaster`](https://github.com/nuxt/ui/blob/v3/src/runtime/components/Toaster.vue) của chúng tôi sử dụng thành phần [`ToastProvider`](https://reka-ui.com/docs/components/toast#provider) từ Reka UI.
 ::
 
 ::tip{to="/components/toast"}
-Learn how to customize the appearance and behavior of toasts in the **Toast** component documentation.
+Tìm hiểu cách tùy chỉnh giao diện và hành vi của toast trong tài liệu thành phần **Toast**.
 ::
 
 ## API
 
 ### `add(toast: Partial<Toast>): Toast`
 
-Adds a new toast notification.
+Thêm một thông báo toast mới.
 
 - Parameters:
-  - `toast`: A partial `Toast` object with the following properties:
-    - `id` (optional): A unique identifier for the toast. If not provided, a timestamp will be used.
-    - `open` (optional): Whether the toast is open. Defaults to `true`.
-    - Other properties from the `Toast` interface.
-- Returns: The complete `Toast` object that was added.
+  - `toast`: Một đối tượng `Toast` một phần với các thuộc tính sau:
+    - `id` (tùy chọn): Một mã định danh duy nhất cho toast. Nếu không được cung cấp, một timestamp sẽ được sử dụng.
+    - `open` (tùy chọn): Toast có mở hay không. Mặc định là `true`.
+    - Các thuộc tính khác từ interface `Toast`.
+- Returns: Đối tượng `Toast` hoàn chỉnh đã được thêm.
 
 ```vue
 <script setup lang="ts">
@@ -54,11 +54,11 @@ function showToast() {
 
 ### `update(id: string | number, toast: Partial<Toast>)`
 
-Updates an existing toast notification.
+Cập nhật một thông báo toast hiện có.
 
 - Parameters:
-  - `id`: The unique identifier of the toast to update.
-  - `toast`: A partial `Toast` object with the properties to update.
+  - `id`: Mã định danh duy nhất của toast để cập nhật.
+  - `toast`: Một đối tượng `Toast` một phần với các thuộc tính để cập nhật.
 
 ```vue
 <script setup lang="ts">
@@ -75,10 +75,10 @@ function updateToast(id: string | number) {
 
 ### `remove(id: string | number)`
 
-Removes a toast notification.
+Loại bỏ một thông báo toast.
 
 - Parameters:
-  - `id`: The unique identifier of the toast to remove.
+  - `id`: Mã định danh duy nhất của toast để loại bỏ.
 
 ```vue
 <script setup lang="ts">
@@ -92,7 +92,7 @@ function removeToast(id: string | number) {
 
 ### `clear()`
 
-Removes all toast notifications.
+Loại bỏ tất cả thông báo toast.
 
 ```vue
 <script setup lang="ts">
@@ -107,4 +107,4 @@ function clearAllToasts() {
 ### `toasts`
 
 - Type: `Ref<Toast[]>`
-- Description: A reactive array containing all current toast notifications.
+- Description: Một mảng phản ứng chứa tất cả thông báo toast hiện tại.

@@ -6,7 +6,7 @@ navigation: false
 
 ## Usage
 
-Use the auto-imported `useFormField` composable to integrate custom inputs with a [Form](/components/form).
+Sử dụng composable `useFormField` được tự động nhập để tích hợp các đầu vào tùy chỉnh với một [Form](/components/form).
 
 ```vue
 <script setup lang="ts">
