@@ -1,6 +1,6 @@
 ---
 title: "defineNuxtRouteMiddleware"
-description: "Create named route middleware using defineNuxtRouteMiddleware helper function."
+description: "Tạo middleware tuyến được đặt tên bằng hàm trợ giúp defineNuxtRouteMiddleware."
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -8,7 +8,7 @@ links:
     size: xs
 ---
 
-Route middleware are stored in the [`middleware/`](/docs/guide/directory-structure/middleware) of your Nuxt application (unless [set otherwise](/docs/api/nuxt-config#middleware)).
+Middleware tuyến được lưu trữ trong [`middleware/`](/docs/guide/directory-structure/middleware) của ứng dụng Nuxt của bạn (trừ khi [đặt khác](/docs/api/nuxt-config#middleware)).
 
 ## Type
 
@@ -26,15 +26,15 @@ interface RouteMiddleware {
 
 - **Type**: `RouteMiddleware`
 
-A function that takes two Vue Router's route location objects as parameters: the next route `to` as the first, and the current route `from` as the second.
+Một hàm nhận hai đối tượng vị trí tuyến của Vue Router làm tham số: tuyến tiếp theo `to` làm đầu tiên, và tuyến hiện tại `from` làm thứ hai.
 
-Learn more about available properties of `RouteLocationNormalized` in the **[Vue Router docs](https://router.vuejs.org/api/type-aliases/RouteLocationNormalized.html)**.
+Learn more about available properties of `RouteLocationNormalized` in the **[Vue Router docs](https://router.vuejs.org/api/interfaces/RouteLocationNormalized.html)**.
 
 ## Examples
 
 ### Showing Error Page
 
-You can use route middleware to throw errors and show helpful error messages:
+Bạn có thể sử dụng middleware tuyến để ném lỗi và hiển thị thông báo lỗi hữu ích:
 
 ```ts [middleware/error.ts]
 export default defineNuxtRouteMiddleware((to) => {
@@ -44,11 +44,11 @@ export default defineNuxtRouteMiddleware((to) => {
 })
 ```
 
-The above route middleware will redirect a user to the custom error page defined in the `~/error.vue` file, and expose the error message and code passed from the middleware.
+Middleware tuyến ở trên sẽ chuyển hướng người dùng đến trang lỗi tùy chỉnh được định nghĩa trong tệp `~/error.vue`, và hiển thị thông báo lỗi và mã được truyền từ middleware.
 
 ### Redirection
 
-Use [`useState`](/docs/api/composables/use-state) in combination with `navigateTo` helper function inside the route middleware to redirect users to different routes based on their authentication status:
+Sử dụng [`useState`](/docs/api/composables/use-state) kết hợp với hàm trợ giúp `navigateTo` bên trong middleware tuyến để chuyển hướng người dùng đến các tuyến khác nhau dựa trên trạng thái xác thực của họ:
 
 ```ts [middleware/auth.ts]
 export default defineNuxtRouteMiddleware((to, from) => {
@@ -64,4 +64,4 @@ export default defineNuxtRouteMiddleware((to, from) => {
 })
 ```
 
-Both [navigateTo](/docs/api/utils/navigate-to) and [abortNavigation](/docs/api/utils/abort-navigation) are globally available helper functions that you can use inside `defineNuxtRouteMiddleware`.
+Cả [navigateTo](/docs/api/utils/navigate-to) và [abortNavigation](/docs/api/utils/abort-navigation) đều là các hàm trợ giúp có sẵn toàn cầu mà bạn có thể sử dụng bên trong `defineNuxtRouteMiddleware`.

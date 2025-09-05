@@ -1,6 +1,6 @@
 ---
 title: 'abortNavigation'
-description: 'abortNavigation is a helper function that prevents navigation from taking place and throws an error if one is set as a parameter.'
+description: 'abortNavigation là một hàm trợ giúp ngăn chặn việc điều hướng diễn ra và ném ra lỗi nếu có lỗi được đặt làm tham số.'
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -9,7 +9,7 @@ links:
 ---
 
 ::warning
-`abortNavigation` is only usable inside a [route middleware handler](/docs/guide/directory-structure/middleware).
+`abortNavigation` chỉ có thể sử dụng bên trong một [trình xử lý middleware tuyến](/docs/guide/directory-structure/middleware).
 ::
 
 ## Type
@@ -24,11 +24,11 @@ abortNavigation(err?: Error | string): false
 
 - **Type**: [`Error`](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Error) | `string`
 
-  Optional error to be thrown by `abortNavigation`.
+  Lỗi tùy chọn được ném ra bởi `abortNavigation`.
 
 ## Examples
 
-The example below shows how you can use `abortNavigation` in a route middleware to prevent unauthorized route access:
+Ví dụ dưới đây cho thấy cách bạn có thể sử dụng `abortNavigation` trong middleware tuyến để ngăn chặn truy cập tuyến không được ủy quyền:
 
 ```ts [middleware/auth.ts]
 export default defineNuxtRouteMiddleware((to, from) => {
@@ -46,7 +46,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
 
 ### `err` as a String
 
-You can pass the error as a string:
+Bạn có thể truyền lỗi dưới dạng chuỗi:
 
 ```ts [middleware/auth.ts]
 export default defineNuxtRouteMiddleware((to, from) => {
@@ -60,7 +60,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
 
 ### `err` as an Error Object
 
-You can pass the error as an [`Error`](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Error) object, e.g. caught by the `catch`-block:
+Bạn có thể truyền lỗi dưới dạng đối tượng [`Error`](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Error), ví dụ như được bắt bởi khối `catch`:
 
 ```ts [middleware/auth.ts]
 export default defineNuxtRouteMiddleware((to, from) => {

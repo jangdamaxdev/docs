@@ -1,6 +1,6 @@
 ---
 title: "onBeforeRouteLeave"
-description: The onBeforeRouteLeave composable allows registering a route guard within a component.
+description: Composable onBeforeRouteLeave cho phép đăng ký một bảo vệ tuyến trong một thành phần.
 links:
   - label: Source
     icon: i-simple-icons-github

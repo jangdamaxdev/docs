@@ -1,6 +1,6 @@
 ---
 title: 'createError'
-description: Create an error object with additional metadata.
+description: Tạo một đối tượng lỗi với siêu dữ liệu bổ sung.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -8,20 +8,20 @@ links:
     size: xs
 ---
 
-You can use this function to create an error object with additional metadata. It is usable in both the Vue and Nitro portions of your app, and is meant to be thrown.
+Bạn có thể sử dụng hàm này để tạo một đối tượng lỗi với siêu dữ liệu bổ sung. Nó có thể sử dụng được trong cả phần Vue và Nitro của ứng dụng của bạn, và được thiết kế để được ném ra.
 
 ## Parameters
 
 - `err`: `string | { cause, data, message, name, stack, statusCode, statusMessage, fatal }`
 
-You can pass either a string or an object to the `createError` function. If you pass a string, it will be used as the error `message`, and the `statusCode` will default to `500`. If you pass an object, you can set multiple properties of the error, such as `statusCode`, `message`, and other error properties.
+Bạn có thể truyền một chuỗi hoặc một đối tượng cho hàm `createError`. Nếu bạn truyền một chuỗi, nó sẽ được sử dụng làm `message` lỗi, và `statusCode` sẽ mặc định là `500`. Nếu bạn truyền một đối tượng, bạn có thể đặt nhiều thuộc tính của lỗi, chẳng hạn như `statusCode`, `message`, và các thuộc tính lỗi khác.
 
 ## In Vue App
 
-If you throw an error created with `createError`:
+Nếu bạn ném một lỗi được tạo với `createError`:
 
-- on server-side, it will trigger a full-screen error page which you can clear with `clearError`.
-- on client-side, it will throw a non-fatal error for you to handle. If you need to trigger a full-screen error page, then you can do this by setting `fatal: true`.
+- ở phía máy chủ, nó sẽ kích hoạt một trang lỗi toàn màn hình mà bạn có thể xóa với `clearError`.
+- ở phía máy khách, nó sẽ ném một lỗi không nghiêm trọng để bạn xử lý. Nếu bạn cần kích hoạt một trang lỗi toàn màn hình, thì bạn có thể làm điều này bằng cách đặt `fatal: true`.
 
 ### Example
 
@@ -37,7 +37,7 @@ if (!data.value) {
 
 ## In API Routes
 
-Use `createError` to trigger error handling in server API routes.
+Sử dụng `createError` để kích hoạt xử lý lỗi trong các tuyến API máy chủ.
 
 ### Example
 
@@ -50,6 +50,6 @@ export default eventHandler(() => {
 })
 ```
 
-In API routes, using `createError` by passing an object with a short `statusMessage` is recommended because it can be accessed on the client side. Otherwise, a `message` passed to `createError` on an API route will not propagate to the client. Alternatively, you can use the `data` property to pass data back to the client. In any case, always consider avoiding to put dynamic user input to the message to avoid potential security issues.
+Trong các tuyến API, việc sử dụng `createError` bằng cách truyền một đối tượng với `statusMessage` ngắn được khuyến nghị vì nó có thể được truy cập ở phía máy khách. Nếu không, một `message` được truyền cho `createError` trên một tuyến API sẽ không được truyền đến máy khách. Ngoài ra, bạn có thể sử dụng thuộc tính `data` để truyền dữ liệu trở lại máy khách. Trong mọi trường hợp, luôn cân nhắc tránh đặt đầu vào người dùng động vào message để tránh các vấn đề bảo mật tiềm ẩn.
 
 :read-more{to="/docs/getting-started/error-handling"}

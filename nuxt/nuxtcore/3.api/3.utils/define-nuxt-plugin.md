@@ -1,6 +1,6 @@
 ---
 title: "defineNuxtPlugin"
-description: defineNuxtPlugin() is a helper function for creating Nuxt plugins.
+description: defineNuxtPlugin() là một hàm trợ giúp để tạo các plugin Nuxt.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -8,7 +8,7 @@ links:
     size: xs
 ---
 
-`defineNuxtPlugin` is a helper function for creating Nuxt plugins with enhanced functionality and type safety. This utility normalizes different plugin formats into a consistent structure that works seamlessly within Nuxt's plugin system.
+`defineNuxtPlugin` là một hàm trợ giúp để tạo các plugin Nuxt với chức năng nâng cao và an toàn kiểu. Tiện ích này chuẩn hóa các định dạng plugin khác nhau thành một cấu trúc nhất quán hoạt động liền mạch trong hệ thống plugin của Nuxt.
 
 ```ts twoslash [plugins/hello.ts]
 export default defineNuxtPlugin((nuxtApp) => {
@@ -41,20 +41,22 @@ interface ObjectPlugin<T> {
 
 ## Parameters
 
-**plugin**: A plugin can be defined in two ways:
-1. **Function Plugin**: A function that receives the [`NuxtApp`](/docs/guide/going-further/internals#the-nuxtapp-interface) instance and can return a promise with an potential object with a [`provide`](/docs/guide/directory-structure/plugins#providing-helpers) property if you want to provide a helper on [`NuxtApp`](/docs/guide/going-further/internals#the-nuxtapp-interface) instance.
-2. **Object Plugin**: An object that can include various properties to configure the plugin's behavior, such as `name`, `enforce`, `dependsOn`, `order`, `parallel`, `setup`, `hooks`, and `env`.
+**plugin**: Một plugin có thể được định nghĩa theo hai cách:
+
+1. **Function Plugin**: Một hàm nhận instance [`NuxtApp`](/docs/guide/going-further/internals#the-nuxtapp-interface) và có thể trả về một promise với một đối tượng tiềm năng có thuộc tính [`provide`](/docs/guide/directory-structure/plugins#providing-helpers) nếu bạn muốn cung cấp một trợ giúp trên instance [`NuxtApp`](/docs/guide/going-further/internals#the-nuxtapp-interface).
+
+2. **Object Plugin**: Một đối tượng có thể bao gồm các thuộc tính khác nhau để cấu hình hành vi của plugin, chẳng hạn như `name`, `enforce`, `dependsOn`, `order`, `parallel`, `setup`, `hooks`, và `env`.
 
 | Property           | Type                                                                 | Required | Description                                                                                                     |
 | ------------------ | -------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------- |
-| `name` | `string` | `false` | Optional name for the plugin, useful for debugging and dependency management. |
-| `enforce` | `'pre'` \| `'default'` \| `'post'` | `false` | Controls when the plugin runs relative to other plugins. |
-| `dependsOn` | `string[]` | `false` | Array of plugin names this plugin depends on. Ensures proper execution order. |
-| `order` | `number` | `false` | This allows more granular control over plugin order and should only be used by advanced users. **It overrides the value of `enforce` and is used to sort plugins.** |
-| `parallel` | `boolean` | `false` | Whether to execute the plugin in parallel with other parallel plugins. |
-| `setup` | `Plugin<T>`{lang="ts"}  | `false` | The main plugin function, equivalent to a function plugin. |
-| `hooks` | `Partial<RuntimeNuxtHooks>`{lang="ts"}  | `false` | Nuxt app runtime hooks to register directly. |
-| `env` | `{ islands?: boolean }`{lang="ts"}  | `false` | Set this value to `false` if you don't want the plugin to run when rendering server-only or island components. |
+| `name` | `string` | `false` | Tên tùy chọn cho plugin, hữu ích cho việc gỡ lỗi và quản lý phụ thuộc. |
+| `enforce` | `'pre'` \| `'default'` \| `'post'` | `false` | Kiểm soát khi plugin chạy tương đối với các plugin khác. |
+| `dependsOn` | `string[]` | `false` | Mảng tên plugin mà plugin này phụ thuộc vào. Đảm bảo thứ tự thực thi đúng. |
+| `order` | `number` | `false` | Điều này cho phép kiểm soát chi tiết hơn về thứ tự plugin và chỉ nên được sử dụng bởi người dùng nâng cao. **Nó ghi đè giá trị của `enforce` và được sử dụng để sắp xếp plugin.** |
+| `parallel` | `boolean` | `false` | Có thực thi plugin song song với các plugin song song khác hay không. |
+| `setup` | `Plugin<T>`{lang="ts"}  | `false` | Hàm plugin chính, tương đương với một function plugin. |
+| `hooks` | `Partial<RuntimeNuxtHooks>`{lang="ts"}  | `false` | Các hook runtime ứng dụng Nuxt để đăng ký trực tiếp. |
+| `env` | `{ islands?: boolean }`{lang="ts"}  | `false` | Đặt giá trị này thành `false` nếu bạn không muốn plugin chạy khi kết xuất chỉ máy chủ hoặc các thành phần island. |
 
 :video-accordion{title="Watch a video from Alexander Lichter about the Object Syntax for Nuxt plugins" videoId="2aXZyXB1QGQ"}
 
@@ -62,7 +64,7 @@ interface ObjectPlugin<T> {
 
 ### Basic Usage
 
-The example below demonstrates a simple plugin that adds global functionality:
+Ví dụ dưới đây minh họa một plugin đơn giản thêm chức năng toàn cầu:
 
 ```ts twoslash [plugins/hello.ts]
 export default defineNuxtPlugin((nuxtApp) => {
@@ -77,7 +79,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
 ### Object Syntax Plugin
 
-The example below shows the object syntax with advanced configuration:
+Ví dụ dưới đây cho thấy cú pháp đối tượng với cấu hình nâng cao:
 
 ```ts twoslash [plugins/advanced.ts]
 export default defineNuxtPlugin({

@@ -1,6 +1,6 @@
 ---
 title: "clearError"
-description: "The clearError composable clears all handled errors."
+description: "Composable clearError xóa tất cả các lỗi đã xử lý."
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -8,13 +8,13 @@ links:
     size: xs
 ---
 
-Within your pages, components, and plugins, you can use `clearError` to clear all errors and redirect the user.
+Trong các trang, thành phần và plugin của bạn, bạn có thể sử dụng `clearError` để xóa tất cả lỗi và chuyển hướng người dùng.
 
 **Parameters:**
 
 - `options?: { redirect?: string }`
 
-You can provide an optional path to redirect to (for example, if you want to navigate to a 'safe' page).
+Bạn có thể cung cấp một đường dẫn tùy chọn để chuyển hướng đến (ví dụ, nếu bạn muốn điều hướng đến một trang 'an toàn').
 
 ```js
 // Without redirect
@@ -24,6 +24,6 @@ clearError()
 clearError({ redirect: '/homepage' })
 ```
 
-Errors are set in state using [`useError()`](/docs/api/composables/use-error). The `clearError` composable will reset this state and calls the `app:error:cleared` hook with the provided options.
+Lỗi được đặt trong trạng thái bằng cách sử dụng [`useError()`](/docs/api/composables/use-error). Composable `clearError` sẽ đặt lại trạng thái này và gọi hook `app:error:cleared` với các tùy chọn được cung cấp.
 
 :read-more{to="/docs/getting-started/error-handling"}

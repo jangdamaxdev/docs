@@ -8,9 +8,9 @@ links:
     size: xs
 ---
 
-Preloading components loads components that your page will need very soon, which you want to start loading early in rendering lifecycle. This ensures they are available earlier and are less likely to block the page's render, improving performance.
+Việc preloading components tải các components mà trang của bạn sẽ cần rất sớm, mà bạn muốn bắt đầu tải sớm trong vòng đời render. Điều này đảm bảo chúng có sẵn sớm hơn và ít có khả năng chặn việc render trang, cải thiện hiệu suất.
 
-Use `preloadComponents` to manually preload individual components that have been registered globally in your Nuxt app. By default Nuxt registers these as async components. You must use the Pascal-cased version of the component name.
+Sử dụng `preloadComponents` để preload thủ công các component riêng lẻ đã được đăng ký toàn cục trong ứng dụng Nuxt của bạn. Theo mặc định, Nuxt đăng ký chúng như các async components. Bạn phải sử dụng phiên bản Pascal-cased của tên component.
 
 ```js
 await preloadComponents('MyGlobalComponent')
@@ -19,5 +19,5 @@ await preloadComponents(['MyGlobalComponent1', 'MyGlobalComponent2'])
 ```
 
 ::note
-On server, `preloadComponents` will have no effect.
+Trên server, `preloadComponents` sẽ không có hiệu lực.
 ::

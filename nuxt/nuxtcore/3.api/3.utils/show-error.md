@@ -8,24 +8,24 @@ links:
     size: xs
 ---
 
-Within the [Nuxt context](/docs/guide/going-further/nuxt-app#the-nuxt-context) you can use `showError` to show an error.
+Trong [Nuxt context](/docs/guide/going-further/nuxt-app#the-nuxt-context) bạn có thể sử dụng `showError` để hiển thị lỗi.
 
 **Parameters:**
 
 - `error`: `string | Error | Partial<{ cause, data, message, name, stack, statusCode, statusMessage }>`
 
 ```ts
-showError("😱 Oh no, an error has been thrown.")
+showError("😱 Ôi không, một lỗi đã được ném ra.")
 showError({
   statusCode: 404,
-  statusMessage: "Page Not Found"
+  statusMessage: "Không Tìm Thấy Trang"
 })
 ```
 
-The error is set in the state using [`useError()`](/docs/api/composables/use-error) to create a reactive and SSR-friendly shared error state across components.
+Lỗi được đặt trong state bằng cách sử dụng [`useError()`](/docs/api/composables/use-error) để tạo một shared error state reactive và SSR-friendly trên các components.
 
 ::tip
-`showError` calls the `app:error` hook.
+`showError` gọi hook `app:error`.
 ::
 
 :read-more{to="/docs/getting-started/error-handling"}

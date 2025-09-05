@@ -9,16 +9,16 @@ links:
 ---
 
 ::important
-`setPageLayout` allows you to dynamically change the layout of a page. It relies on access to the Nuxt context and therefore can only be called within the [Nuxt context](/docs/guide/going-further/nuxt-app#the-nuxt-context).
+`setPageLayout` cho phép bạn thay đổi động layout của một trang. Nó dựa vào việc truy cập Nuxt context và do đó chỉ có thể được gọi trong [Nuxt context](/docs/guide/going-further/nuxt-app#the-nuxt-context).
 ::
 
 ```ts [middleware/custom-layout.ts]
 export default defineNuxtRouteMiddleware((to) => {
-  // Set the layout on the route you are navigating _to_
+  // Đặt layout trên route bạn đang điều hướng _đến_
   setPageLayout('other')
 })
 ```
 
 ::note
-If you choose to set the layout dynamically on the server side, you _must_ do so before the layout is rendered by Vue (that is, within a plugin or route middleware) to avoid a hydration mismatch.
+Nếu bạn chọn đặt layout động ở phía server, bạn _phải_ làm như vậy trước khi layout được render bởi Vue (tức là trong plugin hoặc route middleware) để tránh mismatch hydration.
 ::

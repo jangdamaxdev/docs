@@ -1,6 +1,6 @@
 ---
 title: "$fetch"
-description: Nuxt uses ofetch to expose globally the $fetch helper for making HTTP requests.
+description: Nuxt sử dụng ofetch để hiển thị toàn cầu trình trợ giúp $fetch để thực hiện các yêu cầu HTTP.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -8,19 +8,19 @@ links:
     size: xs
 ---
 
-Nuxt uses [ofetch](https://github.com/unjs/ofetch) to expose globally the `$fetch` helper for making HTTP requests within your Vue app or API routes.
+Nuxt sử dụng [ofetch](https://github.com/unjs/ofetch) để hiển thị toàn cầu trình trợ giúp `$fetch` để thực hiện các yêu cầu HTTP trong ứng dụng Vue hoặc các tuyến API của bạn.
 
 ::tip{icon="i-lucide-rocket"}
-During server-side rendering, calling `$fetch` to fetch your internal [API routes](/docs/guide/directory-structure/server) will directly call the relevant function (emulating the request), **saving an additional API call**.
+Trong quá trình kết xuất phía máy chủ, việc gọi `$fetch` để lấy dữ liệu từ các [tuyến API](/docs/guide/directory-structure/server) nội bộ của bạn sẽ trực tiếp gọi hàm liên quan (mô phỏng yêu cầu), **tiết kiệm một cuộc gọi API bổ sung**.
 ::
 
 ::note{color="blue" icon="i-lucide-info"}
-Using `$fetch` in components without wrapping it with [`useAsyncData`](/docs/api/composables/use-async-data) causes fetching the data twice: initially on the server, then again on the client-side during hydration, because `$fetch` does not transfer state from the server to the client. Thus, the fetch will be executed on both sides because the client has to get the data again.
+Sử dụng `$fetch` trong các thành phần mà không bao bọc nó bằng [`useAsyncData`](/docs/api/composables/use-async-data) khiến việc lấy dữ liệu hai lần: ban đầu trên máy chủ, sau đó lại trên phía máy khách trong quá trình hydrat hóa, vì `$fetch` không chuyển trạng thái từ máy chủ sang máy khách. Do đó, việc lấy dữ liệu sẽ được thực hiện ở cả hai phía vì máy khách phải lấy dữ liệu lại.
 ::
 
 ## Usage
 
-We recommend using [`useFetch`](/docs/api/composables/use-fetch) or [`useAsyncData`](/docs/api/composables/use-async-data) + `$fetch` to prevent double data fetching when fetching the component data.
+Chúng tôi khuyên dùng [`useFetch`](/docs/api/composables/use-fetch) hoặc [`useAsyncData`](/docs/api/composables/use-async-data) + `$fetch` để ngăn chặn việc lấy dữ liệu hai lần khi lấy dữ liệu thành phần.
 
 ```vue [app.vue]
 <script setup lang="ts">
@@ -37,7 +37,7 @@ const { data } = await useFetch('/api/item')
 
 :read-more{to="/docs/getting-started/data-fetching"}
 
-You can use `$fetch` in any methods that are executed only on client-side.
+Bạn có thể sử dụng `$fetch` trong bất kỳ phương thức nào chỉ được thực hiện ở phía máy khách.
 
 ```vue [pages/contact.vue]
 <script setup lang="ts">
@@ -55,18 +55,18 @@ async function contactForm() {
 ```
 
 ::tip
-`$fetch` is the preferred way to make HTTP calls in Nuxt instead of [@nuxt/http](https://github.com/nuxt/http) and [@nuxtjs/axios](https://github.com/nuxt-community/axios-module) that are made for Nuxt 2.
+`$fetch` là cách ưu tiên để thực hiện các cuộc gọi HTTP trong Nuxt thay vì [@nuxt/http](https://github.com/nuxt/http) và [@nuxtjs/axios](https://github.com/nuxt-community/axios-module) được tạo cho Nuxt 2.
 ::
 
 ::note
-If you use `$fetch` to call an (external) HTTPS URL with a self-signed certificate in development, you will need to set `NODE_TLS_REJECT_UNAUTHORIZED=0` in your environment.
+Nếu bạn sử dụng `$fetch` để gọi một URL HTTPS (bên ngoài) với chứng chỉ tự ký trong quá trình phát triển, bạn sẽ cần đặt `NODE_TLS_REJECT_UNAUTHORIZED=0` trong môi trường của mình.
 ::
 
 ### Passing Headers and Cookies
 
-When we call `$fetch` in the browser, user headers like `cookie` will be directly sent to the API.
+Khi chúng ta gọi `$fetch` trong trình duyệt, các tiêu đề người dùng như `cookie` sẽ được gửi trực tiếp đến API.
 
-However, during Server-Side Rendering, due to security risks such as **Server-Side Request Forgery (SSRF)** or **Authentication Misuse**, the `$fetch` wouldn't include the user's browser cookies, nor pass on cookies from the fetch response.
+Tuy nhiên, trong quá trình Kết xuất Phía Máy chủ, do các rủi ro bảo mật như **Server-Side Request Forgery (SSRF)** hoặc **Lạm dụng Xác thực**, `$fetch` sẽ không bao gồm cookie của trình duyệt người dùng, cũng không chuyển tiếp cookie từ phản hồi lấy dữ liệu.
 
 ::code-group
 
@@ -83,9 +83,10 @@ export default defineEventHandler((event) => {
   // ... Do something with the cookie
 })
 ```
+
 ::
 
-If you need to forward headers and cookies on the server, you must manually pass them:
+Nếu bạn cần chuyển tiếp tiêu đề và cookie trên máy chủ, bạn phải truyền chúng theo cách thủ công:
 
 ```vue [pages/index.vue]
 <script setup lang="ts">
@@ -95,4 +96,4 @@ const { data } = await useAsyncData(() => requestFetch('/api/cookies'))
 </script>
 ```
 
-However, when calling `useFetch` with a relative URL on the server, Nuxt will use [`useRequestFetch`](/docs/api/composables/use-request-fetch) to proxy headers and cookies (with the exception of headers not meant to be forwarded, like `host`).
+Tuy nhiên, khi gọi `useFetch` với một URL tương đối trên máy chủ, Nuxt sẽ sử dụng [`useRequestFetch`](/docs/api/composables/use-request-fetch) để proxy tiêu đề và cookie (với ngoại lệ các tiêu đề không được chuyển tiếp, như `host`).

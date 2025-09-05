@@ -9,7 +9,7 @@ links:
 ---
 
 ::note
-Updates the [`app.config`](/docs/guide/directory-structure/app-config) using deep assignment. Existing (nested) properties will be preserved.
+Cập nhật [`app.config`](/docs/guide/directory-structure/app-config) bằng cách sử dụng deep assignment. Các thuộc tính (nested) hiện có sẽ được bảo toàn.
 ::
 
 ## Usage

@@ -11,14 +11,14 @@ links:
 ---
 
 ::important
-This utility is available since [Nuxt v3.10](/blog/v3-10).
+Tiện ích này có sẵn kể từ [Nuxt v3.10](/blog/v3-10).
 ::
 
 ## Purpose
 
-The `refreshCookie` function is designed to refresh cookie value returned by `useCookie`.
+Hàm `refreshCookie` được thiết kế để làm mới giá trị cookie được trả về bởi `useCookie`.
 
-This is useful for updating the `useCookie` ref when we know the new cookie value has been set in the browser.
+Điều này hữu ích để cập nhật ref `useCookie` khi chúng ta biết giá trị cookie mới đã được đặt trong trình duyệt.
 
 ## Usage
 
@@ -36,7 +36,7 @@ const loggedIn = computed(() => !!tokenCookie.value)
 ```
 
 ::note{to="/docs/guide/going-further/experimental-features#cookiestore"}
-You can enable experimental `cookieStore` option to automatically refresh `useCookie` value when cookie changes in the browser.
+Bạn có thể bật tùy chọn `cookieStore` thử nghiệm để tự động làm mới giá trị `useCookie` khi cookie thay đổi trong trình duyệt.
 ::
 
 ## Type

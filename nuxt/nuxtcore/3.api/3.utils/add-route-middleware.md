@@ -1,6 +1,6 @@
 ---
 title: 'addRouteMiddleware'
-description: 'addRouteMiddleware() is a helper function to dynamically add middleware in your application.'
+description: 'addRouteMiddleware() là một hàm trợ giúp để thêm middleware một cách động trong ứng dụng của bạn.'
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -9,7 +9,7 @@ links:
 ---
 
 ::note
-Route middleware are navigation guards stored in the [`middleware/`](/docs/guide/directory-structure/middleware) directory of your Nuxt application (unless [set otherwise](/docs/api/nuxt-config#middleware)).
+Middleware tuyến là các bảo vệ điều hướng được lưu trữ trong thư mục [`middleware/`](/docs/guide/directory-structure/middleware) của ứng dụng Nuxt của bạn (trừ khi [đặt khác](/docs/api/nuxt-config#middleware)).
 ::
 
 ## Type
@@ -29,7 +29,7 @@ interface AddRouteMiddlewareOptions {
 
 - **Type:** `string` | `RouteMiddleware`
 
-Can be either a string or a function of type `RouteMiddleware`. Function takes the next route `to` as the first argument and the current route `from` as the second argument, both of which are Vue route objects.
+Có thể là một chuỗi hoặc một hàm của loại `RouteMiddleware`. Hàm nhận tuyến tiếp theo `to` làm đối số đầu tiên và tuyến hiện tại `from` làm đối số thứ hai, cả hai đều là các đối tượng tuyến Vue.
 
 Learn more about available properties of [route objects](/docs/api/composables/use-route).
 
@@ -37,19 +37,19 @@ Learn more about available properties of [route objects](/docs/api/composables/u
 
 - **Type:** `RouteMiddleware`
 
-The second argument is a function of type `RouteMiddleware`. Same as above, it provides `to` and `from` route objects. It becomes optional if the first argument in `addRouteMiddleware()` is already passed as a function.
+Đối số thứ hai là một hàm của loại `RouteMiddleware`. Giống như trên, nó cung cấp các đối tượng tuyến `to` và `from`. Nó trở nên tùy chọn nếu đối số đầu tiên trong `addRouteMiddleware()` đã được truyền dưới dạng hàm.
 
 ### `options`
 
 - **Type:** `AddRouteMiddlewareOptions`
 
-An optional `options` argument lets you set the value of `global` to `true` to indicate whether the router middleware is global or not (set to `false` by default).
+Một đối số `options` tùy chọn cho phép bạn đặt giá trị của `global` thành `true` để chỉ ra xem middleware bộ định tuyến có phải là toàn cầu hay không (đặt thành `false` theo mặc định).
 
 ## Examples
 
 ### Named Route Middleware
 
-Named route middleware is defined by providing a string as the first argument and a function as the second:
+Middleware tuyến được đặt tên được định nghĩa bằng cách cung cấp một chuỗi làm đối số đầu tiên và một hàm làm đối số thứ hai:
 
 ```ts [plugins/my-plugin.ts]
 export default defineNuxtPlugin(() => {
@@ -59,13 +59,13 @@ export default defineNuxtPlugin(() => {
 })
 ```
 
-When defined in a plugin, it overrides any existing middleware of the same name located in the `middleware/` directory.
+Khi được định nghĩa trong một plugin, nó ghi đè bất kỳ middleware nào có cùng tên nằm trong thư mục `middleware/`.
 
 ### Global Route Middleware
 
-Global route middleware can be defined in two ways:
+Middleware tuyến toàn cầu có thể được định nghĩa theo hai cách:
 
-- Pass a function directly as the first argument without a name. It will automatically be treated as global middleware and applied on every route change.
+- Truyền một hàm trực tiếp làm đối số đầu tiên mà không có tên. Nó sẽ tự động được coi là middleware toàn cầu và áp dụng trên mọi thay đổi tuyến.
 
   ```ts [plugins/my-plugin.ts]
   export default defineNuxtPlugin(() => {
@@ -75,7 +75,7 @@ Global route middleware can be defined in two ways:
   })
   ```
 
-- Set an optional, third argument `{ global: true }` to indicate whether the route middleware is global.
+- Đặt đối số thứ ba tùy chọn `{ global: true }` để chỉ ra xem middleware tuyến có phải là toàn cầu hay không.
 
   ```ts [plugins/my-plugin.ts]
   export default defineNuxtPlugin(() => {

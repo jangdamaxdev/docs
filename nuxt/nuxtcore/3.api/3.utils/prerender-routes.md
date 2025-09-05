@@ -8,14 +8,14 @@ links:
     size: xs
 ---
 
-When prerendering, you can hint to Nitro to prerender additional paths, even if their URLs do not show up in the HTML of the generated page.
+Khi prerendering, bạn có thể gợi ý cho Nitro prerender các đường dẫn bổ sung, ngay cả khi URL của chúng không xuất hiện trong HTML của trang được tạo.
 
 ::important
-`prerenderRoutes` can only be called within the [Nuxt context](/docs/guide/going-further/nuxt-app#the-nuxt-context).
+`prerenderRoutes` chỉ có thể được gọi trong [Nuxt context](/docs/guide/going-further/nuxt-app#the-nuxt-context).
 ::
 
 ::note
-`prerenderRoutes` has to be executed during prerendering. If the `prerenderRoutes` is used in dynamic pages/routes which are not prerendered, then it will not be executed.
+`prerenderRoutes` phải được thực thi trong quá trình prerendering. Nếu `prerenderRoutes` được sử dụng trong các trang/routes động không được prerender, thì nó sẽ không được thực thi.
 ::
 
 ```js
@@ -26,21 +26,21 @@ prerenderRoutes(['/', '/about'])
 ```
 
 ::note
-In the browser, or if called outside prerendering, `prerenderRoutes` will have no effect.
+Trong trình duyệt, hoặc nếu được gọi bên ngoài prerendering, `prerenderRoutes` sẽ không có hiệu lực.
 ::
 
-You can even prerender API routes which is particularly useful for full statically generated sites (SSG) because you can then `$fetch` data as if you have an available server!
+Bạn thậm chí có thể prerender các API routes, điều này đặc biệt hữu ích cho các trang web được tạo tĩnh hoàn toàn (SSG) vì bạn có thể `$fetch` dữ liệu như thể có một server khả dụng!
 
 ```js
 prerenderRoutes('/api/content/article/name-of-article')
 
-// Somewhere later in App
+// Ở đâu đó sau này trong App
 const articleContent = await $fetch('/api/content/article/name-of-article', {
   responseType: 'json',
 })
 ```
 
 ::warning
-Prerendered API routes in production may not return the expected response headers, depending on the provider you deploy to. For example, a JSON response might be served with an `application/octet-stream` content type.
-Always manually set `responseType` when fetching prerendered API routes.
+Các API routes được prerender trong production có thể không trả về các header phản hồi mong đợi, tùy thuộc vào nhà cung cấp bạn triển khai. Ví dụ, một phản hồi JSON có thể được phục vụ với loại content `application/octet-stream`.
+Luôn đặt `responseType` thủ công khi fetch các API routes được prerender.
 ::

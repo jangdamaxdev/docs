@@ -1,6 +1,6 @@
 ---
 title: "onBeforeRouteUpdate"
-description: The onBeforeRouteUpdate composable allows registering a route guard within a component.
+description: Composable onBeforeRouteUpdate cho phép đăng ký một bảo vệ tuyến trong một thành phần.
 links:
   - label: Source
     icon: i-simple-icons-github

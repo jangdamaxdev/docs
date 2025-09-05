@@ -8,21 +8,21 @@ links:
     size: xs
 ---
 
-Preloading routes loads the components of a given route that the user might navigate to in future. This ensures that the components are available earlier and less likely to block the navigation, improving performance.
+Việc preloading routes tải các components của một route nhất định mà người dùng có thể điều hướng đến trong tương lai. Điều này đảm bảo rằng các components có sẵn sớm hơn và ít có khả năng chặn việc điều hướng, cải thiện hiệu suất.
 
 ::tip{icon="i-lucide-rocket"}
-Nuxt already automatically preloads the necessary routes if you're using the `NuxtLink` component.
+Nuxt đã tự động preload các routes cần thiết nếu bạn đang sử dụng component `NuxtLink`.
 ::
 
 :read-more{to="/docs/api/components/nuxt-link"}
 
 ## Example
 
-Preload a route when using `navigateTo`.
+Preload một route khi sử dụng `navigateTo`.
 
 ```ts
-// we don't await this async function, to avoid blocking rendering
-// this component's setup function
+// chúng ta không await hàm async này, để tránh chặn việc render
+// hàm setup của component này
 preloadRouteComponents('/dashboard')
 
 const submit = async () => {
@@ -37,5 +37,5 @@ const submit = async () => {
 :read-more{to="/docs/api/utils/navigate-to"}
 
 ::note
-On server, `preloadRouteComponents` will have no effect.
+Trên server, `preloadRouteComponents` sẽ không có hiệu lực.
 ::

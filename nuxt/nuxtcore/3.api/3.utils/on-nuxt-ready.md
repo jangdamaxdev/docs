@@ -1,6 +1,6 @@
 ---
 title: "onNuxtReady"
-description: The onNuxtReady composable allows running a callback after your app has finished initializing.
+description: Composable onNuxtReady cho phép chạy một callback sau khi ứng dụng của bạn đã hoàn thành khởi tạo.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -9,8 +9,8 @@ links:
 ---
 
 ::important
-`onNuxtReady` only runs on the client-side. :br
-It is ideal for running code that should not block the initial rendering of your app.
+`onNuxtReady` chỉ chạy ở phía máy khách. :br
+Nó lý tưởng để chạy mã không nên chặn việc kết xuất ban đầu của ứng dụng của bạn.
 ::
 
 ```ts [plugins/ready.client.ts]
@@ -22,4 +22,4 @@ export default defineNuxtPlugin(() => {
 })
 ```
 
-It is 'safe' to run even after your app has initialized. In this case, then the code will be registered to run in the next idle callback.
+Nó 'an toàn' để chạy ngay cả sau khi ứng dụng của bạn đã khởi tạo. Trong trường hợp này, thì mã sẽ được đăng ký để chạy trong callback rảnh tiếp theo.

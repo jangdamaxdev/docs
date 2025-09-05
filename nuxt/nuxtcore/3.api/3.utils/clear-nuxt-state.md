@@ -1,6 +1,6 @@
 ---
 title: 'clearNuxtState'
-description: Delete the cached state of useState.
+description: Xóa trạng thái được lưu trong bộ nhớ cache của useState.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -9,7 +9,7 @@ links:
 ---
 
 ::note
-This method is useful if you want to invalidate the state of `useState`.
+Phương thức này hữu ích nếu bạn muốn làm mất hiệu lực trạng thái của `useState`.
 ::
 
 ## Type
@@ -20,4 +20,4 @@ clearNuxtState (keys?: string | string[] | ((key: string) => boolean)): void
 
 ## Parameters
 
-- `keys`: One or an array of keys that are used in [`useState`](/docs/api/composables/use-state) to delete their cached state. If no keys are provided, **all state** will be invalidated.
+- `keys`: Một hoặc một mảng các khóa được sử dụng trong [`useState`](/docs/api/composables/use-state) để xóa trạng thái được lưu trong bộ nhớ cache của chúng. Nếu không có khóa nào được cung cấp, **tất cả trạng thái** sẽ bị làm mất hiệu lực.

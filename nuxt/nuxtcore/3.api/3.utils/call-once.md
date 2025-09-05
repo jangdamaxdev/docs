@@ -1,6 +1,6 @@
 ---
 title: "callOnce"
-description: "Run a given function or block of code once during SSR or CSR."
+description: "Chạy một hàm hoặc khối mã đã cho một lần trong quá trình SSR hoặc CSR."
 navigation:
   badge: New
 links:
@@ -11,20 +11,21 @@ links:
 ---
 
 ::important
-This utility is available since [Nuxt v3.9](/blog/v3-9).
+Tiện ích này có sẵn kể từ [Nuxt v3.9](/blog/v3-9).
 ::
 
 ## Purpose
 
-The `callOnce` function is designed to execute a given function or block of code only once during:
-- server-side rendering but not hydration
-- client-side navigation
+Hàm `callOnce` được thiết kế để thực thi một hàm hoặc khối mã đã cho chỉ một lần trong quá trình:
 
-This is useful for code that should be executed only once, such as logging an event or setting up a global state.
+- kết xuất phía máy chủ nhưng không phải hydrat hóa
+- điều hướng phía máy khách
+
+Điều này hữu ích cho mã chỉ nên được thực thi một lần, chẳng hạn như ghi nhật ký sự kiện hoặc thiết lập trạng thái toàn cầu.
 
 ## Usage
 
-The default mode of `callOnce` is to run code only once. For example, if the code runs on the server it won't run again on the client. It also won't run again if you `callOnce` more than once on the client, for example by navigating back to this page.
+Chế độ mặc định của `callOnce` là chạy mã chỉ một lần. Ví dụ, nếu mã chạy trên máy chủ, nó sẽ không chạy lại trên máy khách. Nó cũng sẽ không chạy lại nếu bạn `callOnce` nhiều hơn một lần trên máy khách, ví dụ bằng cách điều hướng trở lại trang này.
 
 ```vue [app.vue]
 <script setup lang="ts">
@@ -37,7 +38,7 @@ await callOnce(async () => {
 </script>
 ```
 
-It is also possible to run on every navigation while still avoiding the initial server/client double load. For this, it is possible to use the `navigation` mode:
+Cũng có thể chạy trên mọi điều hướng trong khi vẫn tránh tải kép ban đầu máy chủ/máy khách. Để làm điều này, có thể sử dụng chế độ `navigation`:
 
 ```vue [app.vue]
 <script setup lang="ts">
@@ -51,21 +52,21 @@ await callOnce(async () => {
 ```
 
 ::important
-`navigation` mode is available since [Nuxt v3.15](/blog/v3-15).
+Chế độ `navigation` có sẵn kể từ [Nuxt v3.15](/blog/v3-15).
 ::
 
 ::tip{to="/docs/getting-started/state-management#usage-with-pinia"}
-`callOnce` is useful in combination with the [Pinia module](/modules/pinia) to call store actions.
+`callOnce` hữu ích khi kết hợp với [mô-đun Pinia](/modules/pinia) để gọi các hành động store.
 ::
 
 :read-more{to="/docs/getting-started/state-management"}
 
 ::warning
-Note that `callOnce` doesn't return anything. You should use [`useAsyncData`](/docs/api/composables/use-async-data) or [`useFetch`](/docs/api/composables/use-fetch) if you want to do data fetching during SSR.
+Lưu ý rằng `callOnce` không trả về gì. Bạn nên sử dụng [`useAsyncData`](/docs/api/composables/use-async-data) hoặc [`useFetch`](/docs/api/composables/use-fetch) nếu bạn muốn thực hiện việc lấy dữ liệu trong quá trình SSR.
 ::
 
 ::note
-`callOnce` is a composable meant to be called directly in a setup function, plugin, or route middleware, because it needs to add data to the Nuxt payload to avoid re-calling the function on the client when the page hydrates.
+`callOnce` là một composable được thiết kế để được gọi trực tiếp trong hàm setup, plugin hoặc middleware tuyến, vì nó cần thêm dữ liệu vào payload Nuxt để tránh gọi lại hàm trên máy khách khi trang hydrat hóa.
 ::
 
 ## Type
@@ -85,8 +86,8 @@ type CallOnceOptions = {
 
 ## Parameters
 
-- `key`: A unique key ensuring that the code is run once. If you do not provide a key, then a key that is unique to the file and line number of the instance of `callOnce` will be generated for you.
-- `fn`: The function to run once. It can be asynchronous.
-- `options`: Setup the mode, either to re-execute on navigation (`navigation`) or just once for the lifetime of the app (`render`). Defaults to `render`.
-  - `render`: Executes once during initial render (either SSR or CSR) - Default mode
-  - `navigation`: Executes once during initial render and once per subsequent client-side navigation
+- `key`: Một khóa duy nhất đảm bảo rằng mã được chạy một lần. Nếu bạn không cung cấp khóa, thì một khóa duy nhất với tệp và số dòng của phiên bản `callOnce` sẽ được tạo cho bạn.
+- `fn`: Hàm để chạy một lần. Nó có thể không đồng bộ.
+- `options`: Thiết lập chế độ, hoặc để thực thi lại trên điều hướng (`navigation`) hoặc chỉ một lần trong suốt thời gian tồn tại của ứng dụng (`render`). Mặc định là `render`.
+  - `render`: Thực thi một lần trong quá trình kết xuất ban đầu (hoặc SSR hoặc CSR) - Chế độ mặc định
+  - `navigation`: Thực thi một lần trong quá trình kết xuất ban đầu và một lần cho mỗi điều hướng phía máy khách tiếp theo

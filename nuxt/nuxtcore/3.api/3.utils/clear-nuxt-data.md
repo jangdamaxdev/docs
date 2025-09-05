@@ -1,6 +1,6 @@
 ---
 title: 'clearNuxtData'
-description: Delete cached data, error status and pending promises of useAsyncData and useFetch.
+description: Xóa dữ liệu được lưu trong bộ nhớ cache, trạng thái lỗi và các promise đang chờ xử lý của useAsyncData và useFetch.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -9,7 +9,7 @@ links:
 ---
 
 ::note
-This method is useful if you want to invalidate the data fetching for another page.
+Phương thức này hữu ích nếu bạn muốn làm mất hiệu lực việc lấy dữ liệu cho một trang khác.
 ::
 
 ## Type
@@ -20,4 +20,4 @@ clearNuxtData (keys?: string | string[] | ((key: string) => boolean)): void
 
 ## Parameters
 
-* `keys`: One or an array of keys that are used in [`useAsyncData`](/docs/api/composables/use-async-data) to delete their cached data. If no keys are provided, **all data** will be invalidated.
+* `keys`: Một hoặc một mảng các khóa được sử dụng trong [`useAsyncData`](/docs/api/composables/use-async-data) để xóa dữ liệu được lưu trong bộ nhớ cache của chúng. Nếu không có khóa nào được cung cấp, **tất cả dữ liệu** sẽ bị làm mất hiệu lực.

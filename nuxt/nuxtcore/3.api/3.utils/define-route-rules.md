@@ -1,6 +1,6 @@
 ---
 title: 'defineRouteRules'
-description: 'Define route rules for hybrid rendering at the page level.'
+description: 'Định nghĩa quy tắc tuyến cho kết xuất hybrid ở cấp độ trang.'
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -9,7 +9,7 @@ links:
 ---
 
 ::read-more{to="/docs/guide/going-further/experimental-features#inlinerouterules" icon="i-lucide-star"}
-This feature is experimental and in order to use it you must enable the `experimental.inlineRouteRules` option in your `nuxt.config`.
+Tính năng này là thử nghiệm và để sử dụng nó, bạn phải bật tùy chọn `experimental.inlineRouteRules` trong `nuxt.config` của mình.
 ::
 
 ## Usage
@@ -26,7 +26,7 @@ defineRouteRules({
 </template>
 ```
 
-Will be translated to:
+Sẽ được dịch sang:
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
@@ -37,16 +37,16 @@ export default defineNuxtConfig({
 ```
 
 ::note
-When running [`nuxt build`](/docs/api/commands/build), the home page will be pre-rendered in `.output/public/index.html` and statically served.
+Khi chạy [`nuxt build`](/docs/api/commands/build), trang chủ sẽ được pre-rendered trong `.output/public/index.html` và được phục vụ tĩnh.
 ::
 
 ## Notes
 
-- A rule defined in `~/pages/foo/bar.vue` will be applied to `/foo/bar` requests.
-- A rule in `~/pages/foo/[id].vue` will be applied to `/foo/**` requests.
+- Một quy tắc được định nghĩa trong `~/pages/foo/bar.vue` sẽ được áp dụng cho các yêu cầu `/foo/bar`.
+- Một quy tắc trong `~/pages/foo/[id].vue` sẽ được áp dụng cho các yêu cầu `/foo/**`.
 
-For more control, such as if you are using a custom `path` or `alias` set in the page's [`definePageMeta`](/docs/api/utils/define-page-meta), you should set `routeRules` directly within your `nuxt.config`.
+Để kiểm soát nhiều hơn, chẳng hạn như nếu bạn đang sử dụng `path` hoặc `alias` tùy chỉnh được đặt trong [`definePageMeta`](/docs/api/utils/define-page-meta) của trang, bạn nên đặt `routeRules` trực tiếp trong `nuxt.config` của mình.
 
 ::read-more{to="/docs/guide/concepts/rendering#hybrid-rendering" icon="i-lucide-medal"}
-Read more about the `routeRules`.
+Đọc thêm về `routeRules`.
 ::

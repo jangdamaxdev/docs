@@ -9,13 +9,13 @@ links:
 ---
 
 ::note
-`reloadNuxtApp` will perform a hard reload of your app, re-requesting a page and its dependencies from the server.
+`reloadNuxtApp` sẽ thực hiện một hard reload của ứng dụng của bạn, re-request trang và các dependencies từ server.
 ::
 
-By default, it will also save the current `state` of your app (that is, any state you could access with `useState`).
+Theo mặc định, nó cũng sẽ lưu `state` hiện tại của ứng dụng của bạn (tức là bất kỳ state nào bạn có thể truy cập với `useState`).
 
 ::read-more{to="/docs/guide/going-further/experimental-features#restorestate" icon="i-lucide-star"}
-You can enable experimental restoration of this state by enabling the `experimental.restoreState` option in your `nuxt.config` file.
+Bạn có thể bật việc khôi phục thử nghiệm của state này bằng cách bật tùy chọn `experimental.restoreState` trong file `nuxt.config` của bạn.
 ::
 
 ## Type
@@ -35,7 +35,7 @@ interface ReloadNuxtAppOptions {
 
 **Type**: `ReloadNuxtAppOptions`
 
-An object accepting the following properties:
+Một object chấp nhận các thuộc tính sau:
 
 - `path` (optional)
 
@@ -43,8 +43,7 @@ An object accepting the following properties:
 
   **Default**: `window.location.pathname`
 
-  The path to reload (defaulting to the current path). If this is different from the current window location it
-  will trigger a navigation and add an entry in the browser history.
+  Đường dẫn để reload (mặc định là đường dẫn hiện tại). Nếu khác với vị trí cửa sổ hiện tại, nó sẽ kích hoạt điều hướng và thêm một entry vào lịch sử trình duyệt.
 
 - `ttl` (optional)
 
@@ -52,8 +51,7 @@ An object accepting the following properties:
 
   **Default**: `10000`
 
-  The number of milliseconds in which to ignore future reload requests. If called again within this time period,
-  `reloadNuxtApp` will not reload your app to avoid reload loops.
+  Số mili giây để bỏ qua các yêu cầu reload trong tương lai. Nếu được gọi lại trong khoảng thời gian này, `reloadNuxtApp` sẽ không reload ứng dụng của bạn để tránh vòng lặp reload.
 
 - `force` (optional)
 
@@ -61,8 +59,7 @@ An object accepting the following properties:
 
   **Default**: `false`
 
-  This option allows bypassing reload loop protection entirely, forcing a reload even if one has occurred within
-  the previously specified TTL.
+  Tùy chọn này cho phép bỏ qua hoàn toàn bảo vệ vòng lặp reload, buộc reload ngay cả khi đã xảy ra trong TTL đã chỉ định trước đó.
 
 - `persistState` (optional)
 
@@ -70,5 +67,4 @@ An object accepting the following properties:
 
   **Default**: `false`
 
-  Whether to dump the current Nuxt state to sessionStorage (as `nuxt:reload:state`). By default this will have no
-  effect on reload unless `experimental.restoreState` is also set, or unless you handle restoring the state yourself.
+  Có dump state Nuxt hiện tại vào sessionStorage (như `nuxt:reload:state`) hay không. Theo mặc định, điều này sẽ không có hiệu lực trên reload trừ khi `experimental.restoreState` cũng được đặt, hoặc trừ khi bạn xử lý việc khôi phục state bằng chính mình.

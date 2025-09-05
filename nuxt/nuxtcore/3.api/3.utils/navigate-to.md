@@ -1,6 +1,6 @@
 ---
 title: "navigateTo"
-description: navigateTo is a helper function that programmatically navigates users.
+description: navigateTo là một hàm trợ giúp điều hướng người dùng theo chương trình.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -10,14 +10,14 @@ links:
 
 ## Usage
 
-`navigateTo` is available on both server side and client side. It can be used within the [Nuxt context](/docs/guide/going-further/nuxt-app#the-nuxt-context), or directly, to perform page navigation.
+`navigateTo` có sẵn ở cả phía máy chủ và phía máy khách. Nó có thể được sử dụng trong [bối cảnh Nuxt](/docs/guide/going-further/nuxt-app#the-nuxt-context), hoặc trực tiếp, để thực hiện điều hướng trang.
 
 ::warning
-Make sure to always use `await` or `return` on result of `navigateTo` when calling it.
+Đảm bảo luôn sử dụng `await` hoặc `return` trên kết quả của `navigateTo` khi gọi nó.
 ::
 
 ::note
-`navigateTo` cannot be used within Nitro routes. To perform a server-side redirect in Nitro routes, use [`sendRedirect`](https://h3.dev/utils/response#sendredirectevent-location-code) instead.
+`navigateTo` không thể được sử dụng trong các tuyến Nitro. Để thực hiện chuyển hướng phía máy chủ trong các tuyến Nitro, hãy sử dụng [`sendRedirect`](https://h3.dev/utils/response#sendredirectevent-location-code) thay thế.
 ::
 
 ### Within a Vue Component
@@ -52,9 +52,9 @@ export default defineNuxtRouteMiddleware((to, from) => {
 })
 ```
 
-When using `navigateTo` within route middleware, you must **return its result** to ensure the middleware execution flow works correctly.
+Khi sử dụng `navigateTo` trong middleware tuyến, bạn phải **trả về kết quả của nó** để đảm bảo luồng thực thi middleware hoạt động đúng cách.
 
-For example, the following implementation **will not work as expected**:
+Ví dụ, việc triển khai sau **sẽ không hoạt động như mong đợi**:
 
 ```ts
 export default defineNuxtRouteMiddleware((to, from) => {
@@ -66,21 +66,21 @@ export default defineNuxtRouteMiddleware((to, from) => {
 })
 ```
 
-In this case, `navigateTo` will be executed but not returned, which may lead to unexpected behavior.
+Trong trường hợp này, `navigateTo` sẽ được thực thi nhưng không được trả về, điều này có thể dẫn đến hành vi không mong muốn.
 
 :read-more{to="/docs/guide/directory-structure/middleware"}
 
 ### Navigating to an External URL
 
-The `external` parameter in `navigateTo` influences how navigating to URLs is handled:
+Tham số `external` trong `navigateTo` ảnh hưởng đến cách điều hướng đến URL được xử lý:
 
-- **Without `external: true`**:
-  - Internal URLs navigate as expected.
-  - External URLs throw an error.
+- **Không có `external: true`**:
+  - URL nội bộ điều hướng như mong đợi.
+  - URL bên ngoài ném ra lỗi.
 
-- **With `external: true`**:
-  - Internal URLs navigate with a full-page reload.
-  - External URLs navigate as expected.
+- **Với `external: true`**:
+  - URL nội bộ điều hướng với tải lại toàn trang.
+  - URL bên ngoài điều hướng như mong đợi.
 
 #### Example
 
@@ -152,7 +152,7 @@ type OpenWindowFeatures = {
 
 **Default**: `'/'`
 
-`to` can be a plain string or a route object to redirect to. When passed as `undefined` or `null`, it will default to `'/'`.
+`to` có thể là một chuỗi đơn giản hoặc một đối tượng tuyến để chuyển hướng đến. Khi được truyền dưới dạng `undefined` hoặc `null`, nó sẽ mặc định là `'/'`.
 
 #### Example
 
@@ -171,60 +171,60 @@ await navigateTo({ name: 'product', params: { id: 1 } })
 
 **Type**: `NavigateToOptions`
 
-An object accepting the following properties:
+Một đối tượng chấp nhận các thuộc tính sau:
 
 - `replace`
 
   - **Type**: `boolean`
   - **Default**: `false`
-  - By default, `navigateTo` pushes the given route into the Vue Router's instance on the client side.
+  - Theo mặc định, `navigateTo` đẩy tuyến đã cho vào instance của Vue Router ở phía máy khách.
 
-    This behavior can be changed by setting `replace` to `true`, to indicate that given route should be replaced.
+    Hành vi này có thể được thay đổi bằng cách đặt `replace` thành `true`, để chỉ ra rằng tuyến đã cho nên được thay thế.
 
 - `redirectCode`
 
   - **Type**: `number`
   - **Default**: `302`
 
-  - `navigateTo` redirects to the given path and sets the redirect code to [`302 Found`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302) by default when the redirection takes place on the server side.
+  - `navigateTo` chuyển hướng đến đường dẫn đã cho và đặt mã chuyển hướng thành [`302 Found`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302) theo mặc định khi chuyển hướng diễn ra ở phía máy chủ.
 
-    This default behavior can be modified by providing different `redirectCode`. Commonly, [`301 Moved Permanently`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301) can be used for permanent redirections.
+    Hành vi mặc định này có thể được sửa đổi bằng cách cung cấp `redirectCode` khác. Thường thì [`301 Moved Permanently`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301) có thể được sử dụng cho các chuyển hướng vĩnh viễn.
 
 - `external`
 
   - **Type**: `boolean`
   - **Default**: `false`
 
-  - Allows navigating to an external URL when set to `true`. Otherwise, `navigateTo` will throw an error, as external navigation is not allowed by default.
+  - Cho phép điều hướng đến một URL bên ngoài khi đặt thành `true`. Nếu không, `navigateTo` sẽ ném ra lỗi, vì điều hướng bên ngoài không được phép theo mặc định.
 
 - `open`
 
   - **Type**: `OpenOptions`
-  - Allows navigating to the URL using the [open()](https://developer.mozilla.org/en-US/docs/Web/API/Window/open) method of the window. This option is only applicable on the client side and will be ignored on the server side.
+  - Cho phép điều hướng đến URL bằng cách sử dụng phương thức [open()](https://developer.mozilla.org/en-US/docs/Web/API/Window/open) của cửa sổ. Tùy chọn này chỉ áp dụng ở phía máy khách và sẽ bị bỏ qua ở phía máy chủ.
 
-    An object accepting the following properties:
+    Một đối tượng chấp nhận các thuộc tính sau:
 
   - `target`
 
     - **Type**: `string`
     - **Default**: `'_blank'`
 
-    - A string, without whitespace, specifying the name of the browsing context the resource is being loaded into.
+    - Một chuỗi, không có khoảng trắng, chỉ định tên của bối cảnh duyệt mà tài nguyên được tải vào.
 
   - `windowFeatures`
 
     - **Type**: `OpenWindowFeatures`
 
-    - An object accepting the following properties:
+    - Một đối tượng chấp nhận các thuộc tính sau:
 
       | Property | Type    | Description |
       |----------|---------|--------------|
-      | `popup`  | `boolean` | Requests a minimal popup window instead of a new tab, with UI features decided by the browser. |
-      | `width` or `innerWidth`  | `number`  | Specifies the content area's width (minimum 100 pixels), including scrollbars. |
-      | `height` or `innerHeight` | `number`  | Specifies the content area's height (minimum 100 pixels), including scrollbars. |
-      | `left` or `screenX`   | `number`  | Sets the horizontal position of the new window relative to the left edge of the screen. |
-      | `top` or `screenY`   | `number`  | Sets the vertical position of the new window relative to the top edge of the screen. |
-      | `noopener` | `boolean` | Prevents the new window from accessing the originating window via `window.opener`. |
-      | `noreferrer` | `boolean` | Prevents the Referer header from being sent and implicitly enables `noopener`. |
+      | `popup`  | `boolean` | Yêu cầu một cửa sổ popup tối thiểu thay vì tab mới, với các tính năng UI được quyết định bởi trình duyệt. |
+      | `width` or `innerWidth`  | `number`  | Chỉ định chiều rộng của khu vực nội dung (tối thiểu 100 pixel), bao gồm thanh cuộn. |
+      | `height` or `innerHeight` | `number`  | Chỉ định chiều cao của khu vực nội dung (tối thiểu 100 pixel), bao gồm thanh cuộn. |
+      | `left` or `screenX`   | `number`  | Đặt vị trí ngang của cửa sổ mới tương đối với cạnh trái của màn hình. |
+      | `top` or `screenY`   | `number`  | Đặt vị trí dọc của cửa sổ mới tương đối với cạnh trên của màn hình. |
+      | `noopener` | `boolean` | Ngăn cửa sổ mới truy cập cửa sổ gốc qua `window.opener`. |
+      | `noreferrer` | `boolean` | Ngăn tiêu đề Referer được gửi và ngầm bật `noopener`. |
 
-      Refer to the [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#windowfeatures) for more detailed information on the **windowFeatures** properties.
+      Tham khảo [tài liệu](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#windowfeatures) để biết thông tin chi tiết hơn về các thuộc tính **windowFeatures**.

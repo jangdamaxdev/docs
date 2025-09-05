@@ -1,6 +1,6 @@
 ---
 title: 'defineLazyHydrationComponent'
-description: 'Define a lazy hydration component with a specific strategy.'
+description: 'Định nghĩa một thành phần hydrat hóa lười với một chiến lược cụ thể.'
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -8,13 +8,13 @@ links:
     size: xs
 ---
 
-`defineLazyHydrationComponent` is a compiler macro that helps you create a component with a specific lazy hydration strategy. Lazy hydration defers hydration until components become visible or until the browser has completed more critical tasks. This can significantly reduce the initial performance cost, especially for non-essential components.
+`defineLazyHydrationComponent` là một macro trình biên dịch giúp bạn tạo một thành phần với chiến lược hydrat hóa lười cụ thể. Hydrat hóa lười trì hoãn hydrat hóa cho đến khi các thành phần trở nên hiển thị hoặc cho đến khi trình duyệt đã hoàn thành các tác vụ quan trọng hơn. Điều này có thể giảm đáng kể chi phí hiệu suất ban đầu, đặc biệt là đối với các thành phần không thiết yếu.
 
 ## Usage
 
 ### Visibility Strategy
 
-Hydrates the component when it becomes visible in the viewport.
+Hydrat hóa thành phần khi nó trở nên hiển thị trong viewport.
 
 ```vue
 <script setup lang="ts">
@@ -35,19 +35,19 @@ const LazyHydrationMyComponent = defineLazyHydrationComponent(
 </template>
 ```
 
-The `hydrateOnVisible` prop is optional. You can pass an object to customize the behavior of the `IntersectionObserver` under the hood.
+Prop `hydrateOnVisible` là tùy chọn. Bạn có thể truyền một đối tượng để tùy chỉnh hành vi của `IntersectionObserver` bên dưới.
 
 ::read-more{to="https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver" title="IntersectionObserver options"}
-Read more about the options for `hydrate-on-visible`.
+Đọc thêm về các tùy chọn cho `hydrate-on-visible`.
 ::
 
 ::note
-Under the hood, this uses Vue's built-in [`hydrateOnVisible` strategy](https://vuejs.org/guide/components/async.html#hydrate-on-visible).
+Bên dưới, điều này sử dụng chiến lược [`hydrateOnVisible`](https://vuejs.org/guide/components/async.html#hydrate-on-visible) tích hợp sẵn của Vue.
 ::
 
 ### Idle Strategy
 
-Hydrates the component when the browser is idle. This is suitable if you need the component to load as soon as possible, but not block the critical rendering path.
+Hydrat hóa thành phần khi trình duyệt đang rảnh. Điều này phù hợp nếu bạn cần thành phần tải càng sớm càng tốt, nhưng không chặn đường dẫn kết xuất quan trọng.
 
 ```vue
 <script setup lang="ts">
@@ -65,17 +65,17 @@ const LazyHydrationMyComponent = defineLazyHydrationComponent(
 </template>
 ```
 
-The `hydrateOnIdle` prop is optional. You can pass a positive number to specify the maximum timeout.
+Prop `hydrateOnIdle` là tùy chọn. Bạn có thể truyền một số dương để chỉ định thời gian chờ tối đa.
 
-Idle strategy is for components that can be hydrated when the browser is idle.
+Chiến lược rảnh là dành cho các thành phần có thể được hydrat hóa khi trình duyệt đang rảnh.
 
 ::note
-Under the hood, this uses Vue's built-in [`hydrateOnIdle` strategy](https://vuejs.org/guide/components/async.html#hydrate-on-idle).
+Bên dưới, điều này sử dụng chiến lược [`hydrateOnIdle`](https://vuejs.org/guide/components/async.html#hydrate-on-idle) tích hợp sẵn của Vue.
 ::
 
 ### Interaction Strategy
 
-Hydrates the component after a specified interaction (e.g., click, mouseover).
+Hydrat hóa thành phần sau một tương tác được chỉ định (ví dụ: click, mouseover).
 
 ```vue
 <script setup lang="ts">
@@ -96,15 +96,15 @@ const LazyHydrationMyComponent = defineLazyHydrationComponent(
 </template>
 ```
 
-The `hydrateOnInteraction` prop is optional. If you do not pass an event or a list of events, it defaults to hydrating on `pointerenter`, `click`, and `focus`.
+Prop `hydrateOnInteraction` là tùy chọn. Nếu bạn không truyền một sự kiện hoặc danh sách các sự kiện, nó mặc định hydrat hóa trên `pointerenter`, `click`, và `focus`.
 
 ::note
-Under the hood, this uses Vue's built-in [`hydrateOnInteraction` strategy](https://vuejs.org/guide/components/async.html#hydrate-on-interaction).
+Bên dưới, điều này sử dụng chiến lược [`hydrateOnInteraction`](https://vuejs.org/guide/components/async.html#hydrate-on-interaction) tích hợp sẵn của Vue.
 ::
 
 ### Media Query Strategy
 
-Hydrates the component when the window matches a media query.
+Hydrat hóa thành phần khi cửa sổ khớp với một truy vấn phương tiện.
 
 ```vue
 <script setup lang="ts">
@@ -126,12 +126,12 @@ const LazyHydrationMyComponent = defineLazyHydrationComponent(
 ```
 
 ::note
-Under the hood, this uses Vue's built-in [`hydrateOnMediaQuery` strategy](https://vuejs.org/guide/components/async.html#hydrate-on-media-query).
+Bên dưới, điều này sử dụng chiến lược [`hydrateOnMediaQuery`](https://vuejs.org/guide/components/async.html#hydrate-on-media-query) tích hợp sẵn của Vue.
 ::
 
 ### Time Strategy
 
-Hydrates the component after a specified delay (in milliseconds).
+Hydrat hóa thành phần sau một độ trễ được chỉ định (tính bằng mili giây).
 
 ```vue
 <script setup lang="ts">
@@ -149,11 +149,11 @@ const LazyHydrationMyComponent = defineLazyHydrationComponent(
 </template>
 ```
 
-Time strategy is for components that can wait a specific amount of time.
+Chiến lược thời gian là dành cho các thành phần có thể chờ một khoảng thời gian cụ thể.
 
 ### If Strategy
 
-Hydrates the component based on a boolean condition.
+Hydrat hóa thành phần dựa trên một điều kiện boolean.
 
 ```vue
 <script setup lang="ts">
@@ -178,11 +178,11 @@ function myFunction() {
 </template>
 ```
 
-If strategy is best for components that might not always need to be hydrated.
+Chiến lược if là tốt nhất cho các thành phần có thể không luôn cần được hydrat hóa.
 
 ### Never Hydrate
 
-Never hydrates the component.
+Không bao giờ hydrat hóa thành phần.
 
 ```vue
 <script setup lang="ts">
@@ -202,7 +202,7 @@ const LazyHydrationMyComponent = defineLazyHydrationComponent(
 
 ### Listening to Hydration Events
 
-All delayed hydration components emit a `@hydrated` event when they are hydrated.
+Tất cả các thành phần hydrat hóa bị trì hoãn phát ra sự kiện `@hydrated` khi chúng được hydrat hóa.
 
 ```vue
 <script setup lang="ts">
@@ -229,7 +229,7 @@ function onHydrate() {
 ## Parameters
 
 ::warning
-To ensure that the compiler correctly recognizes this macro, avoid using external variables. The following approach will prevent the macro from being properly recognized:
+Để đảm bảo trình biên dịch nhận dạng đúng macro này, tránh sử dụng các biến bên ngoài. Cách tiếp cận sau sẽ ngăn macro được nhận dạng đúng cách:
 
 ```vue
 <script setup lang="ts">
@@ -247,13 +247,13 @@ const LazyHydrationMyComponent = defineLazyHydrationComponent(strategy, source)
 
 | Strategy      | Description                                                    |
 |---------------|----------------------------------------------------------------|
-| `visible`     | Hydrates when the component becomes visible in the viewport.   |
-| `idle`        | Hydrates when the browser is idle or after a delay.            |
-| `interaction` | Hydrates upon user interaction (e.g., click, hover).           |
-| `mediaQuery`  | Hydrates when the specified media query condition is met.      |
-| `if`          | Hydrates when a specified boolean condition is met.            |
-| `time`        | Hydrates after a specified time delay.                         |
-| `never`       | Prevents Vue from hydrating the component.                     |
+| `visible`     | Hydrat hóa khi thành phần trở nên hiển thị trong viewport.   |
+| `idle`        | Hydrat hóa khi trình duyệt đang rảnh hoặc sau một độ trễ.            |
+| `interaction` | Hydrat hóa khi có tương tác của người dùng (ví dụ: click, hover).           |
+| `mediaQuery`  | Hydrat hóa khi điều kiện truy vấn phương tiện được chỉ định được đáp ứng.      |
+| `if`          | Hydrat hóa khi điều kiện boolean được chỉ định được đáp ứng.            |
+| `time`        | Hydrat hóa sau độ trễ thời gian được chỉ định.                         |
+| `never`       | Ngăn Vue hydrat hóa thành phần.                     |
 
 ### `source`
 

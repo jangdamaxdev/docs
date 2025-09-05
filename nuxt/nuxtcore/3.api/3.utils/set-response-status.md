@@ -8,29 +8,29 @@ links:
     size: xs
 ---
 
-Nuxt provides composables and utilities for first-class server-side-rendering support.
+Nuxt cung cấp composables và utilities cho hỗ trợ server-side-rendering hạng nhất.
 
-`setResponseStatus` sets the statusCode (and optionally the statusMessage) of the response.
+`setResponseStatus` đặt statusCode (và tùy chọn statusMessage) của response.
 
 ::important
-`setResponseStatus` can only be called in the [Nuxt context](/docs/guide/going-further/nuxt-app#the-nuxt-context).
+`setResponseStatus` chỉ có thể được gọi trong [Nuxt context](/docs/guide/going-further/nuxt-app#the-nuxt-context).
 ::
 
 ```js
 const event = useRequestEvent()
 
-// event will be undefined in the browser
+// event sẽ undefined trong trình duyệt
 if (event) {
-  // Set the status code to 404 for a custom 404 page
+  // Đặt status code thành 404 cho trang 404 tùy chỉnh
   setResponseStatus(event, 404)
 
-  // Set the status message as well
+  // Đặt status message cũng vậy
   setResponseStatus(event, 404, 'Page Not Found')
 }
 ```
 
 ::note
-In the browser, `setResponseStatus` will have no effect.
+Trong trình duyệt, `setResponseStatus` sẽ không có hiệu lực.
 ::
 
 :read-more{to="/docs/getting-started/error-handling"}
