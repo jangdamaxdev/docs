@@ -1,5 +1,5 @@
 ---
-description: A stacked set of collapsible panels.
+description: Một tập hợp các bảng có thể thu gọn xếp chồng.
 category: data
 links:
   - label: Accordion
@@ -14,7 +14,7 @@ links:
 
 ### Items
 
-Use the `items` prop as an array of objects with the following properties:
+Sử dụng prop `items` dưới dạng một mảng các đối tượng với các thuộc tính sau:
 
 - `label?: string`{lang="ts-type"}
 - `icon?: string`{lang="ts-type"}
@@ -53,7 +53,7 @@ props:
 
 ### Multiple
 
-Set the `type` prop to `multiple` to allow multiple items to be active at the same time. Defaults to `single`.
+Đặt prop `type` thành `multiple` để cho phép nhiều mục hoạt động cùng lúc. Mặc định là `single`.
 
 ::component-code
 ---
@@ -84,7 +84,7 @@ props:
 
 ### Collapsible
 
-When `type` is `single`, you can set the `collapsible` prop to `false` to prevent the active item from collapsing.
+Khi `type` là `single`, bạn có thể đặt prop `collapsible` thành `false` để ngăn mục hoạt động thu gọn.
 
 ::component-code
 ---
@@ -115,7 +115,7 @@ props:
 
 ### Unmount
 
-Use the `unmount-on-hide` prop to prevent the content from being unmounted when the accordion is collapsed. Defaults to `true`.
+Sử dụng prop `unmount-on-hide` để ngăn nội dung bị gỡ bỏ khi accordion bị thu gọn. Mặc định là `true`.
 
 ::component-code
 ---
@@ -144,14 +144,14 @@ props:
 ::
 
 ::note
-You can inspect the DOM to see each item's content being rendered.
+Bạn có thể kiểm tra DOM để xem nội dung của mỗi mục đang được hiển thị.
 ::
 
 ### Disabled
 
-Use the `disabled` property to disable the Accordion.
+Sử dụng thuộc tính `disabled` để vô hiệu hóa Accordion.
 
-You can also disable a specific item by using the `disabled` property in the item object.
+Bạn cũng có thể vô hiệu hóa một mục cụ thể bằng cách sử dụng thuộc tính `disabled` trong đối tượng mục.
 
 ::component-code
 ---
@@ -182,10 +182,10 @@ props:
 
 ### Trailing Icon
 
-Use the `trailing-icon` prop to customize the trailing [Icon](/components/icon) of each item. Defaults to `i-lucide-chevron-down`.
+Sử dụng prop `trailing-icon` để tùy chỉnh [Icon](/components/icon) theo sau của mỗi mục. Mặc định là `i-lucide-chevron-down`.
 
 ::tip
-You can also set an icon for a specific item by using the `trailingIcon` property in the item object.
+Bạn cũng có thể đặt biểu tượng cho một mục cụ thể bằng cách sử dụng thuộc tính `trailingIcon` trong đối tượng mục.
 ::
 
 ::component-code
@@ -218,12 +218,12 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.chevronDown` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` dưới khóa `ui.icons.chevronDown`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.chevronDown` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` dưới khóa `ui.icons.chevronDown`.
 :::
 ::
 
@@ -231,7 +231,7 @@ You can customize this icon globally in your `vite.config.ts` under `ui.icons.ch
 
 ### Control active item(s)
 
-You can control the active item(s) by using the `default-value` prop or the `v-model` directive with the index of the item.
+Bạn có thể kiểm soát mục hoạt động bằng cách sử dụng prop `default-value` hoặc chỉ thị `v-model` với chỉ số của mục.
 
 ::component-example
 ---
@@ -242,16 +242,16 @@ props:
 ::
 
 ::tip
-You can also pass the `value` of one of the items if provided.
+Bạn cũng có thể truyền `value` của một trong các mục nếu được cung cấp.
 ::
 
 ::caution
-When `type="multiple"`, ensure to pass an array to the `default-value` prop or the `v-model` directive.
+Khi `type="multiple"`, đảm bảo truyền một mảng cho prop `default-value` hoặc chỉ thị `v-model`.
 ::
 
 ### With drag and drop
 
-Use the [`useSortable`](https://vueuse.org/integrations/useSortable/) composable from [`@vueuse/integrations`](https://vueuse.org/integrations/README.html) to enable drag and drop functionality on the Accordion. This integration wraps [Sortable.js](https://sortablejs.github.io/Sortable/) to provide a seamless drag and drop experience.
+Sử dụng composable [`useSortable`](https://vueuse.org/integrations/useSortable/) từ [`@vueuse/integrations`](https://vueuse.org/integrations/README.html) để bật chức năng kéo và thả trên Accordion. Tích hợp này bao bọc [Sortable.js](https://sortablejs.github.io/Sortable/) để cung cấp trải nghiệm kéo và thả liền mạch.
 
 ::component-example
 ---
@@ -261,7 +261,7 @@ name: 'accordion-drag-and-drop-example'
 
 ### With body slot
 
-Use the `#body` slot to customize the body of each item.
+Sử dụng slot `#body` để tùy chỉnh thân của mỗi mục.
 
 ::component-example
 ---
@@ -272,12 +272,12 @@ props:
 ::
 
 ::tip
-The `#body` slot includes some pre-defined styles, use the [`#content` slot](#with-content-slot) if you want to start from scratch.
+Slot `#body` bao gồm một số kiểu được định nghĩa trước, sử dụng slot [`#content`](#with-content-slot) nếu bạn muốn bắt đầu từ đầu.
 ::
 
 ### With content slot
 
-Use the `#content` slot to customize the content of each item.
+Sử dụng slot `#content` để tùy chỉnh nội dung của mỗi mục.
 
 ::component-example
 ---
@@ -289,9 +289,9 @@ props:
 
 ### With custom slot
 
-Use the `slot` property to customize a specific item.
+Sử dụng thuộc tính `slot` để tùy chỉnh một mục cụ thể.
 
-You will have access to the following slots:
+Bạn sẽ có quyền truy cập vào các slot sau:
 
 - `#{{ item.slot }}`{lang="ts-type"}
 - `#{{ item.slot }}-body`{lang="ts-type"}

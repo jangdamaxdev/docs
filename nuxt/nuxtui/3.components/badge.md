@@ -1,5 +1,5 @@
 ---
-description: A short text to represent a status or a category.
+description: Một văn bản ngắn để đại diện cho trạng thái hoặc danh mục.
 category: element
 links:
   - label: GitHub
@@ -11,7 +11,7 @@ links:
 
 ### Label
 
-Use the default slot to set the label of the Badge.
+Sử dụng slot mặc định để đặt nhãn của Badge.
 
 ::component-code
 ---
@@ -20,7 +20,7 @@ slots:
 ---
 ::
 
-You can achieve the same result by using the `label` prop.
+Bạn có thể đạt được kết quả tương tự bằng cách sử dụng prop `label`.
 
 ::component-code
 ---
@@ -31,7 +31,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the color of the Badge.
+Sử dụng prop `color` để thay đổi màu sắc của Badge.
 
 ::component-code
 ---
@@ -44,7 +44,7 @@ slots:
 
 ### Variant
 
-Use the `variant` props to change the variant of the Badge.
+Sử dụng prop `variant` để thay đổi biến thể của Badge.
 
 ::component-code
 ---
@@ -58,7 +58,7 @@ slots:
 
 ### Size
 
-Use the `size` prop to change the size of the Badge.
+Sử dụng prop `size` để thay đổi kích thước của Badge.
 
 ::component-code
 ---
@@ -71,7 +71,7 @@ slots:
 
 ### Icon
 
-Use the `icon` prop to show an [Icon](/components/icon) inside the Badge.
+Sử dụng prop `icon` để hiển thị một [Icon](/components/icon) bên trong Badge.
 
 ::component-code
 ---
@@ -85,7 +85,7 @@ slots:
 ---
 ::
 
-Use the `leading` and `trailing` props to set the icon position or the `leading-icon` and `trailing-icon` props to set a different icon for each position.
+Sử dụng prop `leading` và `trailing` để đặt vị trí biểu tượng hoặc prop `leading-icon` và `trailing-icon` để đặt biểu tượng khác nhau cho mỗi vị trí.
 
 ::component-code
 ---
@@ -99,7 +99,7 @@ slots:
 
 ### Avatar
 
-Use the `avatar` prop to show an [Avatar](/components/avatar) inside the Badge.
+Sử dụng prop `avatar` để hiển thị một [Avatar](/components/avatar) bên trong Badge.
 
 ::component-code
 ---
@@ -121,7 +121,7 @@ slots:
 
 ### `class` prop
 
-Use the `class` prop to override the base styles of the Badge.
+Sử dụng prop `class` để ghi đè các kiểu cơ sở của Badge.
 
 ::component-code
 ---

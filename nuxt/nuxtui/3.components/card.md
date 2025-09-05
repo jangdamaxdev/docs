@@ -1,5 +1,5 @@
 ---
-description: Display content in a card with a header, body and footer.
+description: Hiển thị nội dung trong một thẻ với tiêu đề, thân và chân trang.
 category: layout
 links:
   - label: GitHub
@@ -19,7 +19,7 @@ props:
 
 ### Variant
 
-Use the `variant` prop to change the variant of the Card.
+Sử dụng prop `variant` để thay đổi biến thể của Card.
 
 ::component-code
 ---

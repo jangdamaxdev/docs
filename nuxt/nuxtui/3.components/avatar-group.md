@@ -1,6 +1,6 @@
 ---
 title: AvatarGroup
-description: Stack multiple avatars in a group.
+description: Xếp chồng nhiều avatar trong một nhóm.
 category: element
 links:
   - label: GitHub
@@ -10,7 +10,7 @@ links:
 
 ## Usage
 
-Wrap multiple [Avatar](/components/avatar) within an AvatarGroup to stack them.
+Bao bọc nhiều [Avatar](/components/avatar) trong một AvatarGroup để xếp chồng chúng.
 
 ::component-code
 ---
@@ -29,7 +29,7 @@ slots:
 
 ### Size
 
-Use the `size` prop to change the size of all the avatars.
+Sử dụng prop `size` để thay đổi kích thước của tất cả các avatar.
 
 ::component-code
 ---
@@ -50,7 +50,7 @@ slots:
 
 ### Max
 
-Use the `max` prop to limit the number of avatars displayed. The rest is displayed as an `+X` avatar.
+Sử dụng prop `max` để giới hạn số lượng avatar được hiển thị. Phần còn lại được hiển thị dưới dạng avatar `+X`.
 
 ::component-code
 ---
@@ -73,19 +73,19 @@ slots:
 
 ### With tooltip
 
-Wrap each avatar with a [Tooltip](/components/tooltip) to display a tooltip on hover.
+Bao bọc mỗi avatar với một [Tooltip](/components/tooltip) để hiển thị chú giải khi di chuột.
 
 :component-example{name="avatar-group-tooltip-example"}
 
 ### With chip
 
-Wrap each avatar with a [Chip](/components/chip) to display a chip around the avatar.
+Bao bọc mỗi avatar với một [Chip](/components/chip) để hiển thị chip xung quanh avatar.
 
 :component-example{name="avatar-group-chip-example"}
 
 ### With link
 
-Wrap each avatar with a [Link](/components/link) to make them clickable.
+Bao bọc mỗi avatar với một [Link](/components/link) để làm cho chúng có thể nhấp.
 
 :component-example{name="avatar-group-link-example"}
 

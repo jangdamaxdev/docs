@@ -1,5 +1,5 @@
 ---
-description: A hierarchy of links to navigate through a website.
+description: Một hệ thống phân cấp các liên kết để điều hướng qua trang web.
 category: navigation
 links:
   - label: GitHub
@@ -11,7 +11,7 @@ links:
 
 ### Items
 
-Use the `items` prop as an array of objects with the following properties:
+Sử dụng prop `items` dưới dạng một mảng các đối tượng với các thuộc tính sau:
 
 - `label?: string`{lang="ts-type"}
 - `icon?: string`{lang="ts-type"}
@@ -20,7 +20,7 @@ Use the `items` prop as an array of objects with the following properties:
 - `class?: any`{lang="ts-type"}
 - `ui?: { item?: ClassNameValue, link?: ClassNameValue, linkLeadingIcon?: ClassNameValue, linkLeadingAvatar?: ClassNameValue, linkLabel?: ClassNameValue, separator?: ClassNameValue, separatorIcon?: ClassNameValue }`{lang="ts-type"}
 
-You can pass any property from the [Link](/components/link#props) component such as `to`, `target`, etc.
+Bạn có thể truyền bất kỳ thuộc tính nào từ thành phần [Link](/components/link#props) như `to`, `target`, v.v.
 
 ::component-code
 ---
@@ -44,12 +44,12 @@ props:
 ::
 
 ::note
-A `span` is rendered instead of a link when the `to` property is not defined.
+Một `span` được hiển thị thay vì liên kết khi thuộc tính `to` không được định nghĩa.
 ::
 
 ### Separator Icon
 
-Use the `separator-icon` prop to customize the [Icon](/components/icon) between each item. Defaults to `i-lucide-chevron-right`.
+Sử dụng prop `separator-icon` để tùy chỉnh [Icon](/components/icon) giữa mỗi mục. Mặc định là `i-lucide-chevron-right`.
 
 ::component-code
 ---
@@ -76,12 +76,12 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.chevronRight` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` dưới khóa `ui.icons.chevronRight`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.chevronRight` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` dưới khóa `ui.icons.chevronRight`.
 :::
 ::
 
@@ -89,15 +89,15 @@ You can customize this icon globally in your `vite.config.ts` under `ui.icons.ch
 
 ### With separator slot
 
-Use the `#separator` slot to customize the separator between each item.
+Sử dụng slot `#separator` để tùy chỉnh dấu phân cách giữa mỗi mục.
 
 :component-example{name="breadcrumb-separator-slot-example"}
 
 ### With custom slot
 
-Use the `slot` property to customize a specific item.
+Sử dụng thuộc tính `slot` để tùy chỉnh một mục cụ thể.
 
-You will have access to the following slots:
+Bạn sẽ có quyền truy cập vào các slot sau:
 
 - `#{{ item.slot }}`{lang="ts-type"}
 - `#{{ item.slot }}-leading`{lang="ts-type"}
@@ -107,7 +107,7 @@ You will have access to the following slots:
 :component-example{name="breadcrumb-custom-slot-example"}
 
 ::tip{to="#slots"}
-You can also use the `#item`, `#item-leading`, `#item-label` and `#item-trailing` slots to customize all items.
+Bạn cũng có thể sử dụng slot `#item`, `#item-leading`, `#item-label` và `#item-trailing` để tùy chỉnh tất cả các mục.
 ::
 
 ## API

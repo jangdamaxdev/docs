@@ -1,5 +1,5 @@
 ---
-description: A callout to draw user's attention.
+description: Một lời kêu gọi để thu hút sự chú ý của người dùng.
 category: element
 links:
   - label: GitHub
@@ -11,7 +11,7 @@ links:
 
 ### Title
 
-Use the `title` prop to set the title of the Alert.
+Sử dụng prop `title` để đặt tiêu đề của Alert.
 
 ::component-code
 ---
@@ -22,7 +22,7 @@ props:
 
 ### Description
 
-Use the `description` prop to set the description of the Alert.
+Sử dụng prop `description` để đặt mô tả của Alert.
 
 ::component-code
 ---
@@ -35,7 +35,7 @@ props:
 
 ### Icon
 
-Use the `icon` prop to show an [Icon](/components/icon).
+Sử dụng prop `icon` để hiển thị một [Icon](/components/icon).
 
 ::component-code
 ---
@@ -52,7 +52,7 @@ props:
 
 ### Avatar
 
-Use the `avatar` prop to show an [Avatar](/components/avatar).
+Sử dụng prop `avatar` để hiển thị một [Avatar](/components/avatar).
 
 ::component-code
 ---
@@ -69,7 +69,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the color of the Alert.
+Sử dụng prop `color` để thay đổi màu sắc của Alert.
 
 ::component-code
 ---
@@ -88,7 +88,7 @@ props:
 
 ### Variant
 
-Use the `variant` prop to change the variant of the Alert.
+Sử dụng prop `variant` để thay đổi biến thể của Alert.
 
 ::component-code
 ---
@@ -108,10 +108,10 @@ props:
 
 ### Close
 
-Use the `close` prop to display a [Button](/components/button) to dismiss the Alert.
+Sử dụng prop `close` để hiển thị một [Button](/components/button) để đóng Alert.
 
 ::tip
-An `update:open` event will be emitted when the close button is clicked.
+Một sự kiện `update:open` sẽ được phát ra khi nút đóng được nhấp.
 ::
 
 ::component-code
@@ -132,7 +132,7 @@ props:
 ---
 ::
 
-You can pass any property from the [Button](/components/button) component to customize it.
+Bạn có thể truyền bất kỳ thuộc tính nào từ thành phần [Button](/components/button) để tùy chỉnh nó.
 
 ::component-code
 ---
@@ -158,7 +158,7 @@ props:
 
 ### Close Icon
 
-Use the `close-icon` prop to customize the close button [Icon](/components/icon). Defaults to `i-lucide-x`.
+Sử dụng prop `close-icon` để tùy chỉnh [Icon](/components/icon) của nút đóng. Mặc định là `i-lucide-x`.
 
 ::component-code
 ---
@@ -182,18 +182,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.close` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` dưới khóa `ui.icons.close`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.close` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` dưới khóa `ui.icons.close`.
 :::
 ::
 
 ### Actions
 
-Use the `actions` prop to add some [Button](/components/button) actions to the Alert.
+Sử dụng prop `actions` để thêm một số hành động [Button](/components/button) vào Alert.
 
 ::component-code
 ---
@@ -218,7 +218,7 @@ props:
 
 ### Orientation
 
-Use the `orientation` prop to change the orientation of the Alert.
+Sử dụng prop `orientation` để thay đổi hướng của Alert.
 
 ::component-code
 ---
@@ -246,7 +246,7 @@ props:
 
 ### `class` prop
 
-Use the `class` prop to override the base styles of the Alert.
+Sử dụng prop `class` để ghi đè các kiểu cơ sở của Alert.
 
 ::component-code
 ---
@@ -263,7 +263,7 @@ props:
 
 ### `ui` prop
 
-Use the `ui` prop to override the slots styles of the Alert.
+Sử dụng prop `ui` để ghi đè các kiểu slot của Alert.
 
 ::component-code
 ---

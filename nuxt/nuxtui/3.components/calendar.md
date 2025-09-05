@@ -1,6 +1,6 @@
 ---
 title: Calendar
-description: A calendar component for selecting single dates, multiple dates or date ranges.
+description: Một thành phần lịch để chọn ngày đơn lẻ, nhiều ngày hoặc phạm vi ngày.
 category: element
 links:
   - label: Calendar
@@ -12,12 +12,12 @@ links:
 ---
 
 ::note
-This component relies on the [`@internationalized/date`](https://react-spectrum.adobe.com/internationalized/date/index.html) package which provides objects and functions for representing and manipulating dates and times in a locale-aware manner.
+Thành phần này dựa vào gói [`@internationalized/date`](https://react-spectrum.adobe.com/internationalized/date/index.html) cung cấp các đối tượng và hàm để biểu diễn và thao tác ngày tháng theo cách nhận biết ngôn ngữ.
 ::
 
 ## Usage
 
-Use the `v-model` directive to control the selected date.
+Sử dụng chỉ thị `v-model` để kiểm soát ngày đã chọn.
 
 ::component-code
 ---
@@ -32,7 +32,7 @@ props:
 ---
 ::
 
-Use the `default-value` prop to set the initial value when you do not need to control its state.
+Sử dụng prop `default-value` để đặt giá trị ban đầu khi bạn không cần kiểm soát trạng thái của nó.
 
 ::component-code
 ---
@@ -49,7 +49,7 @@ props:
 
 ### Multiple
 
-Use the `multiple` prop to allow multiple selections.
+Sử dụng prop `multiple` để cho phép chọn nhiều.
 
 ::component-code
 ---
@@ -69,7 +69,7 @@ props:
 
 ### Range
 
-Use the `range` prop to select a range of dates.
+Sử dụng prop `range` để chọn một phạm vi ngày.
 
 ::component-code
 ---
@@ -92,7 +92,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the color of the calendar.
+Sử dụng prop `color` để thay đổi màu của lịch.
 
 ::component-code
 ---
@@ -103,7 +103,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the calendar.
+Sử dụng prop `size` để thay đổi kích thước của lịch.
 
 ::component-code
 ---
@@ -114,7 +114,7 @@ props:
 
 ### Disabled
 
-Use the `disabled` prop to disable the calendar.
+Sử dụng prop `disabled` để vô hiệu hóa lịch.
 
 ::component-code
 ---
@@ -125,7 +125,7 @@ props:
 
 ### Number Of Months
 
-Use the `numberOfMonths` prop to change the number of months in the calendar.
+Sử dụng prop `numberOfMonths` để thay đổi số tháng trong lịch.
 
 ::component-code
 ---
@@ -136,7 +136,7 @@ props:
 
 ### Month Controls
 
-Use the `month-controls` prop to show the month controls. Defaults to `true`.
+Sử dụng prop `month-controls` để hiển thị các điều khiển tháng. Mặc định là `true`.
 
 ::component-code
 ---
@@ -147,7 +147,7 @@ props:
 
 ### Year Controls
 
-Use the `year-controls` prop to show the year controls. Defaults to `true`.
+Sử dụng prop `year-controls` để hiển thị các điều khiển năm. Mặc định là `true`.
 
 ::component-code
 ---
@@ -158,7 +158,7 @@ props:
 
 ### Fixed Weeks
 
-Use the `fixed-weeks` prop to display the calendar with fixed weeks.
+Sử dụng prop `fixed-weeks` để hiển thị lịch với tuần cố định.
 
 ::component-code
 ---
@@ -171,7 +171,7 @@ props:
 
 ### With chip events
 
-Use the [Chip](/components/chip) component to add events to specific days.
+Sử dụng thành phần [Chip](/components/chip) để thêm sự kiện vào các ngày cụ thể.
 
 ::component-example
 ---
@@ -181,7 +181,7 @@ name: 'calendar-events-example'
 
 ### With disabled dates
 
-Use the `is-date-disabled` prop with a function to mark specific dates as disabled.
+Sử dụng prop `is-date-disabled` với một hàm để đánh dấu các ngày cụ thể là bị vô hiệu hóa.
 
 ::component-example
 ---
@@ -191,7 +191,7 @@ name: 'calendar-disabled-dates-example'
 
 ### With unavailable dates
 
-Use the `is-date-unavailable` prop with a function to mark specific dates as unavailable.
+Sử dụng prop `is-date-unavailable` với một hàm để đánh dấu các ngày cụ thể là không khả dụng.
 
 ::component-example
 ---
@@ -201,7 +201,7 @@ name: 'calendar-unavailable-dates-example'
 
 ### With min/max dates
 
-Use the `min-value` and `max-value` props to limit the dates.
+Sử dụng các prop `min-value` và `max-value` để giới hạn các ngày.
 
 ::component-example
 ---
@@ -211,7 +211,7 @@ name: 'calendar-min-max-dates-example'
 
 ### With other calendar systems
 
-You can use other calenders from `@internationalized/date` to implement a different calendar system. 
+Bạn có thể sử dụng các lịch khác từ `@internationalized/date` để triển khai hệ thống lịch khác. 
 
 ::component-example
 ---
@@ -220,12 +220,12 @@ name: 'calendar-other-system-example'
 ::
 
 ::note{to="https://react-spectrum.adobe.com/internationalized/date/Calendar.html#implementations"}
-You can check all the available calendars on `@internationalized/date` docs.
+Bạn có thể kiểm tra tất cả các lịch khả dụng trên tài liệu `@internationalized/date`.
 ::
 
 ### With external controls
 
-You can control the calendar with external controls by manipulating the date passed in the `v-model`.
+Bạn có thể kiểm soát lịch với các điều khiển bên ngoài bằng cách thao tác ngày được truyền trong `v-model`.
 
 ::component-example
 ---
@@ -235,7 +235,7 @@ name: 'calendar-external-controls-example'
 
 ### As a DatePicker
 
-Use a [Button](/components/button) and a [Popover](/components/popover) component to create a date picker.
+Sử dụng thành phần [Button](/components/button) và [Popover](/components/popover) để tạo một bộ chọn ngày.
 
 ::component-example
 ---
@@ -245,7 +245,7 @@ name: 'calendar-date-picker-example'
 
 ### As a DateRangePicker
 
-Use a [Button](/components/button) and a [Popover](/components/popover) component to create a date range picker.
+Sử dụng thành phần [Button](/components/button) và [Popover](/components/popover) để tạo một bộ chọn phạm vi ngày.
 
 ::component-example
 ---

@@ -1,6 +1,6 @@
 ---
 title: ButtonGroup
-description: Group multiple button-like elements together.
+description: Nhóm nhiều phần tử giống nút lại với nhau.
 category: element
 links:
   - label: GitHub
@@ -10,7 +10,7 @@ links:
 
 ## Usage
 
-Wrap multiple [Button](/components/button) within a ButtonGroup to group them together.
+Bao bọc nhiều [Button](/components/button) trong một ButtonGroup để nhóm chúng lại.
 
 ::component-code
 ---
@@ -27,7 +27,7 @@ slots:
 
 ### Size
 
-Use the `size` prop to change the size of all the buttons.
+Sử dụng prop `size` để thay đổi kích thước của tất cả các nút.
 
 ::component-code
 ---
@@ -46,7 +46,7 @@ slots:
 
 ### Orientation
 
-Use the `orientation` prop to change the orientation of the buttons. Defaults to `horizontal`.
+Sử dụng prop `orientation` để thay đổi hướng của các nút. Mặc định là `horizontal`.
 
 ::component-code
 ---
@@ -67,7 +67,7 @@ slots:
 
 ### With input
 
-You can use components like [Input](/components/input), [InputMenu](/components/input-menu), [Select](/components/select) [SelectMenu](/components/select-menu), etc. within a button group.
+Bạn có thể sử dụng các thành phần như [Input](/components/input), [InputMenu](/components/input-menu), [Select](/components/select) [SelectMenu](/components/select-menu), v.v. trong một nhóm nút.
 
 ::component-code
 ---
@@ -85,19 +85,19 @@ slots:
 
 ### With tooltip
 
-You can use a [Tooltip](/components/tooltip) within a button group.
+Bạn có thể sử dụng một [Tooltip](/components/tooltip) trong một nhóm nút.
 
 :component-example{name="button-group-tooltip-example"}
 
 ### With dropdown
 
-You can use a [DropdownMenu](/components/dropdown-menu) within a button group.
+Bạn có thể sử dụng một [DropdownMenu](/components/dropdown-menu) trong một nhóm nút.
 
 :component-example{name="button-group-dropdown-example"}
 
 ### With badge
 
-You can use a [Badge](/components/badge) within a button group.
+Bạn có thể sử dụng một [Badge](/components/badge) trong một nhóm nút.
 
 :component-example{name="button-group-badge-example"}
 

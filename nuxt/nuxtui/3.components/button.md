@@ -1,5 +1,5 @@
 ---
-description: A button element that can act as a link or trigger an action.
+description: Một phần tử nút có thể hoạt động như một liên kết hoặc kích hoạt một hành động.
 category: element
 links:
   - label: GitHub
@@ -11,7 +11,7 @@ links:
 
 ### Label
 
-Use the default slot to set the label of the Button.
+Sử dụng slot mặc định để đặt nhãn của Button.
 
 ::component-code
 ---
@@ -20,7 +20,7 @@ slots:
 ---
 ::
 
-You can achieve the same result by using the `label` prop.
+Bạn có thể đạt được kết quả tương tự bằng cách sử dụng prop `label`.
 
 ::component-code
 ---
@@ -31,7 +31,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the color of the Button.
+Sử dụng prop `color` để thay đổi màu sắc của Button.
 
 ::component-code
 ---
@@ -44,7 +44,7 @@ slots:
 
 ### Variant
 
-Use the `variant` prop to change the variant of the Button.
+Sử dụng prop `variant` để thay đổi biến thể của Button.
 
 ::component-code
 ---
@@ -58,7 +58,7 @@ slots:
 
 ### Size
 
-Use the `size` prop to change the size of the Button.
+Sử dụng prop `size` để thay đổi kích thước của Button.
 
 ::component-code
 ---
@@ -71,7 +71,7 @@ slots:
 
 ### Icon
 
-Use the `icon` prop to show an [Icon](/components/icon) inside the Button.
+Sử dụng prop `icon` để hiển thị một [Icon](/components/icon) bên trong Button.
 
 ::component-code
 ---
@@ -85,7 +85,7 @@ slots:
 ---
 ::
 
-Use the `leading` and `trailing` props to set the icon position or the `leading-icon` and `trailing-icon` props to set a different icon for each position.
+Sử dụng prop `leading` và `trailing` để đặt vị trí biểu tượng hoặc prop `leading-icon` và `trailing-icon` để đặt biểu tượng khác nhau cho mỗi vị trí.
 
 ::component-code
 ---
@@ -97,7 +97,7 @@ slots:
 ---
 ::
 
-The `label` as prop or slot is optional so you can use the Button as an icon-only button.
+Phần tử `label` dưới dạng prop hoặc slot là tùy chọn nên bạn có thể sử dụng Button dưới dạng nút chỉ biểu tượng.
 
 ::component-code
 ---
@@ -111,7 +111,7 @@ props:
 
 ### Avatar
 
-Use the `avatar` prop to show an [Avatar](/components/avatar) inside the Button.
+Sử dụng prop `avatar` để hiển thị một [Avatar](/components/avatar) bên trong Button.
 
 ::component-code
 ---
@@ -129,7 +129,7 @@ slots:
 ---
 ::
 
-The `label` as prop or slot is optional so you can use the Button as an avatar-only button.
+Phần tử `label` dưới dạng prop hoặc slot là tùy chọn nên bạn có thể sử dụng Button dưới dạng nút chỉ avatar.
 
 ::component-code
 ---
@@ -145,7 +145,7 @@ props:
 
 ### Link
 
-You can pass any property from the [Link](/components/link#props) component such as `to`, `target`, etc.
+Bạn có thể truyền bất kỳ thuộc tính nào từ thành phần [Link](/components/link#props) như `to`, `target`, v.v.
 
 ::component-code
 ---
@@ -159,7 +159,7 @@ slots:
 ---
 ::
 
-When the Button is a link or when using the `active` prop, you can use the `active-color` and `active-variant` props to customize the active state.
+Khi Button là liên kết hoặc khi sử dụng prop `active`, bạn có thể sử dụng prop `active-color` và `active-variant` để tùy chỉnh trạng thái hoạt động.
 
 ::component-code
 ---
@@ -198,7 +198,7 @@ slots:
 Button
 ::
 
-You can also use the `active-class` and `inactive-class` props to customize the active state.
+Bạn cũng có thể sử dụng prop `active-class` và `inactive-class` để tùy chỉnh trạng thái hoạt động.
 
 ::component-code
 ---
@@ -214,7 +214,7 @@ Button
 ::
 
 ::tip
-You can configure these styles globally in your `app.config.ts` file under the `ui.button.variants.active` key.
+Bạn có thể cấu hình các kiểu này toàn cục trong tệp `app.config.ts` của bạn dưới khóa `ui.button.variants.active`.
 
 ```ts
 export default defineAppConfig({
@@ -235,7 +235,7 @@ export default defineAppConfig({
 
 ### Loading
 
-Use the `loading` prop to show a loading icon and disable the Button.
+Sử dụng prop `loading` để hiển thị biểu tượng tải và vô hiệu hóa Button.
 
 ::component-code
 ---
@@ -248,17 +248,17 @@ slots:
 Button
 ::
 
-Use the `loading-auto` prop to show the loading icon automatically while the `@click` promise is pending.
+Sử dụng prop `loading-auto` để hiển thị biểu tượng tải tự động trong khi promise `@click` đang chờ.
 
 :component-example{name="button-loading-auto-example"}
 
-This also works with the [Form](/components/form) component.
+Điều này cũng hoạt động với thành phần [Form](/components/form).
 
 :component-example{name="button-loading-auto-form-example"}
 
 ### Loading Icon
 
-Use the `loading-icon` prop to customize the loading icon. Defaults to `i-lucide-loader-circle`.
+Sử dụng prop `loading-icon` để tùy chỉnh biểu tượng tải. Mặc định là `i-lucide-loader-circle`.
 
 ::component-code
 ---
@@ -274,18 +274,18 @@ Button
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` dưới khóa `ui.icons.loading`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` dưới khóa `ui.icons.loading`.
 :::
 ::
 
 ### Disabled
 
-Use the `disabled` prop to disable the Button.
+Sử dụng prop `disabled` để vô hiệu hóa Button.
 
 ::component-code
 ---
@@ -302,7 +302,7 @@ Button
 
 ### `class` prop
 
-Use the `class` prop to override the base styles of the Button.
+Sử dụng prop `class` để ghi đè các kiểu cơ sở của Button.
 
 ::component-code
 ---
@@ -315,7 +315,7 @@ slots:
 
 ### `ui` prop
 
-Use the `ui` prop to override the slots styles of the Button.
+Sử dụng prop `ui` để ghi đè các kiểu slot của Button.
 
 ::component-code
 ---
@@ -345,7 +345,7 @@ slots:
 :component-props
 
 ::callout{icon="i-simple-icons-github" to="https://github.com/nuxt/ui/blob/v3/src/runtime/components/Link.vue#L13"}
-The `Button` component extends the `Link` component. Check out the source code on GitHub.
+Thành phần `Button` mở rộng thành phần `Link`. Kiểm tra mã nguồn trên GitHub.
 ::
 
 ### Slots

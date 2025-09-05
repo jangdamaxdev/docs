@@ -1,5 +1,5 @@
 ---
-description: An img element with fallback and Nuxt Image support.
+description: Một phần tử img với dự phòng và hỗ trợ Nuxt Image.
 category: element
 links:
   - label: GitHub
@@ -9,15 +9,15 @@ links:
 
 ## Usage
 
-The Avatar uses the `<NuxtImg>` component when [`@nuxt/image`](https://github.com/nuxt/image) is installed, falling back to `img` otherwise.
+Avatar sử dụng thành phần `<NuxtImg>` khi [`@nuxt/image`](https://github.com/nuxt/image) được cài đặt, quay lại `img` nếu không.
 
 ::note
-You can pass any property from the HTML `<img>` element such as `alt`, `loading`, etc.
+Bạn có thể truyền bất kỳ thuộc tính nào từ phần tử HTML `<img>` như `alt`, `loading`, v.v.
 ::
 
 ### Src
 
-Use the `src` prop to set the image URL.
+Sử dụng prop `src` để đặt URL hình ảnh.
 
 ::component-code
 ---
@@ -28,7 +28,7 @@ props:
 
 ### Size
 
-Use the `size` prop to set the size of the Avatar.
+Sử dụng prop `size` để đặt kích thước của Avatar.
 
 ::component-code
 ---
@@ -41,12 +41,12 @@ props:
 ::
 
 ::note
-The `<img>` element's `width` and `height` are automatically set based on the `size` prop.
+`width` và `height` của phần tử `<img>` được tự động đặt dựa trên prop `size`.
 ::
 
 ### Icon
 
-Use the `icon` prop to display a fallback [Icon](/components/icon).
+Sử dụng prop `icon` để hiển thị một [Icon](/components/icon) dự phòng.
 
 ::component-code
 ---
@@ -58,7 +58,7 @@ props:
 
 ### Text
 
-Use the `text` prop to display a fallback text.
+Sử dụng prop `text` để hiển thị văn bản dự phòng.
 
 ::component-code
 ---
@@ -70,7 +70,7 @@ props:
 
 ### Alt
 
-When no icon or text is provided, the **initials** of the `alt` prop is used as fallback.
+Khi không có biểu tượng hoặc văn bản nào được cung cấp, **chữ cái đầu** của prop `alt` được sử dụng làm dự phòng.
 
 ::component-code
 ---
@@ -81,20 +81,20 @@ props:
 ::
 
 ::note
-The `alt` prop is passed to the `img` element as the `alt` attribute.
+Prop `alt` được truyền cho phần tử `img` dưới dạng thuộc tính `alt`.
 ::
 
 ## Examples
 
 ### With tooltip
 
-You can use a [Tooltip](/components/tooltip) component to display a tooltip when hovering the Avatar.
+Bạn có thể sử dụng thành phần [Tooltip](/components/tooltip) để hiển thị chú giải khi di chuột lên Avatar.
 
 :component-example{name="avatar-tooltip-example"}
 
 ### With chip
 
-You can use a [Chip](/components/chip) component to display a chip around the Avatar.
+Bạn có thể sử dụng thành phần [Chip](/components/chip) để hiển thị chip xung quanh Avatar.
 
 :component-example{name="avatar-chip-example"}
 

@@ -1,5 +1,5 @@
 ---
-description: A carousel with motion and swipe built using Embla.
+description: Một carousel với chuyển động và vuốt được xây dựng bằng Embla.
 category: data
 links:
   - label: Embla
@@ -14,10 +14,10 @@ links:
 
 ### Items
 
-Use the `items` prop as an array and render each item using the default slot:
+Sử dụng prop `items` dưới dạng mảng và hiển thị từng mục bằng slot mặc định:
 
 ::note
-Use your mouse to drag the carousel horizontally on desktop.
+Sử dụng chuột để kéo carousel theo chiều ngang trên desktop.
 ::
 
 ::component-example
@@ -27,12 +27,12 @@ class: 'p-8'
 ---
 ::
 
-You can also pass an array of objects with the following properties:
+Bạn cũng có thể truyền một mảng các đối tượng với các thuộc tính sau:
 
 - `class?: any`{lang="ts-type"}
 - `ui?: { item?: ClassNameValue }`{lang="ts-type"}
 
-You can control how many items are visible by using the [`basis`](https://tailwindcss.com/docs/flex-basis) / [`width`](https://tailwindcss.com/docs/width) utility classes on the `item`:
+Bạn có thể kiểm soát số lượng mục hiển thị bằng cách sử dụng các lớp tiện ích [`basis`](https://tailwindcss.com/docs/flex-basis) / [`width`](https://tailwindcss.com/docs/width) trên `item`:
 
 ::component-example
 ---
@@ -43,10 +43,10 @@ class: 'p-8 px-16'
 
 ### Orientation
 
-Use the `orientation` prop to change the orientation of the Progress. Defaults to `horizontal`.
+Sử dụng prop `orientation` để thay đổi hướng của Carousel. Mặc định là `horizontal`.
 
 ::note
-Use your mouse to drag the carousel vertically on desktop.
+Sử dụng chuột để kéo carousel theo chiều dọc trên desktop.
 ::
 
 ::component-example
@@ -57,12 +57,12 @@ class: 'p-8'
 ::
 
 ::caution
-You need to specify a `height` on the container in vertical orientation.
+Bạn cần chỉ định `height` trên container trong hướng dọc.
 ::
 
 ### Arrows
 
-Use the `arrows` prop to display prev and next buttons.
+Sử dụng prop `arrows` để hiển thị các nút prev và next.
 
 ::component-example
 ---
@@ -73,7 +73,7 @@ class: 'p-8'
 
 ### Prev / Next
 
-Use the `prev` and `next` props to customize the prev and next buttons with any [Button](/components/button) props.
+Sử dụng các prop `prev` và `next` để tùy chỉnh các nút prev và next với bất kỳ prop [Button](/components/button) nào.
 
 ::component-example
 ---
@@ -84,7 +84,7 @@ class: 'p-8'
 
 ### Prev / Next Icons
 
-Use the `prev-icon` and `next-icon` props to customize the buttons [Icon](/components/icon). Defaults to `i-lucide-arrow-left` / `i-lucide-arrow-right`.
+Sử dụng các prop `prev-icon` và `next-icon` để tùy chỉnh [Icon](/components/icon) của các nút. Mặc định là `i-lucide-arrow-left` / `i-lucide-arrow-right`.
 
 ::component-example
 ---
@@ -103,18 +103,18 @@ options:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize these icons globally in your `app.config.ts` under `ui.icons.arrowLeft` / `ui.icons.arrowRight` key.
+Bạn có thể tùy chỉnh các biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.arrowLeft` / `ui.icons.arrowRight`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize these icons globally in your `vite.config.ts` under `ui.icons.arrowLeft` / `ui.icons.arrowRight` key.
+Bạn có thể tùy chỉnh các biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.arrowLeft` / `ui.icons.arrowRight`.
 :::
 ::
 
 ### Dots
 
-Use the `dots` prop to display a list of dots to scroll to a specific slide.
+Sử dụng prop `dots` để hiển thị danh sách các chấm để cuộn đến slide cụ thể.
 
 ::component-example
 ---
@@ -123,7 +123,7 @@ class: 'p-8 pb-12'
 ---
 ::
 
-The number of dots is based on the number of slides displayed in the view:
+Số lượng chấm dựa trên số lượng slide được hiển thị trong view:
 
 ::component-example
 ---
@@ -134,13 +134,13 @@ class: 'p-8 px-16 pb-12'
 
 ## Plugins
 
-The Carousel component implements the official [Embla Carousel plugins](https://www.embla-carousel.com/plugins/).
+Thành phần Carousel triển khai các plugin [Embla Carousel](https://www.embla-carousel.com/plugins/) chính thức.
 
 ### Autoplay
 
-This plugin is used to extend Embla Carousel with **autoplay** functionality.
+Plugin này được sử dụng để mở rộng Embla Carousel với chức năng **tự động phát**.
 
-Use the `autoplay` prop as a boolean or an object to configure the [Autoplay plugin](https://www.embla-carousel.com/plugins/autoplay/).
+Sử dụng prop `autoplay` dưới dạng boolean hoặc đối tượng để cấu hình [Autoplay plugin](https://www.embla-carousel.com/plugins/autoplay/).
 
 ::component-example
 ---
@@ -150,14 +150,14 @@ class: 'p-8 px-16 pb-12'
 ::
 
 ::note
-In this example, we're using the `loop` prop for an infinite carousel.
+Trong ví dụ này, chúng tôi đang sử dụng prop `loop` cho carousel vô hạn.
 ::
 
 ### Auto Scroll
 
-This plugin is used to extend Embla Carousel with **auto scroll** functionality.
+Plugin này được sử dụng để mở rộng Embla Carousel với chức năng **tự động cuộn**.
 
-Use the `auto-scroll` prop as a boolean or an object to configure the [Auto Scroll plugin](https://www.embla-carousel.com/plugins/auto-scroll/).
+Sử dụng prop `auto-scroll` dưới dạng boolean hoặc đối tượng để cấu hình [Auto Scroll plugin](https://www.embla-carousel.com/plugins/auto-scroll/).
 
 ::component-example
 ---
@@ -167,14 +167,14 @@ class: 'p-8 px-16 pb-12'
 ::
 
 ::note
-In this example, we're using the `loop` prop for an infinite carousel.
+Trong ví dụ này, chúng tôi đang sử dụng prop `loop` cho carousel vô hạn.
 ::
 
 ### Auto Height
 
-This plugin is used to extend Embla Carousel with **auto height** functionality. It changes the height of the carousel container to fit the height of the highest slide in view.
+Plugin này được sử dụng để mở rộng Embla Carousel với chức năng **tự động chiều cao**. Nó thay đổi chiều cao của container carousel để phù hợp với chiều cao của slide cao nhất trong view.
 
-Use the `auto-height` prop as a boolean or an object to configure the [Auto Height plugin](https://www.embla-carousel.com/plugins/auto-height/).
+Sử dụng prop `auto-height` dưới dạng boolean hoặc đối tượng để cấu hình [Auto Height plugin](https://www.embla-carousel.com/plugins/auto-height/).
 
 ::component-example
 ---
@@ -184,14 +184,14 @@ class: 'p-8 pt-16'
 ::
 
 ::note
-In this example, we add the `transition-[height]` class on the container to animate the height change.
+Trong ví dụ này, chúng tôi thêm lớp `transition-[height]` trên container để tạo hiệu ứng chuyển đổi chiều cao.
 ::
 
 ### Class Names
 
-Class Names is a **class name toggle** utility plugin for Embla Carousel that enables you to automate the toggling of class names on your carousel.
+Class Names là plugin tiện ích **chuyển đổi tên lớp** cho Embla Carousel cho phép bạn tự động chuyển đổi tên lớp trên carousel của bạn.
 
-Use the `class-names` prop as a boolean or an object to configure the [Class Names plugin](https://www.embla-carousel.com/plugins/class-names/).
+Sử dụng prop `class-names` dưới dạng boolean hoặc đối tượng để cấu hình [Class Names plugin](https://www.embla-carousel.com/plugins/class-names/).
 
 ::component-example
 ---
@@ -201,14 +201,14 @@ class: 'p-8'
 ::
 
 ::note
-In this example, we add the `transition-opacity [&:not(.is-snapped)]:opacity-10` classes on the `item` to animate the opacity change.
+Trong ví dụ này, chúng tôi thêm các lớp `transition-opacity [&:not(.is-snapped)]:opacity-10` trên `item` để tạo hiệu ứng chuyển đổi độ mờ.
 ::
 
 ### Fade
 
-This plugin is used to replace the Embla Carousel scroll functionality with **fade transitions**.
+Plugin này được sử dụng để thay thế chức năng cuộn Embla Carousel bằng **chuyển đổi mờ**.
 
-Use the `fade` prop as a boolean or an object to configure the [Fade plugin](https://www.embla-carousel.com/plugins/fade/).
+Sử dụng prop `fade` dưới dạng boolean hoặc đối tượng để cấu hình [Fade plugin](https://www.embla-carousel.com/plugins/fade/).
 
 ::component-example
 ---
@@ -219,12 +219,12 @@ class: 'p-8 pb-12'
 
 ### Wheel Gestures
 
-This plugin is used to extend Embla Carousel with the ability to **use the mouse/trackpad wheel** to navigate the carousel.
+Plugin này được sử dụng để mở rộng Embla Carousel với khả năng **sử dụng bánh xe chuột/trackpad** để điều hướng carousel.
 
-Use the `wheel-gestures` prop as a boolean or an object to configure the [Wheel Gestures plugin](https://www.embla-carousel.com/plugins/wheel-gestures/).
+Sử dụng prop `wheel-gestures` dưới dạng boolean hoặc đối tượng để cấu hình [Wheel Gestures plugin](https://www.embla-carousel.com/plugins/wheel-gestures/).
 
 ::note
-Use your mouse wheel to scroll the carousel.
+Sử dụng bánh xe chuột để cuộn carousel.
 ::
 
 ::component-example
@@ -238,7 +238,7 @@ class: 'p-8 px-16'
 
 ### With thumbnails
 
-You can use the [`emblaApi`](#expose) function [scrollTo](https://www.embla-carousel.com/api/methods/#scrollto) to display thumbnails under the carousel that allows you to navigate to a specific slide.
+Bạn có thể sử dụng hàm [`emblaApi`](#expose) [scrollTo](https://www.embla-carousel.com/api/methods/#scrollto) để hiển thị hình thu nhỏ dưới carousel cho phép bạn điều hướng đến slide cụ thể.
 
 ::component-example
 ---
@@ -263,7 +263,7 @@ class: 'p-8 px-16'
 
 ### Expose
 
-You can access the typed component instance using [`useTemplateRef`](https://vuejs.org/api/composition-api-helpers.html#usetemplateref).
+Bạn có thể truy cập instance thành phần đã nhập bằng [`useTemplateRef`](https://vuejs.org/api/composition-api-helpers.html#usetemplateref).
 
 ```vue
 <script setup lang="ts">
@@ -275,7 +275,7 @@ const carousel = useTemplateRef('carousel')
 </template>
 ```
 
-This will give you access to the following:
+Điều này sẽ cho bạn quyền truy cập vào những thứ sau:
 
 | Name | Type |
 | ---- | ---- |
