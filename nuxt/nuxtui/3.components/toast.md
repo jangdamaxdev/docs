@@ -12,19 +12,19 @@ links:
 
 ## Usage
 
-Use the [useToast](/composables/use-toast) composable to display a toast in your application.
+Sử dụng composable [useToast](/composables/use-toast) để hiển thị toast trong ứng dụng của bạn.
 
 ::warning
-Make sure to wrap your app with the [`App`](/components/app) component which uses our [`Toaster`](https://github.com/nuxt/ui/blob/v3/src/runtime/components/Toaster.vue) component which uses the [`ToastProvider`](https://reka-ui.com/docs/components/toast#provider) component from Reka UI.
+Đảm bảo bao bọc ứng dụng của bạn với thành phần [`App`](/components/app) sử dụng thành phần [`Toaster`](https://github.com/nuxt/ui/blob/v3/src/runtime/components/Toaster.vue) của chúng tôi sử dụng thành phần [`ToastProvider`](https://reka-ui.com/docs/components/toast#provider) từ Reka UI.
 ::
 
 ::tip{to="/components/app#props"}
-You can check the `App` component `toaster` prop to see how to configure the Toaster globally.
+Bạn có thể kiểm tra prop `toaster` của thành phần `App` để xem cách cấu hình Toaster toàn cầu.
 ::
 
 ### Title
 
-Pass a `title` field to the `toast.add` method to display a title.
+Truyền trường `title` cho phương thức `toast.add` để hiển thị tiêu đề.
 
 ::component-example
 ---
@@ -38,7 +38,7 @@ name: 'toast-title-example'
 
 ### Description
 
-Pass a `description` field to the `toast.add` method to display a description.
+Truyền trường `description` cho phương thức `toast.add` để hiển thị mô tả.
 
 ::component-example
 ---
@@ -55,7 +55,7 @@ name: 'toast-description-example'
 
 ### Icon
 
-Pass an `icon` field to the `toast.add` method to display an [Icon](/components/icon).
+Truyền trường `icon` cho phương thức `toast.add` để hiển thị một [Icon](/components/icon).
 
 ::component-example
 ---
@@ -69,7 +69,7 @@ name: 'toast-icon-example'
 
 ### Avatar
 
-Pass an `avatar` field to the `toast.add` method to display an [Avatar](/components/avatar).
+Truyền trường `avatar` cho phương thức `toast.add` để hiển thị một [Avatar](/components/avatar).
 
 ::component-example
 ---
@@ -85,7 +85,7 @@ name: 'toast-avatar-example'
 
 ### Color
 
-Pass a `color` field to the `toast.add` method to change the color of the Toast.
+Truyền trường `color` cho phương thức `toast.add` để thay đổi màu sắc của Toast.
 
 ::component-example
 ---
@@ -107,7 +107,7 @@ name: 'toast-color-example'
 
 ### Close
 
-Pass a `close` field to customize or hide the close [Button](/components/button) (with `false` value).
+Truyền trường `close` để tùy chỉnh hoặc ẩn [Button](/components/button) đóng (với giá trị `false`).
 
 ::component-example
 ---
@@ -117,7 +117,7 @@ name: 'toast-close-example'
 
 ### Close Icon
 
-Pass a `closeIcon` field to customize the close button [Icon](/components/icon). Default to `i-lucide-x`.
+Truyền trường `closeIcon` để tùy chỉnh [Icon](/components/icon) của nút đóng. Mặc định là `i-lucide-x`.
 
 ::component-example
 ---
@@ -132,18 +132,18 @@ name: 'toast-close-icon-example'
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.close` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cầu trong `app.config.ts` của bạn dưới khóa `ui.icons.close`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.close` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cầu trong `vite.config.ts` của bạn dưới khóa `ui.icons.close`.
 :::
 ::
 
 ### Actions
 
-Pass an `actions` field to add some [Button](/components/button) actions to the Toast.
+Truyền trường `actions` để thêm một số hành động [Button](/components/button) vào Toast.
 
 ::component-example
 ---
@@ -157,10 +157,10 @@ name: 'toast-actions-example'
 
 ### Progress :badge{label="New" class="align-text-top"}
 
-Pass a `progress` field to customize or hide the [Progress](/components/progress) bar (with `false` value).
+Truyền trường `progress` để tùy chỉnh hoặc ẩn thanh [Progress](/components/progress) (với giá trị `false`).
 
 ::tip
-The Progress bar inherits the Toast color by default, but you can override it using the `progress.color` field.
+Thanh Progress kế thừa màu Toast theo mặc định, nhưng bạn có thể ghi đè bằng trường `progress.color`.
 ::
 
 ::component-example
@@ -171,7 +171,7 @@ name: 'toast-progress-example'
 
 ### Orientation
 
-Pass an `orientation` field to the `toast.add` method to change the orientation of the Toast.
+Truyền trường `orientation` cho phương thức `toast.add` để thay đổi hướng của Toast.
 
 ::component-example
 ---
@@ -190,7 +190,7 @@ name: 'toast-orientation-example'
 
 ### Change global position
 
-Change the `toaster.position` prop on the [App](/components/app#props) component to change the position of the toasts.
+Thay đổi prop `toaster.position` trên thành phần [App](/components/app#props) để thay đổi vị trí của các toast.
 
 ::component-example
 ---
@@ -203,12 +203,12 @@ name: 'toast-example'
 ::
 
 ::note{to="https://github.com/nuxt/ui/blob/v3/docs/app/app.config.ts#L3"}
-In this example, we use the `AppConfig` to configure the `position` prop of the `Toaster` component globally.
+Trong ví dụ này, chúng tôi sử dụng `AppConfig` để cấu hình prop `position` của thành phần `Toaster` toàn cầu.
 ::
 
 ### Change global duration
 
-Change the `toaster.duration` prop on the [App](/components/app#props) component to change the duration of the toasts.
+Thay đổi prop `toaster.duration` trên thành phần [App](/components/app#props) để thay đổi thời lượng của các toast.
 
 ::component-example
 ---
@@ -221,15 +221,15 @@ name: 'toast-example'
 ::
 
 ::note{to="https://github.com/nuxt/ui/blob/v3/docs/app/app.config.ts#L5"}
-In this example, we use the `AppConfig` to configure the `duration` prop of the `Toaster` component globally.
+Trong ví dụ này, chúng tôi sử dụng `AppConfig` để cấu hình prop `duration` của thành phần `Toaster` toàn cầu.
 ::
 
 ### Stacked toasts
 
-Set the `toaster.expand` prop to `false` on the [App](/components/app#props) component to display stacked toasts.
+Đặt prop `toaster.expand` thành `false` trên thành phần [App](/components/app#props) để hiển thị các toast xếp chồng.
 
 ::tip
-You can hover over the toasts to expand them. This will also pause the timer of the toasts.
+Bạn có thể di chuột qua các toast để mở rộng chúng. Điều này cũng sẽ tạm dừng bộ đếm thời gian của các toast.
 ::
 
 ::component-example
@@ -243,7 +243,7 @@ name: 'toast-example'
 ::
 
 ::note{to="https://github.com/nuxt/ui/blob/v3/docs/app/app.config.ts#L4"}
-In this example, we use the `AppConfig` to configure the `expand` prop of the `Toaster` component globally.
+Trong ví dụ này, chúng tôi sử dụng `AppConfig` để cấu hình prop `expand` của thành phần `Toaster` toàn cầu.
 ::
 
 ## API

@@ -12,19 +12,19 @@ links:
 
 ## Usage
 
-Use a [Button](/components/button) or any other component in the default slot of the Tooltip.
+Sử dụng [Button](/components/button) hoặc bất kỳ thành phần nào khác trong slot mặc định của Tooltip.
 
 ::warning
-Make sure to wrap your app with the [`App`](/components/app) component which uses the [`TooltipProvider`](https://reka-ui.com/docs/components/tooltip#provider) component from Reka UI.
+Đảm bảo bao bọc ứng dụng của bạn với thành phần [`App`](/components/app) sử dụng thành phần [`TooltipProvider`](https://reka-ui.com/docs/components/tooltip#provider) từ Reka UI.
 ::
 
 ::tip{to="/components/app#props"}
-You can check the `App` component `tooltip` prop to see how to configure the Tooltip globally.
+Bạn có thể kiểm tra prop `tooltip` của thành phần `App` để xem cách cấu hình Tooltip toàn cầu.
 ::
 
 ### Text
 
-Use the `text` prop to set the content of the Tooltip.
+Sử dụng prop `text` để đặt nội dung của Tooltip.
 
 ::component-code
 ---
@@ -42,7 +42,7 @@ slots:
 
 ### Kbds
 
-Use the `kbds` prop to render [Kbd](/components/kbd) components in the Tooltip.
+Sử dụng prop `kbds` để hiển thị các thành phần [Kbd](/components/kbd) trong Tooltip.
 
 ::component-code
 ---
@@ -65,12 +65,12 @@ slots:
 ::
 
 ::tip
-You can use special keys like `meta` that displays as `⌘` on macOS and `Ctrl` on other platforms.
+Bạn có thể sử dụng các phím đặc biệt như `meta` hiển thị dưới dạng `⌘` trên macOS và `Ctrl` trên các nền tảng khác.
 ::
 
 ### Delay
 
-Use the `delay-duration` prop to change the delay before the Tooltip appears. For example, you can make it appear instantly by setting it to `0`.
+Sử dụng prop `delay-duration` để thay đổi độ trễ trước khi Tooltip xuất hiện. Ví dụ, bạn có thể làm cho nó xuất hiện ngay lập tức bằng cách đặt thành `0`.
 
 ::component-code
 ---
@@ -90,12 +90,12 @@ slots:
 ::
 
 ::tip
-This can be configured globally through the `tooltip.delayDuration` option in the [`App`](/components/app) component.
+Điều này có thể được cấu hình toàn cầu thông qua tùy chọn `tooltip.delayDuration` trong thành phần [`App`](/components/app).
 ::
 
 ### Content
 
-Use the `content` prop to control how the Tooltip content is rendered, like its `align` or `side` for example.
+Sử dụng prop `content` để kiểm soát cách nội dung Tooltip được hiển thị, như `align` hoặc `side` chẳng hạn.
 
 ::component-code
 ---
@@ -129,7 +129,7 @@ slots:
 
 ### Arrow
 
-Use the `arrow` prop to display an arrow on the Tooltip.
+Sử dụng prop `arrow` để hiển thị mũi tên trên Tooltip.
 
 ::component-code
 ---
@@ -151,7 +151,7 @@ slots:
 
 ### Disabled
 
-Use the `disabled` prop to disable the Tooltip.
+Sử dụng prop `disabled` để vô hiệu hóa Tooltip.
 
 ::component-code
 ---
@@ -174,7 +174,7 @@ slots:
 
 ### Control open state
 
-You can control the open state by using the `default-open` prop or the `v-model:open` directive.
+Bạn có thể kiểm soát trạng thái mở bằng cách sử dụng prop `default-open` hoặc directive `v-model:open`.
 
 ::component-example
 ---
@@ -183,12 +183,12 @@ name: 'tooltip-open-example'
 ::
 
 ::note
-In this example, leveraging [`defineShortcuts`](/composables/define-shortcuts), you can toggle the Tooltip by pressing :kbd{value="O"}.
+Trong ví dụ này, tận dụng [`defineShortcuts`](/composables/define-shortcuts), bạn có thể chuyển đổi Tooltip bằng cách nhấn :kbd{value="O"}.
 ::
 
 ### With following cursor :badge{label="New" class="align-text-top"}
 
-You can make the Tooltip follow the cursor when hovering over an element using the [`reference`](https://reka-ui.com/docs/components/tooltip#trigger) prop:
+Bạn có thể làm cho Tooltip theo dõi con trỏ khi di chuột qua một phần tử bằng cách sử dụng prop [`reference`](https://reka-ui.com/docs/components/tooltip#trigger):
 
 ::component-example
 ---

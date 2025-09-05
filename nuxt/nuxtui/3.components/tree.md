@@ -14,7 +14,7 @@ links:
 
 ### Items
 
-Use the `items` prop as an array of objects with the following properties:
+Sử dụng prop `items` dưới dạng một mảng các đối tượng với các thuộc tính sau:
 
 - `icon?: string`{lang="ts-type"}
 - `label?: string`{lang="ts-type"}
@@ -30,7 +30,7 @@ Use the `items` prop as an array of objects with the following properties:
 - `ui?: { item?: ClassNameValue, itemWithChildren?: ClassNameValue, link?: ClassNameValue, linkLeadingIcon?: ClassNameValue, linkLabel?: ClassNameValue, linkTrailing?: ClassNameValue, linkTrailingIcon?: ClassNameValue, listWithChildren?: ClassNameValue }`{lang="ts-type"}
 
 ::note
-A unique identifier is required for each item. The component will use the `value` prop as identifier, falling back to `label` if `value` is not provided. One of these must be provided for the component to work properly.
+Một định danh duy nhất là bắt buộc cho mỗi mục. Thành phần sẽ sử dụng prop `value` làm định danh, quay lại `label` nếu `value` không được cung cấp. Một trong những cái này phải được cung cấp để thành phần hoạt động đúng cách.
 ::
 
 ::component-code
@@ -70,7 +70,7 @@ props:
 
 ### Multiple
 
-Use the `multiple` prop to allow multiple item selections.
+Sử dụng prop `multiple` để cho phép chọn nhiều mục.
 
 ::component-code
 ---
@@ -110,7 +110,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the color of the Tree.
+Sử dụng prop `color` để thay đổi màu sắc của Tree.
 
 ::component-code
 ---
@@ -150,7 +150,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the Tree.
+Sử dụng prop `size` để thay đổi kích thước của Tree.
 
 ::component-code
 ---
@@ -190,10 +190,10 @@ props:
 
 ### Trailing Icon
 
-Use the `trailing-icon` prop to customize the trailing [Icon](/components/icon) of a parent node. Defaults to `i-lucide-chevron-down`.
+Sử dụng prop `trailing-icon` để tùy chỉnh [Icon](/components/icon) theo sau của một nút cha. Mặc định là `i-lucide-chevron-down`.
 
 ::note
-If an icon is specified for an item, it will always take precedence over these props.
+Nếu một biểu tượng được chỉ định cho một mục, nó sẽ luôn ưu tiên hơn các prop này.
 ::
 
 ::component-code
@@ -236,7 +236,7 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.chevronDown` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cầu trong `app.config.ts` của bạn dưới khóa `ui.icons.chevronDown`.
 :::
 
 #vue
@@ -247,7 +247,7 @@ You can customize this icon globally in your `vite.config.ts` under `ui.icons.ch
 
 ### Expanded Icon
 
-Use the `expanded-icon` and `collapsed-icon` props to customize the icons of a parent node when it is expanded or collapsed. Defaults to `i-lucide-folder-open` and `i-lucide-folder` respectively.
+Sử dụng prop `expanded-icon` và `collapsed-icon` để tùy chỉnh biểu tượng của một nút cha khi nó được mở rộng hoặc thu gọn. Mặc định là `i-lucide-folder-open` và `i-lucide-folder` tương ứng.
 
 ::component-code
 ---

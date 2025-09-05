@@ -14,7 +14,7 @@ links:
 
 ### Items
 
-Use the `items` prop as an array of objects with the following properties:
+Sử dụng prop `items` dưới dạng một mảng các đối tượng với các thuộc tính sau:
 
 - `label?: string`{lang="ts-type"}
 - `icon?: string`{lang="ts-type"}
@@ -50,7 +50,7 @@ props:
 
 ### Content
 
-Set the `content` prop to `false` to turn the Tabs into a toggle-only control without displaying any content. Defaults to `true`.
+Đặt prop `content` thành `false` để biến Tabs thành một điều khiển chỉ chuyển đổi mà không hiển thị nội dung. Mặc định là `true`.
 
 ::component-code
 ---
@@ -77,7 +77,7 @@ props:
 
 ### Unmount
 
-Use the `unmount-on-hide` prop to prevent the content from being unmounted when the Tabs is collapsed. Defaults to `true`.
+Sử dụng prop `unmount-on-hide` để ngăn nội dung bị gỡ bỏ khi Tabs bị thu gọn. Mặc định là `true`.
 
 ::component-code
 ---
@@ -103,12 +103,12 @@ props:
 ::
 
 ::note
-You can inspect the DOM to see each item's content being rendered.
+Bạn có thể kiểm tra DOM để xem nội dung của mỗi mục đang được hiển thị.
 ::
 
 ### Color
 
-Use the `color` prop to change the color of the Tabs.
+Sử dụng prop `color` để thay đổi màu sắc của Tabs.
 
 ::component-code
 ---
@@ -132,7 +132,7 @@ props:
 
 ### Variant
 
-Use the `variant` prop to change the variant of the Tabs.
+Sử dụng prop `variant` để thay đổi biến thể của Tabs.
 
 ::component-code
 ---
@@ -157,7 +157,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the Tabs.
+Sử dụng prop `size` để thay đổi kích thước của Tabs.
 
 ::component-code
 ---
@@ -182,7 +182,7 @@ props:
 
 ### Orientation
 
-Use the `orientation` prop to change the orientation of the Tabs. Defaults to `horizontal`.
+Sử dụng prop `orientation` để thay đổi hướng của Tabs. Mặc định là `horizontal`.
 
 ::component-code
 ---
@@ -209,21 +209,21 @@ props:
 
 ### Control active item
 
-You can control the active item by using the `default-value` prop or the `v-model` directive with the index of the item.
+Bạn có thể kiểm soát mục hoạt động bằng cách sử dụng prop `default-value` hoặc directive `v-model` với chỉ số của mục.
 
 :component-example{name="tabs-model-value-example"}
 
 ### With content slot
 
-Use the `#content` slot to customize the content of each item.
+Sử dụng slot `#content` để tùy chỉnh nội dung của mỗi mục.
 
 :component-example{name="tabs-content-slot-example"}
 
 ### With custom slot
 
-Use the `slot` property to customize a specific item.
+Sử dụng thuộc tính `slot` để tùy chỉnh một mục cụ thể.
 
-You will have access to the following slots:
+Bạn sẽ có quyền truy cập vào các slot sau:
 
 - `#{{ item.slot }}`{lang="ts-type"}
 
@@ -245,7 +245,7 @@ You will have access to the following slots:
 
 ### Expose
 
-When accessing the component via a template ref, you can use the following:
+Khi truy cập thành phần qua template ref, bạn có thể sử dụng như sau:
 
 | Name | Type |
 | ---- | ---- |

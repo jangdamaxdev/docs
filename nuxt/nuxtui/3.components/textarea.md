@@ -9,7 +9,7 @@ links:
 
 ## Usage
 
-Use the `v-model` directive to control the value of the Textarea.
+Sử dụng directive `v-model` để kiểm soát giá trị của Textarea.
 
 ::component-code
 ---
@@ -24,7 +24,7 @@ props:
 
 ### Rows
 
-Use the `rows` prop to set the number of rows. Defaults to `3`.
+Sử dụng prop `rows` để đặt số lượng hàng. Mặc định là `3`.
 
 ::component-code
 ---
@@ -35,7 +35,7 @@ props:
 
 ### Placeholder
 
-Use the `placeholder` prop to set a placeholder text.
+Sử dụng prop `placeholder` để đặt văn bản giữ chỗ.
 
 ::component-code
 ---
@@ -46,7 +46,7 @@ props:
 
 ### Autoresize
 
-Use the `autoresize` prop to enable autoresizing the height of the Textarea.
+Sử dụng prop `autoresize` để bật tự động điều chỉnh kích thước chiều cao của Textarea.
 
 ::component-code
 ---
@@ -60,7 +60,7 @@ props:
 ---
 ::
 
-Use the `maxrows` prop to set the maximum number of rows when autoresizing. If set to `0`, the Textarea will grow indefinitely.
+Sử dụng prop `maxrows` để đặt số lượng hàng tối đa khi tự động điều chỉnh. Nếu đặt thành `0`, Textarea sẽ tăng vô hạn.
 
 ::component-code
 ---
@@ -77,7 +77,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the ring color when the Textarea is focused.
+Sử dụng prop `color` để thay đổi màu vòng khi Textarea được tập trung.
 
 ::component-code
 ---
@@ -91,12 +91,12 @@ props:
 ::
 
 ::note
-The `highlight` prop is used here to show the focus state. It's used internally when a validation error occurs.
+Prop `highlight` được sử dụng ở đây để hiển thị trạng thái tập trung. Nó được sử dụng nội bộ khi xảy ra lỗi xác thực.
 ::
 
 ### Variant
 
-Use the `variant` prop to change the variant of the Textarea.
+Sử dụng prop `variant` để thay đổi biến thể của Textarea.
 
 ::component-code
 ---
@@ -112,7 +112,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the Textarea.
+Sử dụng prop `size` để thay đổi kích thước của Textarea.
 
 ::component-code
 ---
@@ -126,7 +126,7 @@ props:
 
 ### Icon
 
-Use the `icon` prop to show an [Icon](/components/icon) inside the Textarea.
+Sử dụng prop `icon` để hiển thị một [Icon](/components/icon) bên trong Textarea.
 
 ::component-code
 ---
@@ -142,7 +142,7 @@ props:
 ---
 ::
 
-Use the `leading` and `trailing` props to set the icon position or the `leading-icon` and `trailing-icon` props to set a different icon for each position.
+Sử dụng prop `leading` và `trailing` để đặt vị trí biểu tượng hoặc prop `leading-icon` và `trailing-icon` để đặt biểu tượng khác cho mỗi vị trí.
 
 ::component-code
 ---
@@ -159,7 +159,7 @@ props:
 
 ### Avatar
 
-Use the `avatar` prop to show an [Avatar](/components/avatar) inside the Textarea.
+Sử dụng prop `avatar` để hiển thị một [Avatar](/components/avatar) bên trong Textarea.
 
 ::component-code
 ---
@@ -178,7 +178,7 @@ props:
 
 ### Loading
 
-Use the `loading` prop to show a loading icon on the Textarea.
+Sử dụng prop `loading` để hiển thị biểu tượng tải trên Textarea.
 
 ::component-code
 ---
@@ -194,7 +194,7 @@ props:
 
 ### Loading Icon
 
-Use the `loading-icon` prop to customize the loading icon. Defaults to `i-lucide-loader-circle`.
+Sử dụng prop `loading-icon` để tùy chỉnh biểu tượng tải. Mặc định là `i-lucide-loader-circle`.
 
 ::component-code
 ---
@@ -211,18 +211,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cầu trong `app.config.ts` của bạn dưới khóa `ui.icons.loading`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cầu trong `vite.config.ts` của bạn dưới khóa `ui.icons.loading`.
 :::
 ::
 
 ### Disabled
 
-Use the `disabled` prop to disable the Textarea.
+Sử dụng prop `disabled` để vô hiệu hóa Textarea.
 
 ::component-code
 ---
@@ -250,7 +250,7 @@ props:
 
 ### Expose
 
-When accessing the component via a template ref, you can use the following:
+Khi truy cập thành phần qua template ref, bạn có thể sử dụng như sau:
 
 | Name | Type |
 | ---- | ---- |

@@ -12,7 +12,7 @@ links:
 
 ### Items
 
-Use the `items` prop as an array of objects with the following properties:
+Sử dụng prop `items` dưới dạng một mảng các đối tượng với các thuộc tính sau:
 
 - `date?: string`{lang="ts-type"}
 - `title?: string`{lang="ts-type"}
@@ -59,7 +59,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the color of the active items in a Timeline.
+Sử dụng prop `color` để thay đổi màu sắc của các mục hoạt động trong Timeline.
 
 ::component-code
 ---
@@ -97,7 +97,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the Timeline.
+Sử dụng prop `size` để thay đổi kích thước của Timeline.
 
 ::component-code
 ---
@@ -135,7 +135,7 @@ props:
 
 ### Orientation
 
-Use the `orientation` prop to change the orientation of the Timeline. Defaults to `vertical`.
+Sử dụng prop `orientation` để thay đổi hướng của Timeline. Mặc định là `vertical`.
 
 ::component-code
 ---
@@ -174,7 +174,7 @@ class: 'overflow-x-auto'
 
 ### Reverse
 
-Use the reverse prop to reverse the direction of the Timeline.
+Sử dụng prop reverse để đảo ngược hướng của Timeline.
 
 ::component-code
 ---
@@ -216,25 +216,25 @@ class: 'overflow-x-auto'
 
 ### Control active item
 
-You can control the active item by using the `default-value` prop or the `v-model` directive with the index of the item.
+Bạn có thể kiểm soát mục hoạt động bằng cách sử dụng prop `default-value` hoặc directive `v-model` với chỉ số của mục.
 
 :component-example{name="timeline-model-value-example" prettier}
 
 ::tip
-You can also pass the `value` of one of the items if provided.
+Bạn cũng có thể truyền `value` của một trong các mục nếu được cung cấp.
 ::
 
 ### With alternating layout
 
-Use the `ui` prop to create a Timeline with alternating layout.
+Sử dụng prop `ui` để tạo Timeline với bố cục xen kẽ.
 
 :component-example{name="timeline-alternating-layout-example" prettier}
 
 ### With custom slot
 
-Use the `slot` property to customize a specific item.
+Sử dụng thuộc tính `slot` để tùy chỉnh một mục cụ thể.
 
-You will have access to the following slots:
+Bạn sẽ có quyền truy cập vào các slot sau:
 
 - `#{{ item.slot }}-indicator`{lang="ts-type"}
 - `#{{ item.slot }}-date`{lang="ts-type"}
@@ -245,7 +245,7 @@ You will have access to the following slots:
 
 ### With slots
 
-Use the available slots to create a more complex Timeline.
+Sử dụng các slot có sẵn để tạo Timeline phức tạp hơn.
 
 :component-example{name="timeline-slots-example" prettier}
 
