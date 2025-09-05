@@ -1,6 +1,6 @@
 ---
 title: "nuxt analyze"
-description: "Analyze the production bundle or your Nuxt application."
+description: "Phân tích gói sản xuất hoặc ứng dụng Nuxt của bạn."
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -14,14 +14,14 @@ npx nuxt analyze [ROOTDIR] [--cwd=<directory>] [--logLevel=<silent|info|verbose>
 ```
 <!--/analyze-cmd-->
 
-The `analyze` command builds Nuxt and analyzes the production bundle (experimental).
+Lệnh `analyze` xây dựng Nuxt và phân tích gói sản xuất (thử nghiệm).
 
 ## Arguments
 
 <!--analyze-args-->
 Argument | Description
 --- | ---
-`ROOTDIR="."` | Specifies the working directory (default: `.`)
+`ROOTDIR="."` | Chỉ định thư mục làm việc (mặc định: `.`)
 <!--/analyze-args-->
 
 ## Options
@@ -29,13 +29,13 @@ Argument | Description
 <!--analyze-opts-->
 Option | Default | Description
 --- | --- | ---
-`--cwd=<directory>` |  | Specify the working directory, this takes precedence over ROOTDIR (default: `.`)
-`--logLevel=<silent\|info\|verbose>` |  | Specify build-time log level
-`--dotenv` |  | Path to `.env` file to load, relative to the root directory
-`--name=<name>` | `default` | Name of the analysis
-`--no-serve` |  | Skip serving the analysis results
+`--cwd=<directory>` |  | Chỉ định thư mục làm việc, điều này ưu tiên hơn ROOTDIR (mặc định: `.`)
+`--logLevel=<silent\|info\|verbose>` |  | Chỉ định cấp độ log thời gian xây dựng
+`--dotenv` |  | Đường dẫn đến tệp `.env` để tải, tương đối với thư mục gốc
+`--name=<name>` | `default` | Tên của phân tích
+`--no-serve` |  | Bỏ qua phục vụ kết quả phân tích
 <!--/analyze-opts-->
 
 ::note
-This command sets `process.env.NODE_ENV` to `production`.
+Lệnh này đặt `process.env.NODE_ENV` thành `production`.
 ::

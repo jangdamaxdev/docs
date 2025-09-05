@@ -1,6 +1,6 @@
 ---
 title: "nuxt module"
-description: "Search and add modules to your Nuxt application with the command line."
+description: "Tìm kiếm và thêm module vào ứng dụng Nuxt của bạn với dòng lệnh."
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -8,7 +8,7 @@ links:
     size: xs
 ---
 
-Nuxt provides a few utilities to work with [Nuxt modules](/modules) seamlessly.
+Nuxt cung cấp một số tiện ích để làm việc với [Nuxt modules](/modules) một cách liền mạch.
 
 ## nuxt module add
 
@@ -21,30 +21,30 @@ npx nuxt module add <MODULENAME> [--cwd=<directory>] [--logLevel=<silent|info|ve
 <!--module-add-args-->
 Argument | Description
 --- | ---
-`MODULENAME` | Module name
+`MODULENAME` | Tên module
 <!--/module-add-args-->
 
 <!--module-add-opts-->
 Option | Default | Description
 --- | --- | ---
-`--cwd=<directory>` | `.` | Specify the working directory
-`--logLevel=<silent\|info\|verbose>` |  | Specify build-time log level
-`--skipInstall` |  | Skip npm install
-`--skipConfig` |  | Skip nuxt.config.ts update
-`--dev` |  | Install module as dev dependency
+`--cwd=<directory>` | `.` | Chỉ định thư mục làm việc
+`--logLevel=<silent\|info\|verbose>` |  | Chỉ định cấp độ log thời gian xây dựng
+`--skipInstall` |  | Bỏ qua npm install
+`--skipConfig` |  | Bỏ qua cập nhật nuxt.config.ts
+`--dev` |  | Cài đặt module như dev dependency
 <!--/module-add-opts-->
 
-The command lets you install [Nuxt modules](/modules) in your application with no manual work.
+Lệnh cho phép bạn cài đặt [Nuxt modules](/modules) trong ứng dụng của bạn mà không cần công việc thủ công.
 
-When running the command, it will:
+Khi chạy lệnh, nó sẽ:
 
-- install the module as a dependency using your package manager
-- add it to your [package.json](/docs/guide/directory-structure/package) file
-- update your [`nuxt.config`](/docs/guide/directory-structure/nuxt-config) file
+- cài đặt module như một dependency sử dụng trình quản lý gói của bạn
+- thêm nó vào tệp [package.json](/docs/guide/directory-structure/package) của bạn
+- cập nhật tệp [`nuxt.config`](/docs/guide/directory-structure/nuxt-config) của bạn
 
-**Example:**
+**Ví dụ:**
 
-Installing the [`Pinia`](/modules/pinia) module
+Cài đặt module [`Pinia`](/modules/pinia)
 
 ```bash [Terminal]
 npx nuxt module add pinia
@@ -63,7 +63,7 @@ npx nuxt module search <QUERY> [--cwd=<directory>] [--nuxtVersion=<2|3>]
 <!--module-search-args-->
 Argument | Description
 --- | ---
-`QUERY` | keywords to search for
+`QUERY` | từ khóa để tìm kiếm
 <!--/module-search-args-->
 
 ### Options
@@ -71,13 +71,13 @@ Argument | Description
 <!--module-search-opts-->
 Option | Default | Description
 --- | --- | ---
-`--cwd=<directory>` | `.` | Specify the working directory
-`--nuxtVersion=<2\|3>` |  | Filter by Nuxt version and list compatible modules only (auto detected by default)
+`--cwd=<directory>` | `.` | Chỉ định thư mục làm việc
+`--nuxtVersion=<2\|3>` |  | Lọc theo phiên bản Nuxt và chỉ liệt kê các module tương thích (tự động phát hiện theo mặc định)
 <!--/module-search-opts-->
 
-The command searches for Nuxt modules matching your query that are compatible with your Nuxt version.
+Lệnh tìm kiếm các module Nuxt khớp với truy vấn của bạn mà tương thích với phiên bản Nuxt của bạn.
 
-**Example:**
+**Ví dụ:**
 
 ```bash [Terminal]
 npx nuxt module search pinia

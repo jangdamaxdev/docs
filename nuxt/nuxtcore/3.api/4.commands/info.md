@@ -1,6 +1,6 @@
 ---
 title: "nuxt info"
-description: The info command logs information about the current or specified Nuxt project.
+description: Lệnh info ghi log thông tin về dự án Nuxt hiện tại hoặc được chỉ định.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -14,14 +14,14 @@ npx nuxt info [ROOTDIR] [--cwd=<directory>]
 ```
 <!--/info-cmd-->
 
-The `info` command logs information about the current or specified Nuxt project.
+Lệnh `info` ghi log thông tin về dự án Nuxt hiện tại hoặc được chỉ định.
 
 ## Arguments
 
 <!--info-args-->
 Argument | Description
 --- | ---
-`ROOTDIR="."` | Specifies the working directory (default: `.`)
+`ROOTDIR="."` | Chỉ định thư mục làm việc (mặc định: `.`)
 <!--/info-args-->
 
 ## Options
@@ -29,5 +29,5 @@ Argument | Description
 <!--info-opts-->
 Option | Default | Description
 --- | --- | ---
-`--cwd=<directory>` |  | Specify the working directory, this takes precedence over ROOTDIR (default: `.`)
+`--cwd=<directory>` |  | Chỉ định thư mục làm việc, điều này ưu tiên hơn ROOTDIR (mặc định: `.`)
 <!--/info-opts-->

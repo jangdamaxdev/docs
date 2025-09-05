@@ -1,6 +1,6 @@
 ---
 title: "nuxt generate"
-description: Pre-renders every route of the application and stores the result in plain HTML files.
+description: Pre-render mọi route của ứng dụng và lưu kết quả trong các tệp HTML thuần.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -14,14 +14,14 @@ npx nuxt generate [ROOTDIR] [--cwd=<directory>] [--logLevel=<silent|info|verbose
 ```
 <!--/generate-cmd-->
 
-The `generate` command pre-renders every route of your application and stores the result in plain HTML files that you can deploy on any static hosting services. The command triggers the `nuxt build` command with the `prerender` argument set to `true`
+Lệnh `generate` pre-render mọi route của ứng dụng của bạn và lưu kết quả trong các tệp HTML thuần mà bạn có thể triển khai trên bất kỳ dịch vụ hosting tĩnh nào. Lệnh kích hoạt lệnh `nuxt build` với đối số `prerender` được đặt thành `true`
 
 ## Arguments
 
 <!--generate-args-->
 Argument | Description
 --- | ---
-`ROOTDIR="."` | Specifies the working directory (default: `.`)
+`ROOTDIR="."` | Chỉ định thư mục làm việc (mặc định: `.`)
 <!--/generate-args-->
 
 ## Options
@@ -29,13 +29,13 @@ Argument | Description
 <!--generate-opts-->
 Option | Default | Description
 --- | --- | ---
-`--cwd=<directory>` |  | Specify the working directory, this takes precedence over ROOTDIR (default: `.`)
-`--logLevel=<silent\|info\|verbose>` |  | Specify build-time log level
-`--preset` |  | Nitro server preset
-`--dotenv` |  | Path to `.env` file to load, relative to the root directory
-`--envName` |  | The environment to use when resolving configuration overrides (default is `production` when building, and `development` when running the dev server)
+`--cwd=<directory>` |  | Chỉ định thư mục làm việc, điều này ưu tiên hơn ROOTDIR (mặc định: `.`)
+`--logLevel=<silent\|info\|verbose>` |  | Chỉ định cấp độ log thời gian xây dựng
+`--preset` |  | Preset máy chủ Nitro
+`--dotenv` |  | Đường dẫn đến tệp `.env` để tải, tương đối với thư mục gốc
+`--envName` |  | Môi trường để sử dụng khi giải quyết ghi đè cấu hình (mặc định là `production` khi xây dựng, và `development` khi chạy máy chủ dev)
 <!--/generate-opts-->
 
 ::read-more{to="/docs/getting-started/deployment#static-hosting"}
-Read more about pre-rendering and static hosting.
+Đọc thêm về pre-rendering và hosting tĩnh.
 ::

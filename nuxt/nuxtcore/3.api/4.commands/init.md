@@ -1,6 +1,6 @@
 ---
 title: "create nuxt"
-description: The init command initializes a fresh Nuxt project.
+description: Lệnh init khởi tạo một dự án Nuxt mới.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -14,14 +14,14 @@ npm create nuxt@latest [DIR] [--cwd=<directory>] [-t, --template] [-f, --force] 
 ```
 <!--/init-cmd-->
 
-The `create-nuxt` command initializes a fresh Nuxt project using [unjs/giget](https://github.com/unjs/giget).
+Lệnh `create-nuxt` khởi tạo một dự án Nuxt mới sử dụng [unjs/giget](https://github.com/unjs/giget).
 
 ## Arguments
 
 <!--init-args-->
 Argument | Description
 --- | ---
-`DIR=""` | Project directory
+`DIR=""` | Thư mục dự án
 <!--/init-args-->
 
 ## Options
@@ -29,21 +29,21 @@ Argument | Description
 <!--init-opts-->
 Option | Default | Description
 --- | --- | ---
-`--cwd=<directory>` | `.` | Specify the working directory
-`-t, --template` |  | Template name
-`-f, --force` |  | Override existing directory
-`--offline` |  | Force offline mode
-`--preferOffline` |  | Prefer offline mode
-`--no-install` |  | Skip installing dependencies
-`--gitInit` |  | Initialize git repository
-`--shell` |  | Start shell after installation in project directory
-`--packageManager` |  | Package manager choice (npm, pnpm, yarn, bun)
-`--modules` |  | Nuxt modules to install (comma separated without spaces)
-`--no-modules` |  | Skip module installation prompt
-`--nightly` |  | Use Nuxt nightly release channel (3x or latest)
+`--cwd=<directory>` | `.` | Chỉ định thư mục làm việc
+`-t, --template` |  | Tên mẫu
+`-f, --force` |  | Ghi đè thư mục hiện có
+`--offline` |  | Buộc chế độ offline
+`--preferOffline` |  | Ưu tiên chế độ offline
+`--no-install` |  | Bỏ qua cài đặt dependencies
+`--gitInit` |  | Khởi tạo kho git
+`--shell` |  | Khởi động shell sau cài đặt trong thư mục dự án
+`--packageManager` |  | Lựa chọn trình quản lý gói (npm, pnpm, yarn, bun)
+`--modules` |  | Các module Nuxt để cài đặt (phân tách bằng dấu phẩy không có khoảng trắng)
+`--no-modules` |  | Bỏ qua lời nhắc cài đặt module
+`--nightly` |  | Sử dụng kênh phát hành nightly của Nuxt (3x hoặc latest)
 <!--/init-opts-->
 
 ## Environment variables
 
-- `NUXI_INIT_REGISTRY`: Set to a custom template registry. ([learn more](https://github.com/unjs/giget#custom-registry)).
-  - Default registry is loaded from [nuxt/starter/templates](https://github.com/nuxt/starter/tree/templates/templates)
+- `NUXI_INIT_REGISTRY`: Đặt thành registry mẫu tùy chỉnh. ([tìm hiểu thêm](https://github.com/unjs/giget#custom-registry)).
+  - Registry mặc định được tải từ [nuxt/starter/templates](https://github.com/nuxt/starter/tree/templates/templates)

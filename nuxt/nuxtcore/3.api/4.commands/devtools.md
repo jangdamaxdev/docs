@@ -1,6 +1,6 @@
 ---
 title: "nuxt devtools"
-description: The devtools command allows you to enable or disable Nuxt DevTools on a per-project basis.
+description: Lệnh devtools cho phép bạn bật hoặc tắt Nuxt DevTools trên cơ sở từng dự án.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -14,15 +14,15 @@ npx nuxt devtools <COMMAND> [ROOTDIR] [--cwd=<directory>]
 ```
 <!--/devtools-cmd-->
 
-Running `nuxt devtools enable` will install the Nuxt DevTools globally, and also enable it within the particular project you are using. It is saved as a preference in your user-level `.nuxtrc`. If you want to remove devtools support for a particular project, you can run `nuxt devtools disable`.
+Chạy `nuxt devtools enable` sẽ cài đặt Nuxt DevTools toàn cầu, và cũng bật nó trong dự án cụ thể bạn đang sử dụng. Nó được lưu như một tùy chọn trong `.nuxtrc` cấp người dùng của bạn. Nếu bạn muốn xóa hỗ trợ devtools cho một dự án cụ thể, bạn có thể chạy `nuxt devtools disable`.
 
 ## Arguments
 
 <!--devtools-args-->
 Argument | Description
 --- | ---
-`COMMAND` | Command to run (options: <enable\|disable>)
-`ROOTDIR="."` | Specifies the working directory (default: `.`)
+`COMMAND` | Lệnh để chạy (tùy chọn: <enable\|disable>)
+`ROOTDIR="."` | Chỉ định thư mục làm việc (mặc định: `.`)
 <!--/devtools-args-->
 
 ## Options
@@ -30,9 +30,9 @@ Argument | Description
 <!--devtools-opts-->
 Option | Default | Description
 --- | --- | ---
-`--cwd=<directory>` |  | Specify the working directory, this takes precedence over ROOTDIR (default: `.`)
+`--cwd=<directory>` |  | Chỉ định thư mục làm việc, điều này ưu tiên hơn ROOTDIR (mặc định: `.`)
 <!--/devtools-opts-->
 
 ::read-more{icon="i-simple-icons-nuxtdotjs" to="https://devtools.nuxt.com" target="\_blank"}
-Read more about the **Nuxt DevTools**.
+Đọc thêm về **Nuxt DevTools**.
 ::

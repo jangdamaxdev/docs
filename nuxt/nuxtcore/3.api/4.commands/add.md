@@ -1,6 +1,6 @@
 ---
 title: "nuxt add"
-description: "Scaffold an entity into your Nuxt application."
+description: "Tạo khuôn mẫu một thực thể vào ứng dụng Nuxt của bạn."
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -19,8 +19,8 @@ npx nuxt add <TEMPLATE> <NAME> [--cwd=<directory>] [--logLevel=<silent|info|verb
 <!--add-args-->
 Argument | Description
 --- | ---
-`TEMPLATE` | Specify which template to generate (options: <api\|plugin\|component\|composable\|middleware\|layout\|page\|layer>)
-`NAME` | Specify name of the generated file
+`TEMPLATE` | Chỉ định mẫu nào để tạo (tùy chọn: <api\|plugin\|component\|composable\|middleware\|layout\|page\|layer>)
+`NAME` | Chỉ định tên của tệp được tạo
 <!--/add-args-->
 
 ### Options
@@ -28,40 +28,40 @@ Argument | Description
 <!--add-opts-->
 Option | Default | Description
 --- | --- | ---
-`--cwd=<directory>` | `.` | Specify the working directory
-`--logLevel=<silent\|info\|verbose>` |  | Specify build-time log level
-`--force` | `false` | Force override file if it already exists
+`--cwd=<directory>` | `.` | Chỉ định thư mục làm việc
+`--logLevel=<silent\|info\|verbose>` |  | Chỉ định cấp độ log thời gian xây dựng
+`--force` | `false` | Buộc ghi đè tệp nếu nó đã tồn tại
 <!--/add-opts-->
 
 **Modifiers:**
 
-Some templates support additional modifier flags to add a suffix (like `.client` or `.get`) to their name.
+Một số mẫu hỗ trợ cờ bổ ngữ bổ sung để thêm hậu tố (như `.client` hoặc `.get`) vào tên của chúng.
 
 ```bash [Terminal]
-# Generates `/plugins/sockets.client.ts`
+# Tạo `/plugins/sockets.client.ts`
 npx nuxt add plugin sockets --client
 ```
 
 ## `nuxt add component`
 
-* Modifier flags: `--mode client|server` or `--client` or `--server`
+* Cờ bổ ngữ: `--mode client|server` hoặc `--client` hoặc `--server`
 
 ```bash [Terminal]
-# Generates `components/TheHeader.vue`
+# Tạo `components/TheHeader.vue`
 npx nuxt add component TheHeader
 ```
 
 ## `nuxt add composable`
 
 ```bash [Terminal]
-# Generates `composables/foo.ts`
+# Tạo `composables/foo.ts`
 npx nuxt add composable foo
 ```
 
 ## `nuxt add layout`
 
 ```bash [Terminal]
-# Generates `layouts/custom.vue`
+# Tạo `layouts/custom.vue`
 npx nuxt add layout custom
 ```
 
@@ -70,43 +70,43 @@ npx nuxt add layout custom
 * Modifier flags: `--mode client|server` or `--client`or `--server`
 
 ```bash [Terminal]
-# Generates `plugins/analytics.ts`
+# Tạo `plugins/analytics.ts`
 npx nuxt add plugin analytics
 ```
 
 ## `nuxt add page`
 
 ```bash [Terminal]
-# Generates `pages/about.vue`
+# Tạo `pages/about.vue`
 npx nuxt add page about
 ```
 
 ```bash [Terminal]
-# Generates `pages/category/[id].vue`
+# Tạo `pages/category/[id].vue`
 npx nuxt add page "category/[id]"
 ```
 
 ## `nuxt add middleware`
 
-* Modifier flags: `--global`
+* Cờ bổ ngữ: `--global`
 
 ```bash [Terminal]
-# Generates `middleware/auth.ts`
+# Tạo `middleware/auth.ts`
 npx nuxt add middleware auth
 ```
 
 ## `nuxt add api`
 
-* Modifier flags: `--method` (can accept `connect`, `delete`, `get`, `head`, `options`, `patch`, `post`, `put` or `trace`) or alternatively you can directly use `--get`, `--post`, etc.
+* Cờ bổ ngữ: `--method` (có thể chấp nhận `connect`, `delete`, `get`, `head`, `options`, `patch`, `post`, `put` hoặc `trace`) hoặc thay thế bạn có thể sử dụng trực tiếp `--get`, `--post`, v.v.
 
 ```bash [Terminal]
-# Generates `server/api/hello.ts`
+# Tạo `server/api/hello.ts`
 npx nuxt add api hello
 ```
 
 ## `nuxt add layer`
 
 ```bash [Terminal]
-# Generates `layers/subscribe/nuxt.config.ts`
+# Tạo `layers/subscribe/nuxt.config.ts`
 npx nuxt add layer subscribe
 ```

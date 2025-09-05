@@ -1,6 +1,6 @@
 ---
 title: "nuxt build"
-description: "Build your Nuxt application."
+description: "Xây dựng ứng dụng Nuxt của bạn."
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -14,14 +14,14 @@ npx nuxt build [ROOTDIR] [--cwd=<directory>] [--logLevel=<silent|info|verbose>] 
 ```
 <!--/build-cmd-->
 
-The `build` command creates a `.output` directory with all your application, server and dependencies ready for production.
+Lệnh `build` tạo thư mục `.output` với tất cả ứng dụng, máy chủ và dependencies sẵn sàng cho sản xuất.
 
 ## Arguments
 
 <!--build-args-->
 Argument | Description
 --- | ---
-`ROOTDIR="."` | Specifies the working directory (default: `.`)
+`ROOTDIR="."` | Chỉ định thư mục làm việc (mặc định: `.`)
 <!--/build-args-->
 
 ## Options
@@ -29,18 +29,18 @@ Argument | Description
 <!--build-opts-->
 Option | Default | Description
 --- | --- | ---
-`--cwd=<directory>` |  | Specify the working directory, this takes precedence over ROOTDIR (default: `.`)
-`--logLevel=<silent\|info\|verbose>` |  | Specify build-time log level
-`--prerender` |  | Build Nuxt and prerender static routes
-`--preset` |  | Nitro server preset
-`--dotenv` |  | Path to `.env` file to load, relative to the root directory
-`--envName` |  | The environment to use when resolving configuration overrides (default is `production` when building, and `development` when running the dev server)
+`--cwd=<directory>` |  | Chỉ định thư mục làm việc, điều này ưu tiên hơn ROOTDIR (mặc định: `.`)
+`--logLevel=<silent\|info\|verbose>` |  | Chỉ định cấp độ log thời gian xây dựng
+`--prerender` |  | Xây dựng Nuxt và prerender các route tĩnh
+`--preset` |  | Preset máy chủ Nitro
+`--dotenv` |  | Đường dẫn đến tệp `.env` để tải, tương đối với thư mục gốc
+`--envName` |  | Môi trường để sử dụng khi giải quyết ghi đè cấu hình (mặc định là `production` khi xây dựng, và `development` khi chạy máy chủ dev)
 <!--/build-opts-->
 
 ::note
-This command sets `process.env.NODE_ENV` to `production`.
+Lệnh này đặt `process.env.NODE_ENV` thành `production`.
 ::
 
 ::note
-`--prerender` will always set the `preset` to `static`
+`--prerender` sẽ luôn đặt `preset` thành `static`
 ::

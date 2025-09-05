@@ -1,6 +1,6 @@
 ---
 title: 'nuxt cleanup'
-description: 'Remove common generated Nuxt files and caches.'
+description: 'Xóa các tệp và bộ nhớ cache Nuxt được tạo phổ biến.'
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -14,7 +14,7 @@ npx nuxt cleanup [ROOTDIR] [--cwd=<directory>]
 ```
 <!--/cleanup-cmd-->
 
-The `cleanup` command removes common generated Nuxt files and caches, including:
+Lệnh `cleanup` xóa các tệp và bộ nhớ cache Nuxt được tạo phổ biến, bao gồm:
 
 - `.nuxt`
 - `.output`
@@ -26,7 +26,7 @@ The `cleanup` command removes common generated Nuxt files and caches, including:
 <!--cleanup-args-->
 Argument | Description
 --- | ---
-`ROOTDIR="."` | Specifies the working directory (default: `.`)
+`ROOTDIR="."` | Chỉ định thư mục làm việc (mặc định: `.`)
 <!--/cleanup-args-->
 
 ## Options
@@ -34,5 +34,5 @@ Argument | Description
 <!--cleanup-opts-->
 Option | Default | Description
 --- | --- | ---
-`--cwd=<directory>` |  | Specify the working directory, this takes precedence over ROOTDIR (default: `.`)
+`--cwd=<directory>` |  | Chỉ định thư mục làm việc, điều này ưu tiên hơn ROOTDIR (mặc định: `.`)
 <!--/cleanup-opts-->

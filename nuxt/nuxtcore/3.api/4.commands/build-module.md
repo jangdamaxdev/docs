@@ -1,6 +1,6 @@
 ---
 title: 'nuxt build-module'
-description: 'Nuxt command to build your Nuxt module before publishing.'
+description: 'Lệnh Nuxt để xây dựng module Nuxt của bạn trước khi xuất bản.'
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -14,14 +14,14 @@ npx nuxt build-module [ROOTDIR] [--cwd=<directory>] [--logLevel=<silent|info|ver
 ```
 <!--/build-module-cmd-->
 
-The `build-module` command runs `@nuxt/module-builder` to generate `dist` directory within your `rootDir` that contains the full build for your **nuxt-module**.
+Lệnh `build-module` chạy `@nuxt/module-builder` để tạo thư mục `dist` trong `rootDir` của bạn chứa bản build đầy đủ cho **nuxt-module** của bạn.
 
 ## Arguments
 
 <!--build-module-args-->
 Argument | Description
 --- | ---
-`ROOTDIR="."` | Specifies the working directory (default: `.`)
+`ROOTDIR="."` | Chỉ định thư mục làm việc (mặc định: `.`)
 <!--/build-module-args-->
 
 ## Options
@@ -29,14 +29,14 @@ Argument | Description
 <!--build-module-opts-->
 Option | Default | Description
 --- | --- | ---
-`--cwd=<directory>` |  | Specify the working directory, this takes precedence over ROOTDIR (default: `.`)
-`--logLevel=<silent\|info\|verbose>` |  | Specify build-time log level
-`--build` | `false` | Build module for distribution
-`--stub` | `false` | Stub dist instead of actually building it for development
-`--sourcemap` | `false` | Generate sourcemaps
-`--prepare` | `false` | Prepare module for local development
+`--cwd=<directory>` |  | Chỉ định thư mục làm việc, điều này ưu tiên hơn ROOTDIR (mặc định: `.`)
+`--logLevel=<silent\|info\|verbose>` |  | Chỉ định cấp độ log thời gian xây dựng
+`--build` | `false` | Xây dựng module để phân phối
+`--stub` | `false` | Stub dist thay vì thực sự xây dựng nó cho phát triển
+`--sourcemap` | `false` | Tạo sourcemaps
+`--prepare` | `false` | Chuẩn bị module cho phát triển cục bộ
 <!--/build-module-opts-->
 
 ::read-more{to="https://github.com/nuxt/module-builder" icon="i-simple-icons-github" target="\_blank"}
-Read more about `@nuxt/module-builder`.
+Đọc thêm về `@nuxt/module-builder`.
 ::

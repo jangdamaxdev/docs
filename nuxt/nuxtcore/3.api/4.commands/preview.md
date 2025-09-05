@@ -1,6 +1,6 @@
 ---
 title: "nuxt preview"
-description: The preview command starts a server to preview your application after the build command.
+description: Lệnh preview khởi động máy chủ để xem trước ứng dụng của bạn sau lệnh build.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -14,14 +14,14 @@ npx nuxt preview [ROOTDIR] [--cwd=<directory>] [--logLevel=<silent|info|verbose>
 ```
 <!--/preview-cmd-->
 
-The `preview` command starts a server to preview your Nuxt application after running the `build` command. The `start` command is an alias for `preview`. When running your application in production refer to the [Deployment section](/docs/getting-started/deployment).
+Lệnh `preview` khởi động máy chủ để xem trước ứng dụng Nuxt của bạn sau khi chạy lệnh `build`. Lệnh `start` là bí danh cho `preview`. Khi chạy ứng dụng của bạn trong sản xuất, hãy tham khảo phần [Deployment](/docs/getting-started/deployment).
 
 ## Arguments
 
 <!--preview-args-->
 Argument | Description
 --- | ---
-`ROOTDIR="."` | Specifies the working directory (default: `.`)
+`ROOTDIR="."` | Chỉ định thư mục làm việc (mặc định: `.`)
 <!--/preview-args-->
 
 ## Options
@@ -29,15 +29,15 @@ Argument | Description
 <!--preview-opts-->
 Option | Default | Description
 --- | --- | ---
-`--cwd=<directory>` |  | Specify the working directory, this takes precedence over ROOTDIR (default: `.`)
-`--logLevel=<silent\|info\|verbose>` |  | Specify build-time log level
-`--envName` |  | The environment to use when resolving configuration overrides (default is `production` when building, and `development` when running the dev server)
-`--dotenv` |  | Path to `.env` file to load, relative to the root directory
-`-p, --port` |  | Port to listen on (default: `NUXT_PORT \|\| NITRO_PORT \|\| PORT`)
+`--cwd=<directory>` |  | Chỉ định thư mục làm việc, điều này ưu tiên hơn ROOTDIR (mặc định: `.`)
+`--logLevel=<silent\|info\|verbose>` |  | Chỉ định cấp độ log thời gian xây dựng
+`--envName` |  | Môi trường để sử dụng khi giải quyết ghi đè cấu hình (mặc định là `production` khi xây dựng, và `development` khi chạy máy chủ dev)
+`--dotenv` |  | Đường dẫn đến tệp `.env` để tải, tương đối với thư mục gốc
+`-p, --port` |  | Port để lắng nghe (mặc định: `NUXT_PORT \|\| NITRO_PORT \|\| PORT`)
 <!--/preview-opts-->
 
-This command sets `process.env.NODE_ENV` to `production`. To override, define `NODE_ENV` in a `.env` file or as command-line argument.
+Lệnh này đặt `process.env.NODE_ENV` thành `production`. Để ghi đè, định nghĩa `NODE_ENV` trong tệp `.env` hoặc như đối số dòng lệnh.
 
 ::note
-For convenience, in preview mode, your [`.env`](/docs/guide/directory-structure/env) file will be loaded into `process.env`. (However, in production you will need to ensure your environment variables are set yourself. For example, with Node.js 20+ you could do this by running `node --env-file .env .output/server/index.mjs` to start your server.)
+Để thuận tiện, trong chế độ preview, tệp [`.env`](/docs/guide/directory-structure/env) của bạn sẽ được tải vào `process.env`. (Tuy nhiên, trong sản xuất bạn sẽ cần đảm bảo các biến môi trường được đặt bởi chính bạn. Ví dụ, với Node.js 20+ bạn có thể làm điều này bằng cách chạy `node --env-file .env .output/server/index.mjs` để khởi động máy chủ của bạn.)
 ::

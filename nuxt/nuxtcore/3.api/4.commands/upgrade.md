@@ -1,6 +1,6 @@
 ---
 title: "nuxt upgrade"
-description: The upgrade command upgrades Nuxt to the latest version.
+description: Lệnh upgrade nâng cấp Nuxt lên phiên bản mới nhất.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -14,14 +14,14 @@ npx nuxt upgrade [ROOTDIR] [--cwd=<directory>] [--logLevel=<silent|info|verbose>
 ```
 <!--/upgrade-cmd-->
 
-The `upgrade` command upgrades Nuxt to the latest version.
+Lệnh `upgrade` nâng cấp Nuxt lên phiên bản mới nhất.
 
 ## Arguments
 
 <!--upgrade-args-->
 Argument | Description
 --- | ---
-`ROOTDIR="."` | Specifies the working directory (default: `.`)
+`ROOTDIR="."` | Chỉ định thư mục làm việc (mặc định: `.`)
 <!--/upgrade-args-->
 
 ## Options
@@ -29,9 +29,9 @@ Argument | Description
 <!--upgrade-opts-->
 Option | Default | Description
 --- | --- | ---
-`--cwd=<directory>` |  | Specify the working directory, this takes precedence over ROOTDIR (default: `.`)
-`--logLevel=<silent\|info\|verbose>` |  | Specify build-time log level
-`--dedupe` |  | Will deduplicate dependencies but not recreate the lockfile
-`-f, --force` |  | Force upgrade to recreate lockfile and node_modules
-`-ch, --channel=<stable\|nightly>` | `stable` | Specify a channel to install from (default: stable)
+`--cwd=<directory>` |  | Chỉ định thư mục làm việc, điều này ưu tiên hơn ROOTDIR (mặc định: `.`)
+`--logLevel=<silent\|info\|verbose>` |  | Chỉ định cấp độ log thời gian xây dựng
+`--dedupe` |  | Sẽ loại bỏ trùng lặp dependencies nhưng không tạo lại lockfile
+`-f, --force` |  | Buộc nâng cấp để tạo lại lockfile và node_modules
+`-ch, --channel=<stable\|nightly>` | `stable` | Chỉ định kênh để cài đặt từ (mặc định: stable)
 <!--/upgrade-opts-->

@@ -1,6 +1,6 @@
 ---
 title: 'nuxt prepare'
-description: The prepare command creates a .nuxt directory in your application and generates types.
+description: Lệnh prepare tạo thư mục .nuxt trong ứng dụng của bạn và tạo các loại.
 links:
   - label: Source
     icon: i-simple-icons-github
@@ -14,14 +14,14 @@ npx nuxt prepare [ROOTDIR] [--dotenv] [--cwd=<directory>] [--logLevel=<silent|in
 ```
 <!--/prepare-cmd-->
 
-The `prepare` command creates a [`.nuxt`](/docs/guide/directory-structure/nuxt) directory in your application and generates types. This can be useful in a CI environment or as a `postinstall` command in your [`package.json`](/docs/guide/directory-structure/package).
+Lệnh `prepare` tạo thư mục [`.nuxt`](/docs/guide/directory-structure/nuxt) trong ứng dụng của bạn và tạo các loại. Điều này có thể hữu ích trong môi trường CI hoặc như lệnh `postinstall` trong [`package.json`](/docs/guide/directory-structure/package) của bạn.
 
 ## Arguments
 
 <!--prepare-args-->
 Argument | Description
 --- | ---
-`ROOTDIR="."` | Specifies the working directory (default: `.`)
+`ROOTDIR="."` | Chỉ định thư mục làm việc (mặc định: `.`)
 <!--/prepare-args-->
 
 ## Options
@@ -29,8 +29,8 @@ Argument | Description
 <!--prepare-opts-->
 Option | Default | Description
 --- | --- | ---
-`--dotenv` |  | Path to `.env` file to load, relative to the root directory
-`--cwd=<directory>` |  | Specify the working directory, this takes precedence over ROOTDIR (default: `.`)
-`--logLevel=<silent\|info\|verbose>` |  | Specify build-time log level
-`--envName` |  | The environment to use when resolving configuration overrides (default is `production` when building, and `development` when running the dev server)
+`--dotenv` |  | Đường dẫn đến tệp `.env` để tải, tương đối với thư mục gốc
+`--cwd=<directory>` |  | Chỉ định thư mục làm việc, điều này ưu tiên hơn ROOTDIR (mặc định: `.`)
+`--logLevel=<silent\|info\|verbose>` |  | Chỉ định cấp độ log thời gian xây dựng
+`--envName` |  | Môi trường để sử dụng khi giải quyết ghi đè cấu hình (mặc định là `production` khi xây dựng, và `development` khi chạy máy chủ dev)
 <!--/prepare-opts-->
