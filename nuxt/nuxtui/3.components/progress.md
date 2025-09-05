@@ -1,5 +1,5 @@
 ---
-description: An indicator showing the progress of a task.
+description: Một indicator showing the progress of a task.
 category: element
 links:
   - label: Progress
@@ -12,7 +12,7 @@ links:
 
 ## Usage
 
-Use the `v-model` directive to control the value of the Progress.
+Sử dụng directive `v-model` để kiểm soát value của Progress.
 
 ::component-code
 ---
@@ -25,7 +25,7 @@ props:
 
 ### Max
 
-Use the `max` prop to set the maximum value of the Progress.
+Sử dụng prop `max` để đặt maximum value của Progress.
 
 ::component-code
 ---
@@ -37,7 +37,7 @@ props:
 ---
 ::
 
-Use the `max` prop with an array of strings to display the active step under the bar, the maximum value of the Progress is the length of the array.
+Sử dụng prop `max` với một array of strings để hiển thị active step dưới bar, maximum value của Progress là length của array.
 
 ::component-code
 ---
@@ -59,7 +59,7 @@ props:
 
 ### Status
 
-Use the `status` prop to display the current Progress value above the bar.
+Sử dụng prop `status` để hiển thị current Progress value above the bar.
 
 ::component-code
 ---
@@ -73,7 +73,7 @@ props:
 
 ### Indeterminate
 
-When no `v-model` is set or the value is `null`, the Progress becomes _indeterminate_. The progress bar is animated as a `carousel`, but you can change it using the [`animation`](#animation) prop.
+Khi no `v-model` được set hoặc value là `null`, Progress trở thành _indeterminate_. Progress bar được animated như một `carousel`, nhưng bạn có thể thay đổi nó bằng prop [`animation`](#animation).
 
 ::component-code
 ---
@@ -86,7 +86,7 @@ props:
 
 ### Animation
 
-Use the `animation` prop to change the animation of the Progress to an inverse carousel, a swinging bar or an elastic bar. Defaults to `carousel`.
+Sử dụng prop `animation` để thay đổi animation của Progress thành inverse carousel, swinging bar hoặc elastic bar. Mặc định là `carousel`.
 
 ::component-code
 ---
@@ -97,7 +97,7 @@ props:
 
 ### Orientation
 
-Use the `orientation` prop to change the orientation of the Progress. Defaults to `horizontal`.
+Sử dụng prop `orientation` để thay đổi orientation của Progress. Mặc định là `horizontal`.
 
 ::component-code
 ---
@@ -111,7 +111,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the color of the Slider.
+Sử dụng prop `color` để thay đổi color của Slider.
 
 ::component-code
 ---
@@ -122,7 +122,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the Slider.
+Sử dụng prop `size` để thay đổi size của Slider.
 
 ::component-code
 ---
@@ -133,7 +133,7 @@ props:
 
 ### Inverted
 
-Use the `inverted` prop to visually invert the Progress.
+Sử dụng prop `inverted` để visually invert Progress.
 
 ::component-code
 ---

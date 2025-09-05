@@ -1,6 +1,6 @@
 ---
 title: SelectMenu
-description: An advanced searchable select element.
+description: Một phần tử select có thể tìm kiếm nâng cao.
 category: form
 links:
   - label: Combobox
@@ -13,19 +13,19 @@ links:
 
 ## Usage
 
-Use the `v-model` directive to control the value of the SelectMenu or the `default-value` prop to set the initial value when you do not need to control its state.
+Sử dụng directive `v-model` để kiểm soát giá trị của SelectMenu hoặc prop `default-value` để đặt giá trị ban đầu khi bạn không cần kiểm soát trạng thái của nó.
 
 ::tip
-Use this over a [`Select`](/components/select) to take advantage of Reka UI's [`Combobox`](https://reka-ui.com/docs/components/combobox) component that offers search capabilities and multiple selection.
+Sử dụng điều này thay vì [`Select`](/components/select) để tận dụng thành phần [`Combobox`](https://reka-ui.com/docs/components/combobox) của Reka UI cung cấp khả năng tìm kiếm và lựa chọn nhiều.
 ::
 
 ::note
-This component is similar to the [`InputMenu`](/components/input-menu) but it's using a Select instead of an Input with the search inside the menu.
+Thành phần này tương tự như [`InputMenu`](/components/input-menu) nhưng sử dụng Select thay vì Input với tìm kiếm bên trong menu.
 ::
 
 ### Items
 
-Use the `items` prop as an array of strings, numbers or booleans:
+Sử dụng prop `items` dưới dạng mảng các chuỗi, số hoặc boolean:
 
 ::component-code
 ---
@@ -48,7 +48,7 @@ props:
 ---
 ::
 
-You can also pass an array of objects with the following properties:
+Bạn cũng có thể truyền một mảng các đối tượng với các thuộc tính sau:
 
 - `label?: string`{lang="ts-type"}
 - [`type?: "label" | "separator" | "item"`{lang="ts-type"}](#with-items-type)
@@ -82,10 +82,10 @@ props:
 ::
 
 ::caution
-Unlike the [`Select`](/components/select) component, the SelectMenu expects the whole object to be passed to the `v-model` directive or the `default-value` prop by default.
+Không giống như thành phần [`Select`](/components/select), SelectMenu mong đợi toàn bộ đối tượng được truyền đến directive `v-model` hoặc prop `default-value` theo mặc định.
 ::
 
-You can also pass an array of arrays to the `items` prop to display separated groups of items.
+Bạn cũng có thể truyền một mảng các mảng để hiển thị các nhóm mục được phân tách.
 
 ::component-code
 ---
@@ -116,7 +116,7 @@ props:
 
 ### Value Key
 
-You can choose to bind a single property of the object rather than the whole object by using the `value-key` prop. Defaults to `undefined`.
+Bạn có thể chọn ràng buộc một thuộc tính duy nhất của đối tượng thay vì toàn bộ đối tượng bằng cách sử dụng prop `value-key`. Mặc định là `undefined`.
 
 ::component-code
 ---
@@ -147,7 +147,7 @@ props:
 
 ### Multiple
 
-Use the `multiple` prop to allow multiple selections, the selected items will be separated by a comma in the trigger.
+Sử dụng prop `multiple` để cho phép lựa chọn nhiều, các mục đã chọn sẽ được phân tách bằng dấu phẩy trong trigger.
 
 ::component-code
 ---
@@ -175,12 +175,12 @@ props:
 ::
 
 ::caution
-Ensure to pass an array to the `default-value` prop or the `v-model` directive.
+Đảm bảo truyền một mảng đến prop `default-value` hoặc directive `v-model`.
 ::
 
 ### Placeholder
 
-Use the `placeholder` prop to set a placeholder text.
+Sử dụng prop `placeholder` để đặt văn bản placeholder.
 
 ::component-code
 ---
@@ -203,9 +203,9 @@ props:
 
 ### Search Input
 
-Use the `search-input` prop to customize or hide the search input (with `false` value).
+Sử dụng prop `search-input` để tùy chỉnh hoặc ẩn input tìm kiếm (với giá trị `false`).
 
-You can pass any property from the [Input](/components/input) component to customize it.
+Bạn có thể truyền bất kỳ thuộc tính nào từ thành phần [Input](/components/input) để tùy chỉnh nó.
 
 ::component-code
 ---
@@ -239,12 +239,12 @@ props:
 ::
 
 ::tip
-You can set the `search-input` prop to `false` to hide the search input.
+Bạn có thể đặt prop `search-input` thành `false` để ẩn input tìm kiếm.
 ::
 
 ### Content
 
-Use the `content` prop to control how the SelectMenu content is rendered, like its `align` or `side` for example.
+Sử dụng prop `content` để kiểm soát cách nội dung SelectMenu được hiển thị, như `align` hoặc `side` của nó.
 
 ::component-code
 ---
@@ -283,7 +283,7 @@ props:
 
 ### Arrow
 
-Use the `arrow` prop to display an arrow on the SelectMenu.
+Sử dụng prop `arrow` để hiển thị mũi tên trên SelectMenu.
 
 ::component-code
 ---
@@ -310,7 +310,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the ring color when the SelectMenu is focused.
+Sử dụng prop `color` để thay đổi màu vòng khi SelectMenu được focus.
 
 ::component-code
 ---
@@ -336,12 +336,12 @@ props:
 ::
 
 ::note
-The `highlight` prop is used here to show the focus state. It's used internally when a validation error occurs.
+Prop `highlight` được sử dụng ở đây để hiển thị trạng thái focus. Nó được sử dụng nội bộ khi có lỗi xác thực.
 ::
 
 ### Variant
 
-Use the `variant` prop to change the variant of the SelectMenu.
+Sử dụng prop `variant` để thay đổi variant của SelectMenu.
 
 ::component-code
 ---
@@ -369,7 +369,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the SelectMenu.
+Sử dụng prop `size` để thay đổi kích thước của SelectMenu.
 
 ::component-code
 ---
@@ -395,7 +395,7 @@ props:
 
 ### Icon
 
-Use the `icon` prop to show an [Icon](/components/icon) inside the SelectMenu.
+Sử dụng prop `icon` để hiển thị một [Icon](/components/icon) bên trong SelectMenu.
 
 ::component-code
 ---
@@ -422,7 +422,7 @@ props:
 
 ### Trailing Icon
 
-Use the `trailing-icon` prop to customize the trailing [Icon](/components/icon). Defaults to `i-lucide-chevron-down`.
+Sử dụng prop `trailing-icon` để tùy chỉnh [Icon](/components/icon) trailing. Mặc định là `i-lucide-chevron-down`.
 
 ::component-code
 ---
@@ -450,18 +450,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.chevronDown` key.
+Bạn có thể tùy chỉnh icon này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.chevronDown`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.chevronDown` key.
+Bạn có thể tùy chỉnh icon này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.chevronDown`.
 :::
 ::
 
 ### Selected Icon
 
-Use the `selected-icon` prop to customize the icon when an item is selected. Defaults to `i-lucide-check`.
+Sử dụng prop `selected-icon` để tùy chỉnh icon khi một mục được chọn. Mặc định là `i-lucide-check`.
 
 ::component-code
 ---
@@ -489,18 +489,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.check` key.
+Bạn có thể tùy chỉnh icon này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.check`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.check` key.
+Bạn có thể tùy chỉnh icon này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.check`.
 :::
 ::
 
 ### Avatar
 
-Use the `avatar` prop to display an [Avatar](/components/avatar) inside the SelectMenu.
+Sử dụng prop `avatar` để hiển thị một [Avatar](/components/avatar) bên trong SelectMenu.
 
 ::component-code
 ---
@@ -528,7 +528,7 @@ props:
 
 ### Loading
 
-Use the `loading` prop to show a loading icon on the SelectMenu.
+Sử dụng prop `loading` để hiển thị icon loading trên SelectMenu.
 
 ::component-code
 ---
@@ -555,7 +555,7 @@ props:
 
 ### Loading Icon
 
-Use the `loading-icon` prop to customize the loading icon. Defaults to `i-lucide-loader-circle`.
+Sử dụng prop `loading-icon` để tùy chỉnh icon loading. Mặc định là `i-lucide-loader-circle`.
 
 ::component-code
 ---
@@ -583,18 +583,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh icon này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.loading`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh icon này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.loading`.
 :::
 ::
 
 ### Disabled
 
-Use the `disabled` prop to disable the SelectMenu.
+Sử dụng prop `disabled` để vô hiệu hóa SelectMenu.
 
 ::component-code
 ---
@@ -621,7 +621,7 @@ props:
 
 ### With items type
 
-You can use the `type` property with `separator` to display a separator between items or `label` to display a label.
+Bạn có thể sử dụng thuộc tính `type` với `separator` để hiển thị một separator giữa các mục hoặc `label` để hiển thị một label.
 
 ::component-code
 ---
@@ -657,7 +657,7 @@ props:
 
 ### With icon in items
 
-You can use the `icon` property to display an [Icon](/components/icon) inside the items.
+Bạn có thể sử dụng thuộc tính `icon` để hiển thị một [Icon](/components/icon) bên trong các mục.
 
 ::component-example
 ---
@@ -667,12 +667,12 @@ name: 'select-menu-items-icon-example'
 ::
 
 ::tip
-You can also use the `#leading` slot to display the selected icon.
+Bạn cũng có thể sử dụng slot `#leading` để hiển thị icon đã chọn.
 ::
 
 ### With avatar in items
 
-You can use the `avatar` property to display an [Avatar](/components/avatar) inside the items.
+Bạn có thể sử dụng thuộc tính `avatar` để hiển thị một [Avatar](/components/avatar) bên trong các mục.
 
 ::component-example
 ---
@@ -682,12 +682,12 @@ name: 'select-menu-items-avatar-example'
 ::
 
 ::tip
-You can also use the `#leading` slot to display the selected avatar.
+Bạn cũng có thể sử dụng slot `#leading` để hiển thị avatar đã chọn.
 ::
 
 ### With chip in items
 
-You can use the `chip` property to display a [Chip](/components/chip) inside the items.
+Bạn có thể sử dụng thuộc tính `chip` để hiển thị một [Chip](/components/chip) bên trong các mục.
 
 ::component-example
 ---
@@ -697,12 +697,12 @@ name: 'select-menu-items-chip-example'
 ::
 
 ::note
-In this example, the `#leading` slot is used to display the selected chip.
+Trong ví dụ này, slot `#leading` được sử dụng để hiển thị chip đã chọn.
 ::
 
 ### Control open state
 
-You can control the open state by using the `default-open` prop or the `v-model:open` directive.
+Bạn có thể kiểm soát trạng thái mở bằng cách sử dụng prop `default-open` hoặc directive `v-model:open`.
 
 ::component-example
 ---
@@ -711,12 +711,12 @@ name: 'select-menu-open-example'
 ::
 
 ::note
-In this example, leveraging [`defineShortcuts`](/composables/define-shortcuts), you can toggle the SelectMenu by pressing :kbd{value="O"}.
+Trong ví dụ này, tận dụng [`defineShortcuts`](/composables/define-shortcuts), bạn có thể chuyển đổi SelectMenu bằng cách nhấn :kbd{value="O"}.
 ::
 
 ### Control search term
 
-Use the `v-model:search-term` directive to control the search term.
+Sử dụng directive `v-model:search-term` để kiểm soát từ khóa tìm kiếm.
 
 ::component-example
 ---
@@ -726,7 +726,7 @@ name: 'select-menu-search-term-example'
 
 ### With rotating icon
 
-Here is an example with a rotating icon that indicates the open state of the SelectMenu.
+Đây là một ví dụ với icon xoay chỉ ra trạng thái mở của SelectMenu.
 
 ::component-example
 ---
@@ -736,7 +736,7 @@ name: 'select-menu-icon-example'
 
 ### With create item
 
-Use the `create-item` prop to enable users to add custom values that aren't in the predefined options.
+Sử dụng prop `create-item` để cho phép người dùng thêm giá trị tùy chỉnh không có trong các tùy chọn được định sẵn.
 
 ::component-example
 ---
@@ -746,16 +746,16 @@ name: 'select-menu-create-item-example'
 ::
 
 ::note
-The create option shows when no match is found by default. Set it to `always` to show it even when similar values exist.
+Tùy chọn tạo hiển thị khi không tìm thấy kết quả phù hợp theo mặc định. Đặt nó thành `always` để hiển thị ngay cả khi có giá trị tương tự tồn tại.
 ::
 
 ::tip{to="#emits"}
-Use the `@create` event to handle the creation of the item. You will receive the event and the item as arguments.
+Sử dụng sự kiện `@create` để xử lý việc tạo mục. Bạn sẽ nhận được sự kiện và mục dưới dạng đối số.
 ::
 
 ### With fetched items
 
-You can fetch items from an API and use them in the SelectMenu.
+Bạn có thể lấy các mục từ một API và sử dụng chúng trong SelectMenu.
 
 ::component-example
 ---
@@ -766,7 +766,7 @@ name: 'select-menu-fetch-example'
 
 ### With ignore filter
 
-Set the `ignore-filter` prop to `true` to disable the internal search and use your own search logic.
+Đặt prop `ignore-filter` thành `true` để vô hiệu hóa tìm kiếm nội bộ và sử dụng logic tìm kiếm của riêng bạn.
 
 ::component-example
 ---
@@ -776,12 +776,12 @@ name: 'select-menu-ignore-filter-example'
 ::
 
 ::note
-This example uses [`refDebounced`](https://vueuse.org/shared/refDebounced/#refdebounced) to debounce the API calls.
+Ví dụ này sử dụng [`refDebounced`](https://vueuse.org/shared/refDebounced/#refdebounced) để debounce các cuộc gọi API.
 ::
 
 ### With filter fields
 
-Use the `filter-fields` prop with an array of fields to filter on. Defaults to `[labelKey]`.
+Sử dụng prop `filter-fields` với một mảng các trường để lọc trên. Mặc định là `[labelKey]`.
 
 ::component-example
 ---
@@ -792,7 +792,7 @@ name: 'select-menu-filter-fields-example'
 
 ### With full content width
 
-You can expand the content to the full width of its items by using the `ui.content` key.
+Bạn có thể mở rộng nội dung đến chiều rộng đầy đủ của các mục của nó bằng cách sử dụng khóa `ui.content`.
 
 ::component-example
 ---
@@ -802,7 +802,7 @@ collapse: true
 ::
 
 ::tip
-You can also change the content width globally in your `app.config.ts`:
+Bạn cũng có thể thay đổi chiều rộng nội dung toàn cục trong `app.config.ts` của bạn:
 
 ```
 export default defineAppConfig({
@@ -819,7 +819,7 @@ export default defineAppConfig({
 
 ### As a CountryPicker
 
-This example demonstrates using the SelectMenu as a country picker with lazy loading - countries are only fetched when the menu is opened.
+Ví dụ này minh họa việc sử dụng SelectMenu làm country picker với lazy loading - các quốc gia chỉ được lấy khi menu được mở.
 
 ::component-example
 ---
@@ -846,7 +846,7 @@ name: 'select-menu-countries-example'
 
 ### Expose
 
-When accessing the component via a template ref, you can use the following:
+Khi truy cập thành phần qua template ref, bạn có thể sử dụng những thứ sau:
 
 | Name | Type |
 | ---- | ---- |

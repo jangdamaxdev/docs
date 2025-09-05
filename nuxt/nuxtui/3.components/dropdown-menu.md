@@ -13,11 +13,11 @@ links:
 
 ## Usage
 
-Use a [Button](/components/button) or any other component in the default slot of the DropdownMenu.
+Sử dụng một [Button](/components/button) hoặc bất kỳ thành phần nào khác trong slot mặc định của DropdownMenu.
 
 ### Items
 
-Use the `items` prop as an array of objects with the following properties:
+Sử dụng prop `items` dưới dạng một mảng các đối tượng với các thuộc tính sau:
 
 - `label?: string`{lang="ts-type"}
 - `icon?: string`{lang="ts-type"}
@@ -34,7 +34,7 @@ Use the `items` prop as an array of objects with the following properties:
 - `class?: any`{lang="ts-type"}
 - `ui?: { item?: ClassNameValue, label?: ClassNameValue, separator?: ClassNameValue, itemLeadingIcon?: ClassNameValue, itemLeadingAvatarSize?: ClassNameValue, itemLeadingAvatar?: ClassNameValue, itemLabel?: ClassNameValue, itemLabelExternalIcon?: ClassNameValue, itemTrailing?: ClassNameValue, itemTrailingIcon?: ClassNameValue, itemTrailingKbds?: ClassNameValue, itemTrailingKbdsSize?: ClassNameValue }`{lang="ts-type"}
 
-You can pass any property from the [Link](/components/link#props) component such as `to`, `target`, etc.
+Bạn có thể truyền bất kỳ thuộc tính nào từ thành phần [Link](/components/link#props) như `to`, `target`, v.v.
 
 ::component-code
 ---
@@ -107,16 +107,16 @@ slots:
 ::
 
 ::note
-You can also pass an array of arrays to the `items` prop to create separated groups of items.
+Bạn cũng có thể truyền một mảng các mảng cho prop `items` để tạo các nhóm mục được tách biệt.
 ::
 
 ::tip
-Each item can take a `children` array of objects with the same properties as the `items` prop to create a nested menu which can be controlled using the `open`, `defaultOpen` and `content` properties.
+Mỗi mục có thể nhận một mảng `children` các đối tượng với các thuộc tính giống như prop `items` để tạo một menu lồng nhau có thể được kiểm soát bằng các thuộc tính `open`, `defaultOpen` và `content`.
 ::
 
 ### Content
 
-Use the `content` prop to control how the DropdownMenu content is rendered, like its `align` or `side` for example.
+Sử dụng prop `content` để kiểm soát cách nội dung DropdownMenu được render, như `align` hoặc `side` của nó ví dụ.
 
 ::component-code
 ---
@@ -163,7 +163,7 @@ slots:
 
 ### Arrow
 
-Use the `arrow` prop to display an arrow on the DropdownMenu.
+Sử dụng prop `arrow` để hiển thị một mũi tên trên DropdownMenu.
 
 ::component-code
 ---
@@ -198,7 +198,7 @@ slots:
 
 ### Size
 
-Use the `size` prop to control the size of the DropdownMenu.
+Sử dụng prop `size` để kiểm soát kích thước của DropdownMenu.
 
 ::component-code
 ---
@@ -234,16 +234,16 @@ slots:
 ::
 
 ::warning
-The `size` prop will not be proxied to the Button, you need to set it yourself.
+Prop `size` sẽ không được ủy quyền cho Button, bạn cần đặt nó tự mình.
 ::
 
 ::note
-When using the same size, the DropdownMenu items will be perfectly aligned with the Button.
+Khi sử dụng cùng kích thước, các mục DropdownMenu sẽ được căn chỉnh hoàn hảo với Button.
 ::
 
 ### Disabled
 
-Use the `disabled` prop to disable the DropdownMenu.
+Sử dụng prop `disabled` để vô hiệu hóa DropdownMenu.
 
 ::component-code
 ---
@@ -279,7 +279,7 @@ slots:
 
 ### With checkbox items
 
-You can use the `type` property with `checkbox` and use the `checked` / `onUpdateChecked` properties to control the checked state of the item.
+Bạn có thể sử dụng thuộc tính `type` với `checkbox` và sử dụng các thuộc tính `checked` / `onUpdateChecked` để kiểm soát trạng thái đã kiểm tra của mục.
 
 ::component-example
 ---
@@ -289,12 +289,12 @@ name: 'dropdown-menu-checkbox-items-example'
 ::
 
 ::note
-To ensure reactivity for the `checked` state of items, it's recommended to wrap your `items` array inside a `computed`.
+Để đảm bảo tính phản ứng cho trạng thái `checked` của các mục, nên bọc mảng `items` của bạn bên trong một `computed`.
 ::
 
 ### With color items
 
-You can use the `color` property to highlight certain items with a color.
+Bạn có thể sử dụng thuộc tính `color` để làm nổi bật một số mục với một màu sắc.
 
 ::component-example
 ---
@@ -304,7 +304,7 @@ name: 'dropdown-menu-color-items-example'
 
 ### Control open state
 
-You can control the open state by using the `default-open` prop or the `v-model:open` directive.
+Bạn có thể kiểm soát trạng thái mở bằng cách sử dụng prop `default-open` hoặc directive `v-model:open`.
 
 ::component-example
 ---
@@ -313,14 +313,14 @@ name: 'dropdown-menu-open-example'
 ::
 
 ::note
-In this example, leveraging [`defineShortcuts`](/composables/define-shortcuts), you can toggle the DropdownMenu by pressing :kbd{value="O"}.
+Trong ví dụ này, tận dụng [`defineShortcuts`](/composables/define-shortcuts), bạn có thể chuyển đổi DropdownMenu bằng cách nhấn :kbd{value="O"}.
 ::
 
 ### With custom slot
 
-Use the `slot` property to customize a specific item.
+Sử dụng thuộc tính `slot` để tùy chỉnh một mục cụ thể.
 
-You will have access to the following slots:
+Bạn sẽ có quyền truy cập vào các slot sau:
 
 - `#{{ item.slot }}`{lang="ts-type"}
 - `#{{ item.slot }}-leading`{lang="ts-type"}
@@ -334,14 +334,14 @@ name: 'dropdown-menu-custom-slot-example'
 ::
 
 ::tip{to="#slots"}
-You can also use the `#item`, `#item-leading`, `#item-label` and `#item-trailing` slots to customize all items.
+Bạn cũng có thể sử dụng các slot `#item`, `#item-leading`, `#item-label` và `#item-trailing` để tùy chỉnh tất cả các mục.
 ::
 
 ### Extract shortcuts
 
-When you have some items with `kbds` property (displaying some [Kbd](/components/kbd)), you can easily make them work with the [defineShortcuts](/composables/define-shortcuts) composable.
+Khi bạn có một số mục với thuộc tính `kbds` (hiển thị một số [Kbd](/components/kbd)), bạn có thể dễ dàng làm cho chúng hoạt động với composable [defineShortcuts](/composables/define-shortcuts).
 
-Inside the `defineShortcuts` composable, there is an `extractShortcuts` utility that will extract the shortcuts recursively from the items and return an object that you can pass to `defineShortcuts`. It will automatically call the `select` function of the item when the shortcut is pressed.
+Bên trong composable `defineShortcuts`, có một tiện ích `extractShortcuts` sẽ trích xuất các phím tắt một cách đệ quy từ các mục và trả về một đối tượng mà bạn có thể truyền cho `defineShortcuts`. Nó sẽ tự động gọi hàm `select` của mục khi phím tắt được nhấn.
 
 ```vue
 <script setup lang="ts">
@@ -379,7 +379,7 @@ defineShortcuts(extractShortcuts(items))
 ```
 
 ::note
-In this example, :kbd{value="meta"} :kbd{value="E"}, :kbd{value="meta"} :kbd{value="I"} and :kbd{value="meta"} :kbd{value="N"} would trigger the `select` function of the corresponding item.
+Trong ví dụ này, :kbd{value="meta"} :kbd{value="E"}, :kbd{value="meta"} :kbd{value="I"} và :kbd{value="meta"} :kbd{value="N"} sẽ kích hoạt hàm `select` của mục tương ứng.
 ::
 
 ## API

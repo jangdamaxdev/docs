@@ -9,7 +9,7 @@ links:
 
 ## Usage
 
-Use the `v-model` directive to control the value of the Input.
+Sử dụng directive `v-model` để kiểm soát giá trị của Input.
 
 ::component-code
 ---
@@ -24,9 +24,9 @@ props:
 
 ### Type
 
-Use the `type` prop to change the input type. Defaults to `text`.
+Sử dụng prop `type` để thay đổi loại input. Mặc định là `text`.
 
-Some types have been implemented in their own components such as [Checkbox](/components/checkbox), [Radio](/components/radio-group), [InputNumber](/components/input-number) etc. and others have been styled like `file` for example.
+Một số loại đã được triển khai trong các thành phần riêng của chúng như [Checkbox](/components/checkbox), [Radio](/components/radio-group), [InputNumber](/components/input-number) v.v. và những loại khác đã được tạo kiểu như `file` ví dụ.
 
 ::component-code
 ---
@@ -43,12 +43,12 @@ props:
 ::
 
 ::callout{icon="i-simple-icons-mdnwebdocs" to="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types" target="_blank"}
-You can check all the available types on the MDN Web Docs.
+Bạn có thể kiểm tra tất cả các loại có sẵn trên MDN Web Docs.
 ::
 
 ### Placeholder
 
-Use the `placeholder` prop to set a placeholder text.
+Sử dụng prop `placeholder` để đặt văn bản placeholder.
 
 ::component-code
 ---
@@ -59,7 +59,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the ring color when the Input is focused.
+Sử dụng prop `color` để thay đổi màu vòng khi Input được focus.
 
 ::component-code
 ---
@@ -73,12 +73,12 @@ props:
 ::
 
 ::note
-The `highlight` prop is used here to show the focus state. It's used internally when a validation error occurs.
+Prop `highlight` được sử dụng ở đây để hiển thị trạng thái focus. Nó được sử dụng nội bộ khi xảy ra lỗi xác thực.
 ::
 
 ### Variant
 
-Use the `variant` prop to change the variant of the Input.
+Sử dụng prop `variant` để thay đổi biến thể của Input.
 
 ::component-code
 ---
@@ -94,7 +94,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the Input.
+Sử dụng prop `size` để thay đổi kích thước của Input.
 
 ::component-code
 ---
@@ -108,7 +108,7 @@ props:
 
 ### Icon
 
-Use the `icon` prop to show an [Icon](/components/icon) inside the Input.
+Sử dụng prop `icon` để hiển thị một [Icon](/components/icon) bên trong Input.
 
 ::component-code
 ---
@@ -123,7 +123,7 @@ props:
 ---
 ::
 
-Use the `leading` and `trailing` props to set the icon position or the `leading-icon` and `trailing-icon` props to set a different icon for each position.
+Sử dụng prop `leading` và `trailing` để đặt vị trí biểu tượng hoặc prop `leading-icon` và `trailing-icon` để đặt biểu tượng khác cho mỗi vị trí.
 
 ::component-code
 ---
@@ -139,7 +139,7 @@ props:
 
 ### Avatar
 
-Use the `avatar` prop to show an [Avatar](/components/avatar) inside the Input.
+Sử dụng prop `avatar` để hiển thị một [Avatar](/components/avatar) bên trong Input.
 
 ::component-code
 ---
@@ -157,7 +157,7 @@ props:
 
 ### Loading
 
-Use the `loading` prop to show a loading icon on the Input.
+Sử dụng prop `loading` để hiển thị biểu tượng loading trên Input.
 
 ::component-code
 ---
@@ -172,7 +172,7 @@ props:
 
 ### Loading Icon
 
-Use the `loading-icon` prop to customize the loading icon. Defaults to `i-lucide-loader-circle`.
+Sử dụng prop `loading-icon` để tùy chỉnh biểu tượng loading. Mặc định là `i-lucide-loader-circle`.
 
 ::component-code
 ---
@@ -188,18 +188,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.loading`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.loading`.
 :::
 ::
 
 ### Disabled
 
-Use the `disabled` prop to disable the Input.
+Sử dụng prop `disabled` để vô hiệu hóa Input.
 
 ::component-code
 ---
@@ -215,7 +215,7 @@ props:
 
 ### With clear button
 
-You can put a [Button](/components/button) inside the `#trailing` slot to clear the Input.
+Bạn có thể đặt một [Button](/components/button) bên trong slot `#trailing` để xóa Input.
 
 ::component-example
 ---
@@ -225,7 +225,7 @@ name: 'input-clear-button-example'
 
 ### With copy button
 
-You can put a [Button](/components/button) inside the `#trailing` slot to copy the value to the clipboard.
+Bạn có thể đặt một [Button](/components/button) bên trong slot `#trailing` để sao chép giá trị vào clipboard.
 
 ::component-example
 ---
@@ -235,7 +235,7 @@ name: 'input-copy-button-example'
 
 ### With password toggle
 
-You can put a [Button](/components/button) inside the `#trailing` slot to toggle the password visibility.
+Bạn có thể đặt một [Button](/components/button) bên trong slot `#trailing` để chuyển đổi khả năng hiển thị mật khẩu.
 
 ::component-example
 ---
@@ -245,7 +245,7 @@ name: 'input-password-toggle-example'
 
 ### With password strength indicator
 
-You can use the [Progress](/components/progress) component to display the password strength indicator.
+Bạn có thể sử dụng thành phần [Progress](/components/progress) để hiển thị chỉ báo độ mạnh mật khẩu.
 
 ::component-example
 ---
@@ -256,7 +256,7 @@ name: 'input-password-strength-indicator-example'
 
 ### With character limit
 
-You can use the `#trailing` slot to add a character limit to the Input.
+Bạn có thể sử dụng slot `#trailing` để thêm giới hạn ký tự cho Input.
 
 ::component-example
 ---
@@ -266,7 +266,7 @@ name: 'input-character-limit-example'
 
 ### With keyboard shortcut
 
-You can use the [Kbd](/components/kbd) component inside the `#trailing` slot to add a keyboard shortcut to the Input.
+Bạn có thể sử dụng thành phần [Kbd](/components/kbd) bên trong slot `#trailing` để thêm phím tắt bàn phím cho Input.
 
 ::component-example
 ---
@@ -275,12 +275,12 @@ name: 'input-kbd-example'
 ::
 
 ::note{to="/composables/define-shortcuts"}
-This example uses the `defineShortcuts` composable to focus the Input when the :kbd{value="/"} key is pressed.
+Ví dụ này sử dụng composable `defineShortcuts` để focus Input khi phím :kbd{value="/"} được nhấn.
 ::
 
 ### With mask
 
-There's no built-in support for masks, but you can use libraries like [maska](https://github.com/beholdr/maska) to mask the Input.
+Không có hỗ trợ tích hợp cho mặt nạ, nhưng bạn có thể sử dụng các thư viện như [maska](https://github.com/beholdr/maska) để che Input.
 
 ::component-example
 ---
@@ -290,7 +290,7 @@ name: 'input-mask-example'
 
 ### With floating label
 
-You can use the `#default` slot to add a floating label to the Input.
+Bạn có thể sử dụng slot `#default` để thêm nhãn nổi cho Input.
 
 ::component-example
 ---
@@ -300,7 +300,7 @@ name: 'input-floating-label-example'
 
 ### Within a FormField
 
-You can use the Input within a [FormField](/components/form-field) component to display a label, help text, required indicator, etc.
+Bạn có thể sử dụng Input trong thành phần [FormField](/components/form-field) để hiển thị nhãn, văn bản trợ giúp, chỉ báo bắt buộc, v.v.
 
 ::component-example
 ---
@@ -309,12 +309,12 @@ name: 'input-form-field-example'
 ::
 
 ::tip{to="/components/form"}
-It also provides validation and error handling when used within a **Form** component.
+Nó cũng cung cấp xác thực và xử lý lỗi khi được sử dụng trong thành phần **Form**.
 ::
 
 ### Within a ButtonGroup
 
-You can use the Input within a [ButtonGroup](/components/button-group) component to group multiple elements together.
+Bạn có thể sử dụng Input trong thành phần [ButtonGroup](/components/button-group) để nhóm nhiều phần tử lại với nhau.
 
 ::component-example
 ---

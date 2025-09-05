@@ -1,6 +1,6 @@
 ---
 title: RadioGroup
-description: A set of radio buttons to select a single option from a list.
+description: Một set of radio buttons để select a single option từ a list.
 category: form
 links:
   - label: RadioGroup
@@ -13,11 +13,11 @@ links:
 
 ## Usage
 
-Use the `v-model` directive to control the value of the RadioGroup or the `default-value` prop to set the initial value when you do not need to control its state.
+Sử dụng directive `v-model` để kiểm soát value của RadioGroup hoặc prop `default-value` để đặt initial value khi bạn không cần kiểm soát state của nó.
 
 ### Items
 
-Use the `items` prop as an array of strings or numbers:
+Sử dụng prop `items` như một mảng of strings hoặc numbers:
 
 ::component-code
 ---
@@ -40,7 +40,7 @@ props:
 ---
 ::
 
-You can also pass an array of objects with the following properties:
+Bạn cũng có thể truyền một mảng of objects với các thuộc tính sau:
 
 - `label?: string`{lang="ts-type"}
 - `description?: string`{lang="ts-type"}
@@ -76,12 +76,12 @@ props:
 ::
 
 ::caution
-When using objects, you need to reference the `value` property of the object in the `v-model` directive or the `default-value` prop.
+Khi sử dụng objects, bạn cần reference thuộc tính `value` của object trong directive `v-model` hoặc prop `default-value`.
 ::
 
 ### Value Key
 
-You can change the property that is used to set the value by using the `value-key` prop. Defaults to `value`.
+Bạn có thể thay đổi property được sử dụng để set value bằng cách sử dụng prop `value-key`. Mặc định là `value`.
 
 ::component-code
 ---
@@ -113,7 +113,7 @@ props:
 
 ### Legend
 
-Use the `legend` prop to set the legend of the RadioGroup.
+Sử dụng prop `legend` để đặt legend của RadioGroup.
 
 ::component-code
 ---
@@ -137,7 +137,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the color of the RadioGroup.
+Sử dụng prop `color` để thay đổi color của RadioGroup.
 
 ::component-code
 ---
@@ -161,7 +161,7 @@ props:
 
 ### Variant
 
-Use the `variant` prop to change the variant of the RadioGroup.
+Sử dụng prop `variant` để thay đổi variant của RadioGroup.
 
 ::component-code
 ---
@@ -192,7 +192,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the RadioGroup.
+Sử dụng prop `size` để thay đổi size của RadioGroup.
 
 ::component-code
 ---
@@ -217,7 +217,7 @@ props:
 
 ### Orientation
 
-Use the `orientation` prop to change the orientation of the RadioGroup. Defaults to `vertical`.
+Sử dụng prop `orientation` để thay đổi orientation của RadioGroup. Mặc định là `vertical`.
 
 ::component-code
 ---
@@ -242,7 +242,7 @@ props:
 
 ### Indicator
 
-Use the `indicator` prop to change the position or hide the indicator. Defaults to `start`.
+Sử dụng prop `indicator` để thay đổi position hoặc hide indicator. Mặc định là `start`.
 
 ::component-code
 ---
@@ -267,7 +267,7 @@ props:
 
 ### Disabled
 
-Use the `disabled` prop to disable the RadioGroup.
+Sử dụng prop `disabled` để disable RadioGroup.
 
 ::component-code
 ---

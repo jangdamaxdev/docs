@@ -1,5 +1,5 @@
 ---
-description: An input element to toggle between checked and unchecked states.
+description: Một phần tử đầu vào để chuyển đổi giữa các trạng thái đã kiểm tra và chưa kiểm tra.
 category: form
 links:
   - label: Checkbox
@@ -12,7 +12,7 @@ links:
 
 ## Usage
 
-Use the `v-model` directive to control the checked state of the Checkbox.
+Sử dụng chỉ thị `v-model` để kiểm soát trạng thái đã kiểm tra của Checkbox.
 
 ::component-code
 ---
@@ -25,7 +25,7 @@ props:
 ---
 ::
 
-Use the `default-value` prop to set the initial value when you do not need to control its state.
+Sử dụng prop `default-value` để đặt giá trị ban đầu khi bạn không cần kiểm soát trạng thái của nó.
 
 ::component-code
 ---
@@ -38,7 +38,7 @@ props:
 
 ### Indeterminate
 
-Use the `indeterminate` value in the `v-model` directive or `default-value` prop to set the Checkbox to an [indeterminate state](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate_state_checkboxes).
+Sử dụng giá trị `indeterminate` trong chỉ thị `v-model` hoặc prop `default-value` để đặt Checkbox ở trạng thái không xác định.
 
 ::component-code
 ---
@@ -51,7 +51,7 @@ props:
 
 ### Indeterminate Icon
 
-Use the `indeterminate-icon` prop to customize the indeterminate icon. Defaults to `i-lucide-minus`.
+Sử dụng prop `indeterminate-icon` để tùy chỉnh biểu tượng không xác định. Mặc định là `i-lucide-minus`.
 
 ::component-code
 ---
@@ -66,18 +66,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.minus` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.minus`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.minus` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.minus`.
 :::
 ::
 
 ### Label
 
-Use the `label` prop to set the label of the Checkbox.
+Sử dụng prop `label` để đặt nhãn của Checkbox.
 
 ::component-code
 ---
@@ -86,7 +86,7 @@ props:
 ---
 ::
 
-When using the `required` prop, an asterisk is added next to the label.
+Khi sử dụng prop `required`, một dấu hoa thị được thêm bên cạnh nhãn.
 
 ::component-code
 ---
@@ -100,7 +100,7 @@ props:
 
 ### Description
 
-Use the `description` prop to set the description of the Checkbox.
+Sử dụng prop `description` để đặt mô tả của Checkbox.
 
 ::component-code
 ---
@@ -114,7 +114,7 @@ props:
 
 ### Icon
 
-Use the `icon` prop to set the icon of the Checkbox when it is checked. Defaults to `i-lucide-check`.
+Sử dụng prop `icon` để đặt biểu tượng của Checkbox khi nó được kiểm tra. Mặc định là `i-lucide-check`.
 
 ::component-code
 ---
@@ -131,18 +131,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.check` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.check`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.check` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.check`.
 :::
 ::
 
 ### Color
 
-Use the `color` prop to change the color of the Checkbox.
+Sử dụng prop `color` để thay đổi màu sắc của Checkbox.
 
 ::component-code
 ---
@@ -158,7 +158,7 @@ props:
 
 ### Variant
 
-Use the `variant` prop to change the variant of the Checkbox.
+Sử dụng prop `variant` để thay đổi biến thể của Checkbox.
 
 ::component-code
 ---
@@ -175,7 +175,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the Checkbox.
+Sử dụng prop `size` để thay đổi kích thước của Checkbox.
 
 ::component-code
 ---
@@ -192,7 +192,7 @@ props:
 
 ### Indicator
 
-Use the `indicator` prop to change the position or hide the indicator. Defaults to `start`.
+Sử dụng prop `indicator` để thay đổi vị trí hoặc ẩn chỉ báo. Mặc định là `start`.
 
 ::component-code
 ---
@@ -209,7 +209,7 @@ props:
 
 ### Disabled
 
-Use the `disabled` prop to disable the Checkbox.
+Sử dụng prop `disabled` để vô hiệu hóa Checkbox.
 
 ::component-code
 ---

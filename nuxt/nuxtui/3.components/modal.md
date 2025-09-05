@@ -1,5 +1,5 @@
 ---
-description: A dialog window that can be used to display a message or request user input.
+description: Một cửa sổ dialog có thể được sử dụng để hiển thị một thông điệp hoặc yêu cầu đầu vào từ người dùng.
 category: overlay
 links:
   - label: Dialog
@@ -12,9 +12,9 @@ links:
 
 ## Usage
 
-Use a [Button](/components/button) or any other component in the default slot of the Modal.
+Sử dụng một [Button](/components/button) hoặc bất kỳ component nào khác trong slot mặc định của Modal.
 
-Then, use the `#content` slot to add the content displayed when the Modal is open.
+Sau đó, sử dụng slot `#content` để thêm nội dung được hiển thị khi Modal mở.
 
 ::component-code
 ---
@@ -35,11 +35,11 @@ slots:
 :placeholder{class="h-48 m-4"}
 ::
 
-You can also use the `#header`{lang="ts-type"}, `#body`{lang="ts-type"} and `#footer`{lang="ts-type"} slots to customize the Modal's content.
+Bạn cũng có thể sử dụng các slot `#header`{lang="ts-type"}, `#body`{lang="ts-type"} và `#footer`{lang="ts-type"} để tùy chỉnh nội dung của Modal.
 
 ### Title
 
-Use the `title` prop to set the title of the Modal's header.
+Sử dụng prop `title` để đặt tiêu đề của header Modal.
 
 ::component-code
 ---
@@ -64,7 +64,7 @@ slots:
 
 ### Description
 
-Use the `description` prop to set the description of the Modal's header.
+Sử dụng prop `description` để đặt mô tả của header Modal.
 
 ::component-code
 ---
@@ -92,9 +92,9 @@ slots:
 
 ### Close
 
-Use the `close` prop to customize or hide the close button (with `false` value) displayed in the Modal's header.
+Sử dụng prop `close` để tùy chỉnh hoặc ẩn nút đóng (với giá trị `false`) được hiển thị trong header Modal.
 
-You can pass any property from the [Button](/components/button) component to customize it.
+Bạn có thể truyền bất kỳ thuộc tính nào từ component [Button](/components/button) để tùy chỉnh nó.
 
 ::component-code
 ---
@@ -126,12 +126,12 @@ slots:
 ::
 
 ::tip
-The close button is not displayed if the `#content` slot is used as it's a part of the header.
+Nút đóng không được hiển thị nếu slot `#content` được sử dụng vì nó là một phần của header.
 ::
 
 ### Close Icon
 
-Use the `close-icon` prop to customize the close button [Icon](/components/icon). Defaults to `i-lucide-x`.
+Sử dụng prop `close-icon` để tùy chỉnh [Icon](/components/icon) của nút đóng. Mặc định là `i-lucide-x`.
 
 ::component-code
 ---
@@ -160,18 +160,18 @@ slots:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.close` key.
+Bạn có thể tùy chỉnh icon này toàn cục trong `app.config.ts` dưới key `ui.icons.close`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.close` key.
+Bạn có thể tùy chỉnh icon này toàn cục trong `vite.config.ts` dưới key `ui.icons.close`.
 :::
 ::
 
 ### Overlay
 
-Use the `overlay` prop to control whether the Modal has an overlay or not. Defaults to `true`.
+Sử dụng prop `overlay` để kiểm soát xem Modal có overlay hay không. Mặc định là `true`.
 
 ::component-code
 ---
@@ -199,7 +199,7 @@ slots:
 
 ### Transition
 
-Use the `transition` prop to control whether the Modal is animated or not. Defaults to `true`.
+Sử dụng prop `transition` để kiểm soát xem Modal có được animate hay không. Mặc định là `true`.
 
 ::component-code
 ---
@@ -227,7 +227,7 @@ slots:
 
 ### Fullscreen
 
-Use the `fullscreen` prop to make the Modal fullscreen.
+Sử dụng prop `fullscreen` để làm cho Modal fullscreen.
 
 ::component-code
 ---
@@ -258,7 +258,7 @@ slots:
 
 ### Control open state
 
-You can control the open state by using the `default-open` prop or the `v-model:open` directive.
+Bạn có thể kiểm soát trạng thái mở bằng cách sử dụng prop `default-open` hoặc directive `v-model:open`.
 
 ::component-example
 ---
@@ -267,16 +267,16 @@ name: 'modal-open-example'
 ::
 
 ::note
-In this example, leveraging [`defineShortcuts`](/composables/define-shortcuts), you can toggle the Modal by pressing :kbd{value="O"}.
+Trong ví dụ này, tận dụng [`defineShortcuts`](/composables/define-shortcuts), bạn có thể toggle Modal bằng cách nhấn :kbd{value="O"}.
 ::
 
 ::tip
-This allows you to move the trigger outside of the Modal or remove it entirely.
+Điều này cho phép bạn di chuyển trigger bên ngoài Modal hoặc loại bỏ nó hoàn toàn.
 ::
 
 ### Disable dismissal
 
-Set the `dismissible` prop to `false` to prevent the Modal from being closed when clicking outside of it or pressing escape. A `close:prevent` event will be emitted when the user tries to close it.
+Đặt prop `dismissible` thành `false` để ngăn Modal bị đóng khi click bên ngoài hoặc nhấn escape. Sự kiện `close:prevent` sẽ được emit khi người dùng cố gắng đóng nó.
 
 ::component-code
 ---
@@ -305,13 +305,13 @@ slots:
 
 ### Programmatic usage
 
-You can use the [`useOverlay`](/composables/use-overlay) composable to open a Modal programmatically.
+Bạn có thể sử dụng composable [`useOverlay`](/composables/use-overlay) để mở Modal theo chương trình.
 
 ::warning
-Make sure to wrap your app with the [`App`](/components/app) component which uses the [`OverlayProvider`](https://github.com/nuxt/ui/blob/v3/src/runtime/components/OverlayProvider.vue) component.
+Đảm bảo wrap app của bạn với component [`App`](/components/app) sử dụng component [`OverlayProvider`](https://github.com/nuxt/ui/blob/v3/src/runtime/components/OverlayProvider.vue).
 ::
 
-First, create a modal component that will be opened programmatically:
+Đầu tiên, tạo một component modal sẽ được mở theo chương trình:
 
 ::component-example
 ---
@@ -322,10 +322,10 @@ preview: false
 ::
 
 ::note
-We are emitting a `close` event when the modal is closed or dismissed here. You can emit any data through the `close` event, however, the event must be emitted in order to capture the return value.
+Chúng tôi đang emit sự kiện `close` khi modal bị đóng hoặc dismissed ở đây. Bạn có thể emit bất kỳ dữ liệu nào thông qua sự kiện `close`, tuy nhiên, sự kiện phải được emit để capture giá trị trả về.
 ::
 
-Then, use it in your app:
+Sau đó, sử dụng nó trong app của bạn:
 
 ::component-example
 ---
@@ -334,12 +334,12 @@ name: 'modal-programmatic-example'
 ::
 
 ::tip
-You can close the modal within the modal component by emitting `emit('close')`.
+Bạn có thể đóng modal trong component modal bằng cách emit `emit('close')`.
 ::
 
 ### Nested modals
 
-You can nest modals within each other.
+Bạn có thể lồng các modal trong nhau.
 
 ::component-example
 ---
@@ -349,7 +349,7 @@ name: 'modal-nested-example'
 
 ### With footer slot
 
-Use the `#footer` slot to add content after the Modal's body.
+Sử dụng slot `#footer` để thêm nội dung sau body của Modal.
 
 ::component-example
 ---
@@ -359,7 +359,7 @@ name: 'modal-footer-slot-example'
 
 ### With command palette
 
-You can use a [CommandPalette](/components/command-palette) component inside the Modal's content.
+Bạn có thể sử dụng component [CommandPalette](/components/command-palette) bên trong nội dung của Modal.
 
 ::component-example
 ---

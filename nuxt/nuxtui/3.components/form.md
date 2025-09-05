@@ -9,19 +9,19 @@ links:
 
 ## Usage
 
-Use the Form component to validate form data using validation libraries such as [Valibot](https://github.com/fabian-hiller/valibot), [Zod](https://github.com/colinhacks/zod), [Yup](https://github.com/jquense/yup), [Joi](https://github.com/hapijs/joi), [Superstruct](https://github.com/ianstormtaylor/superstruct) or your own validation logic.
+Sử dụng thành phần Form để xác thực dữ liệu form bằng cách sử dụng các thư viện xác thực như [Valibot](https://github.com/fabian-hiller/valibot), [Zod](https://github.com/colinhacks/zod), [Yup](https://github.com/jquense/yup), [Joi](https://github.com/hapijs/joi), [Superstruct](https://github.com/ianstormtaylor/superstruct) hoặc logic xác thực của riêng bạn.
 
-It works with the [FormField](/components/form-field) component to display error messages around form elements automatically.
+Nó hoạt động với thành phần [FormField](/components/form-field) để hiển thị thông báo lỗi xung quanh các phần tử form tự động.
 
 ### Schema Validation
 
-It requires two props:
+Nó yêu cầu hai prop:
 
-- `state` - a reactive object holding the form's state.
-- `schema` - any [Standard Schema](https://standardschema.dev/) or a schema from [Yup](https://github.com/jquense/yup), [Joi](https://github.com/hapijs/joi) or [Superstruct](https://github.com/ianstormtaylor/superstruct).
+- `state` - một đối tượng reactive chứa trạng thái của form.
+- `schema` - bất kỳ [Standard Schema](https://standardschema.dev/) nào hoặc một schema từ [Yup](https://github.com/jquense/yup), [Joi](https://github.com/hapijs/joi) hoặc [Superstruct](https://github.com/ianstormtaylor/superstruct).
 
 ::warning
-**No validation library is included** by default, ensure you **install the one you need**.
+**Không có thư viện xác thực nào được bao gồm** theo mặc định, đảm bảo bạn **cài đặt thư viện bạn cần**.
 ::
 
 ::tabs{class="gap-0"}
@@ -66,21 +66,21 @@ It requires two props:
   ::
 ::
 
-Errors are reported directly to the [FormField](/components/form-field) component based on the `name` or `error-pattern` prop. This means the validation rules defined for the `email` attribute in your schema will be applied to `<FormField name="email">`{lang="vue"}.
+Lỗi được báo cáo trực tiếp cho thành phần [FormField](/components/form-field) dựa trên prop `name` hoặc `error-pattern`. Điều này có nghĩa là các quy tắc xác thực được định nghĩa cho thuộc tính `email` trong schema của bạn sẽ được áp dụng cho `<FormField name="email">`{lang="vue"}.
 
-Nested validation rules are handled using dot notation. For example, a rule like `{ user: z.object({ email: z.string() }) }`{lang="ts"} will be applied to `<FormField name="user.email">`{lang="vue"}.
+Các quy tắc xác thực lồng nhau được xử lý bằng cách sử dụng ký hiệu chấm. Ví dụ, một quy tắc như `{ user: z.object({ email: z.string() }) }`{lang="ts"} sẽ được áp dụng cho `<FormField name="user.email">`{lang="vue"}.
 
 ### Custom Validation
 
-Use the `validate` prop to apply your own validation logic.
+Sử dụng prop `validate` để áp dụng logic xác thực của riêng bạn.
 
-The validation function must return a list of errors with the following attributes:
+Hàm xác thực phải trả về một danh sách lỗi với các thuộc tính sau:
 
-- `message` - the error message to display.
-- `name` - the `name` of the `FormField` to send the error to.
+- `message` - thông báo lỗi để hiển thị.
+- `name` - `name` của `FormField` để gửi lỗi đến.
 
 ::tip
-It can be used alongside the `schema` prop to handle complex use cases.
+Nó có thể được sử dụng cùng với prop `schema` để xử lý các trường hợp phức tạp.
 ::
 
 ::component-example
@@ -93,16 +93,16 @@ props:
 
 ### Input Events
 
-The Form component automatically triggers validation when an input emits an `input`, `change`, or `blur` event.
+Thành phần Form tự động kích hoạt xác thực khi một input phát ra sự kiện `input`, `change`, hoặc `blur`.
 
-- Validation on `input` occurs **as you type**.
-- Validation on `change` occurs when you **commit to a value**.
-- Validation on `blur` happens when an input **loses focus**.
+- Xác thực trên `input` xảy ra **khi bạn gõ**.
+- Xác thực trên `change` xảy ra khi bạn **cam kết với một giá trị**.
+- Xác thực trên `blur` xảy ra khi một input **mất focus**.
 
-You can control when validation happens this using the `validate-on` prop.
+Bạn có thể kiểm soát khi nào xác thực xảy ra bằng cách sử dụng prop `validate-on`.
 
 ::tip
-The form always validates on submit.
+Form luôn xác thực khi submit.
 ::
 
 ::component-example{label="Default"}
@@ -125,18 +125,18 @@ options:
 ::
 
 ::tip
-You can use the [`useFormField`](/composables/use-form-field) composable to implement this inside your own components.
+Bạn có thể sử dụng composable [`useFormField`](/composables/use-form-field) để triển khai điều này bên trong các thành phần của riêng bạn.
 ::
 
 ### Error Event
 
-You can listen to the `@error` event to handle errors. This event is triggered when the form is submitted and contains an array of `FormError` objects with the following fields:
+Bạn có thể lắng nghe sự kiện `@error` để xử lý lỗi. Sự kiện này được kích hoạt khi form được submit và chứa một mảng các đối tượng `FormError` với các trường sau:
 
-- `id` - the input's `id`.
-- `name` - the `name` of the `FormField`
-- `message` - the error message to display.
+- `id` - `id` của input.
+- `name` - `name` của `FormField`
+- `message` - thông báo lỗi để hiển thị.
 
-Here's an example that focuses the first input element with an error after the form is submitted:
+Đây là một ví dụ tập trung vào phần tử input đầu tiên có lỗi sau khi form được submit:
 
 ::component-example
 ---
@@ -149,9 +149,9 @@ props:
 
 ### Nesting Forms
 
-Nesting form components allows you to manage complex data structures, such as lists or conditional fields, more efficiently.
+Lồng các thành phần form cho phép bạn quản lý các cấu trúc dữ liệu phức tạp, chẳng hạn như danh sách hoặc các trường có điều kiện, hiệu quả hơn.
 
-For example, it can be used to dynamically add fields based on user's input:
+Ví dụ, nó có thể được sử dụng để thêm động các trường dựa trên input của người dùng:
 ::component-example
 ---
 collapse: true
@@ -159,7 +159,7 @@ name: 'form-example-nested'
 ---
 ::
 
-Or to validate list inputs:
+Hoặc để xác thực các input danh sách:
 ::component-example
 ---
 collapse: true

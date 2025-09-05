@@ -13,7 +13,7 @@ links:
 
 ## Usage
 
-Use the `v-model` directive to control the value of the InputTags.
+Sử dụng directive `v-model` để kiểm soát giá trị của InputTags.
 
 ::component-code
 ---
@@ -27,7 +27,7 @@ props:
 ---
 ::
 
-Use the `default-value` prop to set the initial value when you do not need to control its state.
+Sử dụng prop `default-value` để đặt giá trị ban đầu khi bạn không cần kiểm soát trạng thái của nó.
 
 ::component-code
 ---
@@ -41,7 +41,7 @@ props:
 
 ### Placeholder
 
-Use the `placeholder` prop to set a placeholder text.
+Sử dụng prop `placeholder` để đặt văn bản placeholder.
 
 ::component-code
 ---
@@ -52,7 +52,7 @@ props:
 
 ### Max Length :badge{label="New" class="align-text-top"}
 
-Use the `max-length` prop to set the maximum number of characters allowed in a tag.
+Sử dụng prop `max-length` để đặt số ký tự tối đa được phép trong một thẻ.
 
 ::component-code
 ---
@@ -63,7 +63,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the ring color when the InputTags is focused.
+Sử dụng prop `color` để thay đổi màu vòng khi InputTags được focus.
 
 ::component-code
 ---
@@ -80,12 +80,12 @@ props:
 ::
 
 ::note
-The `highlight` prop is used here to show the focus state. It's used internally when a validation error occurs.
+Prop `highlight` được sử dụng ở đây để hiển thị trạng thái focus. Nó được sử dụng nội bộ khi xảy ra lỗi xác thực.
 ::
 
 ### Variants
 
-Use the `variant` prop to change the appearance of the InputTags.
+Sử dụng prop `variant` để thay đổi giao diện của InputTags.
 
 ::component-code
 ---
@@ -104,7 +104,7 @@ props:
 
 ### Sizes
 
-Use the `size` prop to adjust the size of the InputTags.
+Sử dụng prop `size` để điều chỉnh kích thước của InputTags.
 
 ::component-code
 ---
@@ -121,7 +121,7 @@ props:
 
 ### Icon
 
-Use the `icon` prop to show an [Icon](/components/icon) inside the InputTags.
+Sử dụng prop `icon` để hiển thị một [Icon](/components/icon) bên trong InputTags.
 
 ::component-code
 ---
@@ -139,12 +139,12 @@ props:
 ::
 
 ::note
-Use the `leading` and `trailing` props to set the icon position or the `leading-icon` and `trailing-icon` props to set a different icon for each position.
+Sử dụng prop `leading` và `trailing` để đặt vị trí biểu tượng hoặc prop `leading-icon` và `trailing-icon` để đặt biểu tượng khác cho mỗi vị trí.
 ::
 
 ### Avatar
 
-Use the `avatar` prop to show an [Avatar](/components/avatar) inside the InputTags.
+Sử dụng prop `avatar` để hiển thị một [Avatar](/components/avatar) bên trong InputTags.
 
 ::component-code
 ---
@@ -164,7 +164,7 @@ props:
 
 ### Delete Icon
 
-Use the `delete-icon` prop to customize the delete [Icon](/components/icon) in the tags. Defaults to `i-lucide-x`.
+Sử dụng prop `delete-icon` để tùy chỉnh [Icon](/components/icon) xóa trong các thẻ. Mặc định là `i-lucide-x`.
 
 ::component-code
 ---
@@ -182,18 +182,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.close` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.close`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.close` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.close`.
 :::
 ::
 
 ### Loading
 
-Use the `loading` prop to show a loading icon on the InputTags.
+Sử dụng prop `loading` để hiển thị biểu tượng loading trên InputTags.
 
 ::component-code
 ---
@@ -211,7 +211,7 @@ props:
 
 ### Loading Icon
 
-Use the `loading-icon` prop to customize the loading icon. Defaults to `i-lucide-loader-circle`.
+Sử dụng prop `loading-icon` để tùy chỉnh biểu tượng loading. Mặc định là `i-lucide-loader-circle`.
 
 ::component-code
 ---
@@ -230,18 +230,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.loading`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.loading`.
 :::
 ::
 
 ### Disabled
 
-Use the `disabled` prop to disable the InputTags.
+Sử dụng prop `disabled` để vô hiệu hóa InputTags.
 
 ::component-code
 ---
@@ -260,7 +260,7 @@ props:
 
 ### Within a FormField
 
-You can use the InputTags within a [FormField](/components/form-field) component to display a label, help text, required indicator, etc.
+Bạn có thể sử dụng InputTags trong thành phần [FormField](/components/form-field) để hiển thị nhãn, văn bản trợ giúp, chỉ báo bắt buộc, v.v.
 
 ::component-example
 ---

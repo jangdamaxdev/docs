@@ -1,5 +1,5 @@
 ---
-description: Separates content horizontally or vertically.
+description: Phân tách nội dung theo chiều ngang hoặc dọc.
 category: layout
 links:
   - label: Separator
@@ -12,7 +12,7 @@ links:
 
 ## Usage
 
-Use the Separator component as-is to separate content.
+Sử dụng Separator component as-is để phân tách nội dung.
 
 ::component-code
 ---
@@ -22,7 +22,7 @@ class: 'p-8'
 
 ### Orientation
 
-Use the `orientation` prop to change the orientation of the Separator. Defaults to `horizontal`.
+Sử dụng prop `orientation` để thay đổi hướng của Separator. Mặc định là `horizontal`.
 
 ::component-code
 ---
@@ -37,7 +37,7 @@ props:
 
 ### Label
 
-Use the `label` prop to display a label in the middle of the Separator.
+Sử dụng prop `label` để hiển thị một label ở giữa Separator.
 
 ::component-code
 ---
@@ -49,7 +49,7 @@ props:
 
 ### Icon
 
-Use the `icon` prop to display an icon in the middle of the Separator.
+Sử dụng prop `icon` để hiển thị một icon ở giữa Separator.
 
 ::component-code
 ---
@@ -61,7 +61,7 @@ props:
 
 ### Avatar
 
-Use the `avatar` prop to display an avatar in the middle of the Separator.
+Sử dụng prop `avatar` để hiển thị một avatar ở giữa Separator.
 
 ::component-code
 ---
@@ -75,7 +75,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the color of the Separator. Defaults to `neutral`.
+Sử dụng prop `color` để thay đổi màu của Separator. Mặc định là `neutral`.
 
 ::component-code
 ---
@@ -88,7 +88,7 @@ props:
 
 ### Type
 
-Use the `type` prop to change the type of the Separator. Defaults to `solid`.
+Sử dụng prop `type` để thay đổi loại của Separator. Mặc định là `solid`.
 
 ::component-code
 ---
@@ -100,7 +100,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the Separator. Defaults to `xs`.
+Sử dụng prop `size` để thay đổi kích thước của Separator. Mặc định là `xs`.
 
 ::component-code
 ---

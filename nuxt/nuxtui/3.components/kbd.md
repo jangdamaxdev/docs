@@ -1,6 +1,6 @@
 ---
 title: Kbd
-description: A kbd element to display a keyboard key.
+description: Một phần tử kbd để hiển thị phím bàn phím.
 category: element
 links:
   - label: GitHub
@@ -12,7 +12,7 @@ links:
 
 ### Value
 
-Use the default slot to set the value of the Kbd.
+Sử dụng slot mặc định để đặt giá trị của Kbd.
 
 ::component-code
 ---
@@ -21,7 +21,7 @@ slots:
 ---
 ::
 
-You can achieve the same result by using the `value` prop.
+Bạn có thể đạt được kết quả tương tự bằng cách sử dụng prop `value`.
 
 ::component-code
 ---
@@ -30,7 +30,7 @@ props:
 ---
 ::
 
-You can pass special keys to the `value` prop that goes through the [`useKbd`](https://github.com/nuxt/ui/blob/v3/src/runtime/composables/useKbd.ts) composable. For example, the `meta` key displays as `⌘` on macOS and `Ctrl` on other platforms.
+Bạn có thể truyền các phím đặc biệt vào prop `value` mà đi qua composable [`useKbd`](https://github.com/nuxt/ui/blob/v3/src/runtime/composables/useKbd.ts). Ví dụ, phím `meta` hiển thị là `⌘` trên macOS và `Ctrl` trên các nền tảng khác.
 
 ::component-code
 ---
@@ -64,7 +64,7 @@ items:
 
 ### Color :badge{label="New" class="align-text-top"}
 
-Use the `color` prop to change the color of the Kbd.
+Sử dụng prop `color` để thay đổi màu của Kbd.
 
 ::component-code
 ---
@@ -77,7 +77,7 @@ slots:
 
 ### Variant
 
-Use the `variant` prop to change the variant of the Kbd.
+Sử dụng prop `variant` để thay đổi biến thể của Kbd.
 
 ::component-code
 ---
@@ -91,7 +91,7 @@ slots:
 
 ### Size
 
-Use the `size` prop to change the size of the Kbd.
+Sử dụng prop `size` để thay đổi kích thước của Kbd.
 
 ::component-code
 ---
@@ -106,7 +106,7 @@ slots:
 
 ### `class` prop
 
-Use the `class` prop to override the base styles of the Badge.
+Sử dụng prop `class` để ghi đè các kiểu cơ sở của Badge.
 
 ::component-code
 ---

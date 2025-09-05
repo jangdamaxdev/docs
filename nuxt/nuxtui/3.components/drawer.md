@@ -12,9 +12,9 @@ links:
 
 ## Usage
 
-Use a [Button](/components/button) or any other component in the default slot of the Drawer.
+Sử dụng một [Button](/components/button) hoặc bất kỳ thành phần nào khác trong slot mặc định của Drawer.
 
-Then, use the `#content` slot to add the content displayed when the Drawer is open.
+Sau đó, sử dụng slot `#content` để thêm nội dung hiển thị khi Drawer mở.
 
 ::component-code
 ---
@@ -35,11 +35,11 @@ slots:
 :placeholder{class="h-48 m-4"}
 ::
 
-You can also use the `#header`{lang="ts-type"}, `#body`{lang="ts-type"} and `#footer`{lang="ts-type"} slots to customize the Drawer's content.
+Bạn cũng có thể sử dụng các slot `#header`{lang="ts-type"}, `#body`{lang="ts-type"} và `#footer`{lang="ts-type"} để tùy chỉnh nội dung của Drawer.
 
 ### Title
 
-Use the `title` prop to set the title of the Drawer's header.
+Sử dụng prop `title` để đặt tiêu đề cho header của Drawer.
 
 ::component-code
 ---
@@ -64,7 +64,7 @@ slots:
 
 ### Description
 
-Use the `description` prop to set the description of the Drawer's header.
+Sử dụng prop `description` để đặt mô tả cho header của Drawer.
 
 ::component-code
 ---
@@ -92,7 +92,7 @@ slots:
 
 ### Direction
 
-Use the `direction` prop to control the direction of the Drawer. Defaults to `bottom`.
+Sử dụng prop `direction` để kiểm soát hướng của Drawer. Mặc định là `bottom`.
 
 ::component-code
 ---
@@ -117,7 +117,7 @@ slots:
 
 ### Inset
 
-Use the `inset` prop to inset the Drawer from the edges.
+Sử dụng prop `inset` để chèn Drawer từ các cạnh.
 
 ::component-code
 ---
@@ -143,7 +143,7 @@ slots:
 
 ### Handle
 
-Use the `handle` prop to control whether the Drawer has a handle or not. Defaults to `true`.
+Sử dụng prop `handle` để kiểm soát xem Drawer có tay nắm hay không. Mặc định là `true`.
 
 ::component-code
 ---
@@ -168,7 +168,7 @@ slots:
 
 ### Handle Only
 
-Use the `handle-only` prop to only allow the Drawer to be dragged by the handle.
+Sử dụng prop `handle-only` để chỉ cho phép kéo Drawer bằng tay nắm.
 
 ::component-code
 ---
@@ -193,7 +193,7 @@ slots:
 
 ### Overlay
 
-Use the `overlay` prop to control whether the Drawer has an overlay or not. Defaults to `true`.
+Sử dụng prop `overlay` để kiểm soát xem Drawer có overlay hay không. Mặc định là `true`.
 
 ::component-code
 ---
@@ -218,7 +218,7 @@ slots:
 
 ### Scale background
 
-Use the `should-scale-background` prop to scale the background when the Drawer is open, creating a visual depth effect. You can set the `set-background-color-on-scale` prop to `false` to prevent changing the background color.
+Sử dụng prop `should-scale-background` để thu nhỏ nền khi Drawer mở, tạo hiệu ứng chiều sâu thị giác. Bạn có thể đặt prop `set-background-color-on-scale` thành `false` để ngăn thay đổi màu nền.
 
 ::component-code
 ---
@@ -243,7 +243,7 @@ slots:
 ::
 
 ::warning
-Make sure to add the `data-vaul-drawer-wrapper` directive to a parent element of your app to make this work.
+Hãy đảm bảo thêm directive `data-vaul-drawer-wrapper` vào một phần tử cha của ứng dụng của bạn để điều này hoạt động.
 
 ```vue [app.vue]
 <template>
@@ -274,7 +274,7 @@ export default defineNuxtConfig({
 
 ### Control open state
 
-You can control the open state by using the `default-open` prop or the `v-model:open` directive.
+Bạn có thể kiểm soát trạng thái mở bằng cách sử dụng prop `default-open` hoặc directive `v-model:open`.
 
 ::component-example
 ---
@@ -284,16 +284,16 @@ name: 'drawer-open-example'
 ::
 
 ::note
-In this example, leveraging [`defineShortcuts`](/composables/define-shortcuts), you can toggle the Drawer by pressing :kbd{value="O"}.
+Trong ví dụ này, tận dụng [`defineShortcuts`](/composables/define-shortcuts), bạn có thể chuyển đổi Drawer bằng cách nhấn :kbd{value="O"}.
 ::
 
 ::tip
-This allows you to move the trigger outside of the Drawer or remove it entirely.
+Điều này cho phép bạn di chuyển trigger ra ngoài Drawer hoặc loại bỏ nó hoàn toàn.
 ::
 
 ### Disable dismissal
 
-Set the `dismissible` prop to `false` to prevent the Drawer from being closed when clicking outside of it or pressing escape.
+Đặt prop `dismissible` thành `false` để ngăn Drawer bị đóng khi nhấp bên ngoài hoặc nhấn escape.
 
 ::component-example
 ---
@@ -303,12 +303,12 @@ name: 'drawer-dismissible-example'
 ::
 
 ::note
-In this example, the `header` slot is used to add a close button which is not done by default.
+Trong ví dụ này, slot `header` được sử dụng để thêm nút đóng mà không được thực hiện theo mặc định.
 ::
 
 ### With interactive background
 
-Set the `overlay` and `modal` props to `false` alongside the `dismissible` prop to make the Drawer's background interactive without closing the Drawer.
+Đặt prop `overlay` và `modal` thành `false` cùng với prop `dismissible` để làm cho nền của Drawer tương tác mà không đóng Drawer.
 
 ::component-example
 ---
@@ -319,7 +319,7 @@ name: 'drawer-modal-example'
 
 ### Responsive drawer
 
-You can render a [Modal](/components/modal) component on desktop and a Drawer on mobile for example.
+Bạn có thể render một thành phần [Modal](/components/modal) trên desktop và một Drawer trên mobile ví dụ.
 
 ::component-example
 ---
@@ -330,7 +330,7 @@ name: 'drawer-responsive-example'
 
 ### Nested drawers :badge{label="New" class="align-text-top"}
 
-You can nest drawers within each other by using the `nested` prop.
+Bạn có thể lồng các drawer vào nhau bằng cách sử dụng prop `nested`.
 
 ::component-example
 ---
@@ -341,7 +341,7 @@ name: 'drawer-nested-example'
 
 ### With footer slot
 
-Use the `#footer` slot to add content after the Drawer's body.
+Sử dụng slot `#footer` để thêm nội dung sau body của Drawer.
 
 ::component-example
 ---
@@ -353,7 +353,7 @@ name: 'drawer-footer-slot-example'
 
 ### With command palette
 
-You can use a [CommandPalette](/components/command-palette) component inside the Drawer's content.
+Bạn có thể sử dụng một thành phần [CommandPalette](/components/command-palette) bên trong nội dung của Drawer.
 
 ::component-example
 ---

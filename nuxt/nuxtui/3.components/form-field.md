@@ -10,11 +10,11 @@ links:
 
 ## Usage
 
-Wrap any form component with a FormField. Used in a [Form](/components/form), it provides validation and error handling.
+Bao bọc bất kỳ thành phần form nào với FormField. Được sử dụng trong một [Form](/components/form), nó cung cấp xác thực và xử lý lỗi.
 
 ### Label
 
-Use the `label` prop to set the label for the form control.
+Sử dụng prop `label` để đặt nhãn cho điều khiển form.
 
 ::component-code
 ---
@@ -31,10 +31,10 @@ slots:
 ::
 
 ::note
-The label `for` attribute and the form control are associated with a unique `id` if not provided.
+Thuộc tính `for` của nhãn và điều khiển form được liên kết với một `id` duy nhất nếu không được cung cấp.
 ::
 
-When using the `required` prop, an asterisk is added next to the label.
+Khi sử dụng prop `required`, một dấu hoa thị được thêm bên cạnh nhãn.
 
 ::component-code
 ---
@@ -55,7 +55,7 @@ slots:
 
 ### Description
 
-Use the `description` prop to provide additional information below the label.
+Sử dụng prop `description` để cung cấp thông tin bổ sung dưới nhãn.
 
 ::component-code
 ---
@@ -76,7 +76,7 @@ slots:
 
 ### Hint
 
-Use the `hint` prop to display a hint message next to the label.
+Sử dụng prop `hint` để hiển thị thông báo gợi ý bên cạnh nhãn.
 
 ::component-code
 ---
@@ -97,7 +97,7 @@ slots:
 
 ### Help
 
-Use the `help` prop to display a help message below the form control.
+Sử dụng prop `help` để hiển thị thông báo trợ giúp dưới điều khiển form.
 
 ::component-code
 ---
@@ -118,9 +118,9 @@ slots:
 
 ### Error
 
-Use the `error` prop to display an error message below the form control. When used together with the `help` prop, the `error` prop takes precedence.
+Sử dụng prop `error` để hiển thị thông báo lỗi dưới điều khiển form. Khi được sử dụng cùng với prop `help`, prop `error` có ưu tiên.
 
-When used inside a [Form](/components/form), this is automatically set when a validation error occurs.
+Khi được sử dụng bên trong một [Form](/components/form), điều này được đặt tự động khi xảy ra lỗi xác thực.
 
 ::component-code
 ---
@@ -140,12 +140,12 @@ slots:
 ::
 
 ::tip{to="/getting-started/theme#colors"}
-This sets the `color` to `error` on the form control. You can change it globally in your `app.config.ts`.
+Điều này đặt `color` thành `error` trên điều khiển form. Bạn có thể thay đổi nó toàn cục trong `app.config.ts` của bạn.
 ::
 
 ### Size
 
-Use the `size` prop to change the size of the FormField, the `size` is proxied to the form control.
+Sử dụng prop `size` để thay đổi kích thước của FormField, `size` được ủy quyền cho điều khiển form.
 
 ::component-code
 ---

@@ -10,7 +10,7 @@ links:
 
 ## Usage
 
-Use the `name` prop to display an icon:
+Sử dụng prop `name` để hiển thị một biểu tượng:
 
 ::component-code
 ---
@@ -23,7 +23,7 @@ props:
 ::framework-only
 #nuxt
 :::caution{to="/getting-started/icons/nuxt#collections"}
-It's highly recommended to install the icons collections you need, read more about this.
+Khuyến nghị cao là cài đặt các bộ sưu tập biểu tượng bạn cần, đọc thêm về điều này.
 :::
 ::
 

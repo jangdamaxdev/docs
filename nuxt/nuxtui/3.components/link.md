@@ -1,5 +1,5 @@
 ---
-description: A wrapper around <NuxtLink> with extra props.
+description: Một wrapper xung quanh <NuxtLink> với các prop bổ sung.
 category: navigation
 links:
   - label: GitHub
@@ -9,22 +9,22 @@ links:
 
 ## Usage
 
-The Link component is a wrapper around [`<NuxtLink>`](https://nuxt.com/docs/api/components/nuxt-link) using the [`custom`](https://router.vuejs.org/api/interfaces/RouterLinkProps.html#Properties-custom) prop. It provides a few extra props:
+Link component là một wrapper xung quanh [`<NuxtLink>`](https://nuxt.com/docs/api/components/nuxt-link) sử dụng prop [`custom`](https://router.vuejs.org/api/interfaces/RouterLinkProps.html#Properties-custom). Nó cung cấp một số prop bổ sung:
 
-- `inactive-class` prop to set a class when the link is inactive, `active-class` is used when active.
-- `exact` prop to style with `active-class` when the link is active and the route is exactly the same as the current route.
-- `exact-query` and `exact-hash` props to style with `active-class` when the link is active and the query or hash is exactly the same as the current query or hash.
-  - use `exact-query="partial"` to style with `active-class` when the link is active and the query partially match the current query.
+- `inactive-class` prop để đặt một class khi link không hoạt động, `active-class` được sử dụng khi hoạt động.
+- `exact` prop để style với `active-class` khi link hoạt động và route giống hệt với route hiện tại.
+- `exact-query` và `exact-hash` props để style với `active-class` khi link hoạt động và query hoặc hash giống hệt với query hoặc hash hiện tại.
+  - sử dụng `exact-query="partial"` để style với `active-class` khi link hoạt động và query khớp một phần với query hiện tại.
 
-The incentive behind this is to provide the same API as NuxtLink back in Nuxt 2 / Vue 2. You can read more about it in the Vue Router [migration from Vue 2](https://router.vuejs.org/guide/migration/#removal-of-the-exact-prop-in-router-link) guide.
+Lý do đằng sau là cung cấp cùng API như NuxtLink trở lại trong Nuxt 2 / Vue 2. Bạn có thể đọc thêm về nó trong hướng dẫn migration từ Vue 2 của Vue Router [migration from Vue 2](https://router.vuejs.org/guide/migration/#removal-of-the-exact-prop-in-router-link).
 
 ::note
-It is used by the [`Breadcrumb`](/components/breadcrumb), [`Button`](/components/button), [`ContextMenu`](/components/context-menu), [`DropdownMenu`](/components/dropdown-menu) and [`NavigationMenu`](/components/navigation-menu) components.
+Nó được sử dụng bởi các component [`Breadcrumb`](/components/breadcrumb), [`Button`](/components/button), [`ContextMenu`](/components/context-menu), [`DropdownMenu`](/components/dropdown-menu) và [`NavigationMenu`](/components/navigation-menu).
 ::
 
 ### Tag
 
-The `Link` components renders an `<a>` tag when a `to` prop is provided, otherwise it renders a `<button>` tag. You can use the `as` prop to change fallback tag.
+Component Link hiển thị thẻ `<a>` khi prop `to` được cung cấp, nếu không thì hiển thị thẻ `<button>`. Bạn có thể sử dụng prop `as` để thay đổi thẻ fallback.
 
 ::component-code
 ---
@@ -37,12 +37,12 @@ slots:
 ::
 
 ::note
-You can inspect the rendered HTML by changing the `to` prop.
+Bạn có thể kiểm tra HTML được hiển thị bằng cách thay đổi prop `to`.
 ::
 
 ### Style
 
-By default, the link has default active and inactive styles, check out the [#theme](#theme) section.
+Theo mặc định, link có style active và inactive mặc định, kiểm tra phần [#theme](#theme).
 
 ::component-code
 ---
@@ -54,10 +54,10 @@ slots:
 ::
 
 ::note
-Try changing the `to` prop to see the active and inactive states.
+Thử thay đổi prop `to` để xem các trạng thái active và inactive.
 ::
 
-You can override this behavior by using the `raw` prop and provide your own styles using `class`, `active-class` and `inactive-class`.
+Bạn có thể override hành vi này bằng cách sử dụng prop `raw` và cung cấp style riêng của bạn sử dụng `class`, `active-class` và `inactive-class`.
 
 ::component-code
 ---
@@ -77,7 +77,7 @@ Link
 
 ## IntelliSense
 
-If you're using VSCode and wish to get autocompletion for the classes `active-class` and `inactive-class`, you can add the following settings to your `.vscode/settings.json`:
+Nếu bạn đang sử dụng VSCode và muốn có autocompletion cho các class `active-class` và `inactive-class`, bạn có thể thêm cài đặt sau vào `.vscode/settings.json`:
 
 ```json [.vscode/settings.json]
 {

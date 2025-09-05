@@ -1,6 +1,6 @@
 ---
 title: ColorPicker
-description: A component to select a color.
+description: Một thành phần để chọn màu sắc.
 category: form
 links:
   - label: GitHub
@@ -10,7 +10,7 @@ links:
 
 ## Usage
 
-Use the `v-model` directive to control the value of the ColorPicker.
+Sử dụng chỉ thị `v-model` để kiểm soát giá trị của ColorPicker.
 
 ::component-code
 ---
@@ -23,7 +23,7 @@ props:
 ---
 ::
 
-Use the `default-value` prop to set the initial value when you do not need to control its state.
+Sử dụng prop `default-value` để đặt giá trị ban đầu khi bạn không cần kiểm soát trạng thái của nó.
 
 ::component-code
 ---
@@ -36,7 +36,7 @@ props:
 
 ### RGB Format
 
-Use the `format` prop to set `rgb` value of the ColorPicker.
+Sử dụng prop `format` để đặt giá trị `rgb` của ColorPicker.
 
 ::component-code
 ---
@@ -53,7 +53,7 @@ props:
 
 ### HSL Format
 
-Use the `format` prop to set `hsl` value of the ColorPicker.
+Sử dụng prop `format` để đặt giá trị `hsl` của ColorPicker.
 
 ::component-code
 ---
@@ -70,7 +70,7 @@ props:
 
 ### CMYK Format
 
-Use the `format` prop to set `cmyk` value of the ColorPicker.
+Sử dụng prop `format` để đặt giá trị `cmyk` của ColorPicker.
 
 ::component-code
 ---
@@ -87,7 +87,7 @@ props:
 
 ### CIELab Format
 
-Use the `format` prop to set `lab` value of the ColorPicker.
+Sử dụng prop `format` để đặt giá trị `lab` của ColorPicker.
 
 ::component-code
 ---
@@ -104,7 +104,7 @@ props:
 
 ### Throttle
 
-Use the `throttle` prop to set the throttle value of the ColorPicker.
+Sử dụng prop `throttle` để đặt giá trị throttle của ColorPicker.
 
 ::component-code
 ---
@@ -120,7 +120,7 @@ props:
 
 ### Size
 
-Use the `size` prop to set the size of the ColorPicker.
+Sử dụng prop `size` để đặt kích thước của ColorPicker.
 
 ::component-code
 ---
@@ -131,7 +131,7 @@ props:
 
 ### Disabled
 
-Use the `disabled` prop to disable the ColorPicker.
+Sử dụng prop `disabled` để vô hiệu hóa ColorPicker.
 
 ::component-code
 ---
@@ -144,7 +144,7 @@ props:
 
 ### As a Color chooser
 
-Use a [Button](/components/button) and a [Popover](/components/popover) component to create a color chooser.
+Sử dụng một thành phần [Button](/components/button) và [Popover](/components/popover) để tạo một bộ chọn màu.
 
 ::component-example
 ---

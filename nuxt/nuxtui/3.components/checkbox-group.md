@@ -1,6 +1,6 @@
 ---
 title: CheckboxGroup
-description: A set of checklist buttons to select multiple option from a list.
+description: Một tập hợp các nút danh sách kiểm tra để chọn nhiều tùy chọn từ danh sách.
 category: form
 links:
   - label: CheckboxGroup
@@ -14,11 +14,11 @@ links:
 
 ## Usage
 
-Use the `v-model` directive to control the value of the CheckboxGroup or the `default-value` prop to set the initial value when you do not need to control its state.
+Sử dụng chỉ thị `v-model` để kiểm soát giá trị của CheckboxGroup hoặc prop `default-value` để đặt giá trị ban đầu khi bạn không cần kiểm soát trạng thái của nó.
 
 ### Items
 
-Use the `items` prop as an array of strings or numbers:
+Sử dụng prop `items` dưới dạng mảng các chuỗi hoặc số:
 
 ::component-code
 ---
@@ -42,7 +42,7 @@ props:
 ---
 ::
 
-You can also pass an array of objects with the following properties:
+Bạn cũng có thể truyền một mảng các đối tượng với các thuộc tính sau:
 
 - `label?: string`{lang="ts-type"}
 - `description?: string`{lang="ts-type"}
@@ -79,12 +79,12 @@ props:
 ::
 
 ::caution
-When using objects, you need to reference the `value` property of the object in the `v-model` directive or the `default-value` prop.
+Khi sử dụng đối tượng, bạn cần tham chiếu thuộc tính `value` của đối tượng trong chỉ thị `v-model` hoặc prop `default-value`.
 ::
 
 ### Value Key
 
-You can change the property that is used to set the value by using the `value-key` prop. Defaults to `value`.
+Bạn có thể thay đổi thuộc tính được sử dụng để đặt giá trị bằng cách sử dụng prop `value-key`. Mặc định là `value`.
 
 ::component-code
 ---
@@ -117,7 +117,7 @@ props:
 
 ### Legend
 
-Use the `legend` prop to set the legend of the CheckboxGroup.
+Sử dụng prop `legend` để đặt chú thích của CheckboxGroup.
 
 ::component-code
 ---
@@ -142,7 +142,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the color of the CheckboxGroup.
+Sử dụng prop `color` để thay đổi màu sắc của CheckboxGroup.
 
 ::component-code
 ---
@@ -176,7 +176,7 @@ props:
 
 ### Variant
 
-Use the `variant` prop to change the variant of the CheckboxGroup.
+Sử dụng prop `variant` để thay đổi biến thể của CheckboxGroup.
 
 ::component-code
 ---
@@ -215,7 +215,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the CheckboxGroup.
+Sử dụng prop `size` để thay đổi kích thước của CheckboxGroup.
 
 ::component-code
 ---
@@ -246,7 +246,7 @@ props:
 
 ### Orientation
 
-Use the `orientation` prop to change the orientation of the CheckboxGroup. Defaults to `vertical`.
+Sử dụng prop `orientation` để thay đổi hướng của CheckboxGroup. Mặc định là `vertical`.
 
 ::component-code
 ---
@@ -277,7 +277,7 @@ props:
 
 ### Indicator
 
-Use the `indicator` prop to change the position or hide the indicator. Defaults to `start`.
+Sử dụng prop `indicator` để thay đổi vị trí hoặc ẩn chỉ báo. Mặc định là `start`.
 
 ::component-code
 ---
@@ -312,7 +312,7 @@ props:
 
 ### Disabled
 
-Use the `disabled` prop to disable the CheckboxGroup.
+Sử dụng prop `disabled` để vô hiệu hóa CheckboxGroup.
 
 ::component-code
 ---

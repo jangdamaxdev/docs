@@ -1,5 +1,5 @@
 ---
-description: A list of buttons or links to navigate through pages.
+description: Một danh sách các buttons hoặc links để navigate qua các pages.
 category: navigation
 links:
   - label: Pagination
@@ -12,15 +12,15 @@ links:
 
 ## Usage
 
-Use the `default-page` prop or the `v-model:page` directive to control the current page.
+Sử dụng prop `default-page` hoặc directive `v-model:page` để kiểm soát page hiện tại.
 
 ::note
-The Pagination component uses some [`Button`](/components/button) to display the pages, use [`color`](#color), [`variant`](#variant) and [`size`](#size) props to style them.
+Component Pagination sử dụng một số [Button](/components/button) để hiển thị các pages, sử dụng props [`color`](#color), [`variant`](#variant) và [`size`](#size) để style chúng.
 ::
 
 ### Total
 
-Use the `total` prop to set the total number of items in the list.
+Sử dụng prop `total` để đặt tổng số items trong list.
 
 ::component-code
 ---
@@ -36,7 +36,7 @@ props:
 
 ### Items Per Page
 
-Use the `items-per-page` prop to set the number of items per page. Defaults to `10`.
+Sử dụng prop `items-per-page` để đặt số items per page. Mặc định là `10`.
 
 ::component-code
 ---
@@ -55,7 +55,7 @@ props:
 
 ### Sibling Count
 
-Use the `sibling-count` prop to set the number of siblings to show. Defaults to `2`.
+Sử dụng prop `sibling-count` để đặt số siblings để show. Mặc định là `2`.
 
 ::component-code
 ---
@@ -75,7 +75,7 @@ props:
 
 ### Show Edges
 
-Use the `show-edges` prop to always show the ellipsis, first and last pages. Defaults to `false`.
+Sử dụng prop `show-edges` để luôn show ellipsis, first và last pages. Mặc định là `false`.
 
 ::component-code
 ---
@@ -96,7 +96,7 @@ props:
 
 ### Show Controls
 
-Use the `show-controls` prop to show the first, prev, next and last buttons. Defaults to `true`.
+Sử dụng prop `show-controls` để show các buttons first, prev, next và last. Mặc định là `true`.
 
 ::component-code
 ---
@@ -117,7 +117,7 @@ props:
 
 ### Color
 
-Use the `color` prop to set the color of the inactive controls. Defaults to `neutral`.
+Sử dụng prop `color` để đặt màu của inactive controls. Mặc định là `neutral`.
 
 ::component-code
 ---
@@ -146,7 +146,7 @@ props:
 
 ### Variant
 
-Use the `variant` prop to set the variant of the inactive controls. Defaults to `outline`.
+Sử dụng prop `variant` để đặt variant của inactive controls. Mặc định là `outline`.
 
 ::component-code
 ---
@@ -183,7 +183,7 @@ props:
 
 ### Active Color
 
-Use the `active-color` prop to set the color of the active control. Defaults to `primary`.
+Sử dụng prop `active-color` để đặt màu của active control. Mặc định là `primary`.
 
 ::component-code
 ---
@@ -212,7 +212,7 @@ props:
 
 ### Active Variant
 
-Use the `active-variant` prop to set the variant of the active control. Defaults to `solid`.
+Sử dụng prop `active-variant` để đặt variant của active control. Mặc định là `solid`.
 
 ::component-code
 ---
@@ -249,7 +249,7 @@ props:
 
 ### Size
 
-Use the `size` prop to set the size of the controls. Defaults to `md`.
+Sử dụng prop `size` để đặt size của controls. Mặc định là `md`.
 
 ::component-code
 ---
@@ -276,7 +276,7 @@ props:
 
 ### Disabled
 
-Use the `disabled` prop to disable the pagination controls.
+Sử dụng prop `disabled` để disable pagination controls.
 
 ::component-code
 ---
@@ -298,7 +298,7 @@ props:
 
 ### With links
 
-Use the `to` prop to transform buttons into links. Pass a function that receives the page number and returns a route destination.
+Sử dụng prop `to` để transform buttons thành links. Truyền một function nhận page number và trả về destination route.
 
 ::component-example
 ---
@@ -307,7 +307,7 @@ name: 'pagination-links-example'
 ::
 
 ::note
-In this example we're adding the `#with-links` hash to avoid going to the top of the page.
+Trong ví dụ này chúng tôi thêm hash `#with-links` để tránh đi đến top của page.
 ::
 
 ## API

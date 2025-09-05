@@ -1,6 +1,6 @@
 ---
 title: PinInput
-description: An input element to enter a pin.
+description: Một input element để enter a pin.
 category: form
 links:
   - label: PinInput
@@ -13,7 +13,7 @@ links:
 
 ## Usage
 
-Use the `v-model` directive to control the value of the PinInput.
+Sử dụng directive `v-model` để kiểm soát value của PinInput.
 
 ::component-code
 ---
@@ -27,7 +27,7 @@ props:
 ---
 ::
 
-Use the `default-value` prop to set the initial value when you do not need to control its state.
+Sử dụng prop `default-value` để đặt initial value khi bạn không cần kiểm soát state của nó.
 
 ::component-code
 ---
@@ -41,7 +41,7 @@ props:
 
 ### Type
 
-Use the `type` prop to change the input type. Defaults to `text`.
+Sử dụng prop `type` để thay đổi input type. Mặc định là `text`.
 
 ::component-code
 ---
@@ -55,12 +55,12 @@ props:
 ::
 
 ::note
-When `type` is set to `number`, it will only accept numeric characters.
+Khi `type` được đặt thành `number`, nó sẽ chỉ accept numeric characters.
 ::
 
 ### Mask
 
-Use the `mask` prop to treat the input like a password.
+Sử dụng prop `mask` để treat input như một password.
 
 ::component-code
 ---
@@ -76,7 +76,7 @@ props:
 
 ### OTP
 
-Use the `otp` prop to enable One-Time Password functionality. When enabled, mobile devices can automatically detect and fill OTP codes from SMS messages or clipboard content, with autocomplete support.
+Sử dụng prop `otp` để enable One-Time Password functionality. Khi enabled, mobile devices có thể automatically detect và fill OTP codes từ SMS messages hoặc clipboard content, với autocomplete support.
 
 ::component-code
 ---
@@ -87,7 +87,7 @@ props:
 
 ### Length
 
-Use the `length` prop to change the amount of inputs.
+Sử dụng prop `length` để thay đổi amount of inputs.
 
 ::component-code
 ---
@@ -98,7 +98,7 @@ props:
 
 ### Placeholder
 
-Use the `placeholder` prop to set a placeholder text.
+Sử dụng prop `placeholder` để đặt placeholder text.
 
 ::component-code
 ---
@@ -109,7 +109,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the ring color when the PinInput is focused.
+Sử dụng prop `color` để thay đổi ring color khi PinInput được focused.
 
 ::component-code
 ---
@@ -123,12 +123,12 @@ props:
 ::
 
 ::note
-The `highlight` prop is used here to show the focus state. It's used internally when a validation error occurs.
+Prop `highlight` được sử dụng ở đây để show focus state. Nó được sử dụng internally khi có validation error.
 ::
 
 ### Variant
 
-Use the `variant` prop to change the variant of the PinInput.
+Sử dụng prop `variant` để thay đổi variant của PinInput.
 
 ::component-code
 ---
@@ -144,7 +144,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the PinInput.
+Sử dụng prop `size` để thay đổi size của PinInput.
 
 ::component-code
 ---
@@ -158,7 +158,7 @@ props:
 
 ### Disabled
 
-Use the `disabled` prop to disable the PinInput.
+Sử dụng prop `disabled` để disable PinInput.
 
 ::component-code
 ---
@@ -182,7 +182,7 @@ props:
 
 ### Expose
 
-When accessing the component via a template ref, you can use the following:
+Khi accessing component via template ref, bạn có thể sử dụng:
 
 | Name | Type |
 | ---- | ---- |

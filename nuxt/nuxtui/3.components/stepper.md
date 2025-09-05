@@ -1,5 +1,5 @@
 ---
-description: A set of steps that are used to indicate progress through a multi-step process.
+description: Một tập các bước được sử dụng để chỉ ra tiến trình qua một quy trình đa bước.
 category: navigation
 links:
   - label: Stepper
@@ -14,7 +14,7 @@ links:
 
 ### Items
 
-Use the `items` prop as an array of objects with the following properties:
+Sử dụng prop `items` dưới dạng mảng các đối tượng với các thuộc tính sau:
 
 - `title?: string`{lang="ts-type"}
 - `description?: AvatarProps`{lang="ts-type"}
@@ -50,12 +50,12 @@ props:
 ::
 
 ::note
-Click on the items to navigate through the steps.
+Nhấp vào các mục để điều hướng qua các bước.
 ::
 
 ### Color
 
-Use the `color` prop to change the color of the Stepper.
+Sử dụng prop `color` để thay đổi màu của Stepper.
 
 ::component-code
 ---
@@ -84,7 +84,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the Stepper.
+Sử dụng prop `size` để thay đổi kích thước của Stepper.
 
 ::component-code
 ---
@@ -113,7 +113,7 @@ props:
 
 ### Orientation
 
-Use the `orientation` prop to change the orientation of the Stepper. Defaults to `horizontal`.
+Sử dụng prop `orientation` để thay đổi hướng của Stepper. Mặc định là `horizontal`.
 
 ::component-code
 ---
@@ -142,7 +142,7 @@ props:
 
 ### Disabled
 
-Use the `disabled` prop to disable navigation through the steps.
+Sử dụng prop `disabled` để vô hiệu hóa điều hướng qua các bước.
 
 ::component-code
 ---
@@ -169,38 +169,38 @@ props:
 ::
 
 ::note{to="#with-controls"}
-This can be useful when you want to force navigation with controls.
+Điều này có thể hữu ích khi bạn muốn buộc điều hướng với controls.
 ::
 
 ## Examples
 
 ### With controls
 
-You can add additional controls for the stepper using buttons.
+Bạn có thể thêm các controls bổ sung cho stepper bằng buttons.
 
 :component-example{name="stepper-with-controls-example"}
 
 ### Control active item
 
-You can control the active item by using the `default-value` prop or the `v-model` directive with the index of the item.
+Bạn có thể kiểm soát mục active bằng cách sử dụng prop `default-value` hoặc directive `v-model` với index của mục.
 
 :component-example{name="stepper-model-value-example"}
 
 ::tip
-You can also pass the `value` of one of the items if provided.
+Bạn cũng có thể truyền `value` của một trong các mục nếu được cung cấp.
 ::
 
 ### With content slot
 
-Use the `#content` slot to customize the content of each item.
+Sử dụng slot `#content` để tùy chỉnh nội dung của mỗi mục.
 
 :component-example{name="stepper-content-slot-example"}
 
 ### With custom slot
 
-Use the `slot` property to customize a specific item.
+Sử dụng thuộc tính `slot` để tùy chỉnh một mục cụ thể.
 
-You will have access to the following slots:
+Bạn sẽ có quyền truy cập vào các slot sau:
 
 - `#{{ item.slot }}`{lang="ts-type"}
 
@@ -222,7 +222,7 @@ You will have access to the following slots:
 
 ### Expose
 
-You can access the typed component instance using [`useTemplateRef`](https://vuejs.org/api/composition-api-helpers.html#usetemplateref).
+Bạn có thể truy cập instance thành phần typed bằng cách sử dụng [`useTemplateRef`](https://vuejs.org/api/composition-api-helpers.html#usetemplateref).
 
 ```vue
 <script setup lang="ts">
@@ -234,7 +234,7 @@ const stepper = useTemplateRef('stepper')
 </template>
 ```
 
-This will give you access to the following:
+Điều này sẽ cung cấp cho bạn quyền truy cập vào những thứ sau:
 
 | Name | Type |
 | ---- | ---- |

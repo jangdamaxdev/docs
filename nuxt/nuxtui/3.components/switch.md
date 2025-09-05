@@ -1,5 +1,5 @@
 ---
-description: A control that toggles between two states.
+description: Một control chuyển đổi giữa hai trạng thái.
 category: form
 links:
   - label: Switch
@@ -12,7 +12,7 @@ links:
 
 ## Usage
 
-Use the `v-model` directive to control the checked state of the Switch.
+Sử dụng directive `v-model` để kiểm soát trạng thái checked của Switch.
 
 ::component-code
 ---
@@ -25,7 +25,7 @@ props:
 ---
 ::
 
-Use the `default-value` prop to set the initial value when you do not need to control its state.
+Sử dụng prop `default-value` để đặt giá trị ban đầu khi bạn không cần kiểm soát trạng thái của nó.
 
 ::component-code
 ---
@@ -38,7 +38,7 @@ props:
 
 ### Label
 
-Use the `label` prop to set the label of the Switch.
+Sử dụng prop `label` để đặt label của Switch.
 
 ::component-code
 ---
@@ -47,7 +47,7 @@ props:
 ---
 ::
 
-When using the `required` prop, an asterisk is added next to the label.
+Khi sử dụng prop `required`, một dấu hoa thị được thêm vào bên cạnh label.
 
 ::component-code
 ---
@@ -61,7 +61,7 @@ props:
 
 ### Description
 
-Use the `description` prop to set the description of the Switch.
+Sử dụng prop `description` để đặt mô tả của Switch.
 
 ::component-code
 ---
@@ -75,7 +75,7 @@ props:
 
 ### Icon
 
-Use the `checked-icon` and `unchecked-icon` props to set the icons of the Switch when checked and unchecked.
+Sử dụng prop `checked-icon` và `unchecked-icon` để đặt icons của Switch khi checked và unchecked.
 
 ::component-code
 ---
@@ -93,7 +93,7 @@ props:
 
 ### Loading
 
-Use the `loading` prop to show a loading icon on the Switch.
+Sử dụng prop `loading` để hiển thị icon loading trên Switch.
 
 ::component-code
 ---
@@ -109,7 +109,7 @@ props:
 
 ### Loading Icon
 
-Use the `loading-icon` prop to customize the loading icon. Defaults to `i-lucide-loader-circle`.
+Sử dụng prop `loading-icon` để tùy chỉnh icon loading. Mặc định là `i-lucide-loader-circle`.
 
 ::component-code
 ---
@@ -127,18 +127,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh icon này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.loading`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh icon này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.loading`.
 :::
 ::
 
 ### Color
 
-Use the `color` prop to change the color of the Switch.
+Sử dụng prop `color` để thay đổi màu của Switch.
 
 ::component-code
 ---
@@ -154,7 +154,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the Switch.
+Sử dụng prop `size` để thay đổi kích thước của Switch.
 
 ::component-code
 ---
@@ -170,7 +170,7 @@ props:
 
 ### Disabled
 
-Use the `disabled` prop to disable the Switch.
+Sử dụng prop `disabled` để vô hiệu hóa Switch.
 
 ::component-code
 ---

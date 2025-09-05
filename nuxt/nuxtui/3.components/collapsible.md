@@ -1,5 +1,5 @@
 ---
-description: A collapsible element to toggle visibility of its content.
+description: Một phần tử có thể thu gọn để chuyển đổi khả năng hiển thị của nội dung của nó.
 category: element
 links:
   - label: Collapsible
@@ -12,9 +12,9 @@ links:
 
 ## Usage
 
-Use a [Button](/components/button) or any other component in the default slot of the Collapsible.
+Sử dụng một [Button](/components/button) hoặc bất kỳ thành phần nào khác trong slot mặc định của Collapsible.
 
-Then, use the `#content` slot to add the content displayed when the Collapsible is open.
+Sau đó, sử dụng slot `#content` để thêm nội dung được hiển thị khi Collapsible mở.
 
 ::component-code
 ---
@@ -41,7 +41,7 @@ slots:
 
 ### Unmount
 
-Use the `unmount-on-hide` prop to prevent the content from being unmounted when the Collapsible is collapsed. Defaults to `true`.
+Sử dụng prop `unmount-on-hide` để ngăn nội dung bị gỡ bỏ khi Collapsible bị thu gọn. Mặc định là `true`.
 
 ::component-code
 ---
@@ -68,12 +68,12 @@ slots:
 ::
 
 ::note
-You can inspect the DOM to see the content being rendered.
+Bạn có thể kiểm tra DOM để xem nội dung đang được hiển thị.
 ::
 
 ### Disabled
 
-Use the `disabled` prop to disable the Collapsible.
+Sử dụng prop `disabled` để vô hiệu hóa Collapsible.
 
 ::component-code
 ---
@@ -103,7 +103,7 @@ slots:
 
 ### Control open state
 
-You can control the open state by using the `default-open` prop or the `v-model:open` directive.
+Bạn có thể kiểm soát trạng thái mở bằng cách sử dụng prop `default-open` hoặc chỉ thị `v-model:open`.
 
 ::component-example
 ---
@@ -112,16 +112,16 @@ name: 'collapsible-open-example'
 ::
 
 ::note
-In this example, leveraging [`defineShortcuts`](/composables/define-shortcuts), you can toggle the Collapsible by pressing :kbd{value="O"}.
+Trong ví dụ này, tận dụng [`defineShortcuts`](/composables/define-shortcuts), bạn có thể chuyển đổi Collapsible bằng cách nhấn :kbd{value="O"}.
 ::
 
 ::tip
-This allows you to move the trigger outside of the Collapsible or remove it entirely.
+Điều này cho phép bạn di chuyển trigger bên ngoài Collapsible hoặc loại bỏ nó hoàn toàn.
 ::
 
 ### With rotating icon
 
-Here is an example with a rotating icon in the Button that indicates the open state of the Collapsible.
+Đây là một ví dụ với biểu tượng xoay trong Button cho biết trạng thái mở của Collapsible.
 
 ::component-example
 ---

@@ -1,5 +1,5 @@
 ---
-description: An indicator of a numeric value or a state.
+description: Một chỉ báo của giá trị số hoặc trạng thái.
 category: element
 links:
   - label: GitHub
@@ -9,7 +9,7 @@ links:
 
 ## Usage
 
-Wrap any component with a Chip to display an indicator.
+Bao bọc bất kỳ thành phần nào với Chip để hiển thị chỉ báo.
 
 ::component-code
 ---
@@ -24,7 +24,7 @@ slots:
 
 ### Color
 
-Use the `color` prop to change the color of the Chip.
+Sử dụng prop `color` để thay đổi màu sắc của Chip.
 
 ::component-code
 ---
@@ -41,7 +41,7 @@ slots:
 
 ### Size
 
-Use the `size` prop to change the size of the Chip.
+Sử dụng prop `size` để thay đổi kích thước của Chip.
 
 ::component-code
 ---
@@ -58,7 +58,7 @@ slots:
 
 ### Text
 
-Use the `text` prop to set the text of the Chip.
+Sử dụng prop `text` để đặt văn bản của Chip.
 
 ::component-code
 ---
@@ -76,7 +76,7 @@ slots:
 
 ### Position
 
-Use the `position` prop to change the position of the Chip.
+Sử dụng prop `position` để thay đổi vị trí của Chip.
 
 ::component-code
 ---
@@ -93,7 +93,7 @@ slots:
 
 ### Inset
 
-Use the `inset` prop to display the Chip inside the component. This is useful when dealing with rounded components.
+Sử dụng prop `inset` để hiển thị Chip bên trong thành phần. Điều này hữu ích khi xử lý các thành phần bo tròn.
 
 ::component-code
 ---
@@ -110,7 +110,7 @@ slots:
 
 ### Standalone
 
-Use the `standalone` prop alongside the `inset` prop to display the Chip inline.
+Sử dụng prop `standalone` cùng với prop `inset` để hiển thị Chip nội tuyến.
 
 ::component-code
 ---
@@ -121,19 +121,19 @@ props:
 ::
 
 ::note
-It's used this way in the [`CommandPalette`](/components/command-palette), [`InputMenu`](/components/input-menu), [`Select`](/components/select) or [`SelectMenu`](/components/select-menu) components for example.
+Nó được sử dụng theo cách này trong các thành phần [`CommandPalette`](/components/command-palette), [`InputMenu`](/components/input-menu), [`Select`](/components/select) hoặc [`SelectMenu`](/components/select-menu) chẳng hạn.
 ::
 
 ## Examples
 
 ### Control visibility
 
-You can control the visibility of the Chip using the `show` prop.
+Bạn có thể kiểm soát khả năng hiển thị của Chip bằng cách sử dụng prop `show`.
 
 :component-example{name="chip-show-example"}
 
 ::note
-In this example, the Chip has a color per status and is displayed when the status is not `offline`.
+Trong ví dụ này, Chip có màu cho mỗi trạng thái và được hiển thị khi trạng thái không phải là `offline`.
 ::
 
 ## API

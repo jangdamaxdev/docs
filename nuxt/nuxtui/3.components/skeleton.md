@@ -1,5 +1,5 @@
 ---
-description: A placeholder to show while content is loading.
+description: Một placeholder để hiển thị trong khi nội dung đang tải.
 category: layout
 links:
   - label: GitHub

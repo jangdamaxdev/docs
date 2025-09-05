@@ -1,5 +1,5 @@
 ---
-description: A container lets you center and constrain the width of your content.
+description: Một container cho phép bạn căn giữa và hạn chế chiều rộng của nội dung của bạn.
 category: layout
 links:
   - label: GitHub

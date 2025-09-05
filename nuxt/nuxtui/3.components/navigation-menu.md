@@ -1,6 +1,6 @@
 ---
 title: NavigationMenu
-description: A list of links that can be displayed horizontally or vertically.
+description: Một danh sách các link có thể được hiển thị theo chiều ngang hoặc dọc.
 category: navigation
 links:
   - label: NavigationMenu
@@ -15,7 +15,7 @@ links:
 
 ### Items
 
-Use the `items` prop as an array of objects with the following properties:
+Sử dụng prop `items` như một mảng các object với các thuộc tính sau:
 
 - `label?: string`{lang="ts-type"}
 - `icon?: string`{lang="ts-type"}
@@ -34,7 +34,7 @@ Use the `items` prop as an array of objects with the following properties:
 - `class?: any`{lang="ts-type"}
 - `ui?: { linkLeadingAvatarSize?: ClassNameValue, linkLeadingAvatar?: ClassNameValue, linkLeadingIcon?: ClassNameValue, linkLabel?: ClassNameValue, linkLabelExternalIcon?: ClassNameValue, linkTrailing?: ClassNameValue, linkTrailingBadgeSize?: ClassNameValue, linkTrailingBadge?: ClassNameValue, linkTrailingIcon?: ClassNameValue, label?: ClassNameValue, link?: ClassNameValue, content?: ClassNameValue, childList?: ClassNameValue, childLabel?: ClassNameValue, childItem?: ClassNameValue, childLink?: ClassNameValue, childLinkIcon?: ClassNameValue, childLinkWrapper?: ClassNameValue, childLinkLabel?: ClassNameValue, childLinkLabelExternalIcon?: ClassNameValue, childLinkDescription?: ClassNameValue }`{lang="ts-type"}
 
-You can pass any property from the [Link](/components/link#props) component such as `to`, `target`, etc.
+Bạn có thể truyền bất kỳ thuộc tính nào từ component [Link](/components/link#props) như `to`, `target`, etc.
 
 ::component-code
 ---
@@ -125,11 +125,11 @@ props:
 ::
 
 ::note
-You can also pass an array of arrays to the `items` prop to display groups of items.
+Bạn cũng có thể truyền một mảng các mảng vào prop `items` để hiển thị các nhóm item.
 ::
 
 ::tip
-Each item can take a `children` array of objects with the following properties to create submenus:
+Mỗi item có thể có một mảng `children` với các object có các thuộc tính sau để tạo submenu:
 
 - `label: string`
 - `description?: string`
@@ -141,10 +141,10 @@ Each item can take a `children` array of objects with the following properties t
 
 ### Orientation
 
-Use the `orientation` prop to change the orientation of the NavigationMenu.
+Sử dụng prop `orientation` để thay đổi orientation của NavigationMenu.
 
 ::note
-When orientation is `vertical`, an [Accordion](/components/accordion) component is used to display each group. You can control the open state of each item using the `open` and `defaultOpen` properties and change the behavior using the [`collapsible`](/components/accordion#collapsible) and [`type`](/components/accordion#multiple) props.
+Khi orientation là `vertical`, một component [Accordion](/components/accordion) được sử dụng để hiển thị mỗi nhóm. Bạn có thể kiểm soát trạng thái mở của mỗi item bằng cách sử dụng các thuộc tính `open` và `defaultOpen` và thay đổi hành vi bằng cách sử dụng các prop [`collapsible`](/components/accordion#collapsible) và [`type`](/components/accordion#multiple).
 ::
 
 ::component-code
@@ -238,15 +238,15 @@ props:
 ::
 
 ::note
-Groups will be spaced when orientation is `horizontal` and separated when orientation is `vertical`.
+Các nhóm sẽ được spaced khi orientation là `horizontal` và separated khi orientation là `vertical`.
 ::
 
 ### Collapsed
 
-In `vertical` orientation, use the `collapsed` prop to collapse the NavigationMenu, this can be useful in a sidebar for example.
+Trong `vertical` orientation, sử dụng prop `collapsed` để collapse NavigationMenu, điều này có thể hữu ích trong một sidebar ví dụ.
 
 ::note
-You can use the [`tooltip`](#with-tooltip-in-items) and [`popover`](#with-popover-in-items) props to display more information on the collapsed items.
+Bạn có thể sử dụng các prop [`tooltip`](#with-tooltip-in-items) và [`popover`](#with-popover-in-items) để hiển thị thêm thông tin trên các item collapsed.
 ::
 
 ::component-code
@@ -350,9 +350,9 @@ props:
 
 ### Highlight
 
-Use the `highlight` prop to display a highlighted border for the active item.
+Sử dụng prop `highlight` để hiển thị một border highlighted cho item active.
 
-Use the `highlight-color` prop to change the color of the border. It defaults to the `color` prop.
+Sử dụng prop `highlight-color` để thay đổi màu của border. Nó mặc định là prop `color`.
 
 ::component-code
 ---
@@ -446,16 +446,16 @@ props:
 ::
 
 ::note
-In this example, the `border-b` class is applied to display a border in `horizontal` orientation, this is not done by default to let you have a clean slate to work with.
+Trong ví dụ này, class `border-b` được áp dụng để hiển thị một border trong `horizontal` orientation, điều này không được làm theo mặc định để để bạn có một clean slate để làm việc với.
 ::
 
 ::caution
-In `vertical` orientation, the `highlight` prop only highlights the border of active children.
+Trong `vertical` orientation, prop `highlight` chỉ highlight border của children active.
 ::
 
 ### Color
 
-Use the `color` prop to change the color of the NavigationMenu.
+Sử dụng prop `color` để thay đổi màu của NavigationMenu.
 
 ::component-code
 ---
@@ -490,7 +490,7 @@ props:
 
 ### Variant
 
-Use the `variant` prop to change the variant of the NavigationMenu.
+Sử dụng prop `variant` để thay đổi variant của NavigationMenu.
 
 ::component-code
 ---
@@ -526,15 +526,15 @@ props:
 ::
 
 ::note
-The `highlight` prop changes the `pill` variant active item style. Try it out to see the difference.
+Prop `highlight` thay đổi style item active của `pill` variant. Hãy thử nó để xem sự khác biệt.
 ::
 
 ### Trailing Icon
 
-Use the `trailing-icon` prop to customize the trailing [Icon](/components/icon) of each item. Defaults to `i-lucide-chevron-down`. This icon is only displayed when an item has children.
+Sử dụng prop `trailing-icon` để tùy chỉnh [Icon](/components/icon) trailing của mỗi item. Mặc định là `i-lucide-chevron-down`. Icon này chỉ được hiển thị khi một item có children.
 
 ::tip
-You can also set an icon for a specific item by using the `trailingIcon` property in the item object.
+Bạn cũng có thể đặt một icon cho một item cụ thể bằng cách sử dụng thuộc tính `trailingIcon` trong object item.
 ::
 
 ::component-code
@@ -621,18 +621,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.chevronDown` key.
+Bạn có thể tùy chỉnh icon này toàn cục trong `app.config.ts` dưới key `ui.icons.chevronDown`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.chevronDown` key.
+Bạn có thể tùy chỉnh icon này toàn cục trong `vite.config.ts` dưới key `ui.icons.chevronDown`.
 :::
 ::
 
 ### Arrow
 
-Use the `arrow` prop to display an arrow on the NavigationMenu content when items have children.
+Sử dụng prop `arrow` để hiển thị một arrow trên content NavigationMenu khi items có children.
 
 ::component-code
 ---
@@ -717,15 +717,15 @@ props:
 ::
 
 ::note
-The arrow is animated to follow the active item.
+Arrow được animate để follow item active.
 ::
 
 ### Content Orientation
 
-Use the `content-orientation` prop to change the orientation of the content.
+Sử dụng prop `content-orientation` để thay đổi orientation của content.
 
 ::warning
-This prop only works when `orientation` is `horizontal`.
+Prop này chỉ hoạt động khi `orientation` là `horizontal`.
 ::
 
 ::component-code
@@ -799,7 +799,7 @@ props:
 
 ### Unmount
 
-Use the `unmount-on-hide` prop to control the content unmounting behavior. Defaults to `true`.
+Sử dụng prop `unmount-on-hide` để kiểm soát hành vi unmounting content. Mặc định là `true`.
 
 ::component-code
 ---
@@ -884,16 +884,16 @@ props:
 ::
 
 ::note
-You can inspect the DOM to see each item's content being rendered.
+Bạn có thể inspect DOM để xem content của mỗi item được render.
 ::
 
 ## Examples
 
 ### With tooltip in items
 
-When orientation is `vertical` and the menu is `collapsed`, you can set the `tooltip` prop to `true` to display a [Tooltip](/components/tooltip) around items with their label but you can also use the `tooltip` property on each item to override the default tooltip.
+Khi orientation là `vertical` và menu là `collapsed`, bạn có thể đặt prop `tooltip` thành `true` để hiển thị một [Tooltip](/components/tooltip) xung quanh items với label của chúng nhưng bạn cũng có thể sử dụng thuộc tính `tooltip` trên mỗi item để override tooltip mặc định.
 
-You can pass any property from the [Tooltip](/components/tooltip) component globally or on each item.
+Bạn có thể truyền bất kỳ thuộc tính nào từ component [Tooltip](/components/tooltip) toàn cục hoặc trên mỗi item.
 
 ::component-code
 ---
@@ -996,9 +996,9 @@ props:
 
 ### With popover in items
 
-When orientation is `vertical` and the menu is `collapsed`, you can set the `popover` prop to `true` to display a [Popover](/components/popover) around items with their children but you can also use the `popover` property on each item to override the default popover.
+Khi orientation là `vertical` và menu là `collapsed`, bạn có thể đặt prop `popover` thành `true` để hiển thị một [Popover](/components/popover) xung quanh items với children của chúng nhưng bạn cũng có thể sử dụng thuộc tính `popover` trên mỗi item để override popover mặc định.
 
-You can pass any property from the [Popover](/components/popover) component globally or on each item.
+Bạn có thể truyền bất kỳ thuộc tính nào từ component [Popover](/components/popover) toàn cục hoặc trên mỗi item.
 
 ::component-code
 ---
@@ -1102,12 +1102,12 @@ props:
 ::
 
 ::tip{to="#with-content-slot"}
-You can use the `#content` slot to customize the content of the popover in the `vertical` orientation.
+Bạn có thể sử dụng slot `#content` để tùy chỉnh content của popover trong `vertical` orientation.
 ::
 
 ### Control active item
 
-You can control the active item by using the `default-value` prop or the `v-model` directive with the index of the item.
+Bạn có thể kiểm soát item active bằng cách sử dụng prop `default-value` hoặc directive `v-model` với index của item.
 
 ::component-example
 ---
@@ -1117,18 +1117,18 @@ name: 'navigation-menu-model-value-example'
 ::
 
 ::note
-In this example, leveraging [`defineShortcuts`](/composables/define-shortcuts), you can switch the active item by pressing :kbd{value="1"}, :kbd{value="2"}, or :kbd{value="3"}.
+Trong ví dụ này, tận dụng [`defineShortcuts`](/composables/define-shortcuts), bạn có thể switch item active bằng cách nhấn :kbd{value="1"}, :kbd{value="2"}, hoặc :kbd{value="3"}.
 ::
 
 ::tip
-You can also pass the `value` of one of the items if provided.
+Bạn cũng có thể truyền `value` của một trong các items nếu được cung cấp.
 ::
 
 ### With custom slot
 
-Use the `slot` property to customize a specific item.
+Sử dụng thuộc tính `slot` để tùy chỉnh một item cụ thể.
 
-You will have access to the following slots:
+Bạn sẽ có access đến các slots sau:
 
 - `#{{ item.slot }}`{lang="ts-type"}
 - `#{{ item.slot }}-leading`{lang="ts-type"}
@@ -1143,12 +1143,12 @@ name: 'navigation-menu-custom-slot-example'
 ::
 
 ::tip{to="#slots"}
-You can also use the `#item`, `#item-leading`, `#item-label`, `#item-trailing` and `#item-content` slots to customize all items.
+Bạn cũng có thể sử dụng slots `#item`, `#item-leading`, `#item-label`, `#item-trailing` và `#item-content` để tùy chỉnh tất cả items.
 ::
 
 ### With content slot
 
-Use the `#item-content` slot or the `slot` property (`#{{ item.slot }}-content`) to customize the content of a specific item.
+Sử dụng slot `#item-content` hoặc thuộc tính `slot` (`#{{ item.slot }}-content`) để tùy chỉnh content của một item cụ thể.
 
 ::component-example
 ---
@@ -1158,7 +1158,7 @@ name: 'navigation-menu-content-slot-example'
 ::
 
 ::note
-In this example, we add the `sm:w-(--reka-navigation-menu-viewport-width)` class on the `viewport` to have a dynamic width. This requires to set a width on the content's first child.
+Trong ví dụ này, chúng tôi thêm class `sm:w-(--reka-navigation-menu-viewport-width)` trên `viewport` để có width động. Điều này yêu cầu đặt width trên first child của content.
 ::
 
 ## API

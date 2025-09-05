@@ -1,5 +1,5 @@
 ---
-description: A dialog that slides in from any side of the screen.
+description: Một dialog trượt vào từ bất kỳ bên nào của màn hình.
 category: overlay
 links:
   - label: Dialog
@@ -12,9 +12,9 @@ links:
 
 ## Usage
 
-Use a [Button](/components/button) or any other component in the default slot of the Slideover.
+Sử dụng một [Button](/components/button) hoặc bất kỳ component nào khác trong slot default của Slideover.
 
-Then, use the `#content` slot to add the content displayed when the Slideover is open.
+Sau đó, sử dụng slot `#content` để thêm nội dung hiển thị khi Slideover được mở.
 
 ::component-code
 ---
@@ -35,11 +35,11 @@ slots:
 :placeholder{class="h-full m-4"}
 ::
 
-You can also use the `#header`{lang="ts-type"}, `#body`{lang="ts-type"} and `#footer`{lang="ts-type"} slots to customize the Slideover's content.
+Bạn cũng có thể sử dụng các slot `#header`{lang="ts-type"}, `#body`{lang="ts-type"} và `#footer`{lang="ts-type"} để tùy chỉnh nội dung của Slideover.
 
 ### Title
 
-Use the `title` prop to set the title of the Slideover's header.
+Sử dụng prop `title` để đặt tiêu đề của header Slideover's.
 
 ::component-code
 ---
@@ -64,7 +64,7 @@ slots:
 
 ### Description
 
-Use the `description` prop to set the description of the Slideover's header.
+Sử dụng prop `description` để đặt mô tả của header Slideover's.
 
 ::component-code
 ---
@@ -92,9 +92,9 @@ slots:
 
 ### Close
 
-Use the `close` prop to customize or hide the close button (with `false` value) displayed in the Slideover's header.
+Sử dụng prop `close` để tùy chỉnh hoặc ẩn nút close (với giá trị `false`) được hiển thị trong header Slideover's.
 
-You can pass any property from the [Button](/components/button) component to customize it.
+Bạn có thể truyền bất kỳ thuộc tính nào từ thành phần [Button](/components/button) để tùy chỉnh nó.
 
 ::component-code
 ---
@@ -126,12 +126,12 @@ slots:
 ::
 
 ::note
-The close button is not displayed if the `#content` slot is used as it's a part of the header.
+Nút close không được hiển thị nếu slot `#content` được sử dụng vì nó là một phần của header.
 ::
 
 ### Close Icon
 
-Use the `close-icon` prop to customize the close button [Icon](/components/icon). Defaults to `i-lucide-x`.
+Sử dụng prop `close-icon` để tùy chỉnh [Icon](/components/icon) của nút close. Mặc định là `i-lucide-x`.
 
 ::component-code
 ---
@@ -160,18 +160,18 @@ slots:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.close` key.
+Bạn có thể tùy chỉnh icon này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.close`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.close` key.
+Bạn có thể tùy chỉnh icon này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.close`.
 :::
 ::
 
 ### Side
 
-Use the `side` prop to set the side of the screen where the Slideover will slide in from. Defaults to `right`.
+Sử dụng prop `side` để đặt bên của màn hình mà Slideover sẽ trượt vào từ đó. Mặc định là `right`.
 
 ::component-code
 ---
@@ -199,7 +199,7 @@ slots:
 
 ### Overlay
 
-Use the `overlay` prop to control whether the Slideover has an overlay or not. Defaults to `true`.
+Sử dụng prop `overlay` để kiểm soát xem Slideover có overlay hay không. Mặc định là `true`.
 
 ::component-code
 ---
@@ -227,7 +227,7 @@ slots:
 
 ### Transition
 
-Use the `transition` prop to control whether the Slideover is animated or not. Defaults to `true`.
+Sử dụng prop `transition` để kiểm soát xem Slideover có được animate hay không. Mặc định là `true`.
 
 ::component-code
 ---
@@ -257,7 +257,7 @@ slots:
 
 ### Control open state
 
-You can control the open state by using the `default-open` prop or the `v-model:open` directive.
+Bạn có thể kiểm soát trạng thái mở bằng cách sử dụng prop `default-open` hoặc directive `v-model:open`.
 
 ::component-example
 ---
@@ -266,16 +266,16 @@ name: 'slideover-open-example'
 ::
 
 ::note
-In this example, leveraging [`defineShortcuts`](/composables/define-shortcuts), you can toggle the Slideover by pressing :kbd{value="O"}.
+Trong ví dụ này, tận dụng [`defineShortcuts`](/composables/define-shortcuts), bạn có thể chuyển đổi Slideover bằng cách nhấn :kbd{value="O"}.
 ::
 
 ::tip
-This allows you to move the trigger outside of the Slideover or remove it entirely.
+Điều này cho phép bạn di chuyển trigger ra ngoài Slideover hoặc loại bỏ nó hoàn toàn.
 ::
 
 ### Disable dismissal
 
-Set the `dismissible` prop to `false` to prevent the Slideover from being closed when clicking outside of it or pressing escape. A `close:prevent` event will be emitted when the user tries to close it.
+Đặt prop `dismissible` thành `false` để ngăn Slideover bị đóng khi nhấp bên ngoài hoặc nhấn escape. Sự kiện `close:prevent` sẽ được emit khi người dùng cố gắng đóng nó.
 
 ::component-code
 ---
@@ -304,13 +304,13 @@ slots:
 
 ### Programmatic usage
 
-You can use the [`useOverlay`](/composables/use-overlay) composable to open a Slideover programmatically.
+Bạn có thể sử dụng composable [`useOverlay`](/composables/use-overlay) để mở Slideover theo chương trình.
 
 ::warning
-Make sure to wrap your app with the [`App`](/components/app) component which uses the [`OverlayProvider`](https://github.com/nuxt/ui/blob/v3/src/runtime/components/OverlayProvider.vue) component.
+Hãy đảm bảo wrap app của bạn với thành phần [`App`](/components/app) sử dụng thành phần [`OverlayProvider`](https://github.com/nuxt/ui/blob/v3/src/runtime/components/OverlayProvider.vue).
 ::
 
-First, create a slideover component that will be opened programmatically:
+Đầu tiên, tạo một slideover component sẽ được mở theo chương trình:
 
 ::component-example
 ---
@@ -321,10 +321,10 @@ preview: false
 ::
 
 ::note
-We are emitting a `close` event when the slideover is closed or dismissed here. You can emit any data through the `close` event, however, the event must be emitted in order to capture the return value.
+Chúng tôi đang emit sự kiện `close` khi slideover được đóng hoặc dismissed ở đây. Bạn có thể emit bất kỳ dữ liệu nào thông qua sự kiện `close`, tuy nhiên, sự kiện phải được emit để capture giá trị trả về.
 ::
 
-Then, use it in your app:
+Sau đó, sử dụng nó trong app của bạn:
 
 ::component-example
 ---
@@ -333,12 +333,12 @@ name: 'slideover-programmatic-example'
 ::
 
 ::tip
-You can close the slideover within the slideover component by emitting `emit('close')`.
+Bạn có thể đóng slideover trong slideover component bằng cách emit `emit('close')`.
 ::
 
 ### Nested slideovers
 
-You can nest slideovers within each other.
+Bạn có thể lồng slideovers trong nhau.
 
 ::component-example
 ---
@@ -348,7 +348,7 @@ name: 'slideover-nested-example'
 
 ### With footer slot
 
-Use the `#footer` slot to add content after the Slideover's body.
+Sử dụng slot `#footer` để thêm nội dung sau body của Slideover.
 
 ::component-example
 ---

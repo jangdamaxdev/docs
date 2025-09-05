@@ -11,7 +11,7 @@ navigation.badge: New
 
 ## Usage
 
-Use the `v-model` directive to control the value of the FileUpload.
+Sử dụng directive `v-model` để kiểm soát giá trị của FileUpload.
 
 ::component-code
 ---
@@ -28,7 +28,7 @@ props:
 
 ### Multiple
 
-Use the `multiple` prop to allow multiple files to be selected.
+Sử dụng prop `multiple` để cho phép chọn nhiều tệp.
 
 ::component-code
 ---
@@ -42,7 +42,7 @@ props:
 
 ### Dropzone
 
-Use the `dropzone` prop to enable/disable the droppable area. Defaults to `true`.
+Sử dụng prop `dropzone` để bật/tắt khu vực thả. Mặc định là `true`.
 
 ::component-code
 ---
@@ -56,10 +56,10 @@ props:
 
 ### Interactive
 
-Use the `interactive` prop to enable/disable the clickable area. Defaults to `true`.
+Sử dụng prop `interactive` để bật/tắt khu vực có thể nhấp. Mặc định là `true`.
 
 ::tip{to="#with-files-bottom-slot"}
-This can be useful when adding a [`Button`](/components/button) component in the `#actions` slot.
+Điều này có thể hữu ích khi thêm một thành phần [`Button`](/components/button) trong slot `#actions`.
 ::
 
 ::component-code
@@ -74,7 +74,7 @@ props:
 
 ### Accept
 
-Use the `accept` prop to specify the allowed file types for the input. Provide a comma-separated list of [MIME types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types) or file extensions (e.g., `image/png,application/pdf,.jpg`). Defaults to `*` (all file types).
+Sử dụng prop `accept` để chỉ định các loại tệp được phép cho input. Cung cấp một danh sách được phân tách bằng dấu phẩy của [MIME types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types) hoặc phần mở rộng tệp (ví dụ: `image/png,application/pdf,.jpg`). Mặc định là `*` (tất cả loại tệp).
 
 ::component-code
 ---
@@ -89,7 +89,7 @@ props:
 
 ### Label
 
-Use the `label` prop to set the label of the FileUpload.
+Sử dụng prop `label` để đặt nhãn của FileUpload.
 
 ::component-code
 ---
@@ -104,7 +104,7 @@ props:
 
 ### Description
 
-Use the `description` prop to set the description of the FileUpload.
+Sử dụng prop `description` để đặt mô tả của FileUpload.
 
 ::component-code
 ---
@@ -121,7 +121,7 @@ props:
 
 ### Icon
 
-Use the `icon` prop to set the icon of the FileUpload. Defaults to `i-lucide-upload`.
+Sử dụng prop `icon` để đặt biểu tượng của FileUpload. Mặc định là `i-lucide-upload`.
 
 ::component-code
 ---
@@ -141,18 +141,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.upload` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.upload`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.upload` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.upload`.
 :::
 ::
 
 ### Color
 
-Use the `color` prop to change the color of the FileUpload.
+Sử dụng prop `color` để thay đổi màu sắc của FileUpload.
 
 ::component-code
 ---
@@ -171,12 +171,12 @@ props:
 ::
 
 ::note
-The `highlight` prop is used here to show the focus state. It's used internally when a validation error occurs.
+Prop `highlight` được sử dụng ở đây để hiển thị trạng thái focus. Nó được sử dụng nội bộ khi xảy ra lỗi xác thực.
 ::
 
 ### Variant
 
-Use the `variant` prop to change the variant of the FileUpload.
+Sử dụng prop `variant` để thay đổi biến thể của FileUpload.
 
 ::component-code
 ---
@@ -189,7 +189,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the FileUpload.
+Sử dụng prop `size` để thay đổi kích thước của FileUpload.
 
 ::component-code
 ---
@@ -208,10 +208,10 @@ props:
 
 ### Layout
 
-Use the `layout` prop to change how the files are displayed in the FileUpload. Defaults to `grid`.
+Sử dụng prop `layout` để thay đổi cách các tệp được hiển thị trong FileUpload. Mặc định là `grid`.
 
 ::warning
-This prop only works when `variant` is `area`.
+Prop này chỉ hoạt động khi `variant` là `area`.
 ::
 
 ::component-code
@@ -236,10 +236,10 @@ props:
 
 ### Position
 
-Use the `position` prop to change the position of the files in the FileUpload. Defaults to `outside`.
+Sử dụng prop `position` để thay đổi vị trí của các tệp trong FileUpload. Mặc định là `outside`.
 
 ::warning
-This prop only works when `variant` is `area` and when `layout` is `list`.
+Prop này chỉ hoạt động khi `variant` là `area` và khi `layout` là `list`.
 ::
 
 ::component-code
@@ -268,7 +268,7 @@ props:
 
 ### With Form validation
 
-You can use the FileUpload within a [Form](/components/form) and [FormField](/components/form-field) components to handle validation and error handling.
+Bạn có thể sử dụng FileUpload trong các thành phần [Form](/components/form) và [FormField](/components/form-field) để xử lý xác thực và xử lý lỗi.
 
 ::component-example
 ---
@@ -280,7 +280,7 @@ name: 'file-upload-form-validation-example'
 
 ### With default slot
 
-You can use the default slot to make your own FileUpload component.
+Bạn có thể sử dụng slot mặc định để tạo thành phần FileUpload của riêng bạn.
 
 ::component-example
 ---
@@ -292,7 +292,7 @@ name: 'file-upload-default-slot-example'
 
 ### With files-bottom slot
 
-You can use the `files-bottom` slot to add a [Button](/components/button) under the files list to remove all files for example.
+Bạn có thể sử dụng slot `files-bottom` để thêm một [Button](/components/button) dưới danh sách tệp để xóa tất cả tệp ví dụ.
 
 ::component-example
 ---
@@ -303,12 +303,12 @@ name: 'file-upload-files-bottom-slot-example'
 ::
 
 ::note{to="#interactive"}
-The `interactive` prop is set to `false` in this example to prevent the default clickable area.
+Prop `interactive` được đặt thành `false` trong ví dụ này để ngăn khu vực có thể nhấp mặc định.
 ::
 
 ### With files-top slot
 
-You can use the `files-top` slot to add a [Button](/components/button) above the files list to add new files for example.
+Bạn có thể sử dụng slot `files-top` để thêm một [Button](/components/button) trên danh sách tệp để thêm tệp mới ví dụ.
 
 ::component-example
 ---

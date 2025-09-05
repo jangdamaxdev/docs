@@ -1,5 +1,5 @@
 ---
-description: An input to select a numeric value within a range.
+description: Một input để chọn một giá trị số trong một phạm vi.
 category: form
 links:
   - label: Slider
@@ -12,7 +12,7 @@ links:
 
 ## Usage
 
-Use the `v-model` directive to control the value of the Slider.
+Sử dụng directive `v-model` để kiểm soát giá trị của Slider.
 
 ::component-code
 ---
@@ -23,7 +23,7 @@ props:
 ---
 ::
 
-Use the `default-value` prop to set the initial value when you do not need to control its state.
+Sử dụng prop `default-value` để đặt giá trị ban đầu khi bạn không cần kiểm soát trạng thái của nó.
 
 ::component-code
 ---
@@ -36,7 +36,7 @@ props:
 
 ### Min / Max
 
-Use the `min` and `max` props to set the minimum and maximum values of the Slider. Defaults to `0` and `100`.
+Sử dụng prop `min` và `max` để đặt giá trị tối thiểu và tối đa của Slider. Mặc định là `0` và `100`.
 
 ::component-code
 ---
@@ -51,7 +51,7 @@ props:
 
 ### Step
 
-Use the `step` prop to set the increment value of the Slider. Defaults to `1`.
+Sử dụng prop `step` để đặt giá trị tăng của Slider. Mặc định là `1`.
 
 ::component-code
 ---
@@ -65,7 +65,7 @@ props:
 
 ### Multiple
 
-Use the `v-model` directive or the `default-value` prop with an array of values to create a range Slider.
+Sử dụng directive `v-model` hoặc prop `default-value` với một mảng giá trị để tạo một range Slider.
 
 ::component-code
 ---
@@ -78,7 +78,7 @@ props:
 ---
 ::
 
-Use the `min-steps-between-thumbs` prop to limit the minimum distance between the thumbs.
+Sử dụng prop `min-steps-between-thumbs` để giới hạn khoảng cách tối thiểu giữa các thumbs.
 
 ::component-code
 ---
@@ -94,7 +94,7 @@ props:
 
 ### Orientation
 
-Use the `orientation` prop to change the orientation of the Slider. Defaults to `horizontal`.
+Sử dụng prop `orientation` để thay đổi hướng của Slider. Mặc định là `horizontal`.
 
 ::component-code
 ---
@@ -110,7 +110,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the color of the Slider.
+Sử dụng prop `color` để thay đổi màu của Slider.
 
 ::component-code
 ---
@@ -124,7 +124,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the Slider.
+Sử dụng prop `size` để thay đổi kích thước của Slider.
 
 ::component-code
 ---
@@ -138,7 +138,7 @@ props:
 
 ### Tooltip
 
-Use the `tooltip` prop to display a [Tooltip](/components/tooltip) around the Slider thumbs with the current value. You can set it to `true` for default behavior or pass an object to customize it with any property from the [Tooltip](/components/tooltip#props) component.
+Sử dụng prop `tooltip` để hiển thị một [Tooltip](/components/tooltip) xung quanh các thumbs của Slider với giá trị hiện tại. Bạn có thể đặt nó thành `true` cho hành vi mặc định hoặc truyền một object để tùy chỉnh với bất kỳ thuộc tính nào từ thành phần [Tooltip](/components/tooltip#props).
 
 ::component-code
 ---
@@ -153,7 +153,7 @@ props:
 
 ### Disabled
 
-Use the `disabled` prop to disable the Slider.
+Sử dụng prop `disabled` để vô hiệu hóa Slider.
 
 ::component-code
 ---
@@ -167,7 +167,7 @@ props:
 
 ### Inverted
 
-Use the `inverted` prop to visually invert the Slider.
+Sử dụng prop `inverted` để đảo ngược trực quan Slider.
 
 ::component-code
 ---

@@ -1,6 +1,6 @@
 ---
 title: CommandPalette
-description: A command palette with full-text search powered by Fuse.js for efficient fuzzy matching.
+description: Một bảng lệnh với tìm kiếm toàn văn được cung cấp bởi Fuse.js để khớp mờ hiệu quả.
 category: navigation
 links:
   - label: Fuse.js
@@ -17,15 +17,15 @@ links:
 
 ## Usage
 
-Use the `v-model` directive to control the value of the CommandPalette or the `default-value` prop to set the initial value when you do not need to control its state.
+Sử dụng chỉ thị `v-model` để kiểm soát giá trị của CommandPalette hoặc prop `default-value` để đặt giá trị ban đầu khi bạn không cần kiểm soát trạng thái của nó.
 
 ::tip{to="#control-selected-items"}
-You can also use the `@update:model-value` event to listen to the selected item(s).
+Bạn cũng có thể sử dụng sự kiện `@update:model-value` để lắng nghe mục đã chọn.
 ::
 
 ### Groups
 
-The CommandPalette component filters groups and ranks matching commands by relevance as users type. It provides dynamic, instant search results for efficient command discovery. Use the `groups` prop as an array of objects with the following properties:
+Thành phần CommandPalette lọc các nhóm và xếp hạng các lệnh khớp theo mức độ liên quan khi người dùng nhập. Nó cung cấp kết quả tìm kiếm động, tức thì để khám phá lệnh hiệu quả. Sử dụng prop `groups` dưới dạng mảng các đối tượng với các thuộc tính sau:
 
 - `id: string`{lang="ts-type"}
 - `label?: string`{lang="ts-type"}
@@ -36,10 +36,10 @@ The CommandPalette component filters groups and ranks matching commands by relev
 - `highlightedIcon?: string`{lang="ts-type"}
 
 ::caution
-You must provide an `id` for each group otherwise the group will be ignored.
+Bạn phải cung cấp `id` cho mỗi nhóm nếu không nhóm sẽ bị bỏ qua.
 ::
 
-Each group contains an `items` array of objects that define the commands. Each item can have the following properties:
+Mỗi nhóm chứa mảng `items` các đối tượng định nghĩa các lệnh. Mỗi mục có thể có các thuộc tính sau:
 
 - `prefix?: string`{lang="ts-type"}
 - `label?: string`{lang="ts-type"}
@@ -58,7 +58,7 @@ Each group contains an `items` array of objects that define the commands. Each i
 - `class?: any`{lang="ts-type"}
 - `ui?: { item?: ClassNameValue, itemLeadingIcon?: ClassNameValue, itemLeadingAvatarSize?: ClassNameValue, itemLeadingAvatar?: ClassNameValue, itemLeadingChipSize?: ClassNameValue, itemLeadingChip?: ClassNameValue, itemLabel?: ClassNameValue, itemLabelPrefix?: ClassNameValue, itemLabelBase?: ClassNameValue, itemLabelSuffix?: ClassNameValue, itemTrailing?: ClassNameValue, itemTrailingKbds?: ClassNameValue, itemTrailingKbdsSize?: ClassNameValue, itemTrailingHighlightedIcon?: ClassNameValue, itemTrailingIcon?: ClassNameValue }`{lang="ts-type"}
 
-You can pass any property from the [Link](/components/link#props) component such as `to`, `target`, etc.
+Bạn có thể truyền bất kỳ thuộc tính nào từ thành phần [Link](/components/link#props) như `to`, `target`, v.v.
 
 ::component-code
 ---
@@ -113,12 +113,12 @@ props:
 ::
 
 ::tip{to="#with-children-in-items"}
-Each item can take a `children` array of objects with the following properties to create submenus:
+Mỗi mục có thể lấy mảng `children` các đối tượng với các thuộc tính sau để tạo menu con:
 ::
 
 ### Multiple
 
-Use the `multiple` prop to allow multiple selections.
+Sử dụng prop `multiple` để cho phép nhiều lựa chọn.
 
 ::component-code
 ---
@@ -175,12 +175,12 @@ props:
 ::
 
 ::caution
-Ensure to pass an array to the `default-value` prop or the `v-model` directive.
+Đảm bảo truyền một mảng cho prop `default-value` hoặc chỉ thị `v-model`.
 ::
 
 ### Placeholder
 
-Use the `placeholder` prop to change the placeholder text.
+Sử dụng prop `placeholder` để thay đổi văn bản placeholder.
 
 ::component-code
 ---
@@ -211,7 +211,7 @@ props:
 
 ### Icon
 
-Use the `icon` prop to customize the input [Icon](/components/icon). Defaults to `i-lucide-search`.
+Sử dụng prop `icon` để tùy chỉnh [Icon](/components/icon) đầu vào. Mặc định là `i-lucide-search`.
 
 ::component-code
 ---
@@ -243,18 +243,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.search` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.search`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.search` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.search`.
 :::
 ::
 
 ### Selected Icon
 
-Use the `selected-icon` prop to customize the selected item [Icon](/components/icon). Defaults to `i-lucide-check`.
+Sử dụng prop `selected-icon` để tùy chỉnh [Icon](/components/icon) mục đã chọn. Mặc định là `i-lucide-check`.
 
 ::component-code
 ---
@@ -318,18 +318,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.check` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.check`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.check` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.check`.
 :::
 ::
 
 ### Trailing Icon
 
-Use the `trailing-icon` prop to customize the trailing [Icon](/components/icon) when an item has children. Defaults to `i-lucide-chevron-right`.
+Sử dụng prop `trailing-icon` để tùy chỉnh [Icon](/components/icon) theo sau khi một mục có con. Mặc định là `i-lucide-chevron-right`.
 
 ::component-code
 ---
@@ -365,18 +365,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.chevronRight` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.chevronRight`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.chevronRight` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.chevronRight`.
 :::
 ::
 
 ### Loading
 
-Use the `loading` prop to show a loading icon on the CommandPalette.
+Sử dụng prop `loading` để hiển thị biểu tượng tải trên CommandPalette.
 
 ::component-code
 ---
@@ -407,7 +407,7 @@ props:
 
 ### Loading Icon
 
-Use the `loading-icon` prop to customize the loading icon. Defaults to `i-lucide-loader-circle`.
+Sử dụng prop `loading-icon` để tùy chỉnh biểu tượng tải. Mặc định là `i-lucide-loader-circle`.
 
 ::component-code
 ---
@@ -440,21 +440,21 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.loading`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.loading`.
 :::
 ::
 
 ### Close
 
-Use the `close` prop to display a [Button](/components/button) to dismiss the CommandPalette.
+Sử dụng prop `close` để hiển thị [Button](/components/button) để đóng CommandPalette.
 
 ::tip
-An `update:open` event will be emitted when the close button is clicked.
+Sự kiện `update:open` sẽ được phát ra khi nút đóng được nhấp.
 ::
 
 ::component-code
@@ -485,7 +485,7 @@ props:
 ---
 ::
 
-You can pass any property from the [Button](/components/button) component to customize it.
+Bạn có thể truyền bất kỳ thuộc tính nào từ thành phần [Button](/components/button) để tùy chỉnh nó.
 
 ::component-code
 ---
@@ -522,7 +522,7 @@ props:
 
 ### Close Icon
 
-Use the `close-icon` prop to customize the close button [Icon](/components/icon). Defaults to `i-lucide-x`.
+Sử dụng prop `close-icon` để tùy chỉnh [Icon](/components/icon) nút đóng. Mặc định là `i-lucide-x`.
 
 ::component-code
 ---
@@ -556,20 +556,20 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.close` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.close`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.close` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.close`.
 :::
 ::
 
 ### Back
 
-Use the `back` prop to customize or hide the back button (with `false` value) displayed when navigating into a submenu.
+Sử dụng prop `back` để tùy chỉnh hoặc ẩn nút quay lại (với giá trị `false`) được hiển thị khi điều hướng vào menu con.
 
-You can pass any property from the [Button](/components/button) component to customize it.
+Bạn có thể truyền bất kỳ thuộc tính nào từ thành phần [Button](/components/button) để tùy chỉnh nó.
 
 ::component-code
 ---
@@ -606,7 +606,7 @@ props:
 
 ### Back Icon
 
-Use the `back-icon` prop to customize the back button [Icon](/components/icon). Defaults to `i-lucide-arrow-left`.
+Sử dụng prop `back-icon` để tùy chỉnh [Icon](/components/icon) nút quay lại. Mặc định là `i-lucide-arrow-left`.
 
 ::component-code
 ---
@@ -643,18 +643,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.arrowLeft` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.arrowLeft`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.arrowLeft` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.arrowLeft`.
 :::
 ::
 
 ### Disabled
 
-Use the `disabled` prop to disable the CommandPalette.
+Sử dụng prop `disabled` để vô hiệu hóa CommandPalette.
 
 ::component-code
 ---
@@ -687,7 +687,7 @@ props:
 
 ### Control selected item(s)
 
-You can control the selected item(s) by using the `default-value` prop or the `v-model` directive, by using the `onSelect` field on each item or by using the `@update:model-value` event.
+Bạn có thể kiểm soát mục đã chọn bằng cách sử dụng prop `default-value` hoặc chỉ thị `v-model`, bằng cách sử dụng trường `onSelect` trên mỗi mục hoặc bằng cách sử dụng sự kiện `@update:model-value`.
 
 ::component-example
 ---
@@ -701,7 +701,7 @@ props:
 
 ### Control search term
 
-Use the `v-model:search-term` directive to control the search term.
+Sử dụng chỉ thị `v-model:search-term` để kiểm soát thuật ngữ tìm kiếm.
 
 ::component-example
 ---
@@ -714,12 +714,12 @@ props:
 ::
 
 ::note
-This example uses the `@update:model-value` event to reset the search term when an item is selected.
+Ví dụ này sử dụng sự kiện `@update:model-value` để đặt lại thuật ngữ tìm kiếm khi một mục được chọn.
 ::
 
 ### With children in items
 
-You can create hierarchical menus by using the `children` property in items. When an item has children, it will automatically display a chevron icon and enable navigation into a submenu.
+Bạn có thể tạo menu phân cấp bằng cách sử dụng thuộc tính `children` trong các mục. Khi một mục có con, nó sẽ tự động hiển thị biểu tượng chevron và cho phép điều hướng vào menu con.
 
 ::component-example
 ---
@@ -733,15 +733,15 @@ props:
 ::
 
 ::note
-When navigating into a submenu:
-- The search term is reset
-- A back button appears in the input
-- You can go back to the previous group by pressing the :kbd{value="backspace"} key
+Khi điều hướng vào menu con:
+- Thuật ngữ tìm kiếm được đặt lại
+- Nút quay lại xuất hiện trong đầu vào
+- Bạn có thể quay lại nhóm trước bằng cách nhấn phím :kbd{value="backspace"}
 ::
 
 ### With fetched items
 
-You can fetch items from an API and use them in the CommandPalette.
+Bạn có thể lấy các mục từ API và sử dụng chúng trong CommandPalette.
 
 ::component-example
 ---
@@ -755,7 +755,7 @@ props:
 
 ### With ignore filter
 
-You can set the `ignoreFilter` field to `true` on a group to disable the internal search and use your own search logic.
+Bạn có thể đặt trường `ignoreFilter` thành `true` trên một nhóm để vô hiệu hóa tìm kiếm nội bộ và sử dụng logic tìm kiếm của riêng bạn.
 
 ::component-example
 ---
@@ -768,12 +768,12 @@ props:
 ::
 
 ::note
-This example uses [`refDebounced`](https://vueuse.org/shared/refDebounced/#refdebounced) to debounce the API calls.
+Ví dụ này sử dụng [`refDebounced`](https://vueuse.org/shared/refDebounced/#refdebounced) để debounce các cuộc gọi API.
 ::
 
 ### With post-filtered items
 
-You can use the `postFilter` field on a group to filter items after the search happened.
+Bạn có thể sử dụng trường `postFilter` trên một nhóm để lọc các mục sau khi tìm kiếm xảy ra.
 
 ::component-example
 ---
@@ -786,12 +786,12 @@ props:
 ::
 
 ::note
-Start typing to see items with higher level appear.
+Bắt đầu nhập để xem các mục có mức độ cao hơn xuất hiện.
 ::
 
 ### With custom fuse search
 
-You can use the `fuse` prop to override the options of [useFuse](https://vueuse.org/integrations/useFuse) which defaults to:
+Bạn có thể sử dụng prop `fuse` để ghi đè các tùy chọn của [useFuse](https://vueuse.org/integrations/useFuse) mặc định là:
 
 ```ts
 {
@@ -806,10 +806,10 @@ You can use the `fuse` prop to override the options of [useFuse](https://vueuse.
 ```
 
 ::tip
-The `fuseOptions` are the options of [Fuse.js](https://www.fusejs.io/api/options.html), the `resultLimit` is the maximum number of results to return and the `matchAllWhenSearchEmpty` is a boolean to match all items when the search term is empty.
+`fuseOptions` là các tùy chọn của [Fuse.js](https://www.fusejs.io/api/options.html), `resultLimit` là số lượng kết quả tối đa để trả về và `matchAllWhenSearchEmpty` là boolean để khớp tất cả các mục khi thuật ngữ tìm kiếm trống.
 ::
 
-You can for example set `{ fuseOptions: { includeMatches: true } }`{lang="ts-type"} to highlight the search term in the items.
+Ví dụ, bạn có thể đặt `{ fuseOptions: { includeMatches: true } }`{lang="ts-type"} để làm nổi bật thuật ngữ tìm kiếm trong các mục.
 
 ::component-example
 ---
@@ -823,7 +823,7 @@ props:
 
 ### Within a Popover
 
-You can use the CommandPalette component inside a [Popover](/components/popover)'s content.
+Bạn có thể sử dụng thành phần CommandPalette bên trong nội dung của [Popover](/components/popover).
 
 ::component-example
 ---
@@ -836,7 +836,7 @@ props:
 
 ### Within a Modal
 
-You can use the CommandPalette component inside a [Modal](/components/modal)'s content.
+Bạn có thể sử dụng thành phần CommandPalette bên trong nội dung của [Modal](/components/modal).
 
 ::component-example
 ---
@@ -849,7 +849,7 @@ props:
 
 ### Within a Drawer
 
-You can use the CommandPalette component inside a [Drawer](/components/drawer)'s content.
+Bạn có thể sử dụng thành phần CommandPalette bên trong nội dung của [Drawer](/components/drawer).
 
 ::component-example
 ---
@@ -862,7 +862,7 @@ props:
 
 ### Listen open state
 
-When using the `close` prop, you can listen to the `update:open` event when the button is clicked.
+Khi sử dụng prop `close`, bạn có thể lắng nghe sự kiện `update:open` khi nút được nhấp.
 
 ::component-example
 ---
@@ -874,12 +874,12 @@ props:
 ::
 
 ::note
-This can be useful when using the CommandPalette inside a [`Modal`](/components/modal) for example.
+Điều này có thể hữu ích khi sử dụng CommandPalette bên trong [`Modal`](/components/modal) chẳng hạn.
 ::
 
 ### With footer slot :badge{label="New" class="align-text-top"}
 
-Use the `#footer` slot to add custom content at the bottom of the CommandPalette, such as keyboard shortcuts help or additional actions.
+Sử dụng slot `#footer` để thêm nội dung tùy chỉnh ở cuối CommandPalette, chẳng hạn như trợ giúp phím tắt hoặc hành động bổ sung.
 
 ::component-example
 ---
@@ -893,9 +893,9 @@ props:
 
 ### With custom slot
 
-Use the `slot` property to customize a specific item or group.
+Sử dụng thuộc tính `slot` để tùy chỉnh một mục hoặc nhóm cụ thể.
 
-You will have access to the following slots:
+Bạn sẽ có quyền truy cập vào các slot sau:
 
 - `#{{ item.slot }}`{lang="ts-type"}
 - `#{{ item.slot }}-leading`{lang="ts-type"}
@@ -918,7 +918,7 @@ props:
 ::
 
 ::tip{to="#slots"}
-You can also use the `#item`, `#item-leading`, `#item-label` and `#item-trailing` slots to customize all items.
+Bạn cũng có thể sử dụng các slot `#item`, `#item-leading`, `#item-label` và `#item-trailing` để tùy chỉnh tất cả các mục.
 ::
 
 ## API

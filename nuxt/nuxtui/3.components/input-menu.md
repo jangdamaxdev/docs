@@ -13,19 +13,19 @@ links:
 
 ## Usage
 
-Use the `v-model` directive to control the value of the InputMenu or the `default-value` prop to set the initial value when you do not need to control its state.
+Sử dụng directive `v-model` để kiểm soát giá trị của InputMenu hoặc prop `default-value` để đặt giá trị ban đầu khi bạn không cần kiểm soát trạng thái của nó.
 
 ::tip
-Use this over an [`Input`](/components/input) to take advantage of Reka UI's [`Combobox`](https://reka-ui.com/docs/components/combobox) component that offers autocomplete capabilities.
+Sử dụng điều này thay cho [`Input`](/components/input) để tận dụng thành phần [`Combobox`](https://reka-ui.com/docs/components/combobox) của Reka UI cung cấp khả năng tự động hoàn thành.
 ::
 
 ::note
-This component is similar to the [`SelectMenu`](/components/select-menu) but it's using an Input instead of a Select.
+Thành phần này tương tự như [`SelectMenu`](/components/select-menu) nhưng nó sử dụng Input thay vì Select.
 ::
 
 ### Items
 
-Use the `items` prop as an array of strings, numbers or booleans:
+Sử dụng prop `items` dưới dạng một mảng các chuỗi, số hoặc boolean:
 
 ::component-code
 ---
@@ -46,7 +46,7 @@ props:
 ---
 ::
 
-You can also pass an array of objects with the following properties:
+Bạn cũng có thể truyền một mảng các đối tượng với các thuộc tính sau:
 
 - `label?: string`{lang="ts-type"}
 - [`type?: "label" | "separator" | "item"`{lang="ts-type"}](#with-items-type)
@@ -77,7 +77,7 @@ props:
 ---
 ::
 
-You can also pass an array of arrays to the `items` prop to display separated groups of items.
+Bạn cũng có thể truyền một mảng các mảng cho prop `items` để hiển thị các nhóm mục được tách biệt.
 
 ::component-code
 ---
@@ -106,7 +106,7 @@ props:
 
 ### Value Key
 
-You can choose to bind a single property of the object rather than the whole object by using the `value-key` prop. Defaults to `undefined`.
+Bạn có thể chọn ràng buộc một thuộc tính duy nhất của đối tượng thay vì toàn bộ đối tượng bằng cách sử dụng prop `value-key`. Mặc định là `undefined`.
 
 ::component-code
 ---
@@ -135,7 +135,7 @@ props:
 
 ### Multiple
 
-Use the `multiple` prop to allow multiple selections, the selected items will be displayed as tags.
+Sử dụng prop `multiple` để cho phép chọn nhiều mục, các mục đã chọn sẽ được hiển thị dưới dạng thẻ.
 
 ::component-code
 ---
@@ -161,12 +161,12 @@ props:
 ::
 
 ::caution
-Ensure to pass an array to the `default-value` prop or the `v-model` directive.
+Đảm bảo truyền một mảng cho prop `default-value` hoặc directive `v-model`.
 ::
 
 ### Delete Icon
 
-With `multiple`, use the `delete-icon` prop to customize the delete [Icon](/components/icon) in the tags. Defaults to `i-lucide-x`.
+Với `multiple`, sử dụng prop `delete-icon` để tùy chỉnh [Icon](/components/icon) xóa trong các thẻ. Mặc định là `i-lucide-x`.
 
 ::component-code
 ---
@@ -195,18 +195,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.close` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.close`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.close` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.close`.
 :::
 ::
 
 ### Placeholder
 
-Use the `placeholder` prop to set a placeholder text.
+Sử dụng prop `placeholder` để đặt văn bản placeholder.
 
 ::component-code
 ---
@@ -227,7 +227,7 @@ props:
 
 ### Content
 
-Use the `content` prop to control how the InputMenu content is rendered, like its `align` or `side` for example.
+Sử dụng prop `content` để kiểm soát cách nội dung InputMenu được render, như `align` hoặc `side` của nó ví dụ.
 
 ::component-code
 ---
@@ -264,7 +264,7 @@ props:
 
 ### Arrow
 
-Use the `arrow` prop to display an arrow on the InputMenu.
+Sử dụng prop `arrow` để hiển thị một mũi tên trên InputMenu.
 
 ::component-code
 ---
@@ -289,7 +289,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the ring color when the InputMenu is focused.
+Sử dụng prop `color` để thay đổi màu vòng khi InputMenu được focus.
 
 ::component-code
 ---
@@ -313,12 +313,12 @@ props:
 ::
 
 ::note
-The `highlight` prop is used here to show the focus state. It's used internally when a validation error occurs.
+Prop `highlight` được sử dụng ở đây để hiển thị trạng thái focus. Nó được sử dụng nội bộ khi xảy ra lỗi xác thực.
 ::
 
 ### Variant
 
-Use the `variant` prop to change the variant of the InputMenu.
+Sử dụng prop `variant` để thay đổi biến thể của InputMenu.
 
 ::component-code
 ---
@@ -344,7 +344,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the InputMenu.
+Sử dụng prop `size` để thay đổi kích thước của InputMenu.
 
 ::component-code
 ---
@@ -368,7 +368,7 @@ props:
 
 ### Icon
 
-Use the `icon` prop to show an [Icon](/components/icon) inside the InputMenu.
+Sử dụng prop `icon` để hiển thị một [Icon](/components/icon) bên trong InputMenu.
 
 ::component-code
 ---
@@ -393,7 +393,7 @@ props:
 
 ### Trailing Icon
 
-Use the `trailing-icon` prop to customize the trailing [Icon](/components/icon). Defaults to `i-lucide-chevron-down`.
+Sử dụng prop `trailing-icon` để tùy chỉnh [Icon](/components/icon) trailing. Mặc định là `i-lucide-chevron-down`.
 
 ::component-code
 ---
@@ -419,18 +419,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.chevronDown` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.chevronDown`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.chevronDown` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.chevronDown`.
 :::
 ::
 
 ### Selected Icon
 
-Use the `selected-icon` prop to customize the icon when an item is selected. Defaults to `i-lucide-check`.
+Sử dụng prop `selected-icon` để tùy chỉnh biểu tượng khi một mục được chọn. Mặc định là `i-lucide-check`.
 
 ::component-code
 ---
@@ -456,18 +456,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.check` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.check`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.check` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.check`.
 :::
 ::
 
 ### Avatar
 
-Use the `avatar` prop to show an [Avatar](/components/avatar) inside the InputMenu.
+Sử dụng prop `avatar` để hiển thị một [Avatar](/components/avatar) bên trong InputMenu.
 
 ::component-code
 ---
@@ -493,7 +493,7 @@ props:
 
 ### Loading
 
-Use the `loading` prop to show a loading icon on the InputMenu.
+Sử dụng prop `loading` để hiển thị biểu tượng loading trên InputMenu.
 
 ::component-code
 ---
@@ -518,7 +518,7 @@ props:
 
 ### Loading Icon
 
-Use the `loading-icon` prop to customize the loading icon. Defaults to `i-lucide-loader-circle`.
+Sử dụng prop `loading-icon` để tùy chỉnh biểu tượng loading. Mặc định là `i-lucide-loader-circle`.
 
 ::component-code
 ---
@@ -544,18 +544,18 @@ props:
 ::framework-only
 #nuxt
 :::tip{to="/getting-started/icons/nuxt#theme"}
-You can customize this icon globally in your `app.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `app.config.ts` của bạn dưới khóa `ui.icons.loading`.
 :::
 
 #vue
 :::tip{to="/getting-started/icons/vue#theme"}
-You can customize this icon globally in your `vite.config.ts` under `ui.icons.loading` key.
+Bạn có thể tùy chỉnh biểu tượng này toàn cục trong `vite.config.ts` của bạn dưới khóa `ui.icons.loading`.
 :::
 ::
 
 ### Disabled
 
-Use the `disabled` prop to disable the InputMenu.
+Sử dụng prop `disabled` để vô hiệu hóa InputMenu.
 
 ::component-code
 ---
@@ -580,7 +580,7 @@ props:
 
 ### With items type
 
-You can use the `type` property with `separator` to display a separator between items or `label` to display a label.
+Bạn có thể sử dụng thuộc tính `type` với `separator` để hiển thị một dấu phân cách giữa các mục hoặc `label` để hiển thị một nhãn.
 
 ::component-code
 ---
@@ -614,7 +614,7 @@ props:
 
 ### With icon in items
 
-You can use the `icon` property to display an [Icon](/components/icon) inside the items.
+Bạn có thể sử dụng thuộc tính `icon` để hiển thị một [Icon](/components/icon) bên trong các mục.
 
 ::component-example
 ---
@@ -624,12 +624,12 @@ name: 'input-menu-items-icon-example'
 ::
 
 ::tip
-You can also use the `#leading` slot to display the selected icon.
+Bạn cũng có thể sử dụng slot `#leading` để hiển thị biểu tượng đã chọn.
 ::
 
 ### With avatar in items
 
-You can use the `avatar` property to display an [Avatar](/components/avatar) inside the items.
+Bạn có thể sử dụng thuộc tính `avatar` để hiển thị một [Avatar](/components/avatar) bên trong các mục.
 
 ::component-example
 ---
@@ -639,12 +639,12 @@ name: 'input-menu-items-avatar-example'
 ::
 
 ::tip
-You can also use the `#leading` slot to display the selected avatar.
+Bạn cũng có thể sử dụng slot `#leading` để hiển thị avatar đã chọn.
 ::
 
 ### With chip in items
 
-You can use the `chip` property to display a [Chip](/components/chip) inside the items.
+Bạn có thể sử dụng thuộc tính `chip` để hiển thị một [Chip](/components/chip) bên trong các mục.
 
 ::component-example
 ---
@@ -654,12 +654,12 @@ name: 'input-menu-items-chip-example'
 ::
 
 ::note
-In this example, the `#leading` slot is used to display the selected chip.
+Trong ví dụ này, slot `#leading` được sử dụng để hiển thị chip đã chọn.
 ::
 
 ### Control open state
 
-You can control the open state by using the `default-open` prop or the `v-model:open` directive.
+Bạn có thể kiểm soát trạng thái mở bằng cách sử dụng prop `default-open` hoặc directive `v-model:open`.
 
 ::component-example
 ---
@@ -668,12 +668,12 @@ name: 'input-menu-open-example'
 ::
 
 ::note
-In this example, leveraging [`defineShortcuts`](/composables/define-shortcuts), you can toggle the InputMenu by pressing :kbd{value="O"}.
+Trong ví dụ này, tận dụng [`defineShortcuts`](/composables/define-shortcuts), bạn có thể chuyển đổi InputMenu bằng cách nhấn :kbd{value="O"}.
 ::
 
 ### Control open state on focus
 
-You can use the `open-on-focus` or `open-on-click` props to open the menu when the input is focused or clicked.
+Bạn có thể sử dụng prop `open-on-focus` hoặc `open-on-click` để mở menu khi input được focus hoặc nhấp.
 
 ::component-example
 ---
@@ -683,7 +683,7 @@ name: 'input-menu-open-focus-example'
 
 ### Control search term
 
-Use the `v-model:search-term` directive to control the search term.
+Sử dụng directive `v-model:search-term` để kiểm soát thuật ngữ tìm kiếm.
 
 ::component-example
 ---
@@ -693,7 +693,7 @@ name: 'input-menu-search-term-example'
 
 ### With rotating icon
 
-Here is an example with a rotating icon that indicates the open state of the InputMenu.
+Đây là một ví dụ với biểu tượng xoay chỉ ra trạng thái mở của InputMenu.
 
 ::component-example
 ---
@@ -703,7 +703,7 @@ name: 'input-menu-icon-example'
 
 ### With create item
 
-Use the `create-item` prop to enable users to add custom values that aren't in the predefined options.
+Sử dụng prop `create-item` để cho phép người dùng thêm các giá trị tùy chỉnh không có trong các tùy chọn định sẵn.
 
 ::component-example
 ---
@@ -713,16 +713,16 @@ name: 'input-menu-create-item-example'
 ::
 
 ::note
-The create option shows when no match is found by default. Set it to `always` to show it even when similar values exist.
+Tùy chọn tạo hiển thị khi không tìm thấy khớp theo mặc định. Đặt thành `always` để hiển thị ngay cả khi có giá trị tương tự tồn tại.
 ::
 
 ::tip{to="#emits"}
-Use the `@create` event to handle the creation of the item. You will receive the event and the item as arguments.
+Sử dụng sự kiện `@create` để xử lý việc tạo mục. Bạn sẽ nhận được sự kiện và mục dưới dạng đối số.
 ::
 
 ### With fetched items
 
-You can fetch items from an API and use them in the InputMenu.
+Bạn có thể lấy các mục từ API và sử dụng chúng trong InputMenu.
 
 ::component-example
 ---
@@ -733,7 +733,7 @@ name: 'input-menu-fetch-example'
 
 ### With ignore filter
 
-Set the `ignore-filter` prop to `true` to disable the internal search and use your own search logic.
+Đặt prop `ignore-filter` thành `true` để vô hiệu hóa tìm kiếm nội bộ và sử dụng logic tìm kiếm của riêng bạn.
 
 ::component-example
 ---
@@ -743,12 +743,12 @@ name: 'input-menu-ignore-filter-example'
 ::
 
 ::note
-This example uses [`refDebounced`](https://vueuse.org/shared/refDebounced/#refdebounced) to debounce the API calls.
+Ví dụ này sử dụng [`refDebounced`](https://vueuse.org/shared/refDebounced/#refdebounced) để debounce các cuộc gọi API.
 ::
 
 ### With filter fields
 
-Use the `filter-fields` prop with an array of fields to filter on. Defaults to `[labelKey]`.
+Sử dụng prop `filter-fields` với một mảng các trường để lọc. Mặc định là `[labelKey]`.
 
 ::component-example
 ---
@@ -759,7 +759,7 @@ name: 'input-menu-filter-fields-example'
 
 ### With full content width
 
-You can expand the content to the full width of its items by using the `ui.content` key.
+Bạn có thể mở rộng nội dung đến chiều rộng đầy đủ của các mục của nó bằng cách sử dụng khóa `ui.content`.
 
 ::component-example
 ---
@@ -769,7 +769,7 @@ collapse: true
 ::
 
 ::tip
-You can also change the content width globally in your `app.config.ts`:
+Bạn cũng có thể thay đổi chiều rộng nội dung toàn cục trong `app.config.ts` của bạn:
 
 ```
 export default defineAppConfig({
@@ -786,7 +786,7 @@ export default defineAppConfig({
 
 ### As a CountryPicker
 
-This example demonstrates using the InputMenu as a country picker with lazy loading - countries are only fetched when the menu is opened.
+Ví dụ này minh họa việc sử dụng InputMenu làm bộ chọn quốc gia với lazy loading - các quốc gia chỉ được lấy khi menu được mở.
 
 ::component-example
 ---

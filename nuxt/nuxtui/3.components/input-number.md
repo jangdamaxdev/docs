@@ -12,12 +12,12 @@ links:
 ---
 
 ::note
-This component relies on the [`@internationalized/number`](https://react-spectrum.adobe.com/internationalized/number/index.html) package which provides utilities for formatting and parsing numbers across locales and numbering systems.
+Thành phần này dựa vào gói [`@internationalized/number`](https://react-spectrum.adobe.com/internationalized/number/index.html) cung cấp tiện ích để định dạng và phân tích số trên các locale và hệ thống đánh số.
 ::
 
 ## Usage
 
-Use the `v-model` directive to control the value of the InputNumber.
+Sử dụng directive `v-model` để kiểm soát giá trị của InputNumber.
 
 ::component-code
 ---
@@ -30,7 +30,7 @@ props:
 ---
 ::
 
-Use the `default-value` prop to set the initial value when you do not need to control its state.
+Sử dụng prop `default-value` để đặt giá trị ban đầu khi bạn không cần kiểm soát trạng thái của nó.
 
 ::component-code
 ---
@@ -43,7 +43,7 @@ props:
 
 ### Min / Max
 
-Use the `min` and `max` props to set the minimum and maximum values of the InputNumber.
+Sử dụng prop `min` và `max` để đặt giá trị tối thiểu và tối đa của InputNumber.
 
 ::component-code
 ---
@@ -60,7 +60,7 @@ props:
 
 ### Step
 
-Use the `step` prop to set the step value of the InputNumber.
+Sử dụng prop `step` để đặt giá trị bước của InputNumber.
 
 ::component-code
 ---
@@ -76,7 +76,7 @@ props:
 
 ### Orientation
 
-Use the `orientation` prop to change the orientation of the InputNumber.
+Sử dụng prop `orientation` để thay đổi hướng của InputNumber.
 
 ::component-code
 ---
@@ -92,7 +92,7 @@ props:
 
 ### Placeholder
 
-Use the `placeholder` prop to set a placeholder text.
+Sử dụng prop `placeholder` để đặt văn bản placeholder.
 
 ::component-code
 ---
@@ -103,7 +103,7 @@ props:
 
 ### Color
 
-Use the `color` prop to change the ring color when the InputNumber is focused.
+Sử dụng prop `color` để thay đổi màu vòng khi InputNumber được focus.
 
 ::component-code
 ---
@@ -120,7 +120,7 @@ props:
 
 ### Variant
 
-Use the `variant` prop to change the variant of the InputNumber.
+Sử dụng prop `variant` để thay đổi biến thể của InputNumber.
 
 ::component-code
 ---
@@ -138,7 +138,7 @@ props:
 
 ### Size
 
-Use the `size` prop to change the size of the InputNumber.
+Sử dụng prop `size` để thay đổi kích thước của InputNumber.
 
 ::component-code
 ---
@@ -154,7 +154,7 @@ props:
 
 ### Disabled
 
-Use the `disabled` prop to disable the InputNumber.
+Sử dụng prop `disabled` để vô hiệu hóa InputNumber.
 
 ::component-code
 ---
@@ -170,7 +170,7 @@ props:
 
 ### Increment / Decrement
 
-Use the `increment` and `decrement` props to customize the increment and decrement buttons with any [Button](/components/button) props. Defaults to `{ variant: 'link' }`{lang="ts-type"}.
+Sử dụng prop `increment` và `decrement` để tùy chỉnh các nút tăng và giảm với bất kỳ prop [Button](/components/button) nào. Mặc định là `{ variant: 'link' }`{lang="ts-type"}.
 
 ::component-code
 ---
@@ -200,7 +200,7 @@ props:
 
 ### Increment / Decrement Icons
 
-Use the `increment-icon` and `decrement-icon` props to customize the buttons [Icon](/components/icon). Defaults to `i-lucide-plus` / `i-lucide-minus`.
+Sử dụng prop `increment-icon` và `decrement-icon` để tùy chỉnh [Icon](/components/icon) của các nút. Mặc định là `i-lucide-plus` / `i-lucide-minus`.
 
 ::component-code
 ---
@@ -220,7 +220,7 @@ props:
 
 ### With decimal format
 
-Use the `format-options` prop to customize the format of the value.
+Sử dụng prop `format-options` để tùy chỉnh định dạng của giá trị.
 
 ::component-example
 ---
@@ -230,7 +230,7 @@ name: 'input-number-decimal-example'
 
 ### With percentage format
 
-Use the `format-options` prop with `style: 'percent'` to customize the format of the value.
+Sử dụng prop `format-options` với `style: 'percent'` để tùy chỉnh định dạng của giá trị.
 
 ::component-example
 ---
@@ -240,7 +240,7 @@ name: 'input-number-percentage-example'
 
 ### With currency format
 
-Use the `format-options` prop with `style: 'currency'` to customize the format of the value.
+Sử dụng prop `format-options` với `style: 'currency'` để tùy chỉnh định dạng của giá trị.
 
 ::component-example
 ---
@@ -250,7 +250,7 @@ name: 'input-number-currency-example'
 
 ### Within a FormField
 
-You can use the InputNumber within a [FormField](/components/form-field) component to display a label, help text, required indicator, etc.
+Bạn có thể sử dụng InputNumber trong thành phần [FormField](/components/form-field) để hiển thị nhãn, văn bản trợ giúp, chỉ báo bắt buộc, v.v.
 
 ::component-example
 ---
@@ -260,7 +260,7 @@ name: 'input-number-form-field-example'
 
 ### With slots
 
-Use the `#increment` and `#decrement` slots to customize the buttons.
+Sử dụng slot `#increment` và `#decrement` để tùy chỉnh các nút.
 
 ::component-example
 ---
